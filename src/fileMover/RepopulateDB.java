@@ -28,7 +28,7 @@ public class RepopulateDB {
 		}
 
 		// For these types of files
-		String[] foldersAvailable = {"package", "rake", "pom", "build", "gradle"};
+		String[] foldersAvailable = {"rake", "pom", "build", "gradle"}; //"package",  
 		String src = "D://Build Scripts/";
 		
 		for (String folder: foldersAvailable) {
@@ -51,6 +51,8 @@ public class RepopulateDB {
 			
 			String line = null;
 			String[] info = null;
+			int count = 0;
+			int total = 0;
 			while (true) {
 				// Read in files one at a time
 				try {
@@ -70,7 +72,7 @@ public class RepopulateDB {
 				
 				// Check for repeats
 				try {
-					PreparedStatement query = c.prepareStatement("SELECT * FROM npm WHERE url=?");
+					PreparedStatement query = c.prepareStatement("SELECT * FROM dependencies WHERE url=?");
 					query.setString(1, line);
 					ResultSet rs = query.executeQuery();
 					if (rs.isBeforeFirst()) {
@@ -95,6 +97,12 @@ public class RepopulateDB {
 					out.write('\n');
 				} catch (IOException e) {
 					e.printStackTrace();
+				}
+				count++;
+				if (count >> 16 > 0) {
+					total += count;
+					count = 0;
+					System.out.println(total + " files added to DB");
 				}
 			}
 			

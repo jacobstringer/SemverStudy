@@ -32,7 +32,7 @@ public class ProducerParseFiles implements Runnable {
 		// Open database records
 		BufferedReader in = null;
 		try {
-			in = new BufferedReader(new FileReader("data/BuildFiles.csv"));
+			in = new BufferedReader(new FileReader("D://Build Scripts/package/packagerecoveredfiles.csv"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			this.stopped = true;
@@ -46,7 +46,8 @@ public class ProducerParseFiles implements Runnable {
 				if (temp == null) { // If file is finished
 					break;
 				}
-				info = temp.split(",");
+				//info = temp.split(",");
+				info = new String[]{temp, "", "", "package.json"};
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
