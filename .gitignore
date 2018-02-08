@@ -3,3 +3,7 @@ private_tokens.txt
 data/*
 /old/
 !**.sas
+.project
+.pydevproject
+Tests.txt
+_2018SS.iml
