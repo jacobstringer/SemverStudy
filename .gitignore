@@ -3,4 +3,4 @@ BuildFiles.csv
 private_tokens.txt
 /data/
 /old/
-!/data/data.sas
+!data/data.sas
