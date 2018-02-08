@@ -5,10 +5,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
 
+import org.json.JSONObject;
+
 import githubScraper.Counter;
+import githubScraper.Scraper;
 
 /**
  * A consumer takes lists of student instances and prints them by converting them into html document.
@@ -37,7 +41,7 @@ public class ConsumerParseFiles implements Runnable {
 		// Initialise classes
 		BufferedWriter out = null;
 		try {
-			out = new BufferedWriter(new FileWriter("JSONtypes.txt"));
+			out = new BufferedWriter(new FileWriter("Tests.txt"));
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -46,7 +50,7 @@ public class ConsumerParseFiles implements Runnable {
 		
 		AntDependencyFinder ant = new AntDependencyFinder();
 		GradleDependencyFinder gradle = new GradleDependencyFinder();
-		NPMDependencyFinder npm = new NPMDependencyFinder(c, out);
+		NPMDependencyFinder npm = new NPMDependencyFinder(c);
 		PomDependencyFinder pom = new PomDependencyFinder();
 		RakeDependencyFinder rake = new RakeDependencyFinder();
 		
@@ -60,44 +64,33 @@ public class ConsumerParseFiles implements Runnable {
 					continue;
 				}
 				
+				// Check for repeats
+				try {
+					PreparedStatement query = c.prepareStatement("SELECT * FROM npm WHERE url=?");
+					query.setString(1, file_string[2]);
+					ResultSet rs = query.executeQuery();
+					if (rs.isBeforeFirst()) {
+						continue;
+					}
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+				
 				// Pass onto parsers to extract semantic version information
-				int[] dependencies = null;
+				//int[] dependencies = null;
 				switch (file_string[1]) {
 				//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
 				//case "Gradle": {dependencies = gradle.findVersionData(file_string[0]); break;}
 				//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
 				//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
-				case "Package": {dependencies = npm.findVersionData(file_string[0], file_string[2]); break;}
+				case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
 				}
-				
-				/*
-				if (dependencies == null) {
-					System.out.println(file_string[0] + " " + file_string[1] + " " + file_string[2] + " did not have the correct dependencies and was skipped");
-					continue;
-				}
-				
-				
-				// Add information back to DB
-				PreparedStatement ps = null;
-				try {
-					ps = c.prepareStatement("UPDATE dependencies SET sem_depend = ?, other_depend = ? WHERE url = ?");
-					ps.setInt(1, dependencies[1]);
-					ps.setInt(2, dependencies[0]);
-					ps.setString(3, file_string[2]);
-					ps.execute();
-				} catch (SQLException e) {
-					System.out.println(ps.toString());
-					e.printStackTrace();
-				}	*/
 				
 				counter.added_to_db();
 			}
 			catch (InterruptedException e) {
 				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} 
 
 		}
 		try {

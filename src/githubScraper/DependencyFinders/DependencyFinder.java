@@ -1,5 +1,7 @@
 package githubScraper.DependencyFinders;
 
+import java.sql.Connection;
+
 public interface DependencyFinder {
-	public int[] findVersionData(String file);
+	public void findVersionData(String file, String url);
 }

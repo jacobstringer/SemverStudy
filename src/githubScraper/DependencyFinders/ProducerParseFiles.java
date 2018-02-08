@@ -15,8 +15,8 @@ public class ProducerParseFiles implements Runnable {
 	private BlockingQueue <String[]> queue = null;
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
-	private int getFirstNScripts = 100000; // Change this if not doing full set
 	private int count = 0;
+	private int start = 110000;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();
@@ -37,8 +37,8 @@ public class ProducerParseFiles implements Runnable {
 			e.printStackTrace();
 			this.stopped = true;
 		}
-		
-		while (!this.stopped && count < getFirstNScripts) {
+
+		while (!this.stopped) {
 			// Get one observation at a time out of the database file
 			String[] info = null;
 			try {
@@ -50,25 +50,34 @@ public class ProducerParseFiles implements Runnable {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+
 			// Change url to file name as saved on computer
 			String file = info[0].replaceFirst("https://github.com/", "").replace('/', '+');
-			
+
 			// Find the folder it is found in
 			String type = null;
-			switch(info[3]) {
-			//case "Rakefile":
-			//case "Rakefile.rb": {type = "Rake"; break;}
-			//case "build.gradle": {type = "Gradle"; break;}
-			//case "build.xml": {type = "Build"; break;}
-			//case "pom.xml": {type = "Pom"; break;}
-			case "package.json": {type = "Package"; break;}
+			try {
+				switch(info[3]) {
+				//case "Rakefile":
+				//case "Rakefile.rb": {type = "Rake"; break;}
+				//case "build.gradle": {type = "Gradle"; break;}
+				//case "build.xml": {type = "Build"; break;}
+				//case "pom.xml": {type = "Pom"; break;}
+				case "package.json": {type = "Package"; break;}
+				}
+			} catch (Exception e) {
+				continue;
 			}
 			
 			if (type == null) {
 				continue;
 			}
 			
+			count++;
+			if (count < start) {
+				continue;
+			}
+
 			// Find the file which has the structure buildtype\first_character_of_file\file.extension
 			BufferedReader in2;
 			try {
@@ -79,7 +88,7 @@ public class ProducerParseFiles implements Runnable {
 				System.err.println(file);
 				continue;
 			}
-			
+
 			// Read in file into a single string
 			StringBuilder temp = new StringBuilder();
 			String tempString = null;
@@ -91,13 +100,16 @@ public class ProducerParseFiles implements Runnable {
 					temp.append(tempString);
 				}
 			}
-			
+
 			// Send to consumers
 			try {queue.put(new String[]{temp.toString(), type, info[0]});} catch (InterruptedException e1) {e1.printStackTrace();}
-			
+
 			// Close connection
 			try {in2.close();} catch (IOException e) {e.printStackTrace();}
 			count++;
+			if (count % 10000 == 0) {
+				System.out.println("Read in file: " + count);
+			}
 		}
 		// Close connection
 		try {in.close();} catch (IOException e) {e.printStackTrace();}
