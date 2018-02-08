@@ -1,7 +1,7 @@
 import os
 
 count = 0
-for root, dirs, files in os.walk("C:\\Users\\Jacob\\Desktop\\MasseyReadings\\Java\\_2018SS\\githubSamples"):
+for root, dirs, files in os.walk("D://Build Scripts/package"):
     count += len(files)
 
 print(count)

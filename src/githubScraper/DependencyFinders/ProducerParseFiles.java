@@ -16,7 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
-	private int start = 110000;
+	private int start = 0;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();
@@ -32,7 +32,7 @@ public class ProducerParseFiles implements Runnable {
 		// Open database records
 		BufferedReader in = null;
 		try {
-			in = new BufferedReader(new FileReader("BuildFiles.csv"));
+			in = new BufferedReader(new FileReader("data/BuildFiles.csv"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			this.stopped = true;
@@ -70,11 +70,6 @@ public class ProducerParseFiles implements Runnable {
 			}
 			
 			if (type == null) {
-				continue;
-			}
-			
-			count++;
-			if (count < start) {
 				continue;
 			}
 

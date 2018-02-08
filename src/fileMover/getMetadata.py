@@ -1,9 +1,9 @@
 import os
 import os.path
 
-for name in ["pom", "package", "rake"]:
+for name in ["pom", "package", "rake", "build", "gradle"]:
     source = "D:\\Build Scripts\\" + name
-    dst = "D:\\Build Scripts\\" + name + "\\" + name + ".csv"
+    dst = "D:\\Build Scripts\\" + name + "\\" + name + "2.csv"
     
     out = open(dst, "w")
     
