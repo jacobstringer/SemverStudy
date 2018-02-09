@@ -12,28 +12,19 @@ public class checkAnt {
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = null;
 		try {
-			in = new BufferedReader(new FileReader("BuildFiles.csv"));
+			in = new BufferedReader(new FileReader("D://Build Scripts/Build/buildrecoveredfiles.csv"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		BufferedWriter out = null;
 		try {
-			out = new BufferedWriter(new FileWriter("IvyInfo2.csv"));
+			out = new BufferedWriter(new FileWriter("data/IvyInfo2.csv"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		int counter = 0;
 		String temp = "";
-		while(!temp.contains("chern007/PSP03_reloj_dig")) { 
-			counter++;
-			temp = in.readLine();
-			if (temp == null) {
-				System.out.println(counter);
-				break;
-			}
-		}
 		
 		while(true) {
 			// Get one observation at a time out of the database file
@@ -44,22 +35,12 @@ public class checkAnt {
 					break;
 				}
 				info = temp.split(",");
-				counter++;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 
 			// Change url to file name as saved on computer
 			String file = info[0].replaceFirst("https://github.com/", "").replace('/', '+');
-			try {
-				if (!info[3].equals("build.xml")) {
-					continue;
-				}
-			} catch (ArrayIndexOutOfBoundsException e) {
-				System.out.println(counter);
-				System.out.println(info[0]);
-				continue;
-			}
 
 			BufferedReader in2;
 			try {

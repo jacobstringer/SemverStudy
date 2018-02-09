@@ -74,10 +74,15 @@ Info about Ant projects that use Ivy;
 DATA ivy;
 	INFILE "&dir\IvyInfo.csv" DLM=',';
 	INPUT project $ ivy;
+DATA ivy2;
+	INFILE "&dir\IvyInfo2.csv" DLM=',';
+	INPUT project $ ivy;
+DATA ivycombo;
+	SET ivy ivy2;
 RUN;
 
 ODS HTML;
-PROC MEANS data=ivy;
+PROC MEANS data=ivycombo N  MEAN STD SUM;
 	VAR ivy;
 RUN;
 ODS HTML CLOSE;
@@ -97,7 +102,7 @@ DATA npm;
 RUN;
 
 ODS HTML;
-PROC MEANS data=npm;
+PROC MEANS data=npm MAXDEC=3 N MEAN STD P95 P99 MAX;
 RUN;
 ODS HTML CLOSE;
 
@@ -105,36 +110,4 @@ ODS HTML CLOSE;
 
 ******* FULL FILE OF STATS;
 * General stats;
-DATA build;
-	INFILE "&dir\BuildFiles.csv" DSD;
-	INPUT url $ 
-		lang1 $
-		lang2 $
-		buildtype $
-		sem_depend
-		other_depend
-		users $
-		ghid;
-RUN;
 
-PROC MEANS data=build;
-	CLASS buildtype;
-RUN;
-
-
-* Compare with old build data;
-DATA buildold;
-	INFILE "&dir\BuildFilesOld.csv" DSD;
-	INPUT url $ 
-		lang1 $
-		lang2 $
-		buildtype $
-		sem_depend
-		other_depend
-		users $
-		ghid;
-RUN;
-
-PROC MEANS data=buildold;
-	CLASS buildtype;
-RUN;
