@@ -9,4 +9,4 @@ Surveys how much version ranges are used in automatic build technologies
 The other folders and files are auxiliary scripts and files.
 
 ## Statistics
-https://docs.google.com/document/d/166blaLiHA4iTThH7QbPcwHfmdTFplaORWRf7Wlpi06c/edit
+http://www.jacobstringer.co.nz/Results.html
