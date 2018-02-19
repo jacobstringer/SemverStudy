@@ -1,6 +1,6 @@
 /bin/
 private_tokens.txt
-data/*
+/data/
 /old/
 /.project
 /.pydevproject
