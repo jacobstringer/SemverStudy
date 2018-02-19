@@ -16,7 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
-	private int start = 0;
+	private int until = 100;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();
@@ -32,13 +32,13 @@ public class ProducerParseFiles implements Runnable {
 		// Open database records
 		BufferedReader in = null;
 		try {
-			in = new BufferedReader(new FileReader("D://Build Scripts/package/packagerecoveredfiles.csv"));
+			in = new BufferedReader(new FileReader("C:\\Users\\Jacob\\Desktop\\MasseyReadings\\Java\\_2018SS\\data\\dependencies.csv"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			this.stopped = true;
 		}
 
-		while (!this.stopped) {
+		while (!this.stopped && count < until) {
 			// Get one observation at a time out of the database file
 			String[] info = null;
 			try {
@@ -46,8 +46,7 @@ public class ProducerParseFiles implements Runnable {
 				if (temp == null) { // If file is finished
 					break;
 				}
-				//info = temp.split(",");
-				info = new String[]{temp, "", "", "package.json"};
+				info = temp.split(",");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -61,10 +60,10 @@ public class ProducerParseFiles implements Runnable {
 				switch(info[3]) {
 				//case "Rakefile":
 				//case "Rakefile.rb": {type = "Rake"; break;}
-				//case "build.gradle": {type = "Gradle"; break;}
+				case "build.gradle": {type = "Gradle"; break;}
 				//case "build.xml": {type = "Build"; break;}
 				//case "pom.xml": {type = "Pom"; break;}
-				case "package.json": {type = "Package"; break;}
+				//case "package.json": {type = "Package"; break;}
 				}
 			} catch (Exception e) {
 				continue;
@@ -93,7 +92,7 @@ public class ProducerParseFiles implements Runnable {
 				if (tempString == null) {
 					break;
 				} else {
-					temp.append(tempString);
+					temp.append(tempString+"\n");
 				}
 			}
 

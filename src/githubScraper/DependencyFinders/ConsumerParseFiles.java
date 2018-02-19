@@ -49,7 +49,7 @@ public class ConsumerParseFiles implements Runnable {
 		}
 		
 		AntDependencyFinder ant = new AntDependencyFinder();
-		GradleDependencyFinder gradle = new GradleDependencyFinder();
+		GradleDependencyFinder gradle = new GradleDependencyFinder(c, out);
 		NPMDependencyFinder npm = new NPMDependencyFinder(c);
 		PomDependencyFinder pom = new PomDependencyFinder();
 		RakeDependencyFinder rake = new RakeDependencyFinder();
@@ -80,10 +80,10 @@ public class ConsumerParseFiles implements Runnable {
 				//int[] dependencies = null;
 				switch (file_string[1]) {
 				//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
-				//case "Gradle": {dependencies = gradle.findVersionData(file_string[0]); break;}
+				case "Gradle": {gradle.findVersionData(file_string[0], file_string[2]); break;}
 				//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
 				//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
-				case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
+				//case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
 				}
 				
 				counter.added_to_db();

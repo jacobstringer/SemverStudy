@@ -111,8 +111,10 @@ public class ProductionParseFiles implements ProductionMBean {
 		}
 		// wait to see whether there are still jobs, if none left, stop consumers
 		// now we can safely stop consumers
-		for (ConsumerParseFiles consumer:consumers) {
-			consumer.stop();
+		if (queue.isEmpty()){
+			for (ConsumerParseFiles consumer:consumers) {
+				consumer.stop();
+			}
 		}
 		try {
 			Thread.sleep(500);

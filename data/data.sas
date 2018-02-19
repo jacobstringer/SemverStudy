@@ -110,4 +110,26 @@ ODS HTML CLOSE;
 
 ******* FULL FILE OF STATS;
 * General stats;
+DATA total;
+	INFILE "&dir\dependencies.csv" DSD;
+	INPUT url $ lang1 $ lang2 $ buildtype $ sem_dep other_dep users $ ghid;
+RUN;
+
+ODS HTML;
+PROC MEANS data=total;
+	CLASS lang1 lang2 buildtype;
+	OUTPUT out=buildresults N=N;
+RUN;
+
+DATA buildresults2;
+	SET buildresults;
+	IF N > 10000;
+	IF NOT missing(lang1) AND NOT missing(buildtype);
+PROC PRINT data=buildresults2;
+RUN;
+
+PROC CONTENTS data=buildresults;
+RUN;
+ODS HTML CLOSE; 
+
 

@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 import org.json.JSONObject;
