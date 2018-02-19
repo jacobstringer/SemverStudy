@@ -7,6 +7,5 @@ data/*
 /Tests.txt
 /_2018SS.iml
 !**.sas
-!**.html
 /groovy-core-master/
 
