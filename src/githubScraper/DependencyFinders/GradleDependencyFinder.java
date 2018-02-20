@@ -33,8 +33,9 @@ public class GradleDependencyFinder implements DependencyFinder {
 
 		try {
 			// Fast forward to first {
+			int initial_index = index;
 			while (file.charAt(index) != '{') {index++;}
-			int initial_index = index + 1;
+			//int initial_index = index;
 
 			// Finds the entire dependencies closure and allows for nested closures
 			while (bracket_level > 0) {
