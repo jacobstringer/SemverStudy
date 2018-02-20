@@ -1,90 +1,19 @@
-dependencies {
-    compile      group: 'org.hamcrest',  name: 'hamcrest-integration',    version: '1.2'
-    
-    testCompile  group: 'org.jmock',     name: 'jmock',           version: '2.5.1'
-    testCompile  group: 'org.jmock',     name: 'jmock-junit4',    version: '2.5.1'
-    testCompile  group: "junit",         name: 'junit-dep',       version: "4.8.2"
-}
-dependencies {
-    scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
-    scalaTools "org.scala-lang:scala-library:$scalaVersion"
-    compile "org.scala-lang:scala-library:$scalaVersion"
 
-    testCompile "org.scalatest:scalatest:$scalatestVersion"
-    testCompile 'junit:junit:4.6'
-}
-dependencies {
-  testRuntime "org.apache.openejb:javaee-api:5.0-2",
-              "log4j:log4j:1.2.14",
-              "org.easymock:easymock:3.0",
-              "org.powermock:powermock-module-junit4:1.4.7",
-              "org.powermock:powermock-api-easymock:1.4.7",
-              "junit:junit:4.8.2"
-}
-dependencies {
-    testCompile 'junit:junit:4.8.1'
-    testCompile 'org.jmock:jmock:2.5.1'
-    testCompile 'org.jmock:jmock-junit4:2.5.1'
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
-    groovy group: 'commons-cli', name: 'commons-cli', version: '1.2'
-    testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
-}
-dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.4'
-    groovy group: 'commons-cli', name: 'commons-cli', version: '1.2'
-    testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
-    
-    // optional dependencies for using Spock
-    testRuntime "cglib:cglib-nodep:2.2"     // enables mocking of classes (in addition to interfaces)
-    testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
-}
-dependencies {
-    groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.2'
-}
-dependencies {
-    testCompile 'junit:junit:4.8.1'
-}
-dependencies {
-    testCompile (
-            [group: 'org.spockframework', name: 'spock-core', version: '0.2'],
-            [group: 'junit', name: 'junit', version: '4.6']
-    )
-    testRuntime (
-            [group: 'net.sourceforge.cobertura', name: 'cobertura', version: '1.9'],
-            [group: 'cglib', name: 'cglib-nodep', version: '2.1_3'],
-            [group: 'org.objenesis', name: 'objenesis', version: '1.1'],
-            [group: 'org.easyb', name: 'easyb', version: '0.9.5.2']
-    )
-    groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.6.5'
-    groovy group: 'commons-cli', name: 'commons-cli', version: '1.1'
-    cpdConf group: 'pmd', name: 'pmd', version: '4.2.5'
-}
-dependencies {
-	testCompile 'junit:junit:4.8.2'
-	testCompile 'org.seleniumhq.selenium:selenium:2.0a7'
-	testCompile 'org.testng:testng:5.14.1'
-}
-dependencies {
+
+
+
+
+
+
+
+
+
         classpath 'org.hibernate.build.gradle:gradle-upload-auth-plugin:1.0.2'
     }
-dependencies {
-    groovy 'org.codehaus.groovy:groovy:2.1.1'
-    
-    compile 'org.eclipse.jetty:jetty-server:9.0.0.v20130308',
-            'org.spockframework:spock-core:0.7-groovy-2.0',
-            'org.slf4j:jcl-over-slf4j:1.7.4'
 
-    testCompile 'ch.qos.logback:logback-classic:1.0.10'
-	
-    testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.6', {
-        exclude module: 'commons-logging'
-        exclude module: 'groovy'
-    }
-}
-dependencies {
-    distLib project(':elasticsearch')
-}
-dependencies {
+
+
+
             if (project.name != "test-testng") {
                 testCompile project(':test-testng')
             }
@@ -94,65 +23,17 @@ dependencies {
             testCompile('org.hamcrest:hamcrest-core:1.3.RC2') { transitive = false }
             testCompile('org.hamcrest:hamcrest-library:1.3.RC2') { transitive = false }
         }
-dependencies {
-    // spring dependencies
-    compile "org.springframework:spring-core:$springVersion",
-            "org.springframework:spring-webmvc:$springVersion",
-            "org.springframework:spring-tx:$springVersion",
-            "org.springframework:spring-aop:$springVersion",
-            "org.springframework:spring-aspects:$springVersion",
-            "org.springframework.security:spring-security-config:$springSecurityVersion",
-            "org.springframework.security:spring-security-core:$springSecurityVersion",
-            "org.springframework.security:spring-security-web:$springSecurityVersion",
-            "org.springframework.security:spring-security-taglibs:$springSecurityVersion",
-            "org.aspectj:aspectjrt:1.6.8",
-            "org.aspectj:aspectjweaver:1.6.8",
-            "org.axonframework:axon-core:$axonVersion",
-            "org.axonframework.incubator:axon-googleappengine:1.1-SNAPSHOT",
-            "com.googlecode.objectify:objectify:2.2.2",
-            "javax.persistence:persistence-api:1.0",
-            "opensymphony:sitemesh:2.4.2"
+    
 
-    // web technologies
-    compile "javax.servlet:jstl:1.1.2",
-            "javax.servlet:servlet-api:2.5",
-            "taglibs:standard:1.1.2"
 
-    // logging
-    compile "org.slf4j:jcl-over-slf4j:$slf4jVersion",
-            "org.slf4j:slf4j-api:$slf4jVersion",
-            "org.slf4j:jul-to-slf4j:$slf4jVersion"
-    runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
-
-    compile("log4j:log4j:1.2.16") {
-        exclude group: "com.sun.jdmk", module: "jmxtools"
-        exclude group: "com.sun.jmx", module: "jmxri"
-        exclude group: "javax.mail", module: "mail"
-        exclude group: "javax.jms", module: "jms"
-    }
-
-    // from lib folder
-    compile "com.google.appengine:appengine-api-1.0-sdk:$gaeVersion"
-
-    providedCompile "javax.servlet:servlet-api:2.5"
-
-    // testing
-    testCompile "junit:junit:4.8.1",
-            "org.axonframework:axon-test:$axonVersion",
-            "com.google.appengine:appengine-testing:$gaeVersion"
-
-}
-dependencies {
 		classpath 'io.spring.gradle:docbook-reference-plugin:0.3.1'
 		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.0'
 		classpath 'me.champeau.gradle:gradle-javadoc-hotfix-plugin:0.1'
 		classpath 'io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE'
 		classpath 'io.spring.gradle:spring-io-plugin:0.0.6.RELEASE'
 	}
-dependencies
-        apply plugin: org.hibernate.build.gradle.upload.UploadManager
 
-        configurations {
+
             provided {
                 // todo : need to make sure these are non-exported
                 description = 'Non-exported compile-time dependencies.'
@@ -161,144 +42,193 @@ dependencies
                 description = 'Jars needed for doing deployment to JBoss Nexus repo'
             }
         }
-dependencies {
+
+        // appropriately inject the common dependencies into each sub-project
+        dependencies {
+            compile( libraries.slf4j_api )
+            testCompile( libraries.junit )
+            testRuntime( libraries.slf4j_simple )
+            testRuntime( libraries.jcl_slf4j )
+            testRuntime( libraries.jcl_api )
+            testRuntime( libraries.jcl )
+            testRuntime( libraries.javassist )
+            testRuntime( libraries.h2 )
+            deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+        }
+
+        sourceSets {
+            main {
+                compileClasspath += configurations.provided
+            }
+        }
+
+        manifest.mainAttributes(
+                provider: 'gradle',
+                'Implementation-Url': 'http://hibernate.org',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Hibernate.org',
+                'Implementation-Vendor-Id': 'org.hibernate'
+        )
+
+        test {
+            systemProperties['hibernate.test.validatefailureexpected'] = true
+            maxHeapSize = "1024m"
+        }
+
+        processTestResources.doLast( {
+            copy {
+                from( sourceSets.test.java.srcDirs ) {
+                    include '**/*.properties'
+                    include '**/*.xml'
+                }
+                into sourceSets.test.classesDir
+            }
+        } )
+
+        assemble.doLast( { install } )
+        uploadArchives.dependsOn install
+
+        targetCompatibility = "1.6"
+        sourceCompatibility = "1.6"
+
+        ideaModule {
+            // treat our "provided" configuration dependencies as "Compile" scope dependencies in IntelliJ
+            scopes.COMPILE.plus.add( configurations.provided )
+            // Use explicitly separate compilation output directories for Gradle and IntelliJ
+            File baseDirectory = new File( subProject.buildDir, "idea/classes" )
+            outputDir = new File( baseDirectory, "main" )
+            testOutputDir = new File( baseDirectory, "test" )
+            whenConfigured { module ->
+                module.dependencies*.exported = true
+            }
+        }
+		eclipseClasspath {
+			plusConfigurations.add( configurations.provided )
+		}
+
+        // elements used to customize the generated POM used during upload
+        def pomConfig = {
+            url 'http://hibernate.org'
+            organization {
+                name 'Hibernate.org'
+                url 'http://hibernate.org'
+            }
+            issueManagement {
+                system 'jira'
+                url 'http://opensource.atlassian.com/projects/hibernate/browse/HHH'
+            }
+            scm {
+                url "http://github.com/hibernate/hibernate-core"
+                connection "scm:git:http://github.com/hibernate/hibernate-core.git"
+                developerConnection "scm:git:git@github.com:hibernate/hibernate-core.git"
+            }
+            licenses {
+                license {
+                    name 'GNU Lesser General Public License'
+                    url 'http://www.gnu.org/licenses/lgpl-2.1.html'
+                    comments 'See discussion at http://hibernate.org/356.html for more details.'
+                    distribution 'repo'
+                }
+            }
+            developers {
+            }
+        }
+
+        configure(install.repositories.mavenInstaller) {
+            pom.project pomConfig
+        }
+
+        uploadArchives {
+            repositories.mavenDeployer {
+                name = 'jbossDeployer'
+                configuration = configurations.deployerJars
+                pom.project pomConfig
+                repository(url: "https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/")
+                snapshotRepository(url: "https://repository.jboss.org/nexus/content/repositories/snapshots")
+            }
+        }
+
+        task sourcesJar(type: Jar, dependsOn: compileJava) {
+            from sourceSets.main.allSource
+            classifier = 'sources'
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
+
+        uploadArchives.dependsOn sourcesJar
+    
+
         classpath "commons-io:commons-io:1.4"
     }
-dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.7'
-    compile 'pircbot:pircbot:1.5.0'
-    compile 'commons-logging:commons-logging:1.1.1'
-    testCompile 'junit:junit:4.11'
-    testCompile 'org.mockito:mockito-all:1.9.0'
-    runtime 'log4j:log4j:1.2.17'
-}
-dependencies {
+
+
+
         classpath 'com.android.tools.build:gradle:1.5.0'
     }
-dependencies {
+
+
 		classpath("io.spring.gradle:propdeps-plugin:0.0.8")
 		classpath("io.spring.gradle:docbook-reference-plugin:0.3.1")
 		classpath("org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16")
 		classpath("org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.7")
 	}
-dependencies {
+
+
     classpath 'org.linkedin:org.linkedin.gradle-plugins:1.3.1'
   }
-dependencies {
-	compile group: 'commons-httpclient', name:'commons-httpclient', version:'3.1'
-	compile group: 'joda-time', name:'joda-time', version:'1.6'
-	testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-dependencies {
+
+
+
         classpath 'com.android.tools.build:gradle:1.0.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-dependencies {
+
+
 		classpath 'kaizen:kaizen:0.2.2'
 	}
-dependencies {
+
+
         compile project(':jmd-core')
     }
-dependencies {
-    compile group:'log4j', name:'log4j', version:'1.2.16'
-    compile group:'com.google.guava', name:'guava', version:'18.0'
-}
-dependencies {
+
+    jar {
+        manifest {
+            attributes 'Implementation-Title': 'net.contra.jmd',
+                    'Implementation-Version': version,
+                    'Main-Class': 'net.contra.jmd.Deobfuscator'
+        }
+
+        from {
+            configurations.compile.collect {
+                it.isDirectory() ? it : zipTree(it)
+            }
+        }
+    }
+
+
+
         classpath 'com.android.tools.build:gradle:2.2.2'
     }
-dependencies {	
-
-		scalaTools 'org.scala-lang:scala-compiler:2.8.1'
-		scalaTools 'org.scala-lang:scala-library:2.8.1'
 
 
-		compile group: 'org.scala-lang', name: 'scala-compiler', version: '2.8.1'
-		compile group: 'org.scala-lang', name: 'scala-library', version: '2.8.1'
-		compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.0.Beta2'
-		compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
-		compile group: 'log4j', name: 'log4j', version: '1.2.16'
-		compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.6.0.Beta2', ext: 'jar'
-		compile group: 'jboss', name: 'javassist', version: '3.1'
-		compile group: 'cglib', name: 'cglib-nodep', version: '2.2'
-		testCompile group: 'junit', name: 'junit', version: '4.8'
-		testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.0.0'
-		testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
-		lib = "$projectDir/lib"
-		compile files(fileTree(dir: lib as File, includes: ['*.jar']))
-}
-dependencies {
-	jenkinsPlugins "org.jvnet.hudson.plugins:instant-messaging:${instantMessagingPluginVersion}@jar"
 
-	jenkinsPlugins "org.jenkins-ci.plugins:mailer:1.7@jar"
 
-	compile "org.igniterealtime.smack:smack-java7:$smackVersion"
-	compile "org.igniterealtime.smack:smack-extensions:$smackVersion"
-	compile "org.igniterealtime.smack:smack-tcp:$smackVersion"
 
-	testCompile group: 'junit', name: 'junit', version: '4.11'
-}
-dependencies {
-    distLib project(':elasticsearch')
-}
-dependencies {
 		classpath 'org.springframework.build.gradle:docbook-reference-plugin:0.1.5'
 	}
-dependencies {
-    compile 'com.miglayout:miglayout:3.7.3.1:swing'
-    compile 'javax.mail:mail:1.4.3'
-    compile 'ch.qos.logback:logback-classic:0.9.24'
-    compile 'com.google.collections:google-collections:1.0'
-    compile 'com.google.inject:guice:2.0'
-    compile 'org.jasypt:jasypt:1.6'
-    compile 'org.yaml:snakeyaml:1.6'
-    compile 'foxtrot:foxtrot-core:3.0'
-    compile 'commons-io:commons-io:1.4'
-    compile 'com.dteoh:treasuremap:0.1.1'
-    compile 'org.jsoup:jsoup:1.3.3'
-    compile 'net.java.dev.jna:jna:3.2.7'
-    compile fileTree(dir: 'libs', include: '*.jar')
-    
-    testCompile 'junit:junit:4.7'
-    testCompile 'org.easytesting:fest-swing-junit:1.2a4'
-    testCompile 'org.mockito:mockito-all:1.8.5'
-    testCompile 'org.jvnet.mock-javamail:mock-javamail:1.9'
-    testCompile 'nl.jqno.equalsverifier:equalsverifier:0.6.4'
-    testCompile 'org.objenesis:objenesis:1.1'
-    testCompile 'cglib:cglib-nodep:2.2'
-}
-dependencies {
-    compile group: 'com.google.guava', name: 'guava', version: '10.0.1'
 
-    compile "commons-logging:commons-logging:1.1.1"
 
-    // TEST-COMPILE
-    testCompile "log4j:log4j:1.2.16"
 
-    testCompile "junit:junit:4.10"
-    testCompile "org.mockito:mockito-all:1.8.5"
-    testCompile "org.easytesting:fest-assert:1.4"
-}
-dependencies.
-}
 
-dependencies {
-	// scala '
-    groovy 'org.codehaus.groovy:groovy:1.7.0'
-    testCompile 'junit:junit:4.7'
-	compile(
-        [group: 'commons-logging', name: 'commons-logging', version: '1.1.1'],
-        [group: 'log4j', name: 'log4j', version: '1.2.16']
-    )
-}
-dependencies {
+
         classpath 'org.hibernate.build.gradle:gradle-upload-auth-plugin:1.0.0'
     }
-dependencies
-        apply plugin: org.hibernate.build.gradle.upload.UploadAuthenticationManager
 
-        configurations {
+
             provided {
                 // todo : need to make sure these are non-exported
                 description = 'Non-exported compile-time dependencies.'
@@ -307,452 +237,237 @@ dependencies
                 description = 'Jars needed for doing deployment to JBoss Nexus repo'
             }
         }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' }
-dependencies {
+
+        // appropriately inject the common dependencies into each sub-project
+        dependencies {
+            compile( libraries.slf4j_api )
+            testCompile( libraries.junit )
+            testRuntime( libraries.slf4j_simple )
+            testRuntime( libraries.jcl_slf4j )
+            testRuntime( libraries.jcl_api )
+            testRuntime( libraries.jcl )
+            testRuntime( libraries.javassist )
+            testRuntime( libraries.h2 )
+            deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+        }
+
+        sourceSets {
+            main {
+                compileClasspath += configurations.provided
+            }
+        }
+
+        manifest.mainAttributes(
+                provider: 'gradle',
+                'Implementation-Url': 'http://hibernate.org',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Hibernate.org',
+                'Implementation-Vendor-Id': 'org.hibernate'
+        )
+
+        test {
+            systemProperties['hibernate.test.validatefailureexpected'] = true
+            maxHeapSize = "1024m"
+        }
+
+        processTestResources.doLast( {
+            copy {
+                from( sourceSets.test.java.srcDirs ) {
+                    include '**/*.properties'
+                    include '**/*.xml'
+                }
+                into sourceSets.test.classesDir
+            }
+        } )
+
+        assemble.doLast( { install } )
+        uploadArchives.dependsOn install
+
+        targetCompatibility = "1.6"
+        sourceCompatibility = "1.6"
+
+        ideaModule {
+            // treat our "provided" configuration dependencies as "Compile" scope dependencies in IntelliJ
+            scopes.COMPILE.plus.add( configurations.provided )
+            // Use explicitly separate compilation output directories for Gradle and IntelliJ
+            File baseDirectory = new File( subProject.buildDir, "idea/classes" )
+            outputDir = new File( baseDirectory, "main" )
+            testOutputDir = new File( baseDirectory, "test" )
+            whenConfigured { module ->
+                module.dependencies*.exported = true
+            }
+        }
+		eclipseClasspath {
+			plusConfigurations.add( configurations.provided )
+		}
+
+        // elements used to customize the generated POM used during upload
+        def pomConfig = {
+            url 'http://hibernate.org'
+            organization {
+                name 'Hibernate.org'
+                url 'http://hibernate.org'
+            }
+            issueManagement {
+                system 'jira'
+                url 'http://opensource.atlassian.com/projects/hibernate/browse/HHH'
+            }
+            scm {
+                url "http://github.com/hibernate/hibernate-core"
+                connection "scm:git:http://github.com/hibernate/hibernate-core.git"
+                developerConnection "scm:git:git@github.com:hibernate/hibernate-core.git"
+            }
+            licenses {
+                license {
+                    name 'GNU Lesser General Public License'
+                    url 'http://www.gnu.org/licenses/lgpl-2.1.html'
+                    comments 'See discussion at http://hibernate.org/356.html for more details.'
+                    distribution 'repo'
+                }
+            }
+            developers {
+            }
+        }
+
+        subProject.basePomConfig = pomConfig
+
+        configure(install.repositories.mavenInstaller) {
+            pom.project pomConfig
+        }
+
+        uploadArchives {
+            repositories.mavenDeployer {
+                name = 'jbossDeployer'
+                configuration = configurations.deployerJars
+                pom.project pomConfig
+                repository(id: "jboss-releases-repository", url: "https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/")
+                snapshotRepository(id: "jboss-snapshots-repository", url: "https://repository.jboss.org/nexus/content/repositories/snapshots")
+            }
+        }
+
+        task sourcesJar(type: Jar, dependsOn: compileJava) {
+            from sourceSets.main.allSource
+            classifier = 'sources'
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
+
+        uploadArchives.dependsOn sourcesJar
+    
+
+
+
         classpath 'com.android.tools.build:gradle:2.1.3'
     }
-dependencies {
+
+
         classpath 'com.android.tools.build:gradle:2.1.3'
     }
-dependencies {
+
+
         classpath 'com.android.tools.build:gradle:2.1.3'
     }
-dependencies {
+
+
         classpath 'com.android.tools.build:gradle:2.2.2'
     }
-dependencies {
+
+
         classpath 'com.android.tools.build:gradle:3.0.1'
     }
-dependencies {
+
+
         classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.5'
     }
-dependencies {
-  // wicket
-  compile group: 'org.apache.wicket', name: 'wicket', version: '1.5-SNAPSHOT'
-  compile group: 'org.apache.wicket', name: 'wicket-guice', version: '1.5-SNAPSHOT'
 
-  // hibernate
-  compile group: 'org.hibernate', name: 'ejb3-persistence', version: '1.0.2.GA'
-  compile group: 'org.hibernate', name: 'hibernate-annotations', version: '3.4.0.GA'
-  compile group: 'org.hibernate', name: 'hibernate-commons-annotations', version: '3.3.0.ga'
-  compile group: 'org.hibernate', name: 'hibernate-search', version: '3.1.0.GA'
-  compile group: 'javax.validation', name: 'validation-api', version: '1.0.CR5'
 
-  // hades
-//  compile group: 'org.synyx.hades', name: 'org.synyx.hades', version: '2.0.0.RELEASE'
 
-  // logging
-  compile group: 'log4j', name: 'log4j', version: '1.2.14'
-  compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.5.8'
-  compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
-
-  // jetty
-  compile group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.25', scope: 'provided'
-  compile group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.25', scope: 'provided'
-  compile group: 'org.mortbay.jetty', name: 'jetty-management', version: '6.1.25', scope: 'provided'
-
-  // quartz 
-  compile group: 'org.quartz-scheduler', name: 'quartz', version: '1.8.3'
-//  compile group: 'org.quartz-scheduler', name: 'quartz-oracle', version: '1.8.3'
-//  compile group: 'org.quartz-scheduler', name: 'quartz-weblogic', version: '1.8.3'
-//  compile group: 'org.quartz-scheduler', name: 'quartz-jboss', version: '1.8.3'
-
-  // other tools (Guava, Mockito)
-  compile group: 'commons-io', name: 'commons-io', version: '1.4'
-  compile group: 'com.google.guava', name: 'guava', version: 'r07'
-  compile group: 'org.mockito', name: 'mockito-all', version: '1.8.1'
-
-  // intellij sync
-  groovy 'org.codehaus.groovy:groovy:1.7.2'
-  compile 'org.slf4j:slf4j-log4j12:1.5.2'
-
-  // test stuff
-  testCompile group: 'junit', name: 'junit', version: '4.4'
-  testCompile group: 'org.hibernate', name: 'hibernate-validator', version: '4.0.0.CR1'
-}
-dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-dependencies {
-  groovy localGroovy()
-  compile group: 'org.apache.ant', name: 'ant', version: '1.8.1'
-  deployerJars group: 'org.apache.maven.wagon', name: 'wagon-ssh', version: '1.0-beta-2'
-}
-dependencies {
+
+
+
 		classpath 'org.hibernate.build.gradle:gradle-maven-publish-auth:2.0.1'
 		classpath 'org.hibernate.build.gradle:hibernate-matrix-testing:2.0.0-SNAPSHOT'
 		classpath 'org.hibernate.build.gradle:version-injection-plugin:1.0.0'
 		classpath 'org.hibernate.build.gradle:gradle-xjc-plugin:1.0.2.Final'
 		classpath 'com.github.lburgazzoli:lb-karaf-features-gen:1.0.0-SNAPSHOT'
 	}
-dependencies.DefaultSelfResolvingDependency
 
-import org.gradle.build.samples.WrapperProjectCreator
-import org.gradle.build.Version
-import org.gradle.build.Install
-import org.gradle.build.Git
 
-/**
- * For building Gradle you usually don't need to specify any properties. Only certain functionality of the Gradle requires
- * setting certain properties. Those properties can be set in the gradle.properties file in the the gradle user home. The
- * following properties can be set:
- *
- * Uploading distributions to Gradle's release and snapshot repository at codehaus: codehausUserName, codehausUserPassword
- * Uploading the userguide and the javadoc to Gradle's website: websiteFtpUserName, websiteFtpUserPassword
- * Using the build to create a new distribution and install it on the local machine: gradle_installPath
- */
 
-version = new Version(project)
 
-defaultTasks 'assemble'
-
-apply plugin: 'java-base'
-
-startScriptsDir = new File("$buildDir/startScripts")
-
-archivesBaseName = 'gradle'
-
-libraries = [
-        ant: 'org.apache.ant:ant:1.8.1@jar',
-        ant_junit: 'org.apache.ant:ant-junit:1.8.1@jar',
-        ant_launcher: 'org.apache.ant:ant-launcher:1.8.1@jar',
-        ant_nodeps: 'org.apache.ant:ant-nodeps:1.8.1@jar',
-        ant_antlr: 'org.apache.ant:ant-antlr:1.8.1@jar',
-        antlr: 'antlr:antlr:2.7.7@jar',
-        asm_all: 'asm:asm-all:3.2@jar',
-        commons_cli: 'commons-cli:commons-cli:1.2@jar',
-        commons_io: 'commons-io:commons-io:1.4@jar',
-        commons_lang: 'commons-lang:commons-lang:2.5@jar',
-        dom4j: 'dom4j:dom4j:1.6.1@jar',
-        google_collections: 'com.google.collections:google-collections:1.0@jar',
-        groovy: 'org.codehaus.groovy:groovy-all:1.7.6@jar',
-        ivy: 'org.apache.ivy:ivy:2.2.0@jar',
-        jaxen: 'jaxen:jaxen:1.1@jar',
-        slf4j_api: 'org.slf4j:slf4j-api:1.6.1@jar',
-        jcl_to_slf4j: 'org.slf4j:jcl-over-slf4j:1.6.1@jar',
-        jul_to_slf4j: 'org.slf4j:jul-to-slf4j:1.6.1@jar',
-        log4j_to_slf4j: 'org.slf4j:log4j-over-slf4j:1.6.1@jar',
-        logback_classic: 'ch.qos.logback:logback-classic:0.9.24@jar',
-        logback_core: 'ch.qos.logback:logback-core:0.9.24@jar',
-        junit: 'junit:junit:4.8.1',
-        xmlunit: 'xmlunit:xmlunit:1.3',
-]
-
-libraries.spock = ['org.spockframework:spock-core:0.4-groovy-1.7@jar', libraries.groovy, 'cglib:cglib-nodep:2.2', 'org.objenesis:objenesis:1.2']
-libraries.groovy_depends = [libraries.groovy, libraries.commons_cli]
-libraries.jetty_depends = ["org.mortbay.jetty:jetty:6.1.25@jar", "org.mortbay.jetty:jetty-util:6.1.25@jar",
-        "org.mortbay.jetty:servlet-api:2.5-20081211@jar"]
-
-allprojects {
-    group = 'org.gradle'
-
-    plugins.withType(JavaPlugin).whenPluginAdded {
-        sourceCompatibility = 1.5
-        targetCompatibility = 1.5
-    }
-
-    repositories {
-        mavenRepo(urls: 'http://gradle.artifactoryonline.com/gradle/libs')
-    }
-
-    version = this.version
-}
-dependencies {
-    groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
-
-    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
-
-	compile "org.springframework:spring-core:${springVersion}"
-	compile "org.springframework:spring-beans:${springVersion}"
-	compile "org.springframework:spring-context:${springVersion}"
-	compile "org.springframework:spring-context-support:${springVersion}"
-	compile "org.springframework:spring-web:${springVersion}"
-	compile "org.springframework:spring-webmvc:${springVersion}"
-	compile "org.springframework:spring-jdbc:${springVersion}"
-
-    compile "org.slf4j:slf4j-api:${slf4jVersion}"
-	compile "org.slf4j:slf4j-log4j12:${slf4jVersion}"
-
-    compile "org.codehaus.jackson:jackson-core-asl:${jacksonVersion}"
-	compile "org.codehaus.jackson:jackson-mapper-asl:${jacksonVersion}"
-
-    compile "com.google.guava:guava:13.0.1"
-
-	compile "org.hsqldb:hsqldb:${hsqldbVersion}"
-	compile "org.hsqldb:sqltool:${hsqldbVersion}"
-
-    compile "commons-dbcp:commons-dbcp:1.4"
-	compile "joda-time:joda-time:1.6.2"
-
-    compile "org.json:json:20090211"
-
-    compile "opensymphony:quartz-all:1.6.3"
-	compile("org.codehaus.groovy.modules.http-builder:http-builder:0.6") {
-        exclude module: 'groovy'
-    }
-
-    compile "mysql:mysql-connector-java:5.1.16"
-
-    runtime "javax.servlet:jstl:1.2"
-    providedCompile "javax.servlet:servlet-api:2.5"
-
-    testCompile "org.springframework:spring-test:${springVersion}"
-    testCompile "junit:junit:4.10"
-    testCompile "org.hamcrest:hamcrest-library:1.3"
-    testCompile "org.easymock:easymock:3.0"
-
-}
-dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
     }
-dependencies {
-    sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
-}
-dependencies {
-    scalaTools "org.scala-lang:scala-compiler:$scalaVersion", 
-        "org.scala-lang:scala-library:$scalaVersion"    
 
-    compile "org.scala-lang:scala-library:$scalaVersion", 
-    	"net.liftweb:lift-mapper_$scalaVersion:$liftVersion", 
-    	"net.liftweb:lift-webkit_$scalaVersion:$liftVersion",
-    	"net.liftweb:lift-util_$scalaVersion:$liftVersion",
-    	"net.liftweb:lift-actor_$scalaVersion:$liftVersion",
-    	"net.liftweb:lift-common_$scalaVersion:$liftVersion",
-    	"net.liftweb:lift-json_$scalaVersion:$liftVersion", 
-        "com.h2database:h2:1.2.138"
 
-    testCompile "junit:junit:4.5", 
-        "org.scala-tools.testing:specs_$scalaVersion:$specsVersion",
-        "org.scala-lang:scala-compiler:$scalaVersion",
-        'org.mortbay.jetty:jetty:6.1.25',
-        'org.mortbay.jetty:jetty-util:6.1.25',
-        'org.mortbay.jetty:jetty-management:6.1.25',
-	"org.scala-lang:scala-compiler:$scalaVersion"  // Needed for LiftConsole	
 
-	
-    providedCompile 'javax.servlet:servlet-api:2.5' 
-}
-dependencies {
-    groovy group: 'org.mbte.groovypp', name: 'groovypp', version: "$gppVersion"
 
-    compile group: 'org.mbte.groovypp', name: 'groovypp', version: "$gppVersion"
-    compile group: 'org.mbte.groovypp', name: 'gretty', version: "0.4.121"
-    compile group: 'com.amazonaws', name: 'aws-java-sdk', version: "1.1.0"
-    runtime(group: 'commons-cli', name: 'commons-cli', version: '1.1')
 
-}
-dependencies {
         classpath "commons-io:commons-io:1.4"
     }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.23' }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' }
-dependencies { gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.1' }
-dependencies { gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7' }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' }
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' }
-dependencies {
-  groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
 
-  provided 'javax.servlet:servlet-api:2.5'
-  compile 'org.apache.tomcat:catalina:6.0.26'
-  compile 'org.springframework.data:spring-data-riak:1.0.0.M2-SNAPSHOT'
 
-}
-dependencies { gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.0.2' }
-dependencies {
-  // mandatory dependencies for using Spock
-  groovy("org.codehaus.groovy:groovy-all:1.7.5")
-  testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
 
-  // optional dependencies for using Spock
-  testCompile "org.hamcrest:hamcrest-core:1.2" // only necessary if Hamcrest matchers are used
-  testRuntime "cglib:cglib-nodep:2.2"     // enables mocking of classes (in addition to interfaces)
-  testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
 
-  // dependencies used by examples in this project (not required for using Spock)
-  testRuntime "com.h2database:h2:1.2.147"
-}
-dependencies {
+
+
+
+
+
+
+
         classpath 'org.gradle.api.plugins:gradle-cargo-plugin:1.5'
     }
-dependencies {
+
+
         classpath "commons-io:commons-io:1.4"
     }
-dependencies {
-  groovy 'org.codehaus.groovy:groovy:1.8.0-beta-2'
-  deployerJars "org.apache.maven.wagon:wagon-ssh:1.0-beta-6" 
-  compile fileTree(
-    dir:System.getenv().get('GRADLE_HOME'),
-    includes:['**/*.jar']
-  )
-}
-dependencies {
+
+
+
         classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.8.1'
         classpath 'com.github.townsfolk:gradle-release:1.2'
     }
-dependencies {
+
+
         classpath "commons-io:commons-io:2.1"
         //classpath "com.goldin.plugins:gradle:0.1-RC3" // http://evgeny-goldin.com/wiki/Gradle-duplicates-plugin
     }
-dependencies {
-    compile gradleApi()
-    groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
-    testCompile group: 'junit', name: 'junit', version: '4.8.2'
-    testCompile HAMCREST
-}
-dependencies {
-	compile 'org.slf4j:slf4j-api:1.6.1'
-	runtime 'org.slf4j:jcl-over-slf4j:1.6.1'
-	runtime 'ch.qos.logback:logback-classic:0.9.26'
-	compile 'org.apache.camel:camel-core:2.5.0'
-	runtime 'org.apache.camel:camel-xmpp:2.5.0'
-	runtime 'org.apache.camel:camel-xstream:2.5.0'
-//	runtime 'org.apache.camel:camel-jackson:2.5.0'
-}
-dependencies.DefaultSelfResolvingDependency
 
-import org.gradle.build.samples.WrapperProjectCreator
-import org.gradle.build.Version
-import org.gradle.build.Install
-import org.gradle.build.Git
 
-/**
- * For building Gradle you usually don't need to specify any properties. Only certain functionality of the Gradle requires
- * setting certain properties. Those properties can be set in the gradle.properties file in the the gradle user home. The
- * following properties can be set:
- *
- * Uploading distributions to Gradle's release and snapshot repository at codehaus: artifactoryUserName, artifactoryUserPassword
- * Uploading the userguide and the javadoc to Gradle's website: websiteFtpUserName, websiteFtpUserPassword
- * Using the build to create a new distribution and install it on the local machine: gradle_installPath
- */
 
-version = new Version(project)
 
-defaultTasks 'assemble'
 
-apply plugin: 'java-base'
 
-startScriptsDir = new File("$buildDir/startScripts")
-
-archivesBaseName = 'gradle'
-
-libraries = [
-        ant: 'org.apache.ant:ant:1.8.1@jar',
-        ant_junit: 'org.apache.ant:ant-junit:1.8.1@jar',
-        ant_launcher: 'org.apache.ant:ant-launcher:1.8.1@jar',
-        ant_nodeps: 'org.apache.ant:ant-nodeps:1.8.1@jar',
-        ant_antlr: 'org.apache.ant:ant-antlr:1.8.1@jar',
-        antlr: 'antlr:antlr:2.7.7@jar',
-        asm_all: 'asm:asm-all:3.2@jar',
-        commons_cli: 'commons-cli:commons-cli:1.2@jar',
-        commons_io: 'commons-io:commons-io:1.4@jar',
-        commons_lang: 'commons-lang:commons-lang:2.5@jar',
-        dom4j: 'dom4j:dom4j:1.6.1@jar',
-        google_collections: 'com.google.collections:google-collections:1.0@jar',
-        groovy: 'org.codehaus.groovy:groovy-all:1.7.6@jar',
-        ivy: 'org.apache.ivy:ivy:2.2.0@jar',
-        jaxen: 'jaxen:jaxen:1.1@jar',
-        slf4j_api: 'org.slf4j:slf4j-api:1.6.1@jar',
-        jcl_to_slf4j: 'org.slf4j:jcl-over-slf4j:1.6.1@jar',
-        jul_to_slf4j: 'org.slf4j:jul-to-slf4j:1.6.1@jar',
-        log4j_to_slf4j: 'org.slf4j:log4j-over-slf4j:1.6.1@jar',
-        logback_classic: 'ch.qos.logback:logback-classic:0.9.24@jar',
-        logback_core: 'ch.qos.logback:logback-core:0.9.24@jar',
-        junit: 'junit:junit:4.8.1',
-        xmlunit: 'xmlunit:xmlunit:1.3',
-]
-
-libraries.spock = ['org.spockframework:spock-core:0.4-groovy-1.7@jar', libraries.groovy, 'cglib:cglib-nodep:2.2', 'org.objenesis:objenesis:1.2']
-libraries.groovy_depends = [libraries.groovy, libraries.commons_cli]
-libraries.jetty_depends = ["org.mortbay.jetty:jetty:6.1.25@jar", "org.mortbay.jetty:jetty-util:6.1.25@jar",
-        "org.mortbay.jetty:servlet-api:2.5-20081211@jar"]
-
-allprojects {
-    group = 'org.gradle'
-
-    plugins.withType(JavaPlugin).whenPluginAdded {
-        sourceCompatibility = 1.5
-        targetCompatibility = 1.5
-    }
-
-    repositories {
-        mavenRepo(urls: 'http://gradle.artifactoryonline.com/gradle/libs')
-    }
-
-    version = this.version
-}
-dependencies {
-	groovy 'org.codehaus.groovy:groovy-all:1.7.5'
-	testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
-}
-dependencies {
         classpath "commons-io:commons-io:1.4"
     }
-dependencies {
-	def modeShapeVersion='2.8.3.Final'
-	def jettyurl="org.mortbay.jetty:jetty:6.1.25"
-    groovy group: "org.codehaus.groovy", name: "groovy-all", version: "2.0.1"
-	compile jettyurl
-	compile "javax.servlet:servlet-api:2.5"
-	compile "org.mortbay.jetty:jsp-api-2.1:6.1.14"
-	compile "javax.jcr:jcr:2.0"
-	compile "org.modeshape:modeshape-jcr:$modeShapeVersion"
-	compile "org.modeshape:modeshape-connector-disk:$modeShapeVersion"
-	compile "org.slf4j:slf4j-log4j12:1.6.6"
-    testCompile "junit:junit:4.10"
-	executableWarDeps jettyurl
-}
-dependencies {
+
+
+
         classpath 'com.android.tools.build:gradle:3.0.1'
     }
-dependencies {
-    sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
-}
-dependencies {
-	testCompile group: 'junit', name: 'junit', version: '4.+'
-	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
-}
-dependencies {
-   compile group: 'org.springframework' , name: 'spring', version: '2.5.5'
-   compile group: 'log4j' , name: 'log4j' , version: '1.2.15'
 
-   testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-dependencies {
-	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
-	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.2'
-	testCompile group: 'junit', name: 'junit', version: '4.8.2'
-}
-dependencies {
+
+
+
+
+
         classpath "commons-io:commons-io:1.4"
     }
-dependencies {
-	compile 'commons-lang:commons-lang:2.5'
-	compile 'javax.servlet:jstl:1.1.0'
-	compile 'taglibs:standard:1.1.2'
-	
-	providedCompile 'javax.servlet:servlet-api:2.5'
 
-	testCompile 'org.mockito:mockito-all:1.8.5'
-}
-dependencies { gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7' }
-dependencies {
-  springVersion = '3.0.5.RELEASE'
-  slf4jVersion = '1.6.1'
-  logbackVersion = '0.9.27'
 
-  compile "org.springframework:spring-context:$springVersion", "org.springframework:spring-webmvc:$springVersion",
-          "org.slf4j:slf4j-api:$slf4jVersion", "org.slf4j:jcl-over-slf4j:$slf4jVersion",
-          "ch.qos.logback:logback-core:$logbackVersion", "ch.qos.logback:logback-classic:$logbackVersion"
 
-  testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
-}
-dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE") }
-dependencies {
+
+ classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE") }
+
+
 		classpath "org.gradle.plugins:gradle-idea-plugin:0.2"
 	}
-dependencies {
+
+
             if (project.name != "test-testng") {
                 testCompile project(':test-testng')
             }
@@ -762,13 +477,20 @@ dependencies {
             testCompile('org.hamcrest:hamcrest-core:1.3.RC2') { transitive = false }
             testCompile('org.hamcrest:hamcrest-library:1.3.RC2') { transitive = false }
         }
-dependencies {
+    
+
         classpath "commons-io:commons-io:1.4"
     }
-dependencies {
+
+
         testCompile 'org.testng:testng:6.8'
     }
-dependencies {
+
+    test {
+	    useTestNG()
+    }
+
+
 		if(isStandardGroovyMavenProject) {
 	       	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.4'
 
@@ -780,10 +502,160 @@ dependencies {
           compile spockDependency
         }
     }
-dependencies
-        apply plugin: org.hibernate.build.gradle.upload.UploadManager
 
-        configurations {
+    if (isGormDatasource) {
+      dependencies {
+        testCompile project(":grails-datastore-gorm-tck")
+      }
+      
+      // We need to test against the TCK. Gradle cannot find/run tests from jars
+      // without a lot of plumbing, so here we copy the class files from the TCK
+      // project into this project's test classes dir so Gradle can find the test
+      // classes and run them. See grails.gorm.tests.GormDatastoreSpec for on the TCK.
+      
+      // helper, used below.
+      def toBaseClassRelativePathWithoutExtension = { String base, String classFile ->
+        if (classFile.startsWith(base)) {
+          def sansClass = classFile[0 .. classFile.size() - ".class".size() - 1]
+          def dollarIndex = sansClass.indexOf('$')
+          def baseClass = dollarIndex > 0 ? sansClass[0..dollarIndex - 1] : sansClass
+          def relative = baseClass - base - '/'
+          relative
+        } else {
+          null
+        }
+      }
+
+      test.doFirst {
+        def tckClassesDir = project(":grails-datastore-gorm-tck").sourceSets.main.classesDir
+        def thisProjectsTests =  // surely there is a less hardcoded way to do this
+        copy {
+          from tckClassesDir
+          into sourceSets.test.classesDir
+          include "**/*.class"
+          exclude { details ->
+            // Do not copy across any TCK class (or nested classes of that class)
+            // If there is a corresponding source file in the particular modules 
+            // test source tree. Allows a module to override a test/helper.
+            
+            def candidatePath = details.file.absolutePath
+            def relativePath = toBaseClassRelativePathWithoutExtension(tckClassesDir.absolutePath, candidatePath)
+
+            if (relativePath == null) {
+              throw new IllegalStateException("$candidatePath does not appear to be in the TCK")
+            }
+            
+            project.file("src/test/groovy/${relativePath}.groovy").exists()
+          }
+        }
+      }
+    }
+
+    if(project.name.startsWith("grails-")) {
+      group = "org.grails"
+      archivesBaseName = "grails-datastore"
+    }
+    else {
+      group = "org.springframework"
+      archivesBaseName = 'spring-datastore'
+    }
+
+    if(isStandardGroovyMavenProject) {
+      configure(install.repositories.mavenInstaller) {
+          pom.whenConfigured { pom ->
+            def dependency = pom.dependencies.find { dep -> dep.artifactId == 'slf4j-simple' }
+            dependency?.optional = true
+          }
+          pom.project {
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'http://github.com/grails/inconsequential'
+                }
+            }
+          }
+      }
+
+      uploadArchives {
+          description = "Does a maven deploy of archives artifacts"
+          def isDav = System.getProperty("deploy.protocol") == 'dav'
+          def protocol = isDav ? 'dav:' : ''
+//          def releaseRepositoryUrl = "https://dav.codehaus.org/repository/grails/"
+          def milestoneRepositoryUrl = isSpringProject ? 's3://maven.springframework.org/milestone' :
+                                                         "${protocol}https://dav.codehaus.org/repository/grails/"
+          def snapshotRepositoryUrl = isSpringProject ? 's3://maven.springframework.org/snapshot' :
+                                                        "${protocol}https://dav.codehaus.org/snapshots.repository/grails/"
+
+          // add a configuration with a classpath that includes our s3 maven deployer
+          configurations { deployerJars }
+          dependencies {
+
+            deployerJars "org.springframework.build.aws:org.springframework.build.aws.maven:3.0.0.RELEASE"
+
+            // NOTE!!!!!: Maven deployment over webdav is broken due to SHA1 checksum issues. To deploy
+            // you first need to run ./gradlew -Ddeploy.protocol=dav uploadArchives
+            // and then ./gradlew uploadArchives a second time to get a valid deployment
+
+            if(isDav) {
+              deployerJars "org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6"
+            }
+            else {
+              deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+            }
+
+
+
+          }
+
+          repositories.mavenDeployer {
+              switch (releaseType) {
+                  case 'RELEASE':
+                    // TODO: Will need to update this when doing a non-snapshot/milestone release
+//                      repository(url: releaseRepositoryUrl)
+//                      description += releaseRepositoryUrl
+                      break;
+
+                  case ~/M[0-9]+/:
+                      description += milestoneRepositoryUrl
+                      // fall through and pick up config below
+
+                  case 'BUILD-SNAPSHOT':
+                      description += snapshotRepositoryUrl
+                      def credentials
+                      if(isSpringProject) {
+                        credentials = [userName: project.properties.s3AccessKey,
+                                       passphrase: project.properties.s3SecretAccessKey]
+                      }
+                      else {
+                        credentials = [userName: project.properties['codehaus.username'],
+                                       password: project.properties['codehaus.password']]
+                      }
+                      configuration = configurations.deployerJars
+                      repository(url: milestoneRepositoryUrl) {
+                          authentication(credentials)
+                      }
+                      snapshotRepository(url: snapshotRepositoryUrl) {
+                          authentication(credentials)
+                      }
+                    break;
+              }
+
+              pom.project {
+                  licenses {
+                      license {
+                          name 'The Apache Software License, Version 2.0'
+                          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                          distribution 'repo'
+                      }
+                  }
+              }
+          }
+      }
+
+    }
+
+
             provided {
                 // todo : need to make sure these are non-exported
                 description = 'Non-exported compile-time dependencies.'
@@ -792,10 +664,124 @@ dependencies
                 description = 'Jars needed for doing deployment to JBoss Nexus repo'
             }
         }
-dependencies
-        apply plugin: org.hibernate.build.gradle.upload.UploadManager
 
-        configurations {
+        // appropriately inject the common dependencies into each sub-project
+        dependencies {
+            compile( libraries.slf4j_api )
+            testCompile( libraries.junit )
+            testRuntime( libraries.slf4j_simple )
+            testRuntime( libraries.jcl_slf4j )
+            testRuntime( libraries.jcl_api )
+            testRuntime( libraries.jcl )
+            testRuntime( libraries.javassist )
+            testRuntime( libraries.h2 )
+            deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+        }
+
+        sourceSets {
+            main {
+                compileClasspath += configurations.provided
+            }
+        }
+
+        manifest.mainAttributes(
+                provider: 'gradle',
+                'Implementation-Url': 'http://hibernate.org',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Hibernate.org',
+                'Implementation-Vendor-Id': 'org.hibernate'
+        )
+
+        test {
+            systemProperties['hibernate.test.validatefailureexpected'] = true
+            maxHeapSize = "1024m"
+        }
+
+        processTestResources.doLast( {
+            copy {
+                from( sourceSets.test.java.srcDirs ) {
+                    include '**/*.properties'
+                    include '**/*.xml'
+                }
+                into sourceSets.test.classesDir
+            }
+        } )
+
+        assemble.doLast( { install } )
+        uploadArchives.dependsOn install
+
+        targetCompatibility = "1.6"
+        sourceCompatibility = "1.6"
+
+        ideaModule {
+            // treat our "provided" configuration dependencies as "Compile" scope dependencies in IntelliJ
+            scopes.COMPILE.plus.add( configurations.provided )
+            // Use explicitly separate compilation output directories for Gradle and IntelliJ
+            File baseDirectory = new File( subProject.buildDir, "idea/classes" )
+            outputDir = new File( baseDirectory, "main" )
+            testOutputDir = new File( baseDirectory, "test" )
+            whenConfigured { module ->
+                module.dependencies*.exported = true
+            }
+        }
+		eclipseClasspath {
+			plusConfigurations.add( configurations.provided )
+		}
+
+        // elements used to customize the generated POM used during upload
+        def pomConfig = {
+            url 'http://hibernate.org'
+            organization {
+                name 'Hibernate.org'
+                url 'http://hibernate.org'
+            }
+            issueManagement {
+                system 'jira'
+                url 'http://opensource.atlassian.com/projects/hibernate/browse/HHH'
+            }
+            scm {
+                url "http://github.com/hibernate/hibernate-core"
+                connection "scm:git:http://github.com/hibernate/hibernate-core.git"
+                developerConnection "scm:git:git@github.com:hibernate/hibernate-core.git"
+            }
+            licenses {
+                license {
+                    name 'GNU Lesser General Public License'
+                    url 'http://www.gnu.org/licenses/lgpl-2.1.html'
+                    comments 'See discussion at http://hibernate.org/356.html for more details.'
+                    distribution 'repo'
+                }
+            }
+            developers {
+            }
+        }
+
+        configure(install.repositories.mavenInstaller) {
+            pom.project pomConfig
+        }
+
+        uploadArchives {
+            repositories.mavenDeployer {
+                name = 'jbossDeployer'
+                configuration = configurations.deployerJars
+                pom.project pomConfig
+                repository(url: "https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/")
+                snapshotRepository(url: "https://repository.jboss.org/nexus/content/repositories/snapshots")
+            }
+        }
+
+        task sourcesJar(type: Jar, dependsOn: compileJava) {
+            from sourceSets.main.allSource
+            classifier = 'sources'
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
+
+        uploadArchives.dependsOn sourcesJar
+    
+
             provided {
                 // todo : need to make sure these are non-exported
                 description = 'Non-exported compile-time dependencies.'
@@ -804,7 +790,124 @@ dependencies
                 description = 'Jars needed for doing deployment to JBoss Nexus repo'
             }
         }
-dependencies {
+
+        // appropriately inject the common dependencies into each sub-project
+        dependencies {
+            compile( libraries.slf4j_api )
+            testCompile( libraries.junit )
+            testRuntime( libraries.slf4j_simple )
+            testRuntime( libraries.jcl_slf4j )
+            testRuntime( libraries.jcl_api )
+            testRuntime( libraries.jcl )
+            testRuntime( libraries.javassist )
+            testRuntime( libraries.h2 )
+            deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+        }
+
+        sourceSets {
+            main {
+                compileClasspath += configurations.provided
+            }
+        }
+
+        manifest.mainAttributes(
+                provider: 'gradle',
+                'Implementation-Url': 'http://hibernate.org',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Hibernate.org',
+                'Implementation-Vendor-Id': 'org.hibernate'
+        )
+
+        test {
+            systemProperties['hibernate.test.validatefailureexpected'] = true
+            maxHeapSize = "1024m"
+        }
+
+        processTestResources.doLast( {
+            copy {
+                from( sourceSets.test.java.srcDirs ) {
+                    include '**/*.properties'
+                    include '**/*.xml'
+                }
+                into sourceSets.test.classesDir
+            }
+        } )
+
+        assemble.doLast( { install } )
+        uploadArchives.dependsOn install
+
+        targetCompatibility = "1.6"
+        sourceCompatibility = "1.6"
+
+        ideaModule {
+            // treat our "provided" configuration dependencies as "Compile" scope dependencies in IntelliJ
+            scopes.COMPILE.plus.add( configurations.provided )
+            // Use explicitly separate compilation output directories for Gradle and IntelliJ
+            File baseDirectory = new File( subProject.buildDir, "idea/classes" )
+            outputDir = new File( baseDirectory, "main" )
+            testOutputDir = new File( baseDirectory, "test" )
+            whenConfigured { module ->
+                module.dependencies*.exported = true
+            }
+        }
+		eclipseClasspath {
+			plusConfigurations.add( configurations.provided )
+		}
+
+        // elements used to customize the generated POM used during upload
+        def pomConfig = {
+            url 'http://hibernate.org'
+            organization {
+                name 'Hibernate.org'
+                url 'http://hibernate.org'
+            }
+            issueManagement {
+                system 'jira'
+                url 'http://opensource.atlassian.com/projects/hibernate/browse/HHH'
+            }
+            scm {
+                url "http://github.com/hibernate/hibernate-core"
+                connection "scm:git:http://github.com/hibernate/hibernate-core.git"
+                developerConnection "scm:git:git@github.com:hibernate/hibernate-core.git"
+            }
+            licenses {
+                license {
+                    name 'GNU Lesser General Public License'
+                    url 'http://www.gnu.org/licenses/lgpl-2.1.html'
+                    comments 'See discussion at http://hibernate.org/356.html for more details.'
+                    distribution 'repo'
+                }
+            }
+            developers {
+            }
+        }
+
+        configure(install.repositories.mavenInstaller) {
+            pom.project pomConfig
+        }
+
+        uploadArchives {
+            repositories.mavenDeployer {
+                name = 'jbossDeployer'
+                configuration = configurations.deployerJars
+                pom.project pomConfig
+                repository(url: "https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/")
+                snapshotRepository(url: "https://repository.jboss.org/nexus/content/repositories/snapshots")
+            }
+        }
+
+        task sourcesJar(type: Jar, dependsOn: compileJava) {
+            from sourceSets.main.allSource
+            classifier = 'sources'
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
+
+        uploadArchives.dependsOn sourcesJar
+    
+
 		if(isStandardGroovyMavenProject) {
 	       	groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.4'
 
@@ -816,36 +919,175 @@ dependencies {
           compile spockDependency
         }
     }
-dependencies {
+
+    if (isGormDatasource) {
+      dependencies {
+        testCompile project(":grails-datastore-gorm-tck")
+      }
+      
+      // We need to test against the TCK. Gradle cannot find/run tests from jars
+      // without a lot of plumbing, so here we copy the class files from the TCK
+      // project into this project's test classes dir so Gradle can find the test
+      // classes and run them. See grails.gorm.tests.GormDatastoreSpec for on the TCK.
+      
+      // helper, used below.
+      def toBaseClassRelativePathWithoutExtension = { String base, String classFile ->
+        if (classFile.startsWith(base)) {
+          def sansClass = classFile[0 .. classFile.size() - ".class".size() - 1]
+          def dollarIndex = sansClass.indexOf('$')
+          def baseClass = dollarIndex > 0 ? sansClass[0..dollarIndex - 1] : sansClass
+          def relative = baseClass - base - '/'
+          relative
+        } else {
+          null
+        }
+      }
+
+      test.doFirst {
+        def tckClassesDir = project(":grails-datastore-gorm-tck").sourceSets.main.classesDir
+        def thisProjectsTests =  // surely there is a less hardcoded way to do this
+        copy {
+          from tckClassesDir
+          into sourceSets.test.classesDir
+          include "**/*.class"
+          exclude { details ->
+            // Do not copy across any TCK class (or nested classes of that class)
+            // If there is a corresponding source file in the particular modules 
+            // test source tree. Allows a module to override a test/helper.
+            
+            def candidatePath = details.file.absolutePath
+            def relativePath = toBaseClassRelativePathWithoutExtension(tckClassesDir.absolutePath, candidatePath)
+
+            if (relativePath == null) {
+              throw new IllegalStateException("$candidatePath does not appear to be in the TCK")
+            }
+            
+            project.file("src/test/groovy/${relativePath}.groovy").exists()
+          }
+        }
+      }
+    }
+
+    if(project.name.startsWith("grails-")) {
+      group = "org.grails"
+      archivesBaseName = "grails-datastore"
+    }
+    else {
+      group = "org.springframework"
+      archivesBaseName = 'spring-datastore'
+    }
+
+    if(isStandardGroovyMavenProject) {
+      configure(install.repositories.mavenInstaller) {
+          pom.whenConfigured { pom ->
+            def dependency = pom.dependencies.find { dep -> dep.artifactId == 'slf4j-simple' }
+            dependency?.optional = true
+          }
+          pom.project {
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'http://github.com/grails/inconsequential'
+                }
+            }
+          }
+      }
+
+      uploadArchives {
+          description = "Does a maven deploy of archives artifacts"
+          def isDav = System.getProperty("deploy.protocol") == 'dav'
+          def protocol = isDav ? 'dav:' : ''
+//          def releaseRepositoryUrl = "https://dav.codehaus.org/repository/grails/"
+          def milestoneRepositoryUrl = isSpringProject ? 's3://maven.springframework.org/milestone' :
+                                                         "${protocol}https://dav.codehaus.org/repository/grails/"
+          def snapshotRepositoryUrl = isSpringProject ? 's3://maven.springframework.org/snapshot' :
+                                                        "${protocol}https://dav.codehaus.org/snapshots.repository/grails/"
+
+          // add a configuration with a classpath that includes our s3 maven deployer
+          configurations { deployerJars }
+          dependencies {
+
+            deployerJars "org.springframework.build.aws:org.springframework.build.aws.maven:3.0.0.RELEASE"
+
+            // NOTE!!!!!: Maven deployment over webdav is broken due to SHA1 checksum issues. To deploy
+            // you first need to run ./gradlew -Ddeploy.protocol=dav uploadArchives
+            // and then ./gradlew uploadArchives a second time to get a valid deployment
+
+            if(isDav) {
+              deployerJars "org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6"
+            }
+            else {
+              deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+            }
+
+
+
+          }
+
+          repositories.mavenDeployer {
+              switch (releaseType) {
+                  case 'RELEASE':
+                    // TODO: Will need to update this when doing a non-snapshot/milestone release
+//                      repository(url: releaseRepositoryUrl)
+//                      description += releaseRepositoryUrl
+                      break;
+
+                  case ~/M[0-9]+/:
+                      description += milestoneRepositoryUrl
+                      // fall through and pick up config below
+
+                  case 'BUILD-SNAPSHOT':
+                      description += snapshotRepositoryUrl
+                      def credentials
+                      if(isSpringProject) {
+                        credentials = [userName: project.properties.s3AccessKey,
+                                       passphrase: project.properties.s3SecretAccessKey]
+                      }
+                      else {
+                        credentials = [userName: project.properties['codehaus.username'],
+                                       password: project.properties['codehaus.password']]
+                      }
+                      configuration = configurations.deployerJars
+                      repository(url: milestoneRepositoryUrl) {
+                          authentication(credentials)
+                      }
+                      snapshotRepository(url: snapshotRepositoryUrl) {
+                          authentication(credentials)
+                      }
+                    break;
+              }
+
+              pom.project {
+                  licenses {
+                      license {
+                          name 'The Apache Software License, Version 2.0'
+                          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                          distribution 'repo'
+                      }
+                  }
+              }
+          }
+      }
+
+    }
+
+
 		classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.10.0'
 		classpath 'net.saliman:gradle-cobertura-plugin:1.1.2'
         classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.8.1'
 		classpath 'org.asciidoctor:asciidoctor-gradle-plugin:0.5.0'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.3'
     }
-dependencies {
+
+
         classpath 'org.gradle.api.plugins:gradle-gaelyk-plugin:0.4.1'
         classpath 'org.gradle.api.plugins:gradle-gae-plugin:0.7.6'
     }
-dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
 
-    compile (
-	[group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '1.1.GA'],
-	[group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.6.4'],
-	[group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.6.4'],
-	[group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.6.4'],
-	[group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26']
-    )
 
-    testCompile group: 'junit', name: 'junit', version: '4.+'
-}
-dependencies {
-    testCompile 'junit:junit:4.12'
-    testCompile 'net.java.dev.jna:jna-platform:4.2.2'
 
-}
-dependencies {
+
             if (project.name != "test-testng") {
                 testCompile project(':test-testng')
             }
@@ -855,12 +1097,5 @@ dependencies {
             testCompile('org.hamcrest:hamcrest-core:1.3.RC2') { transitive = false }
             testCompile('org.hamcrest:hamcrest-library:1.3.RC2') { transitive = false }
         }
-dependencies {
-  compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
-  compile group: 'org.springframework', name: 'spring-core', version: '3.0.3.RELEASE'
-  compile group: 'org.slf4j', name: 'slf4j-api', version: '1.5.6'
-  testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
-  testCompile group: 'junit', name: 'junit', version: '4.+'
-  testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.5.6'
-  testCompile group: 'log4j', name: 'log4j', version: '1.2.14'
-}
+    
+
