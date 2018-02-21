@@ -9,10 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
 
-import org.json.JSONObject;
-
 import githubScraper.Counter;
-import githubScraper.Scraper;
 
 /**
  * A consumer takes lists of student instances and prints them by converting them into html document.
