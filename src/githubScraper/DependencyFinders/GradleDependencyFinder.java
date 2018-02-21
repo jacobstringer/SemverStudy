@@ -9,16 +9,17 @@ import java.util.regex.Pattern;
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
 	Writer out;
-	//int counter = 0;
 
 	public GradleDependencyFinder(Connection c, Writer out) {
 		this.c = c;
 		this.out = out;
 	}
 
-	Pattern totalVersion = Pattern.compile("(\'|\").+(\'|\")");	
+	Pattern totalVersion = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
+	Pattern mapVersionPattern = Pattern.compile("version:\\s*[\'\"][^\'\"]+[\'\"]");
 	Pattern numberVersion = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
 	Pattern variableVersion = Pattern.compile("\\$[^\'\":]+");
+	Pattern findCommand = Pattern.compile("^[a-zA-Z]+");
 
 	private void printString(String s) {
 		try {
@@ -83,40 +84,48 @@ public class GradleDependencyFinder implements DependencyFinder {
 			return "";
 		}
 	}
-	
+
 	// Takes one line of dependencies, resolves any variables, and returns the version number
 	private String getVersionNum (String line, String file, String url) {
 		String version = "";
+		String total = "";
+		Matcher mmap = mapVersionPattern.matcher(line);
 		Matcher m = totalVersion.matcher(line);
-		if (m.find()) {
-			// total is everything inside brackets on the line
-			String total = m.group();
-			try {
-				// Captures number versions
-				m = numberVersion.matcher(total.split(":")[2]);
-				if (m.find()) {
-					return m.group();
-				} 
-				
-				// Captures variable versions
-				m = variableVersion.matcher(total.split(":")[2]);
-				if (m.find()) { 
-					String variable = m.group().replaceAll("[\\$\\{\\}]", "");
-					Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
-					m = pvar.matcher(file);
-					if (m.find()) {
-						Matcher m2 = numberVersion.matcher(m.group());
-						if (m2.find()) {
-							return m2.group();
-						}
-					}
-					printString("No variable found for: " + variable + " in file: " + url);
-				}
-			} catch (IndexOutOfBoundsException e) { // Catches non-normal amount of colons
-				//System.err.println(line);
+
+		try {
+			if (mmap.find()) {
+				// total is everything inside brackets on the line
+				total = mmap.group();
+			} else if (m.find()) {
+				total = m.group().split(":")[2];
+			} else {
+				return version;
 			}
+
+			// Captures number versions
+			m = numberVersion.matcher(total);
+			if (m.find()) {
+				return m.group();
+			} 
+
+			// Captures variable versions
+			m = variableVersion.matcher(total);
+			if (m.find()) { 
+				String variable = m.group().replaceAll("[\\$\\{\\}]", "");
+				Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
+				m = pvar.matcher(file);
+				if (m.find()) {
+					Matcher m2 = numberVersion.matcher(m.group());
+					if (m2.find()) {
+						return m2.group();
+					}
+				}
+				printString("No variable found for: " + variable + " in file: " + url);
+			}
+		} catch (IndexOutOfBoundsException e) { // Catches non-normal amount of colons
+			//System.err.println(line);
 		}
-		
+
 		return version;
 	}
 
@@ -129,13 +138,11 @@ public class GradleDependencyFinder implements DependencyFinder {
 		}
 
 		// Print info
-		//printString(file);
 		printString(deps);
-		//System.out.println(counter++);
-		
+
 		// Some commands can be used over multiple lines
 		String last_command = "";
-		
+
 		// Check dependencies lines one by one
 		for (String line: deps.split("\n")) {
 			// Filter only compile and testCompile tasks
@@ -145,16 +152,22 @@ public class GradleDependencyFinder implements DependencyFinder {
 				last_command = "compile";
 			} else if (line.startsWith("testCompile")) {
 				last_command = "testCompile";
-			} else if (Pattern.matches("^[\'\"]", line)) {
+			} else if ((last_command.equals("compile") || last_command.equals("testCompile")) 
+					&& Pattern.matches("[\'\"\\[].+", line)) {
 				// last_command is now this command
 			} else {
+				Matcher m = findCommand.matcher(line);
+				if (m.find()) {
+					last_command = m.group();
+					//System.out.println(last_command);
+				}
 				continue;
 			}
 
-			// Catches multiline statements (closures)
-			//if (Pattern.matches(type + "\\s*(", line)) {
-				//line.
-			//}
+			// Continue if the line does not have any further information
+			if (Pattern.matches(last_command + "\\s*\\(\\s*", line)) {
+				continue;
+			}
 
 			// Extracts version information out of line
 			String version = getVersionNum(line, file, url);
