@@ -5,6 +5,7 @@ private_tokens.txt
 /old/
 .project
 .pydevproject
+.classpath
 .idea/
 .settings/
 /
