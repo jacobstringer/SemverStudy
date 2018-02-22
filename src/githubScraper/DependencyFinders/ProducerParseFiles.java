@@ -16,7 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
-	private int until = 100;
+	private int until = 10000;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();

@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
 	Writer out;
-	
+
 	HashMap<String, Integer> commands = new HashMap<String, Integer>();
 	String[] wantedCommands = new String[]{"compile", "testCompile", "runtime", "testRuntime"};
 
@@ -27,6 +28,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 	Pattern numberVersion = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
 	Pattern variableVersion = Pattern.compile("\\$[^\'\":]+");
 	Pattern findCommand = Pattern.compile("^[a-zA-Z]+");
+	Pattern latest = Pattern.compile("latest");
 
 	private void printString(String s) {
 		try {
@@ -36,7 +38,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// Find closure nearest to index, used for once the dependencies keyword is found
 	private String getClosure(String file, int index) {
 		int bracket_level = 0;		
@@ -93,47 +95,61 @@ public class GradleDependencyFinder implements DependencyFinder {
 	}
 
 	// Takes one line of dependencies, resolves any variables, and returns the version number
-	private String getVersionNum (String line, String file, String url) {
-		String version = "";
-		String total = "";
+	private List<String> getVersionNum (String line, String file, String url) {
+		ArrayList<String> resolvedVersions = new ArrayList<>();
+		ArrayList<String> rawVersions = new ArrayList<>();
 		Matcher mmap = mapVersionPattern.matcher(line);
 		Matcher m = totalVersion.matcher(line);
 
 		try {
 			if (mmap.find()) {
-				// total is everything inside brackets on the line
-				total = mmap.group();
+				rawVersions.add(mmap.group());
 			} else if (m.find()) {
-				total = m.group().split(":")[2];
+				rawVersions.add(m.group().split(":")[2]);
+				while(m.find()) {
+					rawVersions.add(m.group().split(":")[2]);
+				}
 			} else {
-				return version;
+				return resolvedVersions;
 			}
 
-			// Captures number versions
-			m = numberVersion.matcher(total);
-			if (m.find()) {
-				return m.group();
-			} 
-
-			// Captures variable versions
-			m = variableVersion.matcher(total);
-			if (m.find()) { 
-				String variable = m.group().replaceAll("[\\$\\{\\}]", "");
-				Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
-				m = pvar.matcher(file);
+			// In case there is more than one dependency on the same line
+			for (String tot: rawVersions) {
+				// Captures number versions
+				m = numberVersion.matcher(tot);
 				if (m.find()) {
-					Matcher m2 = numberVersion.matcher(m.group());
-					if (m2.find()) {
-						return m2.group();
+					resolvedVersions.add(m.group());
+					continue;
+				} 
+				
+				// Captures ivy style 'latest'
+				m = latest.matcher(tot);
+				if (m.find()) {
+					resolvedVersions.add(m.group());
+					continue;
+				} 
+
+				// Captures variable versions
+				m = variableVersion.matcher(tot);
+				if (m.find()) { 
+					String variable = m.group().replaceAll("[\\$\\{\\}]", "");
+					Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
+					m = pvar.matcher(file);
+					if (m.find()) {
+						Matcher m2 = numberVersion.matcher(m.group());
+						if (m2.find()) {
+							resolvedVersions.add(m2.group());
+							continue;
+						}
 					}
+					printString("No variable found for: " + variable + " in file: " + url);
 				}
-				printString("No variable found for: " + variable + " in file: " + url);
 			}
 		} catch (IndexOutOfBoundsException e) { // Catches non-normal amount of colons
 			//System.err.println(line);
 		}
 
-		return version;
+		return resolvedVersions;
 	}
 
 	@Override
@@ -145,7 +161,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		}
 
 		// Print info
-		printString(deps);
+		// printString(deps);
 
 		// Some commands can be used over multiple lines
 		String last_command = "";
@@ -154,25 +170,25 @@ public class GradleDependencyFinder implements DependencyFinder {
 		for (String line: deps.split("\n")) {
 			line = line.trim();
 			String type = "";
-			
+
 			// Find command
 			Matcher m = findCommand.matcher(line);
 			if (m.find()) {
 				type = m.group();
 			}
-			
+
 			// Accounts for multi-line commands
 			if (!Pattern.matches("^[\'\"\\[].+", line)) {
 				last_command = type;
 			}
-			
+
 			// Counts types of commands
 			Integer i = commands.get(last_command);
 			if (i == null)
 				commands.put(last_command, 1);
 			else	
 				commands.put(last_command, ++i);
-			
+
 			// Ignores commands that are not useful for analysis
 			if (!Arrays.asList(wantedCommands).contains(last_command))
 				continue;
@@ -183,8 +199,16 @@ public class GradleDependencyFinder implements DependencyFinder {
 			}
 
 			// Extracts version information out of line
-			String version = getVersionNum(line, file, url);
-			printString(last_command + ": " + version);
+			List<String> version = getVersionNum(line, file, url);
+			// printString(last_command + ": " + version.toString());
+			
+			if (version.size() > 1) {
+				printString(deps);
+				printString(last_command + ": " + version);
+			}
+
+			//if (Pattern.matches(last_command + "\\s+[a-zA-Z]+\\(\\)\\s*$", line))
+			//	printString(file);
 		}
 	}
 
