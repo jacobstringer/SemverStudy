@@ -6,13 +6,9 @@
     testCompile  group: "junit",         name: 'junit-dep',       version: "4.8.2"
 
 compile: 1.2
-{compile=1}
 testCompile: 2.5.1
-{testCompile=1, compile=1}
 testCompile: 2.5.1
-{testCompile=2, compile=1}
 testCompile: 4.8.2
-{testCompile=3, compile=1}
 
     scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
     scalaTools "org.scala-lang:scala-library:$scalaVersion"
@@ -22,11 +18,8 @@ testCompile: 4.8.2
     testCompile 'junit:junit:4.6'
 
 compile: 2.7.7
-{testCompile=3, compile=2, scalaTools=2}
 testCompile: 1.0
-{testCompile=4, compile=2, scalaTools=2}
 testCompile: 4.6
-{testCompile=5, compile=2, scalaTools=2}
 
   testRuntime "org.apache.openejb:javaee-api:5.0-2",
               "log4j:log4j:1.2.14",
@@ -35,6 +28,12 @@ testCompile: 4.6
               "org.powermock:powermock-api-easymock:1.4.7",
               "junit:junit:4.8.2"
 
+testRuntime: 5.0
+testRuntime: 1.2.14
+testRuntime: 3.0
+testRuntime: 1.4.7
+testRuntime: 1.4.7
+testRuntime: 4.8.2
 
     testCompile 'junit:junit:4.8.1'
     testCompile 'org.jmock:jmock:2.5.1'
@@ -44,13 +43,9 @@ testCompile: 4.6
     testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
 
 testCompile: 4.8.1
-{testCompile=6, compile=2, scalaTools=2, testRuntime=1}
 testCompile: 2.5.1
-{testCompile=7, compile=2, scalaTools=2, testRuntime=1}
 testCompile: 2.5.1
-{testCompile=8, compile=2, scalaTools=2, testRuntime=1}
 testCompile: 0.4
-{testCompile=9, groovy=2, compile=2, scalaTools=2, testRuntime=1}
 
     groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.4'
     groovy group: 'commons-cli', name: 'commons-cli', version: '1.2'
@@ -61,7 +56,8 @@ testCompile: 0.4
     testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
 
 testCompile: 0.4
-{testCompile=10, groovy=4, compile=2, scalaTools=2, testRuntime=1}
+testRuntime: 2.2
+testRuntime: 1.2
 
     groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.2'
 
@@ -69,7 +65,6 @@ testCompile: 0.4
     testCompile 'junit:junit:4.8.1'
 
 testCompile: 4.8.1
-{testCompile=11, groovy=5, compile=2, scalaTools=2, testRuntime=3}
 
     testCompile (
             [group: 'org.spockframework', name: 'spock-core', version: '0.2'],
@@ -86,20 +81,19 @@ testCompile: 4.8.1
     cpdConf group: 'pmd', name: 'pmd', version: '4.2.5'
 
 testCompile: 0.2
-{testCompile=13, groovy=5, compile=2, scalaTools=2, testRuntime=3}
 testCompile: 4.6
-{testCompile=14, groovy=5, compile=2, scalaTools=2, testRuntime=3}
+testRuntime: 1.9
+testRuntime: 2.1
+testRuntime: 1.1
+testRuntime: 0.9.5
 
 	testCompile 'junit:junit:4.8.2'
 	testCompile 'org.seleniumhq.selenium:selenium:2.0a7'
 	testCompile 'org.testng:testng:5.14.1'
 
 testCompile: 4.8.2
-{testCompile=15, cpdConf=1, groovy=7, compile=2, scalaTools=2, testRuntime=4}
 testCompile: 2.0
-{testCompile=16, cpdConf=1, groovy=7, compile=2, scalaTools=2, testRuntime=4}
 testCompile: 5.14.1
-{testCompile=17, cpdConf=1, groovy=7, compile=2, scalaTools=2, testRuntime=4}
 
     groovy 'org.codehaus.groovy:groovy:2.1.1'
     
@@ -115,15 +109,10 @@ testCompile: 5.14.1
     }
 
 compile: 9.0.0
-{testCompile=17, cpdConf=1, groovy=8, compile=3, scalaTools=2, testRuntime=4}
 compile: 0.7
-{testCompile=17, cpdConf=1, groovy=8, compile=4, scalaTools=2, testRuntime=4}
 compile: 1.7.4
-{testCompile=17, cpdConf=1, groovy=8, compile=5, scalaTools=2, testRuntime=4}
 testCompile: 1.0.10
-{testCompile=18, cpdConf=1, groovy=8, compile=5, scalaTools=2, testRuntime=4}
 testCompile: 0.6
-{testCompile=19, cpdConf=1, groovy=8, compile=5, scalaTools=2, testRuntime=4}
 
     distLib project(':elasticsearch')
 
@@ -179,59 +168,33 @@ testCompile: 0.6
 
 
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=6, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=7, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=8, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=9, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=10, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=11, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=12, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=13, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 3.0.5
-{testCompile=19, cpdConf=1, groovy=8, compile=14, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.6.8
-{testCompile=19, cpdConf=1, groovy=8, compile=15, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.6.8
-{testCompile=19, cpdConf=1, groovy=8, compile=16, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.1
-{testCompile=19, cpdConf=1, groovy=8, compile=17, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.1
-{testCompile=19, cpdConf=1, groovy=8, compile=18, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 2.2.2
-{testCompile=19, cpdConf=1, groovy=8, compile=19, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.0
-{testCompile=19, cpdConf=1, groovy=8, compile=20, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 2.4.2
-{testCompile=19, cpdConf=1, groovy=8, compile=21, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.1.2
-{testCompile=19, cpdConf=1, groovy=8, compile=22, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 2.5
-{testCompile=19, cpdConf=1, groovy=8, compile=23, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 1.1.2
-{testCompile=19, cpdConf=1, groovy=8, compile=24, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 4
-{testCompile=19, cpdConf=1, groovy=8, compile=25, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 4
-{testCompile=19, cpdConf=1, groovy=8, compile=26, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
 compile: 4
-{testCompile=19, cpdConf=1, groovy=8, compile=27, scalaTools=2, distLib=2, exclude=2, testRuntime=4}
+runtime: 4
 compile: 1.2.16
-{testCompile=19, cpdConf=1, groovy=8, compile=28, scalaTools=2, distLib=2, runtime=1, exclude=2, testRuntime=4}
 compile: 1.5.1
-{testCompile=19, cpdConf=1, groovy=8, compile=29, scalaTools=2, distLib=2, runtime=1, exclude=6, testRuntime=4}
 testCompile: 4.8.1
-{testCompile=20, cpdConf=1, groovy=8, compile=29, scalaTools=2, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 testCompile: 1.1
-{testCompile=21, cpdConf=1, groovy=8, compile=29, scalaTools=2, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 testCompile: 1.5.1
-{testCompile=22, cpdConf=1, groovy=8, compile=29, scalaTools=2, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 
     lib = "$projectDir/lib"
     groovy files(fileTree(dir: lib as File, includes: ['groovy-all-1.7.*.jar']))
@@ -239,7 +202,6 @@ testCompile: 1.5.1
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=22, cpdConf=1, groovy=9, compile=30, scalaTools=2, lib=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 
     compile 'org.codehaus.groovy:groovy-all:2.3.7'
     compile 'pircbot:pircbot:1.5.0'
@@ -249,26 +211,19 @@ compile:
     runtime 'log4j:log4j:1.2.17'
 
 compile: 2.3.7
-{testCompile=22, cpdConf=1, groovy=9, compile=31, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 compile: 1.5.0
-{testCompile=22, cpdConf=1, groovy=9, compile=32, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 compile: 1.1.1
-{testCompile=22, cpdConf=1, groovy=9, compile=33, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 testCompile: 4.11
-{testCompile=23, cpdConf=1, groovy=9, compile=33, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
 testCompile: 1.9.0
-{testCompile=24, cpdConf=1, groovy=9, compile=33, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=1, exclude=6, testRuntime=4}
+runtime: 1.2.17
 
 	compile group: 'commons-httpclient', name:'commons-httpclient', version:'3.1'
 	compile group: 'joda-time', name:'joda-time', version:'1.6'
 	testCompile group: 'junit', name: 'junit', version: '4.+'
 
 compile: 3.1
-{testCompile=24, cpdConf=1, groovy=9, compile=34, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=2, exclude=6, testRuntime=4}
 compile: 1.6
-{testCompile=24, cpdConf=1, groovy=9, compile=35, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=2, exclude=6, testRuntime=4}
 testCompile: 4.+
-{testCompile=25, cpdConf=1, groovy=9, compile=35, scalaTools=2, lib=1, jsp=1, providedCompile=1, distLib=2, runtime=2, exclude=6, testRuntime=4}
 
 	boo "boo:boo:$booVersion"
 
@@ -277,9 +232,7 @@ testCompile: 4.+
     compile group:'com.google.guava', name:'guava', version:'18.0'
 
 compile: 1.2.16
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=36, scalaTools=2, providedCompile=1, distLib=2, exclude=6}
 compile: 18.0
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=37, scalaTools=2, providedCompile=1, distLib=2, exclude=6}
 	
 
 		scalaTools 'org.scala-lang:scala-compiler:2.8.1'
@@ -301,29 +254,17 @@ compile: 18.0
 		compile files(fileTree(dir: lib as File, includes: ['*.jar']))
 
 compile: 2.8.1
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=38, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 2.8.1
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=39, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 3.6.0
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=40, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 1.6.1
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=41, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 1.2.16
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=42, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 3.6.0
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=43, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 3.1
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=44, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 2.2
-{testCompile=25, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=45, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 testCompile: 4.8
-{testCompile=26, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=45, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 testCompile: 2.0.0
-{testCompile=27, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=45, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 testCompile: 1.8.5
-{testCompile=28, boo=1, lib=1, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=45, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 compile: 
-{testCompile=28, boo=1, lib=2, jsp=1, runtime=2, testRuntime=4, cpdConf=1, groovy=9, compile=46, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 
 	jenkinsPlugins "org.jvnet.hudson.plugins:instant-messaging:${instantMessagingPluginVersion}@jar"
 
@@ -337,15 +278,11 @@ compile:
 
 No variable found for: smackVersion in file: https://github.com/jenkinsci/jabber-plugin
 compile: 
-{testCompile=28, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=47, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 No variable found for: smackVersion in file: https://github.com/jenkinsci/jabber-plugin
 compile: 
-{testCompile=28, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=48, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 No variable found for: smackVersion in file: https://github.com/jenkinsci/jabber-plugin
 compile: 
-{testCompile=28, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=49, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 testCompile: 4.11
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=49, scalaTools=4, providedCompile=1, distLib=2, exclude=6}
 
     distLib project(':elasticsearch')
 
@@ -373,45 +310,25 @@ testCompile: 4.11
     testCompile 'cglib:cglib-nodep:2.2'
 
 compile: 3.7.3
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=50, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.4.3
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=51, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 0.9.24
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=52, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.0
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=53, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 2.0
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=54, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.6
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=55, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.6
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=56, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 3.0
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=57, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.4
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=58, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 0.1.1
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=59, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.3.3
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=60, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 3.2.7
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=61, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 
-{testCompile=29, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 4.7
-{testCompile=30, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.2
-{testCompile=31, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.8.5
-{testCompile=32, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.9
-{testCompile=33, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 0.6.4
-{testCompile=34, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.1
-{testCompile=35, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 2.2
-{testCompile=36, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=62, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 
     compile group: 'com.google.guava', name: 'guava', version: '10.0.1'
 
@@ -425,17 +342,11 @@ testCompile: 2.2
     testCompile "org.easytesting:fest-assert:1.4"
 
 compile: 10.0.1
-{testCompile=36, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=63, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.1.1
-{testCompile=36, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.2.16
-{testCompile=37, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 4.10
-{testCompile=38, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.8.5
-{testCompile=39, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 1.4
-{testCompile=40, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=9, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 
 	// scala '
     groovy 'org.codehaus.groovy:groovy:1.7.0'
@@ -446,11 +357,8 @@ testCompile: 1.4
     )
 
 testCompile: 4.7
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=64, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.1.1
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=66, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.2.16
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=67, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 
     compile gradleApi()
     compile localGroovy()
@@ -463,17 +371,11 @@ compile: 1.2.16
     deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
 
 compile: 
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=68, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=69, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.0.5
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=70, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 compile: 1.7.0
-{testCompile=41, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=10, compile=71, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 4.8.1
-{testCompile=42, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=11, compile=71, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
 testCompile: 
-{testCompile=43, boo=1, lib=2, jsp=1, runtime=2, jenkinsPlugins=2, testRuntime=4, cpdConf=1, groovy=11, compile=71, scalaTools=4, providedCompile=1, distLib=3, exclude=6}
  gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' 
  gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' 
 
@@ -483,7 +385,6 @@ testCompile:
     testCompile 'junit:junit:4.11'
 
 testCompile: 4.11
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=71, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 
   // wicket
   compile group: 'org.apache.wicket', name: 'wicket', version: '1.5-SNAPSHOT'
@@ -529,67 +430,44 @@ testCompile: 4.11
   testCompile group: 'org.hibernate', name: 'hibernate-validator', version: '4.0.0.CR1'
 
 compile: 1.5
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=72, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.5
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=73, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.0.2
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=74, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 3.4.0
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=75, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 3.3.0
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=76, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 3.1.0
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=77, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.0
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=78, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.2.14
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=79, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.5.8
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=80, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.1.1
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=81, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 6.1.25
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=82, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 6.1.25
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=83, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 6.1.25
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=84, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.8.3
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=85, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.4
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=86, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 07
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=87, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.8.1
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=11, compile=88, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 1.5.2
-{testCompile=44, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=89, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 testCompile: 4.4
-{testCompile=45, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=89, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 testCompile: 4.0.0
-{testCompile=46, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=89, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.slick2d:slick2d-core:$slick2d_version"
     compile "org.lwjgl.lwjgl:lwjgl-platform:2.9.3"
 
 compile: 1.0.6
-{testCompile=46, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=90, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 2
-{testCompile=46, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=91, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 compile: 2.9.3
-{testCompile=46, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=12, compile=92, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 
   groovy localGroovy()
   compile group: 'org.apache.ant', name: 'ant', version: '1.8.1'
   deployerJars group: 'org.apache.maven.wagon', name: 'wagon-ssh', version: '1.0-beta-2'
 
 compile: 1.8.1
-{testCompile=46, boo=1, lib=2, jsp=1, provided=3, runtime=2, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=13, compile=93, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=1}
 
     runtime runtimeProjects()
     plugins pluginProjects()
 
+runtime: 
 
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
@@ -636,55 +514,31 @@ compile: 1.8.1
 
 
 compile: 2.0.4
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=94, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=95, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=96, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=97, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=98, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=99, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=100, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 3.1.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=101, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 4
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=102, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 4
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=103, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 1.6.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=104, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 1.6.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=105, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 13.0.1
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=106, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 2.0.0
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=107, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 2.0.0
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=108, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 1.4
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=109, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 1.6.2
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=110, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 20090211
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=111, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 1.6.3
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=112, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 0.6
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=113, scalaTools=4, providedCompile=1, distLib=3, exclude=6, deployerJars=2}
 compile: 5.1.16
-{testCompile=46, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=3, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=114, scalaTools=4, providedCompile=1, distLib=3, exclude=7, deployerJars=2}
+runtime: 1.2
 testCompile: 3.1.3
-{testCompile=47, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=114, scalaTools=4, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 4.10
-{testCompile=48, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=114, scalaTools=4, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 1.3
-{testCompile=49, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=114, scalaTools=4, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 3.0
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=114, scalaTools=4, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 
     sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
 
@@ -713,35 +567,20 @@ testCompile: 3.0
     providedCompile 'javax.servlet:servlet-api:2.5' 
 
 compile: 2.8.1
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=115, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=116, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=117, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=118, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=119, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=120, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 2.2
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=121, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 compile: 1.2.138
-{testCompile=50, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 4.5
-{testCompile=51, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 1.6.6
-{testCompile=52, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 2.8.1
-{testCompile=53, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 6.1.25
-{testCompile=54, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 6.1.25
-{testCompile=55, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 6.1.25
-{testCompile=56, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 testCompile: 2.8.1
-{testCompile=57, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=14, compile=122, scalaTools=5, sshDeploy=1, providedCompile=2, distLib=3, exclude=7, deployerJars=2}
 
     groovy group: 'org.mbte.groovypp', name: 'groovypp', version: "$gppVersion"
 
@@ -752,11 +591,9 @@ testCompile: 2.8.1
 
 
 compile: 0.4.115
-{testCompile=57, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=15, compile=123, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 0.4.121
-{testCompile=57, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=15, compile=124, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 1.1.0
-{testCompile=57, boo=1, lib=2, jsp=1, plugins=1, provided=3, runtime=4, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=15, compile=125, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
+runtime: 1.1
 
     lib = "$projectDir/lib"
     groovy files(fileTree(dir: lib as File, includes: ['groovy-all-*.jar']))
@@ -764,7 +601,6 @@ compile: 1.1.0
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=57, boo=1, lib=3, jsp=1, plugins=1, provided=3, runtime=5, jenkinsPlugins=2, testRuntime=4, gradleScript=2, cpdConf=1, groovy=16, compile=126, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
  gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.23' 
  gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16' 
  gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.1' 
@@ -780,9 +616,7 @@ compile:
 
 
 compile: 6.0.26
-{testCompile=57, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=4, gradleScript=8, cpdConf=1, groovy=17, compile=127, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 1.0.0
-{testCompile=57, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=4, gradleScript=8, cpdConf=1, groovy=17, compile=128, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
  gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.0.2' 
 
   // mandatory dependencies for using Spock
@@ -798,9 +632,10 @@ compile: 1.0.0
   testRuntime "com.h2database:h2:1.2.147"
 
 testCompile: 0.5
-{testCompile=58, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=4, gradleScript=9, cpdConf=1, groovy=18, compile=128, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 testCompile: 1.2
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=4, gradleScript=9, cpdConf=1, groovy=18, compile=128, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
+testRuntime: 2.2
+testRuntime: 1.2
+testRuntime: 1.2.147
 
     compile         group: 'org.codehaus.jackson' , name: 'jackson-core-asl'   , version: '1.6.4'
     compile         group: 'org.codehaus.jackson' , name: 'jackson-mapper-asl' , version: '1.6.4'
@@ -816,27 +651,16 @@ testCompile: 1.2
     testCompile     group: 'junit'                , name: 'junit'              , version: '4.8.1'
 
 compile: 1.6.4
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=129, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 1.6.4
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=130, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 9.3
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=131, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 1.7.7
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=132, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 6.15.0
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=133, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 6.15.0
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=134, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 6.15.0
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=135, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 6.15.0
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=136, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 compile: 6.15.0
-{testCompile=59, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=137, scalaTools=5, sshDeploy=1, providedCompile=3, distLib=3, exclude=7, deployerJars=2}
 testCompile: 2.4
-{testCompile=60, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=137, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=2}
 testCompile: 4.8.1
-{testCompile=61, boo=1, lib=3, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=18, compile=137, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=2}
 
     lib = "$projectDir/lib"
     groovy files(fileTree(dir: lib as File, includes: ['groovy-all-1.7.*.jar']))
@@ -844,7 +668,6 @@ testCompile: 4.8.1
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=61, boo=1, lib=4, jsp=2, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=19, compile=138, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=2}
 
   groovy 'org.codehaus.groovy:groovy:1.8.0-beta-2'
   deployerJars "org.apache.maven.wagon:wagon-ssh:1.0-beta-6" 
@@ -854,7 +677,6 @@ compile:
   )
 
 compile: 
-{testCompile=61, boo=1, lib=4, jsp=3, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, testRuntime=7, gradleScript=9, cpdConf=1, groovy=20, compile=139, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
     test files(
         "${libTestDir}/hamcrest-as3-only-1.1.3.swc",
@@ -871,11 +693,8 @@ compile:
     testCompile HAMCREST
 
 compile: 
-{testCompile=61, boo=1, lib=4, test=1, jsp=3, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=20, compile=140, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 4.8.2
-{testCompile=62, boo=1, lib=4, test=1, jsp=3, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=21, compile=140, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 
-{testCompile=63, boo=1, lib=4, test=1, jsp=3, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=21, compile=140, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
 	compile 'org.slf4j:slf4j-api:1.6.1'
 	runtime 'org.slf4j:jcl-over-slf4j:1.6.1'
@@ -886,19 +705,21 @@ testCompile:
 //	runtime 'org.apache.camel:camel-jackson:2.5.0'
 
 compile: 1.6.1
-{testCompile=63, boo=1, lib=4, test=1, jsp=3, plugins=1, provided=4, runtime=5, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=21, compile=141, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
+runtime: 1.6.1
+runtime: 0.9.26
 compile: 2.5.0
-{testCompile=63, boo=1, lib=4, test=1, jsp=3, plugins=1, provided=4, runtime=7, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=21, compile=142, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
+runtime: 2.5.0
+runtime: 2.5.0
 
     runtime runtimeProjects()
     plugins pluginProjects()
 
+runtime: 
 
 	groovy 'org.codehaus.groovy:groovy-all:1.7.5'
 	testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
 
 testCompile: 0.5
-{testCompile=64, boo=1, lib=4, test=1, jsp=3, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=22, compile=142, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
     lib = "$projectDir/lib"
     groovy files(fileTree(dir: lib as File, includes: ['groovy-all-1.7.*.jar']))
@@ -906,7 +727,6 @@ testCompile: 0.5
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=64, boo=1, lib=5, test=1, jsp=3, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=23, compile=143, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
 	def modeShapeVersion='2.8.3.Final'
 	def jettyurl="org.mortbay.jetty:jetty:6.1.25"
@@ -922,21 +742,13 @@ compile:
 	executableWarDeps jettyurl
 
 compile: 
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=144, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 2.5
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=145, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 6.1.14
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=146, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 2.0
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=147, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 2.8.3
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=148, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 2.8.3
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=149, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 1.6.6
-{testCompile=64, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=150, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 4.10
-{testCompile=65, boo=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=150, scalaTools=5, sshDeploy=1, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
     sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
 
@@ -945,9 +757,7 @@ testCompile: 4.10
 	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
 
 testCompile: 4.+
-{testCompile=66, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=150, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 1.8.5
-{testCompile=67, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=150, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
    compile group: 'org.springframework' , name: 'spring', version: '2.5.5'
    compile group: 'log4j' , name: 'log4j' , version: '1.2.15'
@@ -955,20 +765,15 @@ testCompile: 1.8.5
    testCompile group: 'junit', name: 'junit', version: '4.+'
 
 compile: 2.5.5
-{testCompile=67, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=151, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 1.2.15
-{testCompile=67, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=152, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 4.+
-{testCompile=68, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=24, compile=152, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
 	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
 	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.2'
 	testCompile group: 'junit', name: 'junit', version: '4.8.2'
 
 compile: 2.2
-{testCompile=68, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=25, compile=153, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 4.8.2
-{testCompile=69, boo=1, executableWarDeps=1, lib=5, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=25, compile=153, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
     lib = "$projectDir/lib"
     groovy files(fileTree(dir: lib as File, includes: ['groovy-all-1.7.*.jar']))
@@ -976,7 +781,6 @@ testCompile: 4.8.2
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=69, boo=1, executableWarDeps=1, lib=6, test=1, def=2, jsp=4, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=26, compile=154, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 
 	compile 'commons-lang:commons-lang:2.5'
 	compile 'javax.servlet:jstl:1.1.0'
@@ -987,13 +791,9 @@ compile:
 	testCompile 'org.mockito:mockito-all:1.8.5'
 
 compile: 2.5
-{testCompile=69, boo=1, executableWarDeps=1, lib=6, test=1, def=2, jsp=5, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=26, compile=155, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 1.1.0
-{testCompile=69, boo=1, executableWarDeps=1, lib=6, test=1, def=2, jsp=5, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=26, compile=156, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 compile: 1.1.2
-{testCompile=69, boo=1, executableWarDeps=1, lib=6, test=1, def=2, jsp=5, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=26, compile=157, scalaTools=5, sshDeploy=2, providedCompile=4, distLib=3, exclude=7, deployerJars=3}
 testCompile: 1.8.5
-{testCompile=70, boo=1, executableWarDeps=1, lib=6, test=1, def=2, jsp=5, plugins=2, provided=4, runtime=10, jenkinsPlugins=2, includes=1, dir=1, testRuntime=7, gradleScript=9, cpdConf=1, groovy=26, compile=157, scalaTools=5, sshDeploy=2, providedCompile=5, distLib=3, exclude=7, deployerJars=3}
  gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7' 
 
   springVersion = '3.0.5.RELEASE'
@@ -1007,13 +807,9 @@ testCompile: 1.8.5
   testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
 
 compile: 3.0.5
-{testCompile=70, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=158, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 4
-{testCompile=70, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=159, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 0.9.27
-{testCompile=70, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=160, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 testCompile: 4.8.2
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=160, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-jetty"
@@ -1030,31 +826,18 @@ testCompile: 4.8.2
     testCompile "org.springframework.boot:spring-boot-starter-test"
 
 compile: 
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=161, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=162, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=163, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=164, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 1.3.176
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=165, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 1.5.1
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=166, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 2.0.0
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=167, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 2.0.0
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=168, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 2.4
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=169, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 3.3.2
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=170, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 2.4.0
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=171, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 compile: 2.4.0
-{testCompile=71, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 testCompile: 
-{testCompile=72, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=26, scalaTools=5, sshDeploy=2, deployerJars=3}
 
 	groovy "org.codehaus.groovy:groovy-all:1.7.5"
 	testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
@@ -1069,13 +852,9 @@ testCompile:
         
 
 testCompile: 0.5
-{testCompile=73, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=27, scalaTools=5, sshDeploy=2, deployerJars=3}
 testCompile: 0.5
-{testCompile=74, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=27, scalaTools=5, sshDeploy=2, deployerJars=3}
 testCompile: 2.0
-{testCompile=75, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=27, scalaTools=5, sshDeploy=2, deployerJars=3}
 testCompile: 2.0
-{testCompile=76, boo=1, lib=6, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=172, providedCompile=5, distLib=3, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=27, scalaTools=5, sshDeploy=2, deployerJars=3}
 
     distLib project(':elasticsearch')
 
@@ -1086,7 +865,6 @@ testCompile: 2.0
     jsp21 files("$lib/jsp-api-2.1.jar")
 
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=5, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=173, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=28, scalaTools=5, sshDeploy=2, deployerJars=3}
 
 	build "com.cenqua.clover:clover:3.0.2"
 	build "org.apache.ant:ant-junit:1.8.1"
@@ -1116,31 +894,22 @@ compile:
 
 No variable found for: ext.gaelykAppEngineVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=174, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykAppEngineVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=175, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykLatestVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=176, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykLatestVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=177, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykLatestVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=178, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykLatestVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 compile: 
-{testCompile=76, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=179, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykSpockLatestVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 testCompile: 
-{testCompile=77, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=179, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykAppEngineVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 testCompile: 
-{testCompile=78, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=179, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 No variable found for: ext.gaelykAppEngineVersion in file: https://github.com/gaelyk/gaelyk-datastore-viewer-plugin
 testCompile: 
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=179, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 
     compile fileTree(dir: 'lib', include: '*.jar')
 
@@ -1155,28 +924,19 @@ testCompile:
     testCompile group: 'junit', name: 'junit', version: '4.+'
 
 compile: 
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=180, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 1.1
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=182, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 1.6.4
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=183, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 1.6.4
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=184, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 1.6.4
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=185, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 6.1.26
-{testCompile=79, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=186, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 4.+
-{testCompile=80, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=186, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 
     testCompile 'junit:junit:4.12'
     testCompile 'net.java.dev.jna:jna-platform:4.2.2'
 
 
 testCompile: 4.12
-{testCompile=81, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=186, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 4.2.2
-{testCompile=82, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=186, providedCompile=5, distLib=4, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 
     distLib project(':elasticsearch')
 
@@ -1190,16 +950,10 @@ testCompile: 4.2.2
   testCompile group: 'log4j', name: 'log4j', version: '1.2.14'
 
 compile: 2.0.1
-{testCompile=82, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=187, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 3.0.3
-{testCompile=82, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=188, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 compile: 1.5.6
-{testCompile=82, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 1.8.4
-{testCompile=83, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 4.+
-{testCompile=84, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 1.5.6
-{testCompile=85, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
 testCompile: 1.2.14
-{testCompile=86, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=1, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=7, springVersion=1, groovy=29, scalaTools=5, sshDeploy=2, build=6, deployerJars=3}
+{=166, testCompile=86, boo=1, lib=7, def=2, jsp=6, plugins=2, provided=4, jenkinsPlugins=2, dir=1, gradleScript=10, logbackVersion=1, cpdConf=1, compile=189, providedCompile=5, distLib=5, exclude=7, executableWarDeps=1, test=7, gaeSdk=1, runtime=10, includes=1, slf=1, testRuntime=16, springVersion=1, groovy=29, scalaTools=6, sshDeploy=2, build=6, deployerJars=3}

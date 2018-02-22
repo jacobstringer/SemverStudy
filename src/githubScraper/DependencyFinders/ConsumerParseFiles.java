@@ -91,6 +91,7 @@ public class ConsumerParseFiles implements Runnable {
 
 		}
 		try {
+			out.write(gradle.commands.toString());
 			out.close();
 			System.out.println("file closed");
 		} catch (IOException e) {
