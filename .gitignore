@@ -3,8 +3,8 @@
 private_tokens.txt
 /data/
 /old/
-/.project
-/.pydevproject
+.project
+.pydevproject
 .idea/
 .settings/
 /
