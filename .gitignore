@@ -5,6 +5,8 @@ private_tokens.txt
 /old/
 /.project
 /.pydevproject
+/.idea/
+/
 /Tests.txt
 /_2018SS.iml
 !**.sas

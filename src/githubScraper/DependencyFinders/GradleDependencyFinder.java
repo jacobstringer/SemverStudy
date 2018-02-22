@@ -3,12 +3,16 @@ package githubScraper.DependencyFinders;
 import java.io.IOException;
 import java.io.Writer;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
 	Writer out;
+	
+	HashMap<String, Integer> commands = new HashMap<String, Integer>();
 
 	public GradleDependencyFinder(Connection c, Writer out) {
 		this.c = c;
@@ -29,7 +33,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 			e.printStackTrace();
 		}
 	}
-
+	
 	// Find closure nearest to index, used for once the dependencies keyword is found
 	private String getClosure(String file, int index) {
 		int bracket_level = 0;		
@@ -159,10 +163,20 @@ public class GradleDependencyFinder implements DependencyFinder {
 				Matcher m = findCommand.matcher(line);
 				if (m.find()) {
 					last_command = m.group();
-					//System.out.println(last_command);
+					Integer i = commands.get(last_command);
+					if (i == null)
+						commands.put(last_command, 1);
+					else	
+						commands.put(last_command, ++i);
 				}
 				continue;
 			}
+			
+			Integer i = commands.get(last_command);
+			if (i == null)
+				commands.put(last_command, 1);
+			else
+				commands.put(last_command, ++i);
 
 			// Continue if the line does not have any further information
 			if (Pattern.matches(last_command + "\\s*\\(\\s*", line)) {
@@ -172,6 +186,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 			// Extracts version information out of line
 			String version = getVersionNum(line, file, url);
 			printString(last_command + ": " + version);
+			printString(commands.toString());
 		}
 	}
 
