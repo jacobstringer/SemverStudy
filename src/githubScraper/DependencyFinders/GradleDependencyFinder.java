@@ -9,27 +9,69 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
+// Able to be used in concurrent mode due to additional HTTP calls for extra files
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
 	Writer out;
-
-	HashMap<String, Integer> commands = new HashMap<String, Integer>();
-	String[] wantedCommands = new String[]{"compile", "testCompile", "runtime", "testRuntime"};
+	
+	int found = 0;
+	int files = 0;
+	int methods = 0;
+	int noVersion = 0;
+	public HashMap<String, Integer> commands = new HashMap<String, Integer>();
+	public HashMap<String, Integer> notFound = new HashMap<String, Integer>();
+	public static final String[] WANTED_COMMANDS = new String[]{
+			"compile", "testCompile", 
+			"runtime", "testRuntime",
+			"provided", "providedCompile",
+			"compileOnly", "compilerCompile",
+	};
+	public static final String[] COMMANDS_TO_PRINT = new String[] {
+			"provided", "providedCompile",
+			"compileOnly", "compilerCompile",
+	};
 
 	public GradleDependencyFinder(Connection c, Writer out) {
 		this.c = c;
 		this.out = out;
 	}
 
-	Pattern totalVersion = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
-	Pattern mapVersionPattern = Pattern.compile("version:\\s*[\'\"][^\'\"]+[\'\"]");
-	Pattern numberVersion = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
-	Pattern variableVersion = Pattern.compile("\\$[^\'\":]+");
-	Pattern findCommand = Pattern.compile("^[a-zA-Z]+");
-	Pattern latest = Pattern.compile("latest");
+	public static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
+	public static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"][^\'\"]+[\'\"]");
+	public static final Pattern NUMBER_VERSION = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
+	public static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[^\'\":]+");
+	public static final Pattern FIND_COMMAND = Pattern.compile("^[a-zA-Z]+");
+	public static final Pattern LATEST = Pattern.compile("latest");
+	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
 
+	private synchronized void incrementFound() {
+		found++;
+	}
+	private synchronized void incrementFiles() {
+		files++;
+	}
+	private synchronized void incrementMethods() {
+		methods++;
+	}
+	private synchronized void incrementNoVersion() {
+		noVersion++;
+	}
+	private synchronized void addCommands(String command) {
+		Integer i = commands.get(command);
+		if (i == null)
+			commands.put(command, 1);
+		else	
+			commands.put(command, ++i);
+	}
+	private synchronized void addNotFound(String variable) {
+		Integer i = notFound.get(variable);
+		if (i == null)
+			notFound.put(variable, 1);
+		else	
+			notFound.put(variable, ++i);
+	}
+	
 	private void printString(String s) {
 		try {
 			out.write(s);
@@ -40,7 +82,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 	}
 
 	// Find closure nearest to index, used for once the dependencies keyword is found
-	private String getClosure(String file, int index) {
+	private String getNextClosure(String file, int index) {
 		int bracket_level = 0;		
 
 		try {
@@ -81,7 +123,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 				} else if (file.charAt(index) =='}') {
 					bracket_level--;
 				} else if (bracket_level == 0 && file.regionMatches(index, "dependencies", 0, "dependencies".length())) {
-					String temp = getClosure(file, index + "dependencies".length());
+					String temp = getNextClosure(file, index + "dependencies".length());
 					// If this dependencies is not the dependencies closure (e.g. it is a comment or import), continue searching
 					if (!temp.equals("")) {
 						return temp;
@@ -94,64 +136,147 @@ public class GradleDependencyFinder implements DependencyFinder {
 		}
 	}
 
-	// Takes one line of dependencies, resolves any variables, and returns the version number
+	// Use if there is a variable listed in the command - fetches variable(s)
+	private List<String> getVariable (String file, String varname) {
+		List<String> variable = new ArrayList<>();
+
+		Pattern getVariableArray = Pattern.compile(varname + "\\s*=\\s*\\[[^\\[\\]]*\\]", Pattern.DOTALL);
+		Pattern getVariableQuotes = Pattern.compile(varname + "\\s*=\\s*[\"\'][^\"\']+[\"\']");
+		Matcher m = getVariableArray.matcher(file);
+		Matcher m2 = getVariableQuotes.matcher(file);
+
+		if (m.find()) {
+			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("]", "").split(",\n"));
+		} else if (m2.find()) {
+			variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("\"\'", ""));
+		}
+
+		return variable;
+	}
+
+	// Use getVariable
+	private String resolveVariable (String file, String variable) {
+		Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
+		Matcher m = pvar.matcher(file);
+		if (m.find()) {
+			Matcher m2 = NUMBER_VERSION.matcher(m.group().split("=")[1]);
+			if (m2.find()) {
+				return m2.group();
+			}
+		}
+		return "";
+	}
+
+	//
+	private String getVersionFromVariable (String file, List<String> ext, String var, String url) {
+		String variable = var.replaceAll("[\\$\\{\\}]", "");
+		String temp = resolveVariable(file, variable);
+		if (!temp.isEmpty()) {
+			return temp;
+		}
+
+		// Looks for external files if the variables are not in this file
+		if (ext.isEmpty()) {
+			Pattern p = Pattern.compile("apply from:.*");
+			Matcher matcher = p.matcher(file);
+			while (matcher.find()) {
+				temp = matcher.group().replaceAll("apply from:\\s*", "").replaceAll("[\'\"]", "").trim();
+				// Sometimes apply from: use a relative path, sometimes a full url, so try both ways
+				try {
+					ext.add(CollectFileFromURL.getFile(temp));
+				} catch (IllegalArgumentException e) {
+					ext.add(CollectFileFromURL.getFile(url.replaceAll("github", "raw.githubusercontent") + "/master/" + temp));
+				}
+			}
+		}
+
+		// Checks for variables in external files
+		for (String s: ext) {
+			temp = resolveVariable(s, variable);
+			if (!temp.isEmpty()) {
+				return temp;
+			}
+		}
+
+		// Records unmatched variables
+		addNotFound(variable);
+		
+		return "";
+	}
+
+	// Takes one line of dependencies (trimmed), resolves any variables, and returns the version number
 	private List<String> getVersionNum (String line, String file, String url) {
-		ArrayList<String> resolvedVersions = new ArrayList<>();
-		ArrayList<String> rawVersions = new ArrayList<>();
-		Matcher mmap = mapVersionPattern.matcher(line);
-		Matcher m = totalVersion.matcher(line);
+		// Returns empty list when version number cannot be found
+		List<String> resolvedVersions = new ArrayList<>();
+		List<String> rawVersions = new ArrayList<>();
+		List<String> ext = new ArrayList<>();
+		Matcher mmap = MAP_VERSION_PATTERN.matcher(line);
+		Matcher m = TOTAL_VERSION.matcher(line);
+		Matcher mvariable = VARIABLES.matcher(line);
 
 		try {
-			if (mmap.find()) {
+			// Get variables and versions for further processing
+			if (mmap.find()) { // Version is written as a map
 				rawVersions.add(mmap.group());
-			} else if (m.find()) {
+			} else if (m.find()) { // Version is written as a string
 				rawVersions.add(m.group().split(":")[2]);
 				while(m.find()) {
 					rawVersions.add(m.group().split(":")[2]);
 				}
-			} else {
+			} else if (mvariable.find()) { // Line lists variables which need resolving
+				String[] temp = mvariable.group().split("[,\\s]+");
+				for (int i=1; i < temp.length; i++) {
+					List<String> temp2 = getVariable(file, temp[i]);
+					if (!temp2.isEmpty()) {
+						for (int j=0; j < temp2.size(); j++) {
+							resolvedVersions.addAll(getVersionNum(temp2.get(j), file, url));
+						}
+					} else {
+						System.out.println(temp[i]);
+						System.out.println(url);
+					}
+
+				}
+			} else { // Neither, empty list returned
 				return resolvedVersions;
 			}
-
-			// In case there is more than one dependency on the same line
+			
+			// Process raw variables and versions
+			// For loop: in case there is more than one dependency on the same line
 			for (String tot: rawVersions) {
-				// Captures number versions
-				m = numberVersion.matcher(tot);
-				if (m.find()) {
-					resolvedVersions.add(m.group());
+				// Resolves variables into versions i.e. ${springVersion}
+				m = VARIABLE_VERSION.matcher(tot);
+				if (m.find()) { 
+					resolvedVersions.add(getVersionFromVariable(file, ext, m.group(), url));
 					continue;
-				} 
-				
-				// Captures ivy style 'latest'
-				m = latest.matcher(tot);
+				}
+
+				// Captures number versions
+				m = NUMBER_VERSION.matcher(tot);
 				if (m.find()) {
 					resolvedVersions.add(m.group());
 					continue;
 				} 
 
-				// Captures variable versions
-				m = variableVersion.matcher(tot);
-				if (m.find()) { 
-					String variable = m.group().replaceAll("[\\$\\{\\}]", "");
-					Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
-					m = pvar.matcher(file);
-					if (m.find()) {
-						Matcher m2 = numberVersion.matcher(m.group());
-						if (m2.find()) {
-							resolvedVersions.add(m2.group());
-							continue;
-						}
-					}
-					printString("No variable found for: " + variable + " in file: " + url);
+				// Captures ivy style 'latest'
+				m = LATEST.matcher(tot);
+				if (m.find()) {
+					resolvedVersions.add(m.group());
+					continue;
 				}
 			}
-		} catch (IndexOutOfBoundsException e) { // Catches non-normal amount of colons
-			//System.err.println(line);
+		} catch (IndexOutOfBoundsException e) { 
+			printString("\t\t"+line);
+			incrementNoVersion();
+			resolvedVersions.add("noVersion");
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 		return resolvedVersions;
 	}
 
+	// ENTRY POINT INTO CLASS. PROVIDE ENTIRE GRADLE FILE AS A STRING ALONG WITH URL FOR RECORDING
 	@Override
 	public void findVersionData(String file, String url) {
 		// Get dependencies closure		
@@ -160,11 +285,8 @@ public class GradleDependencyFinder implements DependencyFinder {
 			return;
 		}
 
-		// Print info
-		// printString(deps);
-
 		// Some commands can be used over multiple lines
-		String last_command = "";
+		String lastCommand = "";
 
 		// Check dependencies lines one by one
 		for (String line: deps.split("\n")) {
@@ -172,43 +294,56 @@ public class GradleDependencyFinder implements DependencyFinder {
 			String type = "";
 
 			// Find command
-			Matcher m = findCommand.matcher(line);
+			Matcher m = FIND_COMMAND.matcher(line);
 			if (m.find()) {
 				type = m.group();
 			}
 
 			// Accounts for multi-line commands
 			if (!Pattern.matches("^[\'\"\\[].+", line)) {
-				last_command = type;
+				if (type.equals("")) { // Filters out comment lines and configuration lines
+					continue;
+				}
+				lastCommand = type;
 			}
 
 			// Counts types of commands
-			Integer i = commands.get(last_command);
-			if (i == null)
-				commands.put(last_command, 1);
-			else	
-				commands.put(last_command, ++i);
+			addCommands(lastCommand);
 
 			// Ignores commands that are not useful for analysis
-			if (!Arrays.asList(wantedCommands).contains(last_command))
+			if (!Arrays.asList(WANTED_COMMANDS).contains(lastCommand))
 				continue;
 
-			// Continue if the line does not have any further information
-			if (Pattern.matches(last_command + "\\s*\\(?\\s*$", line)) {
+			// Continue if the line does not have any further information after the command
+			if (Pattern.matches(lastCommand + "\\s*\\(?\\s*$", line)) {
+				continue;
+			}
+
+			// Counts local file dependencies
+			if (Pattern.matches(lastCommand + "\\s+file(s|Tree).*", line)) {
+				incrementFiles();
+				continue;
+			}
+
+			// Counts method calls to resolve dependencies
+			if (Pattern.matches(lastCommand+"\\s+\\w+\\(\\).*", line)) {
+				incrementMethods();
 				continue;
 			}
 
 			// Extracts version information out of line
 			List<String> version = getVersionNum(line, file, url);
-			// printString(last_command + ": " + version.toString());
-			
-			if (version.size() > 1) {
-				printString(deps);
-				printString(last_command + ": " + version);
-			}
+			incrementFound();
 
-			//if (Pattern.matches(last_command + "\\s+[a-zA-Z]+\\(\\)\\s*$", line))
-			//	printString(file);
+			if (version.isEmpty()) {
+				Pattern p = Pattern.compile("apply from:.*");
+				Matcher matcher = p.matcher(file);
+				while (matcher.find()) {
+					printString(matcher.group());
+				}
+				printString(url);
+				printString(lastCommand + ": " + line);
+			}
 		}
 	}
 

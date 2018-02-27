@@ -1,13 +1,20 @@
 package githubScraper.DependencyFinders;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.stream.Collectors;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -17,7 +24,7 @@ import githubScraper.ProductionMBean;
 
 public class ProductionParseFiles implements ProductionMBean {
 	private static final int PRODUCER_COUNT = 1;
-	private static final int CONSUMER_COUNT = 1;
+	private static final int CONSUMER_COUNT = 10;
 	private static final int BUFFER_SIZE = 50;
 
 	private static Connection c;
@@ -38,6 +45,8 @@ public class ProductionParseFiles implements ProductionMBean {
 	private List<ConsumerParseFiles> consumers = new ArrayList<ConsumerParseFiles>();
 	private BlockingQueue <String[]> queue = new ArrayBlockingQueue<String[]>(BUFFER_SIZE);
 	private Counter jobCounter = new Counter("processed jobs");
+	private GradleDependencyFinder gradle;
+	private BufferedWriter out = null;
 
 	public static void main(String[] args) {
 		new ProductionParseFiles().start();
@@ -55,7 +64,18 @@ public class ProductionParseFiles implements ProductionMBean {
 			System.err.println(e.getClass().getName()+": "+e.getMessage());
 			System.exit(0);
 		}
+		
+		// Log
+		try {
+			out = new BufferedWriter(new FileWriter("Tests.txt"));
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
+		// Logic
+		gradle = new GradleDependencyFinder(c, out);
+		
 		// start producers
 		for (int i=0;i<PRODUCER_COUNT;i++) {
 			ProducerParseFiles producer = new ProducerParseFiles(queue);
@@ -67,7 +87,7 @@ public class ProductionParseFiles implements ProductionMBean {
 
 		// start consumers
 		for (int i=0;i<CONSUMER_COUNT;i++) {
-			ConsumerParseFiles consumer = new ConsumerParseFiles(queue, jobCounter, c);
+			ConsumerParseFiles consumer = new ConsumerParseFiles(queue, jobCounter, c, gradle);
 			Thread thread2 = new Thread(consumer);
 			thread2.setName("consumer - " + i); // name to facilitate analysis with VisualVM or similar tool
 			thread2.start();
@@ -111,14 +131,51 @@ public class ProductionParseFiles implements ProductionMBean {
 		}
 		// wait to see whether there are still jobs, if none left, stop consumers
 		// now we can safely stop consumers
-		if (queue.isEmpty()){
-			for (ConsumerParseFiles consumer:consumers) {
-				consumer.stop();
+		while (!queue.isEmpty()){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {}
+		}
+		for (ConsumerParseFiles consumer:consumers) {
+			consumer.stop();
+		}
+		for (ConsumerParseFiles consumer:consumers) {
+			while (!consumer.done){
+				try {
+					Thread.sleep(200);
+					stop();
+				} catch (InterruptedException e) {}
 			}
 		}
+		
+		// Info
 		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {}
+			out.write("Dependencies found: " + gradle.found);
+			out.write("\n");
+			/*out.write(gradle.commands.entrySet().stream()
+					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
+			out.write("\n");*/
+			out.write(gradle.commands.values().stream().reduce(0, Integer::sum).toString());
+			out.write("\n");
+			/*out.write("Not found: " + gradle.notFound.entrySet().stream()
+					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
+			out.write("\n");*/
+			out.write(gradle.notFound.values().stream().reduce(0, Integer::sum).toString());
+			out.write("\n");
+			out.write("Dependencies by file: " + gradle.files);
+			out.write("\n");
+			out.write("Dependencies by method: " + gradle.methods);
+			out.close();
+			System.out.println("file closed");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// Close DB connection
 		try {
