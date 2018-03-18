@@ -1,7 +1,7 @@
 /.gradle/
 /bin/
 private_tokens.txt
-/data/
+/data/*.csv
 /old/
 .project
 .pydevproject
@@ -11,6 +11,5 @@ private_tokens.txt
 /
 /Tests.txt
 /_2018SS.iml
-!**.sas
 /groovy-core-master/
 **test.java

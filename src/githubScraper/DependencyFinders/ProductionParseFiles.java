@@ -143,32 +143,33 @@ public class ProductionParseFiles implements ProductionMBean {
 			while (!consumer.done){
 				try {
 					Thread.sleep(200);
-					stop();
 				} catch (InterruptedException e) {}
 			}
 		}
 		
 		// Info
 		try {
+			out.flush();
 			out.write("Dependencies found: " + gradle.found);
 			out.write("\n");
-			/*out.write(gradle.commands.entrySet().stream()
+			out.write(gradle.commands.entrySet().stream()
 					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
 					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
-			out.write("\n");*/
+			out.write("\n");
 			out.write(gradle.commands.values().stream().reduce(0, Integer::sum).toString());
 			out.write("\n");
-			/*out.write("Not found: " + gradle.notFound.entrySet().stream()
+			out.write("Not found: " + gradle.notFound.entrySet().stream()
 					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
 					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
-			out.write("\n");*/
+			out.write("\n");
 			out.write(gradle.notFound.values().stream().reduce(0, Integer::sum).toString());
 			out.write("\n");
 			out.write("Dependencies by file: " + gradle.files);
 			out.write("\n");
 			out.write("Dependencies by method: " + gradle.methods);
+			out.flush();
 			out.close();
 			System.out.println("file closed");
 			

@@ -72,7 +72,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 			notFound.put(variable, ++i);
 	}
 	
-	private void printString(String s) {
+	private synchronized void printString(String s) {
 		try {
 			out.write(s);
 			out.write("\n");
@@ -146,31 +146,18 @@ public class GradleDependencyFinder implements DependencyFinder {
 		Matcher m2 = getVariableQuotes.matcher(file);
 
 		if (m.find()) {
-			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("]", "").split(",\n"));
+			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("]\"\'", "").split(",\n"));
 		} else if (m2.find()) {
-			variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("\"\'", ""));
+			variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("[\"\']", ""));
 		}
 
 		return variable;
 	}
 
-	// Use getVariable
-	private String resolveVariable (String file, String variable) {
-		Pattern pvar = Pattern.compile("(?:" + variable + "\\s*=\\s*[\'\"])[^\'\"]+(?:[\'\"])");
-		Matcher m = pvar.matcher(file);
-		if (m.find()) {
-			Matcher m2 = NUMBER_VERSION.matcher(m.group().split("=")[1]);
-			if (m2.find()) {
-				return m2.group();
-			}
-		}
-		return "";
-	}
-
 	//
-	private String getVersionFromVariable (String file, List<String> ext, String var, String url) {
+	private List<String> getVersionFromVariable (String file, List<String> ext, String var, String url) {
 		String variable = var.replaceAll("[\\$\\{\\}]", "");
-		String temp = resolveVariable(file, variable);
+		List<String> temp = getVariable(file, variable);
 		if (!temp.isEmpty()) {
 			return temp;
 		}
@@ -180,10 +167,10 @@ public class GradleDependencyFinder implements DependencyFinder {
 			Pattern p = Pattern.compile("apply from:.*");
 			Matcher matcher = p.matcher(file);
 			while (matcher.find()) {
-				temp = matcher.group().replaceAll("apply from:\\s*", "").replaceAll("[\'\"]", "").trim();
+				temp.add(matcher.group().replaceAll("apply from:\\s*", "").replaceAll("[\'\"]", "").trim());
 				// Sometimes apply from: use a relative path, sometimes a full url, so try both ways
 				try {
-					ext.add(CollectFileFromURL.getFile(temp));
+					ext.add(CollectFileFromURL.getFile(temp.get(temp.size()-1)));
 				} catch (IllegalArgumentException e) {
 					ext.add(CollectFileFromURL.getFile(url.replaceAll("github", "raw.githubusercontent") + "/master/" + temp));
 				}
@@ -192,7 +179,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 
 		// Checks for variables in external files
 		for (String s: ext) {
-			temp = resolveVariable(s, variable);
+			temp.addAll(getVariable(s, variable));
 			if (!temp.isEmpty()) {
 				return temp;
 			}
@@ -201,7 +188,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		// Records unmatched variables
 		addNotFound(variable);
 		
-		return "";
+		return temp;
 	}
 
 	// Takes one line of dependencies (trimmed), resolves any variables, and returns the version number
@@ -216,14 +203,17 @@ public class GradleDependencyFinder implements DependencyFinder {
 
 		try {
 			// Get variables and versions for further processing
-			if (mmap.find()) { // Version is written as a map
+			// Version is written as a map
+			if (mmap.find()) {
 				rawVersions.add(mmap.group());
-			} else if (m.find()) { // Version is written as a string
+			// Version is written as a string
+			} else if (m.find()) { 
 				rawVersions.add(m.group().split(":")[2]);
 				while(m.find()) {
 					rawVersions.add(m.group().split(":")[2]);
 				}
-			} else if (mvariable.find()) { // Line lists variables which need resolving
+			// Line lists variables which need resolving
+			} else if (mvariable.find()) { 
 				String[] temp = mvariable.group().split("[,\\s]+");
 				for (int i=1; i < temp.length; i++) {
 					List<String> temp2 = getVariable(file, temp[i]);
@@ -231,13 +221,14 @@ public class GradleDependencyFinder implements DependencyFinder {
 						for (int j=0; j < temp2.size(); j++) {
 							resolvedVersions.addAll(getVersionNum(temp2.get(j), file, url));
 						}
-					} else {
+					} else { // No variable found... print variable and url to system out
 						System.out.println(temp[i]);
 						System.out.println(url);
 					}
 
 				}
-			} else { // Neither, empty list returned
+			// Neither, empty list returned
+			} else { 
 				return resolvedVersions;
 			}
 			
@@ -247,7 +238,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 				// Resolves variables into versions i.e. ${springVersion}
 				m = VARIABLE_VERSION.matcher(tot);
 				if (m.find()) { 
-					resolvedVersions.add(getVersionFromVariable(file, ext, m.group(), url));
+					resolvedVersions.addAll(getVersionFromVariable(file, ext, m.group(), url));
 					continue;
 				}
 
@@ -265,10 +256,10 @@ public class GradleDependencyFinder implements DependencyFinder {
 					continue;
 				}
 			}
-		} catch (IndexOutOfBoundsException e) { 
-			printString("\t\t"+line);
+		} catch (IndexOutOfBoundsException e) { // Triggers when group:project:version syntax is not followed
+			//printString("\t\t"+line);
 			incrementNoVersion();
-			resolvedVersions.add("noVersion");
+			resolvedVersions.add("noVersion "+line); // Once commented out, no version lines will return an empty list
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -310,9 +301,13 @@ public class GradleDependencyFinder implements DependencyFinder {
 			// Counts types of commands
 			addCommands(lastCommand);
 
+			/*
 			// Ignores commands that are not useful for analysis
-			if (!Arrays.asList(WANTED_COMMANDS).contains(lastCommand))
+			if (!Arrays.asList(WANTED_COMMANDS).contains(lastCommand)) {
+				printString(line);
 				continue;
+			}*/
+				
 
 			// Continue if the line does not have any further information after the command
 			if (Pattern.matches(lastCommand + "\\s*\\(?\\s*$", line)) {
@@ -332,10 +327,13 @@ public class GradleDependencyFinder implements DependencyFinder {
 			}
 
 			// Extracts version information out of line
+			// When no version information is found, empty list is returned
 			List<String> version = getVersionNum(line, file, url);
+			printString(line);
+			printString(version.toString() + " " + lastCommand);
 			incrementFound();
 
-			if (version.isEmpty()) {
+			/*if (version.isEmpty()) { // No information found for this version
 				Pattern p = Pattern.compile("apply from:.*");
 				Matcher matcher = p.matcher(file);
 				while (matcher.find()) {
@@ -343,7 +341,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 				}
 				printString(url);
 				printString(lastCommand + ": " + line);
-			}
+			}*/
 		}
 	}
 
