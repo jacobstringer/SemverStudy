@@ -1,4 +1,5 @@
 FIRST 10000 GRADLE FILES - ALL DEPENDENCY CLOSURE LINES ANALYSED
+First 622 lines as expected
 
 testRuntime "org.apache.openejb:javaee-api:5.0-2",
 [5.0] testRuntime

@@ -222,8 +222,8 @@ public class GradleDependencyFinder implements DependencyFinder {
 							resolvedVersions.addAll(getVersionNum(temp2.get(j), file, url));
 						}
 					} else { // No variable found... print variable and url to system out
-						System.out.println(temp[i]);
-						System.out.println(url);
+						//System.out.println(temp[i]);
+						//System.out.println(url);
 					}
 
 				}
