@@ -41,7 +41,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 	public static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"][^\'\"]+[\'\"]");
 	public static final Pattern NUMBER_VERSION = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
 	public static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[^\'\":]+");
-	public static final Pattern FIND_COMMAND = Pattern.compile("^[a-zA-Z]+");
+	public static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
 	public static final Pattern LATEST = Pattern.compile("latest");
 	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
 
@@ -259,7 +259,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		} catch (IndexOutOfBoundsException e) { // Triggers when group:project:version syntax is not followed
 			//printString("\t\t"+line);
 			incrementNoVersion();
-			resolvedVersions.add("noVersion "+line); // Once commented out, no version lines will return an empty list
+			//resolvedVersions.add("noVersion "+line); // Once commented out, no version lines will return an empty list - excludes trip this often
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -330,7 +330,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 			// When no version information is found, empty list is returned
 			List<String> version = getVersionNum(line, file, url);
 			printString(line);
-			printString(version.toString() + " " + lastCommand);
+			//printString(version.toString() + " " + lastCommand);
 			incrementFound();
 
 			/*if (version.isEmpty()) { // No information found for this version
