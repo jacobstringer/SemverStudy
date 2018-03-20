@@ -1,17 +1,10 @@
 package githubScraper.DependencyFinders;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
-import java.util.stream.Collectors;
-
 import githubScraper.Counter;
 
 /**
@@ -39,6 +32,22 @@ public class ConsumerParseFiles implements Runnable {
 		stopped = true;
 	}
 
+	private synchronized String[] takeFromQueue() {
+		if(!queue.isEmpty()){
+			try {
+				String[] t = queue.take();
+				if (t[0] == null && t[1] == null && t[2] == null) {
+					stop();
+					return null;
+				}
+				return t;
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		} 
+		return null;
+	}
+
 	@Override
 	public void run() {
 		// Initialise classes	
@@ -47,44 +56,37 @@ public class ConsumerParseFiles implements Runnable {
 		//NPMDependencyFinder npm = new NPMDependencyFinder(c);
 		//PomDependencyFinder pom = new PomDependencyFinder();
 		//RakeDependencyFinder rake = new RakeDependencyFinder();
-		
+
 		while (!stopped) {
+			// Take file, filetype, and url info information out of queue
+			String[] file_string = takeFromQueue();
+			if(file_string == null){
+				continue;
+			}
+
+			// Check for repeats
 			try {
-				// Take file, filetype, and url info information out of queue
-				String[] file_string;
-				if(!queue.isEmpty()){
-					file_string = queue.take();
-				} else {
+				PreparedStatement query = c.prepareStatement("SELECT * FROM npm WHERE url=?");
+				query.setString(1, file_string[2]);
+				ResultSet rs = query.executeQuery();
+				if (rs.isBeforeFirst()) {
 					continue;
 				}
-				
-				// Check for repeats
-				try {
-					PreparedStatement query = c.prepareStatement("SELECT * FROM npm WHERE url=?");
-					query.setString(1, file_string[2]);
-					ResultSet rs = query.executeQuery();
-					if (rs.isBeforeFirst()) {
-						continue;
-					}
-				} catch (SQLException e1) {
-					e1.printStackTrace();
-				}
-				
-				// Pass onto parsers to extract semantic version information
-				//int[] dependencies = null;
-				switch (file_string[1]) {
-				//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
-				case "Gradle": {df.findVersionData(file_string[0], file_string[2]); break;}
-				//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
-				//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
-				//case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
-				}
-				
-				counter.added_to_db();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
 			}
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			} 
+
+			// Pass onto parsers to extract semantic version information
+			//int[] dependencies = null;
+			switch (file_string[1]) {
+			//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
+			case "Gradle": {df.findVersionData(file_string[0], file_string[2]); break;}
+			//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
+			//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
+			//case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
+			}
+
+			counter.added_to_db();
 
 		}
 		done = true;

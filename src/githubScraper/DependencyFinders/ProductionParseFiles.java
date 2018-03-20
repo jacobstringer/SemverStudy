@@ -25,7 +25,7 @@ import githubScraper.ProductionMBean;
 public class ProductionParseFiles implements ProductionMBean {
 	private static final int PRODUCER_COUNT = 1;
 	private static final int CONSUMER_COUNT = 10;
-	private static final int BUFFER_SIZE = 50;
+	private static final int BUFFER_SIZE = 1000;
 
 	private static Connection c;
 
@@ -131,44 +131,17 @@ public class ProductionParseFiles implements ProductionMBean {
 		}
 		// wait to see whether there are still jobs, if none left, stop consumers
 		// now we can safely stop consumers
-		while (!queue.isEmpty()){
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {}
-		}
-		for (ConsumerParseFiles consumer:consumers) {
-			consumer.stop();
-		}
 		for (ConsumerParseFiles consumer:consumers) {
 			while (!consumer.done){
+				System.out.print("w");
 				try {
-					Thread.sleep(200);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {}
 			}
 		}
 		
 		// Info
 		try {
-			out.flush();
-			out.write("Dependencies found: " + gradle.found);
-			out.write("\n");
-			out.write(gradle.commands.entrySet().stream()
-					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
-			out.write("\n");
-			out.write(gradle.commands.values().stream().reduce(0, Integer::sum).toString());
-			out.write("\n");
-			out.write("Not found: " + gradle.notFound.entrySet().stream()
-					.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-					.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
-					(oldValue, newValue) -> oldValue, LinkedHashMap::new)).toString());
-			out.write("\n");
-			out.write(gradle.notFound.values().stream().reduce(0, Integer::sum).toString());
-			out.write("\n");
-			out.write("Dependencies by file: " + gradle.files);
-			out.write("\n");
-			out.write("Dependencies by method: " + gradle.methods);
 			out.flush();
 			out.close();
 			System.out.println("file closed");

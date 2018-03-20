@@ -1,0 +1,5528 @@
+Problem at line 1795
+
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.4'
+1.7.4 fixed
+groovy group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+testCompile 'org.jmock:jmock:2.5.1'
+2.5.1 fixed
+testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
+0.4 fixed
+testCompile 'org.jmock:jmock-junit4:2.5.1'
+2.5.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+testRuntime "cglib:cglib-nodep:2.2"     // enables mocking of classes (in addition to interfaces)
+2.2 fixed
+groovy group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
+0.4 fixed
+testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
+1.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.2'
+1.7.2 fixed
+groovy 'org.codehaus.groovy:groovy:2.1.1'
+2.1.1 fixed
+compile 'org.eclipse.jetty:jetty-server:9.0.0.v20130308',
+9.0.0 fixed
+'org.spockframework:spock-core:0.7-groovy-2.0',
+0.7 fixed
+'org.slf4j:jcl-over-slf4j:1.7.4'
+1.7.4 fixed
+testCompile 'ch.qos.logback:logback-classic:1.0.10'
+1.0.10 fixed
+scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
+2.7.7 fixed
+testCompile 'org.codehaus.groovy.modules.http-builder:http-builder:0.6', {
+0.6 fixed
+scalaTools "org.scala-lang:scala-library:$scalaVersion"
+2.7.7 fixed
+compile      group: 'org.hamcrest',  name: 'hamcrest-integration',    version: '1.2'
+1.2 fixed
+compile "org.scala-lang:scala-library:$scalaVersion"
+2.7.7 fixed
+testCompile  group: 'org.jmock',     name: 'jmock',           version: '2.5.1'
+2.5.1 fixed
+testCompile  group: 'org.jmock',     name: 'jmock-junit4',    version: '2.5.1'
+2.5.1 fixed
+testCompile "org.scalatest:scalatest:$scalatestVersion"
+1.0 fixed
+testCompile  group: "junit",         name: 'junit-dep',       version: "4.8.2"
+4.8.2 fixed
+testCompile "org.scalatest:scalatest:$scalatestVersion"
+latest major
+testCompile 'junit:junit:4.6'
+4.6 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.seleniumhq.selenium:selenium:2.0a7'
+2.0 fixed
+testCompile 'org.testng:testng:5.14.1'
+5.14.1 fixed
+[group: 'org.spockframework', name: 'spock-core', version: '0.2'],
+0.2 fixed
+[group: 'junit', name: 'junit', version: '4.6']
+4.6 fixed
+[group: 'net.sourceforge.cobertura', name: 'cobertura', version: '1.9'],
+1.9 fixed
+[group: 'cglib', name: 'cglib-nodep', version: '2.1_3'],
+2.1 fixed
+[group: 'org.objenesis', name: 'objenesis', version: '1.1'],
+1.1 fixed
+[group: 'org.easyb', name: 'easyb', version: '0.9.5.2']
+0.9.5 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.6.5'
+1.6.5 fixed
+groovy group: 'commons-cli', name: 'commons-cli', version: '1.1'
+1.1 fixed
+cpdConf group: 'pmd', name: 'pmd', version: '4.2.5'
+4.2.5 fixed
+testRuntime "org.apache.openejb:javaee-api:5.0-2",
+5.0 fixed
+compile group: 'commons-httpclient', name:'commons-httpclient', version:'3.1'
+3.1 fixed
+compile 'org.codehaus.groovy:groovy-all:2.3.7'
+2.3.7 fixed
+compile 'pircbot:pircbot:1.5.0'
+1.5.0 fixed
+compile 'commons-logging:commons-logging:1.1.1'
+1.1.1 fixed
+testCompile 'junit:junit:4.11'
+4.11 fixed
+testCompile 'org.mockito:mockito-all:1.9.0'
+1.9.0 fixed
+runtime 'log4j:log4j:1.2.17'
+1.2.17 fixed
+boo "boo:boo:$booVersion"
+0.9.7 fixed
+compile group:'log4j', name:'log4j', version:'1.2.16'
+1.2.16 fixed
+compile group:'com.google.guava', name:'guava', version:'18.0'
+18.0 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+2.8.1 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-compiler', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-library', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.0.Beta2'
+3.6.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.6.0.Beta2', ext: 'jar'
+3.6.0 fixed
+compile group: 'jboss', name: 'javassist', version: '3.1'
+3.1 fixed
+compile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+2.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.0.0'
+2.0.0 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+"log4j:log4j:1.2.14",
+1.2.14 fixed
+"org.easymock:easymock:3.0",
+3.0 fixed
+"org.powermock:powermock-module-junit4:1.4.7",
+1.4.7 fixed
+"org.powermock:powermock-api-easymock:1.4.7",
+1.4.7 fixed
+"junit:junit:4.8.2"
+4.8.2 fixed
+compile 'com.miglayout:miglayout:3.7.3.1:swing'
+3.7.3 fixed
+compile 'javax.mail:mail:1.4.3'
+1.4.3 fixed
+compile 'ch.qos.logback:logback-classic:0.9.24'
+0.9.24 fixed
+compile 'com.google.collections:google-collections:1.0'
+1.0 fixed
+compile 'com.google.inject:guice:2.0'
+2.0 fixed
+compile 'org.jasypt:jasypt:1.6'
+1.6 fixed
+compile 'org.yaml:snakeyaml:1.6'
+1.6 fixed
+compile 'foxtrot:foxtrot-core:3.0'
+3.0 fixed
+compile 'commons-io:commons-io:1.4'
+1.4 fixed
+compile 'com.dteoh:treasuremap:0.1.1'
+0.1.1 fixed
+compile 'org.jsoup:jsoup:1.3.3'
+1.3.3 fixed
+compile 'net.java.dev.jna:jna:3.2.7'
+3.2.7 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+testCompile 'org.easytesting:fest-swing-junit:1.2a4'
+1.2 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+testCompile 'org.jvnet.mock-javamail:mock-javamail:1.9'
+1.9 fixed
+testCompile 'nl.jqno.equalsverifier:equalsverifier:0.6.4'
+0.6.4 fixed
+testCompile 'org.objenesis:objenesis:1.1'
+1.1 fixed
+testCompile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+compile group: 'com.google.guava', name: 'guava', version: '10.0.1'
+10.0.1 fixed
+compile "commons-logging:commons-logging:1.1.1"
+1.1.1 fixed
+testCompile "log4j:log4j:1.2.16"
+1.2.16 fixed
+testCompile "junit:junit:4.10"
+4.10 fixed
+testCompile "org.mockito:mockito-all:1.8.5"
+1.8.5 fixed
+testCompile "org.easytesting:fest-assert:1.4"
+1.4 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.0'
+1.7.0 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+[group: 'commons-logging', name: 'commons-logging', version: '1.1.1'],
+1.1.1 fixed
+[group: 'log4j', name: 'log4j', version: '1.2.16']
+1.2.16 fixed
+compile 'org.jboss.jdocbook:jdocbook-core:1.0.5'
+1.0.5 fixed
+compile 'org.apache.ant:ant:1.7.0'
+1.7.0 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+testCompile jmock, spock, slf4j_impl
+2.5.1 fixed
+testCompile jmock, spock, slf4j_impl
+1.1 fixed
+testCompile jmock, spock, slf4j_impl
+1.1 fixed
+testCompile jmock, spock, slf4j_impl
+2.5.1 fixed
+testCompile jmock, spock, slf4j_impl
+2.5.1 fixed
+testCompile jmock, spock, slf4j_impl
+1.2 fixed
+testCompile jmock, spock, slf4j_impl
+2.2 fixed
+testCompile jmock, spock, slf4j_impl
+0.5 fixed
+testCompile jmock, spock, slf4j_impl
+1.1 fixed
+testCompile jmock, spock, slf4j_impl
+2.2 fixed
+testCompile jmock, spock, slf4j_impl
+1.2 fixed
+testCompile jmock, spock, slf4j_impl
+1.6.1 fixed
+testCompile jmock, spock, slf4j_impl
+1.6.1 fixed
+deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+1.0 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+provided 'javax.el:el-api:2.2'
+2.2 fixed
+provided 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+provided 'javax.servlet.jsp:jsp-api:2.2'
+2.2 fixed
+testCompile 'junit:junit:4.11'
+4.11 fixed
+compile group: 'org.apache.wicket', name: 'wicket', version: '1.5-SNAPSHOT'
+1.5 fixed
+compile group: 'org.apache.wicket', name: 'wicket-guice', version: '1.5-SNAPSHOT'
+1.5 fixed
+compile group: 'org.hibernate', name: 'ejb3-persistence', version: '1.0.2.GA'
+1.0.2 fixed
+compile group: 'org.hibernate', name: 'hibernate-annotations', version: '3.4.0.GA'
+3.4.0 fixed
+compile group: 'org.hibernate', name: 'hibernate-commons-annotations', version: '3.3.0.ga'
+3.3.0 fixed
+compile group: 'org.hibernate', name: 'hibernate-search', version: '3.1.0.GA'
+3.1.0 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.CR5'
+1.0 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.14'
+1.2.14 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.5.8'
+1.5.8 fixed
+compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+1.1.1 fixed
+compile group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.25', scope: 'provided'
+6.1.25 fixed
+compile group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.25', scope: 'provided'
+6.1.25 fixed
+compile group: 'org.mortbay.jetty', name: 'jetty-management', version: '6.1.25', scope: 'provided'
+6.1.25 fixed
+compile group: 'org.quartz-scheduler', name: 'quartz', version: '1.8.3'
+1.8.3 fixed
+compile group: 'commons-io', name: 'commons-io', version: '1.4'
+1.4 fixed
+compile group: 'com.google.guava', name: 'guava', version: 'r07'
+07 fixed
+compile group: 'org.mockito', name: 'mockito-all', version: '1.8.1'
+1.8.1 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.2'
+1.7.2 fixed
+compile 'org.slf4j:slf4j-log4j12:1.5.2'
+1.5.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.4'
+4.4 fixed
+testCompile group: 'org.hibernate', name: 'hibernate-validator', version: '4.0.0.CR1'
+4.0.0 fixed
+compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+1.0.6 fixed
+compile "org.slick2d:slick2d-core:$slick2d_version"
+1.0.2 fixed
+compile "org.slick2d:slick2d-core:$slick2d_version"
+2 fixed
+compile "org.lwjgl.lwjgl:lwjgl-platform:2.9.3"
+2.9.3 fixed
+compile group: 'org.apache.ant', name: 'ant', version: '1.8.1'
+1.8.1 fixed
+deployerJars group: 'org.apache.maven.wagon', name: 'wagon-ssh', version: '1.0-beta-2'
+1.0 fixed
+groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+2.0.4 fixed
+compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+2.0.4 fixed
+compile "org.springframework:spring-core:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-beans:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-context:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-context-support:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-web:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-webmvc:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.springframework:spring-jdbc:${springVersion}"
+3.1.3.RELEASE fixed
+compile "org.slf4j:slf4j-api:${slf4jVersion}"
+1.5.6 fixed
+compile "org.slf4j:slf4j-api:${slf4jVersion}"
+4 fixed
+compile "org.slf4j:slf4j-log4j12:${slf4jVersion}"
+1.5.6 fixed
+compile "org.slf4j:slf4j-log4j12:${slf4jVersion}"
+4 fixed
+compile "org.codehaus.jackson:jackson-core-asl:${jacksonVersion}"
+1.6.3 fixed
+compile "org.codehaus.jackson:jackson-mapper-asl:${jacksonVersion}"
+1.6.3 fixed
+compile "com.google.guava:guava:13.0.1"
+13.0.1 fixed
+compile "org.hsqldb:hsqldb:${hsqldbVersion}"
+2.0.0 fixed
+compile "org.hsqldb:sqltool:${hsqldbVersion}"
+2.0.0 fixed
+compile "commons-dbcp:commons-dbcp:1.4"
+1.4 fixed
+compile "joda-time:joda-time:1.6.2"
+1.6.2 fixed
+compile "org.json:json:20090211"
+20090211 fixed
+compile "opensymphony:quartz-all:1.6.3"
+1.6.3 fixed
+compile("org.codehaus.groovy.modules.http-builder:http-builder:0.6") {
+0.6 fixed
+compile "mysql:mysql-connector-java:5.1.16"
+5.1.16 fixed
+runtime "javax.servlet:jstl:1.2"
+1.2 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+testCompile "org.springframework:spring-test:${springVersion}"
+3.1.3.RELEASE fixed
+testCompile "junit:junit:4.10"
+4.10 fixed
+testCompile "org.hamcrest:hamcrest-library:1.3"
+1.3 fixed
+testCompile "org.easymock:easymock:3.0"
+3.0 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+scalaTools "org.scala-lang:scala-compiler:$scalaVersion",
+2.8.1 fixed
+"org.scala-lang:scala-library:$scalaVersion"
+2.8.1 fixed
+compile "org.scala-lang:scala-library:$scalaVersion",
+2.8.1 fixed
+"net.liftweb:lift-mapper_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"net.liftweb:lift-webkit_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"net.liftweb:lift-util_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"net.liftweb:lift-actor_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"net.liftweb:lift-common_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"net.liftweb:lift-json_$scalaVersion:$liftVersion",
+2.2-RC4 fixed
+"com.h2database:h2:1.2.138"
+1.2.138 fixed
+testCompile "junit:junit:4.5",
+4.5 fixed
+"org.scala-tools.testing:specs_$scalaVersion:$specsVersion",
+1.6.6 fixed
+"org.scala-lang:scala-compiler:$scalaVersion",
+2.8.1 fixed
+'org.mortbay.jetty:jetty:6.1.25',
+6.1.25 fixed
+'org.mortbay.jetty:jetty-util:6.1.25',
+6.1.25 fixed
+'org.mortbay.jetty:jetty-management:6.1.25',
+6.1.25 fixed
+"org.scala-lang:scala-compiler:$scalaVersion"  // Needed for LiftConsole
+2.8.1 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+groovy group: 'org.mbte.groovypp', name: 'groovypp', version: "$gppVersion"
+0.4.115 fixed
+compile group: 'org.mbte.groovypp', name: 'groovypp', version: "$gppVersion"
+0.4.115 fixed
+compile group: 'org.mbte.groovypp', name: 'gretty', version: "0.4.121"
+0.4.121 fixed
+compile group: 'com.amazonaws', name: 'aws-java-sdk', version: "1.1.0"
+1.1.0 fixed
+runtime(group: 'commons-cli', name: 'commons-cli', version: '1.1')
+1.1 fixed
+compile group: 'joda-time', name:'joda-time', version:'1.6'
+1.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.23'
+1.23 fixed
+gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.1'
+1.1 fixed
+gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7'
+1.7 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+compile "org.springframework:spring-core:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework:spring-webmvc:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework:spring-tx:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework:spring-aop:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework:spring-aspects:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework.security:spring-security-config:$springSecurityVersion",
+3.0.5.RELEASE fixed
+"org.springframework.security:spring-security-core:$springSecurityVersion",
+3.0.5.RELEASE fixed
+"org.springframework.security:spring-security-web:$springSecurityVersion",
+3.0.5.RELEASE fixed
+"org.springframework.security:spring-security-taglibs:$springSecurityVersion",
+3.0.5.RELEASE fixed
+"org.aspectj:aspectjrt:1.6.8",
+1.6.8 fixed
+"org.aspectj:aspectjweaver:1.6.8",
+1.6.8 fixed
+"org.axonframework:axon-core:$axonVersion",
+1.1-SNAPSHOT fixed
+"org.axonframework.incubator:axon-googleappengine:1.1-SNAPSHOT",
+1.1 fixed
+"com.googlecode.objectify:objectify:2.2.2",
+2.2.2 fixed
+"javax.persistence:persistence-api:1.0",
+1.0 fixed
+"opensymphony:sitemesh:2.4.2"
+2.4.2 fixed
+compile "javax.servlet:jstl:1.1.2",
+1.1.2 fixed
+"javax.servlet:servlet-api:2.5",
+2.5 fixed
+"taglibs:standard:1.1.2"
+1.1.2 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"org.slf4j:slf4j-api:$slf4jVersion",
+1.6.1 fixed
+"org.slf4j:slf4j-api:$slf4jVersion",
+4 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+1.6.1 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+4 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+1.6.1 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile("log4j:log4j:1.2.16") {
+1.2.16 fixed
+compile "com.google.appengine:appengine-api-1.0-sdk:$gaeVersion"
+1.5.1 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+testCompile "junit:junit:4.8.1",
+4.8.1 fixed
+"org.axonframework:axon-test:$axonVersion",
+1.1-SNAPSHOT fixed
+"com.google.appengine:appengine-testing:$gaeVersion"
+1.5.1 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+provided 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'org.apache.tomcat:catalina:6.0.26'
+6.0.26 fixed
+compile 'org.springframework.data:spring-data-riak:1.0.0.M2-SNAPSHOT'
+1.0.0 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.0.2'
+1.0.2 fixed
+groovy("org.codehaus.groovy:groovy-all:1.7.5")
+1.7.5 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testCompile "org.hamcrest:hamcrest-core:1.2" // only necessary if Hamcrest matchers are used
+1.2 fixed
+testRuntime "cglib:cglib-nodep:2.2"     // enables mocking of classes (in addition to interfaces)
+2.2 fixed
+testRuntime "org.objenesis:objenesis:1.2" // enables mocking of classes without default constructor (together with CGLIB)
+1.2 fixed
+testRuntime "com.h2database:h2:1.2.147"
+1.2.147 fixed
+compile         group: 'org.codehaus.jackson' , name: 'jackson-core-asl'   , version: '1.6.4'
+1.6.4 fixed
+compile         group: 'org.codehaus.jackson' , name: 'jackson-mapper-asl' , version: '1.6.4'
+1.6.4 fixed
+compile         group: 'org.postgresql'       , name: 'postgresql'         , version: '9.3-1101-jdbc4'
+9.3 fixed
+compile         group: 'org.slf4j'            , name: 'slf4j-log4j12'      , version: '1.7.7'
+1.7.7 fixed
+compile         group: 'org.apache.wicket'    , name: 'wicket'             , version: '6.15.0'
+6.15.0 fixed
+compile         group: 'org.apache.wicket'    , name: 'wicket-auth-roles'  , version: '6.15.0'
+6.15.0 fixed
+compile         group: 'org.apache.wicket'    , name: 'wicket-devutils'    , version: '6.15.0'
+6.15.0 fixed
+compile         group: 'org.apache.wicket'    , name: 'wicket-datetime'    , version: '6.15.0'
+6.15.0 fixed
+compile         group: 'org.apache.wicket'    , name: 'wicket-extensions'  , version: '6.15.0'
+6.15.0 fixed
+providedCompile group: 'javax.servlet'        , name: 'javax.servlet-api'  , version: '3.1.0'
+3.1.0 fixed
+testCompile     group: 'commons-io'           , name: 'commons-io'         , version: '2.4'
+2.4 fixed
+testCompile     group: 'junit'                , name: 'junit'              , version: '4.8.1'
+4.8.1 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.0-beta-2'
+1.8.0 fixed
+deployerJars "org.apache.maven.wagon:wagon-ssh:1.0-beta-6"
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile HAMCREST
+1.2 fixed
+testCompile HAMCREST
+1.2 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+runtime 'org.slf4j:jcl-over-slf4j:1.6.1'
+1.6.1 fixed
+runtime 'ch.qos.logback:logback-classic:0.9.26'
+0.9.26 fixed
+compile 'org.apache.camel:camel-core:2.5.0'
+2.5.0 fixed
+runtime 'org.apache.camel:camel-xmpp:2.5.0'
+2.5.0 fixed
+runtime 'org.apache.camel:camel-xstream:2.5.0'
+2.5.0 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.5'
+1.7.5 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+def jettyurl="org.mortbay.jetty:jetty:6.1.25"
+6.1.25 fixed
+groovy group: "org.codehaus.groovy", name: "groovy-all", version: "2.0.1"
+2.0.1 fixed
+compile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile "org.mortbay.jetty:jsp-api-2.1:6.1.14"
+6.1.14 fixed
+compile "javax.jcr:jcr:2.0"
+2.0 fixed
+compile "org.modeshape:modeshape-jcr:$modeShapeVersion"
+2.8.3.Final fixed
+compile "org.modeshape:modeshape-connector-disk:$modeShapeVersion"
+2.8.3.Final fixed
+compile "org.slf4j:slf4j-log4j12:1.6.6"
+1.6.6 fixed
+testCompile "junit:junit:4.10"
+4.10 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+compile 'javax.servlet:jstl:1.1.0'
+1.1.0 fixed
+compile 'taglibs:standard:1.1.2'
+1.1.2 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.5"
+1.7.5 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testCompile "org.codehaus.geb:geb-spock:0.5"
+0.5 fixed
+testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.0a5"
+2.0 fixed
+testCompile "org.seleniumhq.selenium:selenium-htmlunit-driver:2.0a5"
+2.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.2'
+2.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+compile group: 'org.springframework' , name: 'spring', version: '2.5.5'
+2.5.5 fixed
+compile group: 'log4j' , name: 'log4j' , version: '1.2.15'
+1.2.15 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+[group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '1.1.GA'],
+1.1 fixed
+[group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.6.4'],
+1.6.4 fixed
+[group: 'org.codehaus.jackson', name: 'jackson-core-asl', version: '1.6.4'],
+1.6.4 fixed
+[group: 'org.codehaus.jackson', name: 'jackson-jaxrs', version: '1.6.4'],
+1.6.4 fixed
+[group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26']
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile "com.h2database:h2:1.3.176"
+1.3.176 fixed
+compile "com.rometools:rome:1.5.1"
+1.5.1 fixed
+compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+2.0.0 fixed
+compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+2.0.0 fixed
+compile "commons-io:commons-io:2.4"
+2.4 fixed
+compile "org.apache.commons:commons-lang3:3.3.2"
+3.3.2 fixed
+compile "io.springfox:springfox-swagger2:2.4.0"
+2.4.0 fixed
+compile "io.springfox:springfox-swagger-ui:2.4.0"
+2.4.0 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy: 'org.codehaus.groovy:groovy-all:1.7.5@jar'
+1.7.5 fixed
+compile "org.easyb:easyb:0.9.8"
+0.9.8 fixed
+compile "junit:junit:4.4"
+4.4 fixed
+compile "org.springframework:spring-test:3.0.4.RELEASE"
+3.0.4 fixed
+testCompile "org.mockito:mockito-all:1.8.5"
+1.8.5 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+1.6.1 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+4 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+1.6.1 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile("log4j:log4j:1.2.15") {
+1.2.15 fixed
+def groovyDep = "org.codehaus.groovy:groovy:1.7.6"
+1.7.6 fixed
+compile  "org.slf4j:jcl-over-slf4j:1.6.1"
+1.6.1 fixed
+optional "oro:oro:2.0.8", "picocontainer:picocontainer:1.2", groovyDep
+2.0.8 fixed
+optional "oro:oro:2.0.8", "picocontainer:picocontainer:1.2", groovyDep
+1.2 fixed
+testCompile "junit:junit:3.8.2", "jmock:jmock:1.2.0", "junitperf:junitperf:1.8", groovyDep
+3.8.2 fixed
+testCompile "junit:junit:3.8.2", "jmock:jmock:1.2.0", "junitperf:junitperf:1.8", groovyDep
+1.2.0 fixed
+testCompile "junit:junit:3.8.2", "jmock:jmock:1.2.0", "junitperf:junitperf:1.8", groovyDep
+1.8 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+2.8.1 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-compiler', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-library', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.0.Beta2'
+3.6.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.6.0.Beta2', ext: 'jar'
+3.6.0 fixed
+compile group: 'jboss', name: 'javassist', version: '3.1'
+3.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.0.0'
+2.0.0 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.5'
+1.7.5 fixed
+testCompile "org.spockframework:spock-core:$spockVersion"
+0.4-groovy-1.7 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'commons-io', name: 'commons-io', version: '2.4'
+2.4 fixed
+compile group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.54'
+1.54 fixed
+compile group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.54'
+1.54 fixed
+compile "org.springframework:spring-context:$springVersion", "org.springframework:spring-webmvc:$springVersion",
+3.0.5.RELEASE fixed
+compile "org.springframework:spring-context:$springVersion", "org.springframework:spring-webmvc:$springVersion",
+3.0.5.RELEASE fixed
+"org.slf4j:slf4j-api:$slf4jVersion", "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+"org.slf4j:slf4j-api:$slf4jVersion", "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"org.slf4j:slf4j-api:$slf4jVersion", "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+"org.slf4j:slf4j-api:$slf4jVersion", "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"ch.qos.logback:logback-core:$logbackVersion", "ch.qos.logback:logback-classic:$logbackVersion"
+0.9.27 fixed
+"ch.qos.logback:logback-core:$logbackVersion", "ch.qos.logback:logback-classic:$logbackVersion"
+0.9.27 fixed
+testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
+4.8.2 fixed
+testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
+3.0.5.RELEASE fixed
+testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
+3.0 fixed
+testCompile "junit:junit:4.8.2", "org.springframework:spring-test:$springVersion", "org.easymock:easymock:3.0", "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
+2.0.1 fixed
+compile group: 'org.springframework', name: 'spring-core', version: '3.0.3.RELEASE'
+3.0.3 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.5.6'
+1.5.6 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.4'
+1.8.4 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.5.6'
+1.5.6 fixed
+testCompile group: 'log4j', name: 'log4j', version: '1.2.14'
+1.2.14 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+testCompile 'net.java.dev.jna:jna-platform:4.2.2'
+4.2.2 fixed
+gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7'
+1.7 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.6'
+1.7.6 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testRuntime 'net.sourceforge.cobertura:cobertura:1.9.3'
+1.9.3 fixed
+testCompile "junit:junit:4.8.1"
+4.8.1 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.5"
+1.7.5 fixed
+testCompile "org.codehaus.geb:geb-spock:0.5.1"
+0.5.1 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testCompile "org.codehaus.geb:geb-junit4:0.5.1"
+0.5.1 fixed
+testCompile "junit:junit-dep:4.8.2"
+4.8.2 fixed
+testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.0a5"
+2.0 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile HAMCREST
+1.2 fixed
+testCompile HAMCREST
+1.2 fixed
+compile "org.apache.maven:maven-core:3.0-beta-1"
+3.0 fixed
+compile "org.apache.maven:maven-model:3.0-beta-1"
+3.0 fixed
+compile "org.apache.maven:maven-artifact:3.0-beta-1"
+3.0 fixed
+compile "org.apache.maven:maven-model-builder:3.0-beta-1"
+3.0 fixed
+compile "org.apache.maven:maven-compat:3.0-beta-1"
+3.0 fixed
+compile "org.codehaus.plexus:plexus-container-default:1.5.4"
+1.5.4 fixed
+compile "org.codehaus.plexus:plexus-classworlds:2.2.3"
+2.2.3 fixed
+compile "org.apache.maven.plugins:maven-clean-plugin:2.4.1"
+2.4.1 fixed
+compile "org.apache.maven.wagon:wagon-http:1.0-beta-6"
+1.0 fixed
+compile "org.apache.maven.wagon:wagon-ssh:1.0-beta-6"
+1.0 fixed
+compile "org.apache.maven.wagon:wagon-ssh-external:1.0-beta-6"
+1.0 fixed
+compile "org.apache.maven.wagon:wagon-file:1.0-beta-6"
+1.0 fixed
+compile "org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6"
+1.0 fixed
+compile "org.apache.maven.wagon:wagon-http-lightweight:1.0-beta-6"
+1.0 fixed
+compile "com.google.guava:guava:r07"
+07 fixed
+compile 'commons-logging:commons-logging:1.2'
+1.2 fixed
+compile 'commons-io:commons-io:1.4'
+1.4 fixed
+compile 'org.apache.commons:commons-lang3:3.0.1'
+3.0.1 fixed
+compile 'org.eclipse.jetty:jetty-server:7.1.6.v20100715'
+7.1.6 fixed
+compile 'org.eclipse.jetty:jetty-servlet:7.1.6.v20100715'
+7.1.6 fixed
+compile 'com.google.guava:guava:20.0'
+20.0 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.0'
+1.7.0 fixed
+compile('org.apache.maven:maven-ant-tasks:2.0.9') {
+2.0.9 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'org.slf4j:slf4j-api:1.6.6'
+1.6.6 fixed
+compile 'org.slf4j:jcl-over-slf4j:1.6.6'
+1.6.6 fixed
+compile 'ch.qos.logback:logback-classic:1.0.6'
+1.0.6 fixed
+compile 'org.springframework:spring-webmvc:3.0.6.RELEASE'
+3.0.6 fixed
+compile 'org.hibernate:hibernate-validator:4.1.0.Final'
+4.1.0 fixed
+compile 'org.freemarker:freemarker:2.3.19'
+2.3.19 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+compile 'commons-io:commons-io:2.0.1'
+2.0.1 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.springframework:spring-test:3.0.6.RELEASE'
+3.0.6 fixed
+testCompile('org.mortbay.jetty:jetty:6.1.26') {
+6.1.26 fixed
+compile "org.codehaus.jackson:jackson-core-asl:$jacksonVersion",
+1.7.1 fixed
+"org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion",
+1.7.1 fixed
+"org.springframework:spring-core:$springVersion",
+3.0.5.RELEASE fixed
+"org.springframework:spring-web:$springVersion",
+3.0.5.RELEASE fixed
+"joda-time:joda-time:1.6.2",
+1.6.2 fixed
+"org.slf4j:slf4j-api:$slf4jVersion",
+1.6.1 fixed
+"org.slf4j:slf4j-api:$slf4jVersion",
+4 fixed
+"org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+"org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+1.6.1 fixed
+"org.slf4j:jul-to-slf4j:$slf4jVersion"
+4 fixed
+testCompile "junit:junit:4.8.2",
+4.8.2 fixed
+"ch.qos.logback:logback-classic:0.9.27"
+0.9.27 fixed
+compile 'org.testng:testng:5.14.6'
+5.14.6 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.5.1'
+0.5.1 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+ktlint 'com.github.shyiko:ktlint:0.14.0'
+0.14.0 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.2"
+1.7.2 fixed
+compile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+compile "org.hamcrest:hamcrest-all:1.2"
+1.2 fixed
+compile "junit:junit:4.8.1"
+4.8.1 fixed
+testCompile "org.mortbay.jetty:jetty:6.1.21"
+6.1.21 fixed
+compile 'org.codehaus.groovy:groovy:1.7.8'
+1.7.8 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+compile 'org.grails.plugins:spring-security-core:3.1.2'
+3.1.2 fixed
+compile "org.springframework.security.kerberos:spring-security-kerberos-core:$springSecurityKerberosVersion", {
+1.0.1.RELEASE fixed
+compile "org.springframework.security.kerberos:spring-security-kerberos-web:$springSecurityKerberosVersion", {
+1.0.1.RELEASE fixed
+compile "net.jcip:jcip-annotations:1.0"
+1.0 fixed
+compile "org.slf4j:slf4j-api:1.7.2"
+1.7.2 fixed
+compile "org.apache.commons:commons-math3:3.1"
+3.1 fixed
+compile "net.sf.trove4j:trove4j:3.0.3"
+3.0.3 fixed
+testCompile "org.perf4j:perf4j:0.9.16"
+0.9.16 fixed
+testCompile "org.hamcrest:hamcrest-all:1.3"
+1.3 fixed
+testCompile 'org.testng:testng:6.7'
+6.7 fixed
+testRuntime 'ch.qos.logback:logback-classic:1.0.9'
+1.0.9 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+compile "org.mongodb:mongo-java-driver:2.7.3"
+2.7.3 fixed
+compile "org.slf4j:slf4j-api:1.7.2"
+1.7.2 fixed
+compile "cglib:cglib:2.2.2"
+2.2.2 fixed
+compile "commons-beanutils:commons-beanutils:1.8.3"
+1.8.3 fixed
+compile "org.aspectj:aspectjtools:1.7.2"
+1.7.2 fixed
+testCompile "org.mockito:mockito-all:1.9.5"
+1.9.5 fixed
+testCompile "org.hamcrest:hamcrest-all:1.3"
+1.3 fixed
+testCompile "junit:junit:4.11"
+4.11 fixed
+[group: 'junit', name: 'junit', version: '4.12'],
+4.12 fixed
+[group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.2.5'],
+4.2.5 fixed
+[group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.1'],
+2.1 fixed
+[group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.1'],
+2.1 fixed
+[group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.1'],
+2.1 fixed
+[group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.10'],
+1.7.10 fixed
+[group: 'org.slf4j', name: 'slf4j-api', version: '1.7.10'],
+1.7.10 fixed
+[group: 'antcontrib', name: 'ant-contrib', version: '1.0b3'],
+1.0 fixed
+[group: 'zutubiandroid', name: 'zutubi-android-ant', version: '0.1.2'],
+0.1.2 fixed
+[group: 'jyson', name: 'jython-standalone', version: '2.5.1'],
+2.5.1 fixed
+[group: 'pmd', name: 'pmd', version: '4.2.5'],
+4.2.5 fixed
+[group: 'junit', name: 'junit', version: '4.4'],
+4.4 fixed
+[group: 'jaxen', name: 'jaxen', version: '1.1.1'],
+1.1.1 fixed
+[group: 'asm', name: 'asm', version: '3.1'],
+3.1 fixed
+[group: 'jslint4java', name: 'jslint4java', version: '1.4.4'],
+1.4.4 fixed
+[group: 'jargs', name: 'jargs', version: '1.0'],
+1.0 fixed
+[group: 'rhino', name: 'rhino', version: '1.6R7'],
+1.6 fixed
+[group: 'yuicompressor', name: 'yuicompressor', version: '2.4.2'],
+2.4.2 fixed
+[group: 'yuicompressor', name: 'yuicompressoranttask', version: '0.5']
+0.5 fixed
+[group: 'com.pivotallabs', name: 'robolectric', version: '1.0-RC1-jar-with-dependencies'],
+1.0 fixed
+[group: 'junit', name: 'junit', version: '4.8.2'],
+4.8.2 fixed
+[group: 'roboguice', name: 'roboguice', version: '1.1']
+1.1 fixed
+compile group: 'de.java2html', name: 'java2html', version: '5.0'
+5.0 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.12'
+1.2.12 fixed
+compile group: 'commons-io', name: 'commons-io', version: '1.3.1'
+1.3.1 fixed
+compile group: 'commons-cli', name: 'commons-cli', version: '1.1'
+1.1 fixed
+compile group: 'org.freemarker', name: 'freemarker', version: '2.3.10'
+2.3.10 fixed
+compile group: 'com.sun.media', name: 'jai_codec', version: '1.1.2_01'
+1.1.2 fixed
+compile group: 'javax.media', name: 'jai_core', version: '1.1.2_01'
+1.1.2 fixed
+compile group: 'com.sun.media', name: 'jai_imageio', version: '1.0_01'
+1.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.jmock', name: 'jmock', version: '2.5.1'
+2.5.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+testCompile group: 'org.easymock', name: 'easymock', version: '2.2'
+2.2 fixed
+compile group: 'org.apache.ant', name:'ant-javamail', version:'1.8.1'
+1.8.1 fixed
+compile group: 'org.asteriskjava', name:'asterisk-java', version:'1.0.0.CI-SNAPSHOT'
+1.0.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.5.11'
+1.5.11 fixed
+runtime group: 'ch.qos.logback', name: 'logback-core', version: '0.9.20'
+0.9.20 fixed
+runtime group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.20'
+0.9.20 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+compile group: 'org.apache.ant', name:'ant-jsch', version:'1.8.1'
+1.8.1 fixed
+compile group: 'com.jcraft', name:'jsch', version:'0.1.42'
+0.1.42 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.5.11'
+1.5.11 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.5.11'
+1.5.11 fixed
+compile group: 'commons-dbcp', name: 'commons-dbcp', version:'1.4'
+1.4 fixed
+compile group: 'commons-lang', name: 'commons-lang', version:'2.6'
+2.6 fixed
+runtime group: 'org.apache.ant', name:'ant-javamail', version:'1.7.1'
+1.7.1 fixed
+compile 'org.codehaus.groovy:groovy-all:2.2.2'
+2.2.2 fixed
+compile "org.ow2.asm:asm:4.1"
+4.1 fixed
+testCompile 'junit:junit:4.11'
+4.11 fixed
+compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+5.1.13 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+compile(group: 'org.hibernate', name: 'hibernate', version: '3.+'){
+3.+ minor
+compile(group: 'org.reflections', name: 'reflections', version: '0.9.5-RC2'){
+0.9.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.2'
+1.8.2 fixed
+testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile 'commons-lang:commons-lang:2.4'
+2.4 fixed
+compile 'com.jgoodies:jgoodies-looks:2.5.3'
+2.5.3 fixed
+compile 'com.miglayout:miglayout:3.7:swing'
+3.7 fixed
+compile 'org.pushingpixels:trident:1.3@jar'
+1.3 fixed
+compile "org.springframework:spring-core:$springVersion"
+3.1.0.M1 fixed
+compile "org.springframework:spring-context:$springVersion"
+3.1.0.M1 fixed
+compile "org.springframework:spring-webmvc:$springVersion"
+3.1.0.M1 fixed
+compile "net.sf.ehcache:ehcache-core:2.3.2"
+2.3.2 fixed
+compile "org.jboss.resteasy:resteasy-jaxrs:$restEasyVersion"
+2.1.0.GA fixed
+compile "org.jboss.resteasy:jaxrs-api:$restEasyVersion"
+2.1.0.GA fixed
+compile "org.jboss.resteasy:resteasy-spring:$restEasyVersion"
+2.1.0.GA fixed
+compile "org.jboss.resteasy:resteasy-jaxb-provider:$restEasyVersion"
+2.1.0.GA fixed
+compile "org.jboss.resteasy:resteasy-jettison-provider:$restEasyVersion"
+2.1.0.GA fixed
+compile "org.codehaus.jettison:jettison:1.2"
+1.2 fixed
+runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+1.6.1 fixed
+runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+4 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+1.6.1 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile "cglib:cglib-nodep:2.2"
+2.2 fixed
+runtime 'org.slf4j:slf4j-simple:1.7.7'
+1.7.7 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+compile  ':grails-bootstrap:1.3.6',
+1.3.6 fixed
+':grails-core:1.3.6',
+1.3.6 fixed
+':grails-crud:1.3.6',
+1.3.6 fixed
+':grails-docs:1.3.6',
+1.3.6 fixed
+':grails-gorm:1.3.6',
+1.3.6 fixed
+':grails-osgi:1.3.6',
+1.3.6 fixed
+':grails-resources:1.3.6',
+1.3.6 fixed
+':grails-scripts:1.3.6',
+1.3.6 fixed
+':grails-spring:1.3.6',
+1.3.6 fixed
+':grails-test:1.3.6',
+1.3.6 fixed
+':grails-web:1.3.6',
+1.3.6 fixed
+':grails-webflow:1.3.6',
+1.3.6 fixed
+':commons-lang:2.4',
+2.4 fixed
+':log4j:1.2.16',
+1.2.16 fixed
+':org.springframework.context:3.0.5.RELEASE',
+3.0.5 fixed
+':org.springframework.context.support:3.0.5.RELEASE',
+3.0.5 fixed
+':org.springframework.core:3.0.5.RELEASE',
+3.0.5 fixed
+':org.springframework.web:3.0.5.RELEASE',
+3.0.5 fixed
+':org.springframework.web.servlet:3.0.5.RELEASE',
+3.0.5 fixed
+':servlet-api:2.5',
+2.5 fixed
+'commons-logging:commons-logging:1.1.1',
+1.1.1 fixed
+'org.spockframework:spock-grails-support:0.5-groovy-1.7',
+0.5 fixed
+'org.codehaus.groovy.modules.http-builder:http-builder:0.5.1'
+0.5.1 fixed
+compile 'org.grails.plugins:spring-security-core:3.1.2'
+3.1.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.+'
+1.7.+ micro
+compile group: 'com.h2database', name: 'h2', version: '1.3.148'
+1.3.148 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+1.6.1 fixed
+runtime "org.slf4j:jcl-over-slf4j:$slf4jVersion",
+4 fixed
+"org.slf4j:slf4j-log4j12:$slf4jVersion"
+1.6.1 fixed
+"org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile "org.springframework:spring-core:$springVersion",
+3.1.0.M1 fixed
+"org.springframework:spring-context:$springVersion",
+3.1.0.M1 fixed
+"cglib:cglib-nodep:2.2"
+2.2 fixed
+compile 'dom4j:dom4j:1.6.1'
+1.6.1 fixed
+compile 'joda-time:joda-time:2.1'
+2.1 fixed
+compile 'com.google.guava:guava:11.0.2'
+11.0.2 fixed
+compile 'org.jsoup:jsoup:1.6.1'
+1.6.1 fixed
+compile 'org.apache.velocity:velocity:1.7'
+1.7 fixed
+providedCompile 'org.slf4j:slf4j-api:1.6.4'
+1.6.4 fixed
+providedCompile 'ch.qos.logback:logback-classic:1.0.1'
+1.0.1 fixed
+providedCompile 'com.h2database:h2:1.3.166'
+1.3.166 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+providedCompile 'c3p0:c3p0:0.9.1.2'
+0.9.1 fixed
+providedCompile("org.eclipse.jetty.aggregate:jetty-plus:$jettyVersion")
+7.5.4.v20111024 fixed
+providedCompile("org.eclipse.jetty:jetty-jndi:$jettyVersion")
+7.5.4.v20111024 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+testCompile 'org.mockito:mockito-all:1.9.0'
+1.9.0 fixed
+testCompile 'org.easytesting:fest-assert:1.4'
+1.4 fixed
+testCompile 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.21.0' // 0.9.7376
+2.21.0 fixed
+testCompile 'net.sourceforge.htmlunit:htmlunit:2.9'
+2.9 fixed
+testCompile 'commons-lang:commons-lang:2.6'
+2.6 fixed
+compile 'org.codehaus.groovy:groovy-all:2.3.9'
+2.3.9 fixed
+testCompile('org.spockframework:spock-core:1.0-groovy-2.3') {
+1.0 fixed
+testCompile 'cglib:cglib-nodep:3.1'
+3.1 fixed
+compile 'org.riotfamily:content:9.1.0-SNAPSHOT'
+9.1.0 fixed
+runtime 'org.hsqldb:hsqldb:1.8.0.10',
+1.8.0 fixed
+'org.slf4j:jcl-over-slf4j:1.5.10',
+1.5.10 fixed
+'org.slf4j:slf4j-log4j12:1.5.10',
+1.5.10 fixed
+'log4j:log4j:1.2.14'
+1.2.14 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+compile group: 'com.google.android', name: 'android', version: '2.3.1', transitive: false
+2.3.1 fixed
+compile group: 'org.eclipse.swt.win32.win32', name: 'x86', version: '3.3.0-v3346', transitive: false
+3.3.0 fixed
+compile group:'asm', name:'asm-all', version:'2.2.3'
+2.2.3 fixed
+compile group:'org.apache.ant', name:'ant', version:'1.7.0'
+1.7.0 fixed
+compile 'nl.javadude.scannit:scannit:1.4.1'
+1.4.1 fixed
+compile 'org.slf4j:slf4j-api:1.7.12'
+1.7.12 fixed
+compile 'org.slf4j:jcl-over-slf4j:1.7.12'
+1.7.12 fixed
+compile 'com.hierynomus:sshj:0.23.0'
+0.23.0 fixed
+runtime 'com.jcraft:jzlib:1.0.7'
+1.0.7 fixed
+compile 'jcifs:jcifs:1.3.17'
+1.3.17 fixed
+compile 'com.hierynomus:smbj:0.4.0'
+0.4.0 fixed
+compile 'net.engio:mbassador:1.3.0'
+1.3.0 fixed
+compile "org.bouncycastle:bcprov-jdk15on:1.57"
+1.57 fixed
+compile "org.bouncycastle:bcpkix-jdk15on:1.57"
+1.57 fixed
+compile 'commons-net:commons-net:3.3'
+3.3 fixed
+compile('dom4j:dom4j:1.6.1') {
+1.6.1 fixed
+compile('jaxen:jaxen:1.1.6') {
+1.1.6 fixed
+compile('org.apache.httpcomponents:httpclient:4.4.1') {
+4.4.1 fixed
+compile 'org.apache.httpcomponents:httpcore:4.4.1'
+4.4.1 fixed
+compile 'commons-codec:commons-codec:1.10'
+1.10 fixed
+testCompile('com.xebialabs.cloud:overcast:2.5.1') {
+2.5.1 fixed
+testCompile 'org.hamcrest:hamcrest-core:1.2.1'
+1.2.1 fixed
+testCompile 'org.hamcrest:hamcrest-library:1.2.1'
+1.2.1 fixed
+testCompile 'org.mockito:mockito-core:1.8.5'
+1.8.5 fixed
+testCompile 'org.testng:testng:5.14.10'
+5.14.10 fixed
+testCompile 'nl.javadude.assumeng:assumeng:1.2.2'
+1.2.2 fixed
+testCompile 'com.google.guava:guava:16.0.1'
+16.0.1 fixed
+testRuntime 'ch.qos.logback:logback-classic:1.0.6'
+1.0.6 fixed
+testCompile group:'com.jgoodies', name:'forms', version:'1.2.0'
+1.2.0 fixed
+toolsCompile group:'org.easytesting', name:'fest-swing', version:'1.2'
+1.2 fixed
+testCompile group: 'com.jgoodies', name: 'forms', version: '1.2.0'
+1.2.0 fixed
+testCompile group:'junit', name:'junit', version:'4.3.1'
+4.3.1 fixed
+testCompile group:'org.easytesting', name:'fest-assert', version:'1.2'
+1.2 fixed
+testCompile group:'org.easytesting', name:'fest-reflect', version:'1.2'
+1.2 fixed
+testCompile group:'org.easytesting', name:'fest-swing', version:'1.2.1'
+1.2.1 fixed
+testCompile group:'org.easytesting', name:'fest-swing-junit', version:'1.2.1'
+1.2.1 fixed
+testCompile group:'org.easytesting', name:'fest-swing-junit-4.3.1', version:'1.2.1'
+1.2.1 fixed
+compile "org.apache.ant:ant:${antVersion}",
+1.7.1 fixed
+"org.apache.ant:ant-launcher:${antVersion}",
+1.7.1 fixed
+"org.apache.ant:ant-junit:${antVersion}",
+1.7.1 fixed
+"org.apache.ant:ant-nodeps:${antVersion}",
+1.7.1 fixed
+"org.apache.ant:ant-trax:${antVersion}",
+1.7.1 fixed
+"org.apache.ivy:ivy:2.2.0"
+2.2.0 fixed
+compile 'commons-beanutils:commons-beanutils:1.8.0'	,
+1.8.0 fixed
+'commons-cli:commons-cli:1.0',
+1.0 fixed
+'commons-codec:commons-codec:1.4',
+1.4 fixed
+'commons-collections:commons-collections:3.2.1',
+3.2.1 fixed
+'commons-dbcp:commons-dbcp:1.3',
+1.3 fixed
+'commons-el:commons-el:1.0',
+1.0 fixed
+'commons-fileupload:commons-fileupload:1.2.1',
+1.2.1 fixed
+'commons-io:commons-io:1.4',
+1.4 fixed
+'commons-lang:commons-lang:2.4',
+2.4 fixed
+'commons-pool:commons-pool:1.5.5',
+1.5.5 fixed
+'commons-validator:commons-validator:1.3.1'
+1.3.1 fixed
+compile( 'cglib:cglib-nodep:2.1_3',
+2.1 fixed
+'org.fusesource.jansi:jansi:1.2.1',
+1.2.1 fixed
+'oro:oro:2.0.8',
+2.0.8 fixed
+'com.lowagie:itext:2.1.7',
+2.1.7 fixed
+'org.xhtmlrenderer:core-renderer:R8pre2',
+8 fixed
+'jline:jline:0.9.94',
+0.9.94 fixed
+'opensymphony:sitemesh:2.4',
+2.4 fixed
+'org.tmatesoft.svnkit:svnkit:1.3.4',
+1.3.4 fixed
+'ognl:ognl:2.7.3',
+2.7.3 fixed
+'com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:1.1_jdk5')
+1.1 fixed
+runtime 'aopalliance:aopalliance:1.0',
+1.0 fixed
+'com.h2database:h2:1.2.147',
+1.2.147 fixed
+'hsqldb:hsqldb:1.8.0.10',
+1.8.0 fixed
+'org.aspectj:aspectjrt:1.6.10',
+1.6.10 fixed
+'org.aspectj:aspectjweaver:1.6.10',
+1.6.10 fixed
+'net.sf.ehcache:ehcache-core:2.3.1',
+2.3.1 fixed
+'org.coconut.forkjoin:jsr166y:070108'
+070108 fixed
+compile 'junit:junit:4.8.1'
+4.8.1 fixed
+compile 'xpp3:xpp3_min:1.1.4c'
+1.1.4 fixed
+compile 'xalan:serializer:2.7.1'
+2.7.1 fixed
+compile 'org.slf4j:slf4j-log4j12:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:jcl-over-slf4j:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:jul-to-slf4j:1.6.1'
+1.6.1 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+compile 'javax.servlet:jsp-api:2.0'
+2.0 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'javax.servlet:jstl:1.1.2'
+1.1.2 fixed
+compile 'net.sf.jsr107cache:jsr107cache:1.0'
+1.0 fixed
+compile 'javax.transaction:jta:1.1'
+1.1 fixed
+compile 'javax.persistence:persistence-api:1.0'
+1.0 fixed
+compile 'taglibs:standard:1.1.2'
+1.1.2 fixed
+compile 'javax.el:el-api:1.0'
+1.0 fixed
+compile 'org.hibernate:hibernate-annotations:3.4.0.GA',
+3.4.0 fixed
+'org.hibernate:hibernate-commons-annotations:3.1.0.GA',
+3.1.0 fixed
+'org.hibernate:hibernate-core:3.3.1.GA',
+3.3.1 fixed
+'org.hibernate:hibernate-validator:3.1.0.GA',
+3.1.0 fixed
+'org.hibernate:hibernate-ehcache:3.3.1.GA',
+3.3.1 fixed
+'javassist:javassist:3.11.0.GA',
+3.11.0 fixed
+'antlr:antlr:2.7.6'
+2.7.6 fixed
+compile "org.springframework:spring-aop:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-asm:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-aspects:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-beans:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-context:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-core:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-expression:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-instrument:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-jdbc:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-jms:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-orm:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-oxm:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-test:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-tx:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-web:${springVersion}",
+3.0.3.RELEASE fixed
+"org.springframework:spring-webmvc:${springVersion}"
+3.0.3.RELEASE fixed
+compile "org.springframework.webflow:spring-binding:2.0.8.RELEASE",
+2.0.8 fixed
+"org.springframework.webflow:spring-js:2.0.8.RELEASE",
+2.0.8 fixed
+"org.springframework.webflow:spring-webflow:2.0.8.RELEASE"
+2.0.8 fixed
+groovy "org.codehaus.groovy:groovy-all:1.8.0-beta-4"
+1.8.0 fixed
+compile( 'org.codehaus.gpars:gpars:0.9' ) {
+0.9 fixed
+jsp21 'javax.servlet.jsp:jsp-api:2.1'
+2.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+testCompile group: 'org.spockframework', name: 'spock-core', version: '0.5-groovy-1.7'
+0.5 fixed
+testCompile group: 'cglib', name: 'cglib', version: '2.2'
+2.2 fixed
+testCompile group: 'org.objenesis', name: 'objenesis', version: '1.2'
+1.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+groovy  'org.codehaus.groovy:groovy:1.6.8'
+1.6.8 fixed
+deploy 'org.apache.maven.wagon:wagon-webdav-jackrabbit:1.0-beta-6'
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.3'
+1.7.3 fixed
+compile 'net.sf.opencsv:opencsv:2.1'
+2.1 fixed
+testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+0.4 fixed
+testCompile "cglib:cglib-nodep:2.2"
+2.2 fixed
+testCompile "org.objenesis:objenesis:1.2"
+1.2 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: slf4jVersion
+4 fixed
+compile group: 'log4j', name: 'log4j', version: log4jVersion
+4 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+def fopDeps = [ 'org.apache.xmlgraphics:fop:0.95-1@jar',
+0.95 fixed
+'org.apache.xmlgraphics:xmlgraphics-commons:1.3',
+1.3 fixed
+'org.apache.xmlgraphics:batik-bridge:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-util:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-css:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-dom:1.7',
+1.7 fixed
+'org.apache.xmlgraphics:batik-svg-dom:1.7@jar',
+1.7 fixed
+'org.apache.avalon.framework:avalon-framework-api:4.3.1']
+4.3.1 fixed
+'xml-resolver:xml-resolver:1.2',
+1.2 fixed
+'xerces:xercesImpl:2.9.1',
+2.9.1 fixed
+'saxon:saxon:6.5.3',
+6.5.3 fixed
+'net.java.dev.jets3t:jets3t:0.6.1',
+0.6.1 fixed
+runtime 'net.sf.xslthl:xslthl:2.0.1',
+2.0.1 fixed
+'net.sf.docbook:docbook-xsl:1.75.2:ns-resources@zip'
+1.75.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+tools module('cobertura:cobertura:1.9.4.1') {
+1.9.4 fixed
+dependency('oro:oro:2.0.8')
+2.0.8 fixed
+dependency('asm:asm:3.0')
+3.0 fixed
+dependency('asm:asm-tree:3.0')
+3.0 fixed
+dependency('log4j:log4j:1.2.9')
+1.2.9 fixed
+groovy "org.codehaus.groovy:groovy-all:$groovyVersion"
+1.7.8 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.+'
+1.7.+ micro
+compile group: 'com.h2database', name: 'h2', version: '1.3.+'
+1.3.+ micro
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile 'org.testng:testng:5.14.6'
+5.14.6 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.8'
+1.7.8 fixed
+deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-2"
+1.0 fixed
+runtime group: 'org.clojure', name: 'clojure', version: '1.2.0'
+1.2.0 fixed
+runtime group: 'swank-clojure', name: 'swank-clojure', version: '1.3.0-SNAPSHOT'
+1.3.0 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+1.7.+ micro
+runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.+'
+1.+ minor
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.assertj', name: 'assertj-core', version: '3.+'
+3.+ minor
+testCompile group: 'org.mockito', name: 'mockito-core', version: '2.+'
+2.+ minor
+codeMetrics group: 'org.terasology.config', name: 'codemetrics', version: '1.1.0', ext: 'zip'
+1.1.0 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.8'
+1.7.8 fixed
+compile 'org.springframework:spring-beans:3.0.5.RELEASE'
+3.0.5 fixed
+compile 'org.springframework:spring-context:3.0.5.RELEASE'
+3.0.5 fixed
+compile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+testCompile 'junit:junit:4.8'
+4.8 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+publish "org.grails:grails-docs:1.4.0.BUILD-SNAPSHOT"
+1.4.0 fixed
+publish "org.slf4j:slf4j-log4j12:1.5.8",
+1.5.8 fixed
+"org.xhtmlrenderer:core-renderer:R8"
+8 fixed
+groovy      "org.codehaus.groovy:groovy-all:$groovyVersion"
+1.8.0-beta-4 fixed
+compile     "org.codehaus.groovy:groovy-all:$groovyVersion",
+1.8.0-beta-4 fixed
+"org.springframework:spring-context:$springVersion",
+3.0.5.RELEASE fixed
+"de.schlichtherle:truezip:$truezipVersion",
+6.8.2 fixed
+"org.apache.ant:ant:$antVersion",
+1.8.2 fixed
+"org.apache.ant:ant-commons-net:$antVersion",
+1.8.2 fixed
+"commons-net:commons-net:2.2",
+2.2 fixed
+"org.apache.commons:commons-exec:1.1",
+1.1 fixed
+"org.slf4j:slf4j-api:1.6.1",
+1.6.1 fixed
+"ch.qos.logback:logback-classic:0.9.28"
+0.9.28 fixed
+testCompile "org.springframework:spring-test:$springVersion",
+3.0.5.RELEASE fixed
+"junit:junit:$junitVersion"
+4.8.2 fixed
+compile 'org.tmatesoft.svnkit:svnkit:1.7.5'
+1.7.5 fixed
+compile 'org.eclipse.jgit:org.eclipse.jgit:2.1.0.201209190230-r'
+2.1.0 fixed
+compile 'com.jcraft:jsch:0.1.44-1'
+0.1.44 fixed
+testCompile 'org.spockframework:spock-core:0.6-groovy-1.8'
+0.6 fixed
+testCompile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+testCompile 'org.objenesis:objenesis:1.2'
+1.2 fixed
+testCompile 'junit:junit-dep:4.9'
+4.9 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.6'
+1.8.6 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.8'
+1.7.8 fixed
+groovy 'commons-cli:commons-cli:1.2'
+1.2 fixed
+compile 'org.codehaus.gpars:gpars:0.11'
+0.11 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+testCompile 'org.codehaus.groovy:groovy-all:1.7.8'
+1.7.8 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+compile group: 'org.apache.wicket', name: 'wicket-core', version: '1.5-rc2'
+1.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.1'
+1.8.1 fixed
+gradleScript group: 'com.alcshare', name: 'addon-gradle', ext: 'gradle', version: '1.7'
+1.7 fixed
+runtime 'commons-cli:commons-cli:1.2'
+1.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+1.7.8 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+onejar group: 'localRepository', name: 'one-jar-ant-task', version: '0.97'
+0.97 fixed
+compile group: 'com.flickr4java', name: 'flickr4java', version: '2.11'
+2.11 fixed
+compile('org.computoring:gop:0.11') {
+0.11 fixed
+compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.7.6'
+1.7.6 fixed
+compile 'org.json:json:20090211'
+20090211 fixed
+compile 'org.apache.httpcomponents:httpclient:4.0-beta2'
+4.0 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.1'
+1.1 fixed
+testRuntime 'org.picocontainer:picocontainer:2.13.2'
+2.13.2 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+compile 'org.liquibase:liquibase-core:2.0.1'
+2.0.1 fixed
+'junit:junit:4.11',
+4.11 fixed
+'org.hamcrest:hamcrest-core:1.3',
+1.3 fixed
+'org.hamcrest:hamcrest-library:1.3',
+1.3 fixed
+'org.jmock:jmock-junit4:2.6.0',
+2.6.0 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.0'
+2.9.0 fixed
+scalaTools 'org.scala-lang:scala-library:2.9.0'
+2.9.0 fixed
+compile 'org.scala-lang:scala-library:2.9.0'
+2.9.0 fixed
+compile 'org.eclipse.jetty:jetty-websocket:7.4.0.v20110414'
+7.4.0 fixed
+compile 'org.eclipse.jetty:jetty-webapp:7.4.0.v20110414'
+7.4.0 fixed
+compile 'com.mongodb.casbah:casbah_2.9.0-1:2.1.5.0'
+2.1.5 fixed
+compile 'commons-fileupload:commons-fileupload:1.2.2'
+1.2.2 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:slf4j-jdk14:1.6.1'
+1.6.1 fixed
+compile 'se.scalablesolutions.akka:akka-http:1.1.3'
+1.1.3 fixed
+compile 'se.scalablesolutions.akka:akka-kernel:1.1.3'
+1.1.3 fixed
+compile('se.scalablesolutions.akka:akka-actor:1.1.3') {
+1.1.3 fixed
+compile 'com.flowpowered:flow-networking:1.0.0-SNAPSHOT'
+1.0.0 fixed
+compile 'jline:jline:2.11'
+2.11 fixed
+compile 'org.slf4j:slf4j-jdk14:1.7.7'
+1.7.7 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+compile 'com.embedly:embedly-api:0.1.+'
+0.1.+ micro
+compile 'com.android.support:design:22.2.0'
+22.2.0 fixed
+compile 'com.android.support:cardview-v7:22.2.0'
+22.2.0 fixed
+compile 'com.android.support:recyclerview-v7:22.2.0'
+22.2.0 fixed
+compile 'org.ocpsoft.prettytime:prettytime:3.2.5.Final'
+3.2.5 fixed
+compile 'com.google.appengine:gradle-appengine-plugin:1.9.34'
+1.9.34 fixed
+compile 'io.github.kdabir.directree:directree:0.2', {
+0.2 fixed
+testCompile "org.spockframework:spock-core:0.7-groovy-${spockQualifier}", { <<<< PROBLEM
+2.0 fixed
+testCompile "org.spockframework:spock-core:0.7-groovy-${spockQualifier}", {
+0.7 fixed
+testCompile "junit:junit:4.10"
+4.10 fixed
+compile 'com.embedly:embedly-api:0.1.+'
+0.1.+ micro
+compile 'org.json:json:20090211'
+20090211 fixed
+compile 'org.apache.httpcomponents:httpclient:4.0-beta2'
+4.0 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.1'
+1.1 fixed
+testRuntime 'org.picocontainer:picocontainer:2.13.2'
+2.13.2 fixed
+compile 'com.google.android.tools:ddmlib:r13'
+13 fixed
+compile "org.hibernate:hibernate-search:3.3.0.Final"
+3.3.0 fixed
+compile "log4j:log4j:1.2.16@jar"
+1.2.16 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1@jar"
+1.6.1 fixed
+compile "javassist:javassist:3.4.GA@jar"
+3.4 fixed
+compile 'hsqldb:hsqldb:1.8.0.10'
+1.8.0 fixed
+compile 'mysql:mysql-connector-java:5.1.14'
+5.1.14 fixed
+testCompile group: 'junit', name: 'junit', version:'4.8.2'
+4.8.2 fixed
+testCompile group: 'com.thibaultdelor', name: 'JunitSQLMatcher', version: '+'
++ major
+groovy 'org.codehaus.groovy:groovy:1.7.6'
+1.7.6 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.6'
+1.7.6 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+compile("cuke4duke:cuke4duke:$cuke4DukeVersion"){
+0.4.3 fixed
+compile("cuke4duke:cuke4duke:$cuke4DukeVersion"){
+4 fixed
+compile "org.picocontainer:picocontainer:2.11.2"
+2.11.2 fixed
+cuke "org.jruby:jruby-complete:1.5.2"
+1.5.2 fixed
+compile group: 'gaelyk', name: 'gaelyk', version: '0.6.1'
+0.6.1 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.6'
+1.7.6 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.5'
+1.7.5 fixed
+compile "org.apache.tomcat:catalina:${tomcatVersion}",
+6.0.29 fixed
+"org.apache.tomcat:coyote:${tomcatVersion}",
+6.0.29 fixed
+"org.apache.tomcat:jasper:${tomcatVersion}"
+6.0.29 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+compile group: 'org.codehaus.groovy.modules.http-builder', name:'http-builder', version:'0.5.1'
+0.5.1 fixed
+compile group: 'oauth.signpost', name: 'signpost-commonshttp4', version: '1.2.1.1'
+1.2.1 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'com.h2database:h2:1.3.153'
+1.3.153 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.8@jar'
+1.7.8 fixed
+compile 'org.easyb:easyb-core:1.5'
+1.5 fixed
+compile "junit:junit:4.4"
+4.4 fixed
+testCompile "org.mockito:mockito-all:1.8.5"
+1.8.5 fixed
+groovy      'org.codehaus.groovy:groovy:1.7.6'
+1.7.6 fixed
+compile     'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+compile     'redis.clients:jedis:1.5.2'
+1.5.2 fixed
+compile     'org.slf4j:jcl-over-slf4j:1.6.1'
+1.6.1 fixed
+compile     'ch.qos.logback:logback-classic:0.9.24'
+0.9.24 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+testCompile group:'com.jgoodies', name:'forms', version:'1.2.0'
+1.2.0 fixed
+toolsCompile group:'org.easytesting', name:'fest-swing', version:'1.2'
+1.2 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+2.5 fixed
+compile group: 'com.google.guava', name: 'guava', version: 'r06'
+06 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.+'
+1.8.+ micro
+groovy 'org.codehaus.groovy:groovy-all:1.7.5'
+1.7.5 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+def fopDeps = [ 'org.apache.xmlgraphics:fop:0.95-1@jar',
+0.95 fixed
+'org.apache.xmlgraphics:xmlgraphics-commons:1.3',
+1.3 fixed
+'org.apache.xmlgraphics:batik-bridge:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-util:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-css:1.7@jar',
+1.7 fixed
+'org.apache.xmlgraphics:batik-dom:1.7',
+1.7 fixed
+'org.apache.xmlgraphics:batik-svg-dom:1.7@jar',
+1.7 fixed
+'org.apache.avalon.framework:avalon-framework-api:4.3.1']
+4.3.1 fixed
+'xml-resolver:xml-resolver:1.2',
+1.2 fixed
+'xerces:xercesImpl:2.9.1',
+2.9.1 fixed
+'saxon:saxon:6.5.3',
+6.5.3 fixed
+'net.java.dev.jets3t:jets3t:0.6.1',
+0.6.1 fixed
+runtime 'net.sf.xslthl:xslthl:2.0.1',
+2.0.1 fixed
+'net.sf.docbook:docbook-xsl:1.75.2:ns-resources@zip'
+1.75.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+1.7.8 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+runtime group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile "org.apache.tapestry:tapestry-core:$tapestryVersion"
+5.3.5 fixed
+compile "org.javasimon:javasimon-core:$javaSimonVersion"
+3.2.1 fixed
+compile "org.apache.tapestry:tapestry-jmx:$tapestryVersion"
+5.3.5 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+testCompile 'org.testng:testng:5.12.1',
+5.12.1 fixed
+'org.easymock:easymock:2.5.2',
+2.5.2 fixed
+'org.jboss.resteasy:tjws:2.0-beta-2',
+2.0 fixed
+"org.apache.tapestry:tapestry-test:$tapestryVersion"
+5.3.5 fixed
+compile 'com.basho.riak:riak-client:0.14.1-trifork'
+0.14.1 fixed
+compile 'jfreechart:jfreechart:1.0.0'
+1.0.0 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.4"
+1.7.4 fixed
+testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+0.4 fixed
+testCompile "junit:junit:4.8.1"
+4.8.1 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile "org.apache.tapestry:tapestry-core:$tapestryVersion"
+5.3.5 fixed
+compile "org.javasimon:javasimon-core:$javaSimonVersion"
+3.2.1 fixed
+compile "org.apache.tapestry:tapestry-jmx:$tapestryVersion"
+5.3.5 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+testCompile 'org.testng:testng:5.12.1',
+5.12.1 fixed
+'org.easymock:easymock:2.5.2',
+2.5.2 fixed
+'org.jboss.resteasy:tjws:2.0-beta-2',
+2.0 fixed
+"org.apache.tapestry:tapestry-test:$tapestryVersion"
+5.3.5 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'com.h2database:h2:1.3.153'
+1.3.153 fixed
+testCompile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+testCompile 'com.google.collections:google-collections:1.0'
+1.0 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+examples 'de.java2html:java2html:5.0',
+5.0 fixed
+'org.codehaus.groovy:groovy-all:1.7.10'
+1.7.10 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.8.0'
+2.8.0 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.0'
+2.8.0 fixed
+compile 'org.scala-lang:scala-compiler:2.8.0'
+2.8.0 fixed
+compile 'org.scala-lang:scala-library:2.8.0'
+2.8.0 fixed
+testCompile 'org.easytesting:fest-assert:1.4'
+1.4 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+compile 'com.android.support:appcompat-v7:+'
++ major
+compile 'com.google.code.gson:gson:2.2.2'
+2.2.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+compile 'org.jboss.resteasy:resteasy-jaxrs:2.0.1.GA'
+2.0.1 fixed
+compile 'org.jboss.resteasy:resteasy-jettison-provider:2.0.1.GA'
+2.0.1 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+compile group:'commons-httpclient', name:'commons-httpclient', version:'3.1'
+3.1 fixed
+compile group: 'commons-codec', name:'commons-codec', version:'1.5'
+1.5 fixed
+compile group:'net.sf.json-lib', name:'json-lib', version:'2.4', classifier:'jdk15'
+2.4 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+testCompile 'junit:junit:4.8'
+4.8 fixed
+[group:'junit', name:'junit', version:'4.8.2']
+4.8.2 fixed
+compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+compile group: 'com.jidesoft', name: 'jide-oss', version: '2.10.2'
+2.10.2 fixed
+compile group: 'com.github.insubstantial', name: 'flamingo', version: '7.0'
+7.0 fixed
+compile group: 'usr.erichschroeter', name: 'applib', version: '0.0.4'
+0.0.4 fixed
+compile group: 'usr.erichschroeter', name: 'jpreferences', version: '0.0.1'
+0.0.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+scalaTools "org.scala-lang:scala-compiler:$scalaVersion"
+2.9.0.RC1 fixed
+scalaTools "org.scala-lang:scala-library:$scalaVersion"
+2.9.0.RC1 fixed
+compile "org.scala-lang:scala-library:$scalaVersion"
+2.9.0.RC1 fixed
+compile akkaLibraries
+1.1-M1 fixed
+compile akkaLibraries
+1.1-M1 fixed
+compile akkaLibraries
+2.9.0.RC1 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+1.7.8 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+runtime group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile group: 'dnsjava', name: 'dnsjava', version: '2.1.1'
+2.1.1 fixed
+compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.3.1'
+1.3.1 fixed
+compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+1.6.1 fixed
+compile group: 'com.mycila.xmltool', name: 'xmltool', version: '3.2'
+3.2 fixed
+compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.1'
+4.1 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+2.5 fixed
+compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
+2.0.1 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'ch.qos.logback', name: 'logback-core', version: '0.9.27'
+0.9.27 fixed
+compile group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.27'
+0.9.27 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+compile 'com.android.support:support-v4:21.0.0'
+21.0.0 fixed
+compile 'com.android.support:appcompat-v7:21.0.0'
+21.0.0 fixed
+compile 'com.google.code.gson:gson:2.3'
+2.3 fixed
+compile('ch.acra:acra:4.5.0') {
+4.5.0 fixed
+compile('org.shredzone.flattr4j:flattr4j-core:2.11') {
+2.11 fixed
+compile 'com.google.code.findbugs:jsr305:3.0.0'
+3.0.0 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'net.sf.bluecove', name: 'bluecove', version: '2.1.0'
+2.1.0 fixed
+compile group: 'net.sf.bluecove', name: 'bluecove-gpl', version: '2.1.0'
+2.1.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'motej', name: 'motej-library', version: '0.9'
+0.9 fixed
+compile group: 'motej', name: 'motej-extras', version: '0.9'
+0.9 fixed
+compile (group: 'se.scalablesolutions.akka', name: 'akka-actor_2.8.0', version: '1.0-M1') {
+1.0 fixed
+compile 'joda-time:joda-time:2.1'
+2.1 fixed
+compile 'org.slf4j:slf4j-simple:1.6.6'
+1.6.6 fixed
+compile 'org.slf4j:jcl-over-slf4j:1.6.6'
+1.6.6 fixed
+compile 'commons-io:commons-io:2.4'
+2.4 fixed
+compile 'commons-cli:commons-cli:1.2'
+1.2 fixed
+compile 'commons-lang:commons-lang:2.6'
+2.6 fixed
+compile 'com.jgoodies:forms:1.2.1'
+1.2.1 fixed
+compile 'com.jgoodies:looks:2.2.2'
+2.2.2 fixed
+compile 'com.amazonaws:aws-java-sdk-s3:1.10.45'
+1.10.45 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+testCompile 'org.mockito:mockito-core:1.9.0'
+1.9.0 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.1'
+1.1 fixed
+testCompile 'com.googlecode.windowlicker:windowlicker-swing:r268'
+268 fixed
+compile 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.3'
+1.7.3 fixed
+testCompile 'junit:junit:3.8.2'
+3.8.2 fixed
+testCompile group: 'org.testng', name: 'testng', version: '5.8', classifier: 'jdk15'
+5.8 fixed
+providedCompile group: 'javax.servlet', name: 'com.springsource.javax.servlet', version:'2.5.0'
+2.5.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile group: 'log4j', name: 'log4j', version:'1.2.16'
+1.2.16 fixed
+compile group: 'org.postgresql', name: 'com.springsource.org.postgresql.jdbc4', version:'8.3.604'
+8.3.604 fixed
+compile group: 'com.hazelcast', name:'hazelcast', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'com.hazelcast', name:'hazelcast-spring', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'org.mybatis', name: 'mybatis', version:'3.0.6'
+3.0.6 fixed
+compile group: 'org.mybatis', name: 'mybatis-hazelcast', version:'1.0.0'
+1.0.0 fixed
+compile group: 'commons-lang', name: 'commons-lang', version:'2.2'
+2.2 fixed
+compile group: 'commons-net', name: 'commons-net', version:'2.2'
+2.2 fixed
+compile group: 'org.elasticsearch', name: 'elasticsearch', version:'0.17.5'
+0.17.5 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-xc', version:'1.7.5'
+1.7.5 fixed
+compile group: 'args4j', name: 'args4j', version:'2.0.12'
+2.0.12 fixed
+compile group: "org.apache.commons", name:"com.springsource.org.apache.commons.dbcp", version:"1.2.2.osgi"
+1.2.2 fixed
+compile group: "org.springframework", name:"org.springframework.web.servlet", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: "org.springframework", name:"org.springframework.jdbc", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-spring', version:'1.0.2'
+1.0.2 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '2.2.6'
+2.2.6 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '2.2.6'
+2.2.6 fixed
+compile group: 'uk.ac.ebi.das', name:'jdas', version: '1.0.1'
+1.0.1 fixed
+compile group: 'net.sf', name: 'sam', version: '1.45', ext: 'jar'
+1.45 fixed
+compile group: 'org.sanger', name: 'artemis', version: 'v13.2.1', ext:'jar'
+13.2.1 fixed
+compile group: 'org.biojava', name: 'biojava', version: '1.6', ext:'jar'
+1.6 fixed
+compile group: 'org.obo', name: 'obo', version: '1.0', ext:'jar'
+1.0 fixed
+compile group: 'org.obo', name: 'bbop', version: '1.0', ext:'jar'
+1.0 fixed
+compile group:'jgrapht', name:'jgrapht', version: '0.7.3'
+0.7.3 fixed
+compile group:'org.codehaus.groovy', name:'groovy-all', version:'1.8.8', ext:'jar'
+1.8.8 fixed
+testCompile 'org.spockframework:spock-core:0.7-groovy-1.8'
+0.7 fixed
+groovy 	"org.codehaus.groovy:groovy-all:1.7.10"
+1.7.10 fixed
+runtime "com.google.appengine:appengine-tools-sdk:1.4.3"
+1.4.3 fixed
+runtime ":gradle-gae-plugin:0.4"
+0.4 fixed
+runtime ":gradle-gaelyk-plugin:0.1"
+0.1 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+compile "org.hibernate:hibernate-search:3.4.0.Final"
+3.4.0 fixed
+compile "log4j:log4j:1.2.16@jar"
+1.2.16 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1@jar"
+1.6.1 fixed
+compile "javassist:javassist:3.4.GA@jar"
+3.4 fixed
+compile 'com.h2database:h2:1.3.154'
+1.3.154 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.7'
+1.7.7 fixed
+runtime 'commons-cli:commons-cli:1.2'
+1.2 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+compile 'org.liquibase:liquibase-core:2.0.1'
+2.0.1 fixed
+compile group: 'com.sun.jersey', name: 'jersey-bundle', version: '1.6'
+1.6 fixed
+compile group: 'com.sun.jersey', name: 'jersey-json', version: '1.6'
+1.6 fixed
+compile group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.1.12'
+2.1.12 fixed
+compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.0.1'
+2.0.1 fixed
+runtime group: 'asm', name: 'asm', version: '3.1'
+3.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.+'
+1.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile group: 'com.sun.jersey.jersey-test-framework', name: 'jersey-test-framework-core', version: '1.6'
+1.6 fixed
+testCompile group: 'com.sun.jersey', name: 'jersey-grizzly', version: '1.6'
+1.6 fixed
+testCompile group: 'com.sun.jersey.jersey-test-framework', name: 'jersey-test-framework-grizzly', version: '1.6'
+1.6 fixed
+compile "org.springframework.data:spring-data-redis:$springDataKVVersion"
+1.0.0.M3 fixed
+compile "org.springframework:spring-webmvc:$springVersion"
+3.1.0.M1 fixed
+compile "javax.inject:com.springsource.javax.inject:1.0.0"
+1.0.0 fixed
+providedCompile "javax.servlet:com.springsource.javax.servlet:2.4.0"
+2.4.0 fixed
+providedCompile "javax.servlet:com.springsource.javax.servlet.jsp:2.1.0"
+2.1.0 fixed
+compile "org.codehaus.jackson:jackson-core-asl:$jacksonVersion"
+1.7.4 fixed
+compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+1.7.4 fixed
+compile "javax.servlet:com.springsource.javax.servlet.jsp.jstl:1.2.0"
+1.2.0 fixed
+compile "org.apache.taglibs:com.springsource.org.apache.taglibs.standard:1.1.2"
+1.1.2 fixed
+compile "org.cloudfoundry:cloudfoundry-runtime:0.6.0"
+0.6.0 fixed
+compile 'junit:junit:4.7'
+4.7 fixed
+compile "log4j:log4j:1.2.7@jar"
+1.2.7 fixed
+compile 'RobertFischer:gradle-compiler-base:0.0.6.5'
+0.0.6 fixed
+compile "com.google.guava:guava:13.0"
+13.0 fixed
+implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
+2.4.12 fixed
+implementation group: "org.python", name: "jython", version: "2.7.0"
+2.7.0 fixed
+packIntoJar group: "org.mozilla", name: "rhino", version: "1.7.7.1"
+1.7.7 fixed
+packIntoJar group: "de.sciss", name: "jsyntaxpane", version: "1.0.0"
+1.0.0 fixed
+packIntoJar group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+testImplementation group: 'junit', name: 'junit', version: '4.12'
+4.12 fixed
+testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
+2.4.12 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile "org.hibernate:hibernate-search:3.3.0.Final"
+3.3.0 fixed
+compile "log4j:log4j:1.2.16@jar"
+1.2.16 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1@jar"
+1.6.1 fixed
+compile "javassist:javassist:3.4.GA@jar"
+3.4 fixed
+compile 'com.h2database:h2:1.3.154'
+1.3.154 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+compile 'org.testng:testng:5.14'
+5.14 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.7'
+1.7.7 fixed
+runtime 'commons-cli:commons-cli:1.2'
+1.2 fixed
+aspects 'org.springframework.data:spring-data-neo4j:1.0.0.RELEASE'
+1.0.0 fixed
+ajc 'org.aspectj:aspectjtools:1.6.12.BUILD-SNAPSHOT'
+1.6.12 fixed
+compile 'org.springframework.data:spring-data-neo4j:1.0.0.RELEASE',
+1.0.0 fixed
+'org.aspectj:aspectjrt:1.6.12.BUILD-SNAPSHOT'
+1.6.12 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.codehaus.geb:geb-core:0.5.1'
+0.5.1 fixed
+testCompile 'org.codehaus.geb:geb-easyb:0.5.1'
+0.5.1 fixed
+testCompile 'org.seleniumhq.selenium:selenium-htmlunit-driver:2.0a7'
+2.0 fixed
+testCompile ('org.easyb:easyb:0.9.8')
+0.9.8 fixed
+scalaTools 'org.scala-lang:scala-compiler:' + scalaVersion
+2.9.0.RC1 fixed
+scalaTools 'org.scala-lang:scala-library:' + scalaVersion
+2.9.0.RC1 fixed
+compile 'se.scalablesolutions.akka:akka-actor:' + akkaVersion
+1.1-M1 fixed
+compile 'se.scalablesolutions.akka:akka-remote:' + akkaVersion
+1.1-M1 fixed
+compile 'se.scalablesolutions.akka:akka-camel:' + akkaVersion
+1.1-M1 fixed
+testCompile 'se.scalablesolutions.akka:akka:' + akkaVersion
+1.1-M1 fixed
+testCompile 'se.scalablesolutions.akka:akka-remote:' + akkaVersion
+1.1-M1 fixed
+testCompile 'se.scalablesolutions.akka:akka-camel:' + akkaVersion
+1.1-M1 fixed
+compile 'org.scala-lang:scala-library:' + scalaVersion
+2.9.0.RC1 fixed
+testCompile 'org.scala-lang:scala-library:' +scalaVersion
+2.9.0.RC1 fixed
+testCompile 'org.scalatest:scalatest_2.9.0:1.6-SNAPSHOT'
+1.6 fixed
+compile 'edu.emory.mathcs:jtransforms:2.3'
+2.3 fixed
+compile 'com.google.guava:guava:r09'
+09 fixed
+compile 'org.apache.commons:commons-math:2.2'
+2.2 fixed
+compile 'commons-lang:commons-lang:2.6'
+2.6 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.1'
+1.1 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+compile 'org.atmosphere:atmosphere-runtime:0.7.1'
+0.7.1 fixed
+compile 'org.atmosphere:atmosphere-compat-tomcat:0.7.1'
+0.7.1 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.googlecode.json-simple:json-simple:1.1'
+1.1 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:slf4j-simple:1.6.1'
+1.6.1 fixed
+compile 'commons-io:commons-io:2.0.1'
+2.0.1 fixed
+boo "boo:boo:$booVersion"
+0.9.7 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile group: 'dnsjava', name: 'dnsjava', version: '2.1.1'
+2.1.1 fixed
+compile group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.3.1'
+1.3.1 fixed
+compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+1.6.1 fixed
+compile group: 'com.mycila.xmltool', name: 'xmltool', version: '3.2'
+3.2 fixed
+compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.1'
+4.1 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+2.5 fixed
+compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
+2.0.1 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'ch.qos.logback', name: 'logback-core', version: '0.9.27'
+0.9.27 fixed
+compile group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.27'
+0.9.27 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile group: "me.vgv.common", name: "common-utils", version: "0.1.2"
+0.1.2 fixed
+compile group: "org.slf4j", name: "slf4j-api", version: "1.6.6"
+1.6.6 fixed
+compile group: "aopalliance", name: "aopalliance", version: "1.0"
+1.0 fixed
+compile group: "org.firebirdsql.jdbc", name: "jaybird-jdk17", version: "2.2.2"
+2.2.2 fixed
+compile group: "com.google.guava", name: "guava", version: "13.0.1"
+13.0.1 fixed
+compile group: "com.google.inject", name: "guice", version: "3.0"
+3.0 fixed
+compile group: "org.hibernate", name: "hibernate-core", version: "3.6.10.Final"
+3.6.10 fixed
+compile group: "org.hibernate", name: "hibernate-commons-annotations", version: "3.2.0.Final"
+3.2.0 fixed
+compile group: "org.hibernate.javax.persistence", name: "hibernate-jpa-2.0-api", version: "1.0.0.Final"
+1.0.0 fixed
+compile group: "commons-lang", name: "commons-lang", version: "2.6"
+2.6 fixed
+compile group: "commons-dbcp", name: "commons-dbcp", version: "1.4"
+1.4 fixed
+compile group: "commons-pool", name: "commons-pool", version: "1.6"
+1.6 fixed
+compile group: "commons-collections", name: "commons-collections", version: "3.2.1"
+3.2.1 fixed
+compile group: "javassist", name: "javassist", version: "3.12.0.GA"
+3.12.0 fixed
+compile group: "dom4j", name: "dom4j", version: "1.6.1"
+1.6.1 fixed
+compile group: "javax.resource", name: "connector", version: "1.0"
+1.0 fixed
+compile group: "javax.inject", name: "javax.inject", version: "1"
+1 fixed
+compile group: "javax.transaction", name: "jta", version: "1.1"
+1.1 fixed
+testCompile group: "org.mockito", name: "mockito-all", version: "1.9.0"
+1.9.0 fixed
+testCompile group: "org.testng", name: "testng", version: "6.8"
+6.8 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: "1.7.10"
+1.7.10 fixed
+compile group: 'org.mbte.groovypp', name: 'groovypp', version: "0.4.242_1.7.10"
+0.4.242 fixed
+compile group: 'org.codehaus.jsr166-mirror', name: 'jsr166y', version: "1.7.0"
+1.7.0 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+groovy group: 'org.apache.ivy', name:'ivy', version:'2.2.0'
+2.2.0 fixed
+groovy group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+compile 'com.atlassian.jira:jira-rest-java-client:0.2'
+0.2 fixed
+compile 'com.sun.jersey:jersey-client:1.5'
+1.5 fixed
+compile 'com.sun.jersey:jersey-core:1.5'
+1.5 fixed
+compile 'commons-httpclient:commons-httpclient:3.1'
+3.1 fixed
+compile 'org.codehaus.jettison:jettison:1.1'
+1.1 fixed
+compile 'com.sun.xml.bind:jaxb-impl:2.2.3'
+2.2.3 fixed
+compile 'org.codehaus.jackson:jackson-core-asl:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-mapper-asl:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-jaxrs:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-xc:1.5.5'
+1.5.5 fixed
+compile 'axis:axis:1.4'
+1.4 fixed
+axis 'axis:axis-ant:1.4', 'axis:axis:1.4'
+1.4 fixed
+axis 'axis:axis-ant:1.4', 'axis:axis:1.4'
+1.4 fixed
+compile 'junit:junit:4.12'
+4.12 fixed
+compile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final',
+1.0.0 fixed
+'javax.enterprise:cdi-api:1.0-SP4',
+1.0 fixed
+'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final'
+1.0.0 fixed
+compile 'org.jboss.seam.security:seam-security:3.0.0.Final',
+3.0.0 fixed
+'org.jboss.seam.remoting:seam-remoting:3.0.0.Final',
+3.0.0 fixed
+'org.xwidgets:xwidgets:1.0.0-SNAPSHOT',
+1.0.0 fixed
+'org.jboss.seam.xwidgets:seam-xwidgets:3.0.0-SNAPSHOT',
+3.0.0 fixed
+'org.jboss.seam.jcr:seam-jcr:3.0.0-SNAPSHOT'//,
+3.0.0 fixed
+compile "org.javassist:javassist:3.17.1-GA"
+3.17.1 fixed
+compile "org.slf4j:slf4j-api:1.7.12"
+1.7.12 fixed
+compile "de.schlichtherle.truezip:truezip-kernel:${trueZipVersion}"
+7.7.8 fixed
+compile "de.schlichtherle.truezip:truezip-file:${trueZipVersion}"
+7.7.8 fixed
+compile "de.schlichtherle.truezip:truezip-driver-zip:${trueZipVersion}"
+7.7.8 fixed
+testCompile "junit:junit:4.12"
+4.12 fixed
+testCompile "org.hamcrest:hamcrest-core:1.3"
+1.3 fixed
+testCompile "org.hamcrest:hamcrest-library:1.3"
+1.3 fixed
+testRuntime "ch.qos.logback:logback-classic:1.1.3"
+1.1.3 fixed
+compile 'com.lowagie:itext:4.2.1'
+4.2.1 fixed
+compile 'jfree:jfreechart-swt:1.0.9'
+1.0.9 fixed
+compile 'jfree:jfreechart-experimental:1.0.9'
+1.0.9 fixed
+compile 'jfree:jfreechart:1.0.13'
+1.0.13 fixed
+compile 'jfree:jcommon:1.0.16'
+1.0.16 fixed
+testCompile 'commons-io:commons-io:1.4'
+1.4 fixed
+testCompile 'junit:junit:4.11'
+4.11 fixed
+testRuntime 'ch.qos.logback:logback-core:1.1.2'
+1.1.2 fixed
+testRuntime 'ch.qos.logback:logback-classic:1.1.2'
+1.1.2 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+2.5 fixed
+compile group: 'com.google.guava', name: 'guava', version: 'r06'
+06 fixed
+compile group: 'org.markdownj', name: 'markdownj', version: '0.3.0-1.0.2b4'
+0.3.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile 'com.anjlab.android:fx:1.0.+@aar'
+1.0.+ micro
+compile 'com.googlecode.json-simple:json-simple:1.1.1'
+1.1.1 fixed
+compile ('com.offbytwo.jenkins:jenkins-client:0.3.7') {
+0.3.7 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+testCompile 'org.easytesting:fest-swing:1.2'
+1.2 fixed
+testCompile 'org.easytesting:fest-util:1.1.3'
+1.1.3 fixed
+testCompile 'org.unitils:unitils-core:3.3'
+3.3 fixed
+compileOnly "org.projectlombok:lombok:1.16.10"
+1.16.10 fixed
+packIntoJar group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+3.4 fixed
+implementation group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+3.4 fixed
+testImplementation group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testImplementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.12'
+2.4.12 fixed
+testImplementation group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+testImplementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+3.4 fixed
+compile 'org.tmatesoft.sqljet:sqljet:1.0.4'
+1.0.4 fixed
+compile 'dom4j:dom4j:1.6.1@jar'
+1.6.1 fixed
+deployerJars 'org.apache.maven.wagon:wagon-http:1.0-beta-6'
+1.0 fixed
+compile      group: 'com.google.guava', name: 'guava',            version: 'r09'
+09 fixed
+testCompile (group: 'junit',            name: 'junit-dep',        version: '4.8+') {
+4.8+ minor
+testCompile  group: 'org.hamcrest',     name: 'hamcrest-library', version: '1.2+'
+1.2+ minor
+compile 'org.codehaus.jsr166-mirror:jsr166y:0.4.40-SNAPSHOT'
+0.4.40 fixed
+compile 'org.codehaus.jsr166-mirror:extra166y:0.4.40-SNAPSHOT'
+0.4.40 fixed
+compile 'org.multiverse:multiverse-beta:0.7-RC-1'
+0.7 fixed
+compile group: 'org.codehaus.jcsp', name: 'jcsp', version: '1.1-rc5'
+1.1 fixed
+docs group: 'org.grails', name: 'grails-docs', version: '1.3.6'
+1.3.6 fixed
+docs group: 'radeox', name: 'radeox', version: '1.0-b2'
+1.0 fixed
+docs group: 'com.lowagie', name: 'itext', version: '2.0.8'
+2.0.8 fixed
+docs group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+docs group: 'org.xhtmlrenderer', name: 'core-renderer', version: 'R8'
+8 fixed
+docs group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+1.1.1 fixed
+deployerJars "org.apache.maven.wagon:wagon-http-lightweight:1.0-beta-6"
+1.0 fixed
+cover 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+testRuntime 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+testCompile 'org.easyb:easyb:0.9.6'
+0.9.6 fixed
+testCompile 'org.codehaus.groovy:groovy-all:1.7.10'
+1.7.10 fixed
+deployerJars "org.apache.maven.wagon:wagon-http:1.0-beta-2"
+1.0 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final',
+1.0.0 fixed
+'javax.enterprise:cdi-api:1.0-SP4',
+1.0 fixed
+'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final'
+1.0.0 fixed
+compile 'org.jboss.seam.security:seam-security:3.0.0.Final'
+3.0.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.5.2'
+2.5.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+'com.semagia.mio:mio-syntaxpack-nodeps:0.1.3-SNAPSHOT',
+0.1.3 fixed
+'org.slf4j:slf4j-api:(1.5.8,)',
+1.5.8 fixed
+'net.ontopia:ontopia-engine:5.1.3',
+5.1.3 fixed
+'net.ontopia:ontopia-mio:0.1.1-SNAPSHOT'
+0.1.1 fixed
+runtime 'org.tmapi:tmapi:(2.0.2,)',
+2.0.2 fixed
+'net.ontopia:toma:1.0.1',
+1.0.1 fixed
+'de.topicmapslab.tmql4j:tmql4ontopia:2.6.5',
+2.6.5 fixed
+'org.slf4j:slf4j-nop:(1.5.8,)'
+1.5.8 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+build 'de.jflex:jflex:1.4.3'
+1.4.3 fixed
+compile "com.icegreen:greenmail:1.5.3"
+1.5.3 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.5.2'
+2.5.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile 'org.slf4j:jcl-over-slf4j:1.6.1'
+1.6.1 fixed
+compile 'com.aestas:akka-servlet:1.0-SNAPSHOT'
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: "1.7.10"
+1.7.10 fixed
+compile group: 'org.mbte.groovypp', name: 'groovypp', version: "0.4.242_1.7.10"
+0.4.242 fixed
+compile group: 'se.scalablesolutions.akka', name: 'akka-actor', version: "1.1"
+1.1 fixed
+compile 'br.com.caelum:vraptor:3.3.1',
+3.3.1 fixed
+'com.thoughtworks.xstream:xstream:1.3.1'
+1.3.1 fixed
+compile group: 'com.google.appengine', name: 'appengine-tools-sdk', version: '1.4.3'
+1.4.3 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+groovy 'org.codehaus.groovy:groovy:1.8.0'
+1.8.0 fixed
+groovy 'commons-cli:commons-cli:1.2'
+1.2 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+compile "org.eclipse.jgit:org.eclipse.jgit:0.12.1"
+0.12.1 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7@jar"
+0.5 fixed
+compile 'org.codehaus.jsr166-mirror:jsr166y:1.7.0'
+1.7.0 fixed
+compile 'org.codehaus.jsr166-mirror:extra166y:1.7.0'
+1.7.0 fixed
+compile 'org.multiverse:multiverse-beta:0.7-RC-1'
+0.7 fixed
+compile group: 'org.codehaus.jcsp', name: 'jcsp', version: '1.1-rc5'
+1.1 fixed
+docs group: 'org.grails', name: 'grails-docs', version: '1.3.6'
+1.3.6 fixed
+docs group: 'radeox', name: 'radeox', version: '1.0-b2'
+1.0 fixed
+docs group: 'com.lowagie', name: 'itext', version: '2.0.8'
+2.0.8 fixed
+docs group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+docs group: 'org.xhtmlrenderer', name: 'core-renderer', version: 'R8'
+8 fixed
+docs group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+1.1.1 fixed
+deployerJars "org.apache.maven.wagon:wagon-http-lightweight:1.0-beta-6"
+1.0 fixed
+cover 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+testRuntime 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+compile "org.codehaus.groovy:groovy-all:2.0.6"
+2.0.6 fixed
+testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+0.7 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+compile "org.springframework:spring-context:3.1.0.M1"
+3.1.0 fixed
+testCompile "junit:junit:4.8"
+4.8 fixed
+izpack "izpack:izpack-standalone-compiler:4.3.3"
+4.3.3 fixed
+compile "commons-configuration:commons-configuration:1.6"
+1.6 fixed
+compile "SwingHelper:SwingHelperTray:390"
+390 fixed
+compile "TooTallNate:WebSocket:f49e9984d877a5b753c6"
+49 fixed
+compile "org.slf4j:slf4j-api:1.6.1"
+1.6.1 fixed
+runtime "ch.qos.logback:logback-classic:0.9.28"
+0.9.28 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.3'
+1.8.3 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+testCompile "org.spockframework:spock-core:$spockVersion"
+0.5-groovy-1.8 fixed
+testRuntime "com.h2database:h2:1.2.147"
+1.2.147 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+compile 'org.liquibase:liquibase-core:2.0.1'
+2.0.1 fixed
+compile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.1'
+1.1 fixed
+compile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.1'
+1.1 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.1'
+2.1 fixed
+tools group: 'junit', name: 'junit', version: '3.8'
+3.8 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.5.6'
+1.5.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testCompile group: 'org.jmock', name: 'jmock', version: '2.5.1'
+2.5.1 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.1'
+1.8.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.10"
+1.7.10 fixed
+testCompile "org.spockframework:spock-core:0.6-groovy-1.7-SNAPSHOT"
+0.6 fixed
+testRuntime "com.h2database:h2:1.2.147"
+1.2.147 fixed
+compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.2.2'
+2.2.2 fixed
+compile group: 'org.jyaml', name: 'jyaml', version: '1.3'
+1.3 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.13'
+1.7.13 fixed
+compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.0.2'
+2.0.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.11'
+4.11 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+1.9.5 fixed
+testCompile group: 'com.h2database', name: 'h2', version: '1.3.171'
+1.3.171 fixed
+testCompile "junit:junit-dep:4.10"
+4.10 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+provided group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+provided group: 'javax.servlet.jsp', name: 'jsp-api', version: '2.1'
+2.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.1'
+1.8.1 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.+'
+1.7.+ micro
+testCompile "org.spockframework:spock-core:$spockVersion"
+0.5-groovy-1.7 fixed
+compile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.1'
+1.1 fixed
+compile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.1'
+1.1 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.1'
+2.1 fixed
+tools group: 'junit', name: 'junit', version: '3.8'
+3.8 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.5.6'
+1.5.6 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testCompile group: 'org.jmock', name: 'jmock', version: '2.5.1'
+2.5.1 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.1'
+1.8.1 fixed
+provided 'javax.servlet:javax.servlet-api:3.1.0'
+3.1.0 fixed
+compile "org.grails.plugins:quartz:2.0.0.M4"
+2.0.0 fixed
+compile group: 'com.google.appengine', name: 'appengine-tools-sdk', version: '1.4.3'
+1.4.3 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+compile 'com.android.support:support-v4:25.3.1'
+25.3.1 fixed
+compile 'com.android.support:appcompat-v7:25.3.1'
+25.3.1 fixed
+compile 'com.android.support:recyclerview-v7:25.3.1'
+25.3.1 fixed
+compile 'com.android.support:cardview-v7:25.3.1'
+25.3.1 fixed
+compile 'com.android.support:design:25.3.1'
+25.3.1 fixed
+compile('com.arcao:geocaching-api:1.6.3') {
+1.6.3 fixed
+compile 'com.asamm:locus-api-android:0.2.10'
+0.2.10 fixed
+compile 'com.arcao:slf4j-timber:3.0'
+3.0 fixed
+compile 'org.apache.commons:commons-lang3:3.6'
+3.6 fixed
+compile 'org.apache.commons:commons-collections4:4.1'
+4.1 fixed
+compile 'commons-io:commons-io:2.5'
+2.5 fixed
+compile('org.scribe:scribe:1.3.7') {
+1.3.7 fixed
+compile 'com.jakewharton:butterknife:7.0.1'
+7.0.1 fixed
+compile 'com.github.afollestad.material-dialogs:core:0.9.4.5'
+0.9.4 fixed
+compile 'com.crashlytics.sdk.android:crashlytics:2.6.8'
+2.6.8 fixed
+compile 'com.squareup.okhttp3:okhttp:3.8.1'
+3.8.1 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile 'org.json:json:20090211'
+20090211 fixed
+compile 'org.apache.httpcomponents:httpclient:4.0-beta2'
+4.0 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'org.codehaus.groovy:groovy-all:1.7.6'
+1.7.6 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.1'
+1.1 fixed
+testRuntime 'org.picocontainer:picocontainer:2.13.2'
+2.13.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: 'latest.integration'
+latest major
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile 'org.redline-rpm:redline:1.1.10+'
+1.1.10+ micro
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile([group: 'org.gmock', name: 'gmock', version: '0.8.2', transitive: false])
+0.8.2 fixed
+compile "junit:junit:3.8.2"
+3.8.2 fixed
+compile "org.codehaus.groovy:groovy:1.7.8"
+1.7.8 fixed
+compile "net.sourceforge.htmlunit:htmlunit:2.8"
+2.8 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+provided 'javax.servlet:javax.servlet-api:3.1.0'
+3.1.0 fixed
+compile('org.codehaus.groovy.modules.http-builder:http-builder:0.7.1') {
+0.7.1 fixed
+compile "org.codehaus.cargo:cargo-daemon-client:$cargoVersion"
+1.4.15 fixed
+testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+1.0 fixed
+testCompile "org.codehaus.cargo:cargo-ant:$cargoVersion"
+1.4.15 fixed
+compile group: 'org.encog', name: 'encog-core', version:'3.4'
+3.4 fixed
+compile group: 'jfree', name: 'jcommon', version:'1.0.15'
+1.0.15 fixed
+compile group: 'jfree', name: 'jfreechart', version:'1.0.13'
+1.0.13 fixed
+compile group: 'org.hsqldb', name: 'hsqldb', version:'2.0.0'
+2.0.0 fixed
+compile group: 'net.sf.jung', name: 'jung2', version:'2.0.1'
+2.0.1 fixed
+compile group: 'net.sf.jung', name: 'jung-graph-impl', version:'2.0.1'
+2.0.1 fixed
+compile group: 'net.sf.jung', name: 'jung-visualization', version:'2.0.1'
+2.0.1 fixed
+compile group: 'net.sf.jung', name: 'jung-api', version:'2.0.1'
+2.0.1 fixed
+compile group: 'net.sf.jung', name: 'jung-io', version:'2.0.1'
+2.0.1 fixed
+compile group: 'net.sf.jung', name: 'jung-algorithms', version:'2.0.1'
+2.0.1 fixed
+compile group: 'batik', name: 'batik-awt-util', version:'1.6'
+1.6 fixed
+compile group: 'batik', name: 'batik-dom', version:'1.6'
+1.6 fixed
+compile group: 'batik', name: 'batik-svggen', version:'1.6'
+1.6 fixed
+compile group: 'batik', name: 'batik-util', version:'1.6'
+1.6 fixed
+compile group: 'batik', name: 'batik-xml', version:'1.6'
+1.6 fixed
+compile group: 'com.lowagie', name: 'itext', version:'2.1.7'
+2.1.7 fixed
+compile group: 'org.scilab.forge', name: 'jlatexmath', version:'0.9.6'
+0.9.6 fixed
+testCompile group: 'junit', name: 'junit', version:'4.8.1'
+4.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.5'
+1.7.5 fixed
+compile group:'org.hsqldb', name:'hsqldb', version:'2.0.0'
+2.0.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+profile "org.grails.profiles:web-plugin:3.1.0.RC1"
+3.1.0 fixed
+'org.slf4j:slf4j-api:1.6.6',
+1.6.6 fixed
+'org.slf4j:jcl-over-slf4j:1.6.6',
+1.6.6 fixed
+'ch.qos.logback:logback-core:1.0.7',
+1.0.7 fixed
+'ch.qos.logback:logback-classic:1.0.7',
+1.0.7 fixed
+'commons-lang:commons-lang:2.5',
+2.5 fixed
+'com.google.guava:guava:r09',
+09 fixed
+'org.functionaljava:functionaljava:3.1'
+3.1 fixed
+testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+2.47.1 fixed
+'junit:junit:4.+',
+4.+ minor
+testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+2.18 fixed
+'org.hamcrest:hamcrest-library:1.1',
+1.1 fixed
+'org.mockito:mockito-core:1.8.5'
+1.8.5 fixed
+compile "org.apache.camel:camel-core:${camelVersion}"
+2.15.0 fixed
+compile "org.apache.camel:camel-spring:${camelVersion}", {
+2.15.0 fixed
+compile "org.apache.camel:camel-groovy:${camelVersion}", {
+2.15.0 fixed
+compile "org.apache.camel:camel-stream:${camelVersion}"
+2.15.0 fixed
+testRuntime "org.apache.camel:camel-test:${camelVersion}", {
+2.15.0 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+compile group: 'org.apache.commons', name: 'com.springsource.org.apache.commons.codec', version: '1.3.0', configuration: 'compile'
+1.3.0 fixed
+xjc 'com.sun.xml.bind:jaxb-xjc:2.1.12'
+2.1.12 fixed
+compile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+bookGeneration 'xalan:xalan:2.7.1', 'xerces:xercesImpl:2.9.1'
+2.7.1 fixed
+bookGeneration 'xalan:xalan:2.7.1', 'xerces:xercesImpl:2.9.1'
+2.9.1 fixed
+bookGenerationStylesheets 'net.sf.docbook:docbook-xsl:1.76.1:resources@zip'
+1.76.1 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile 'org.jboss.logging:jboss-logging:3.3.0.Final'
+3.3.0 fixed
+jbossLoggingTool 'org.jboss.logging:jboss-logging-annotations:2.0.0.Final'
+2.0.0 fixed
+jbossLoggingTool 'org.jboss.logging:jboss-logging-processor:2.0.0.Final'
+2.0.0 fixed
+testCompile( 'junit:junit:3.8.1' )
+3.8.1 fixed
+animalSnifferSignature 'org.codehaus.mojo.signature:java16:1.0@signature'
+1.0 fixed
+compile('org.apache.s4:s4-core:0.4.0-SNAPSHOT' )
+0.4.0 fixed
+compile('org.apache.s4:s4-driver:0.4.0-SNAPSHOT' )
+0.4.0 fixed
+compile('org.json:json:20090211' )
+20090211 fixed
+compile('com.google.code.gson:gson:1.6' )
+1.6 fixed
+compile('log4j:log4j:1.2.15' )
+1.2.15 fixed
+compile('commons-cli:commons-cli:1.2' )
+1.2 fixed
+compile('commons-logging:commons-logging:1.1.1' )
+1.1.1 fixed
+compile('commons-io:commons-io:2.0.1' )
+2.0.1 fixed
+compile('commons-configuration:commons-configuration:1.6' )
+1.6 fixed
+compile('commons-codec:commons-codec:1.4' )
+1.4 fixed
+compile('commons-httpclient:commons-httpclient:3.1' )
+3.1 fixed
+testCompile('junit:junit:4.4' )
+4.4 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+2.6 fixed
+compile group: 'commons-io', name: 'commons-io', version: '2.4'
+2.4 fixed
+compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.3.10'
+2.3.10 fixed
+testCompile group: 'org.spockframework', name: 'spock-core', version: '0.7-groovy-2.0'
+0.7 fixed
+gradleScript group: 'com.alcshare', name: 'alclabs-gradle', ext: 'gradle', version: '1.16'
+1.16 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+[ group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.0'],
+1.8.0 fixed
+[ group: 'org.codehaus.groovy', name: 'groovy-xmlrpc', version: '0.7'],
+0.7 fixed
+[ group: 'jivesoftware', name: 'smack', version: '3.1.0'],
+3.1.0 fixed
+[ group: 'nekohtml', name: 'nekohtml', version: '1.9.6'],
+1.9.6 fixed
+[ group: 'org.apache.poi', name:'poi', version: '3.7'],
+3.7 fixed
+[ group: 'junit', name: 'junit', version: '4.8.2'],
+4.8.2 fixed
+[ group: 'org.spockframework', name: 'spock-core', version: '0.5-groovy-1.8'],
+0.5 fixed
+testCompile group: 'junit', name: 'junit', version:'4.11'
+4.11 fixed
+compile "org.bouncycastle:bcpg-jdk15:1.45"
+1.45 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+provided 'javax.servlet:javax.servlet-api:3.1.0'
+3.1.0 fixed
+compile 'redis.clients:jedis:2.9.0'
+2.9.0 fixed
+compile 'com.google.code.gson:gson:2.6.1'
+2.6.1 fixed
+provided 'javax.servlet:javax.servlet-api:3.1.0'
+3.1.0 fixed
+provided 'org.fusesource.jansi:jansi:1.11'
+1.11 fixed
+compile 'org.apache.httpcomponents:httpclient:4.3.4'
+4.3.4 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+compile "org.springframework:spring-beans:${springVersion}"
+3.1.2.RELEASE fixed
+compile "org.springframework:spring-context:${springVersion}"
+3.1.2.RELEASE fixed
+compile "org.springframework:spring-web:${springVersion}"
+3.1.2.RELEASE fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile 'org.easymock:easymock:3.0'
+3.0 fixed
+testCompile 'com.trigonic:test-utils:0.2'
+0.2 fixed
+providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final',
+1.0.0 fixed
+'javax.enterprise:cdi-api:1.0-SP4',
+1.0 fixed
+'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final'
+1.0.0 fixed
+compile 'org.jboss.seam.security:seam-security:3.0.0.Final',
+3.0.0 fixed
+'org.jboss.seam.remoting:seam-remoting:3.0.0.Final',
+3.0.0 fixed
+'org.xwidgets:xwidgets:1.0.0-SNAPSHOT',
+1.0.0 fixed
+'org.jboss.seam.xwidgets:seam-xwidgets:3.0.0-SNAPSHOT',
+3.0.0 fixed
+'org.jboss.seam.jcr:seam-jcr:3.0.0-SNAPSHOT'//,
+3.0.0 fixed
+compile 'commons-io:commons-io:1.4'
+1.4 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile 'org.easymock:easymock:2.4'
+2.4 fixed
+testCompile 'org.easymock:easymockclassextension:2.4'
+2.4 fixed
+compile 'org.apache.httpcomponents:httpclient:4.1.1'
+4.1.1 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile "javax.transaction:transaction-api:1.1",
+1.1 fixed
+"org.springframework:spring-beans:${springVersion}",
+3.0.5.RELEASE fixed
+"org.springframework:spring-jdbc:${springVersion}",
+3.0.5.RELEASE fixed
+"org.springframework:spring-web:${springVersion}",
+3.0.5.RELEASE fixed
+"org.springframework:spring-webmvc:${springVersion}",
+3.0.5.RELEASE fixed
+"org.springframework:spring-orm:${springVersion}",
+3.0.5.RELEASE fixed
+'org.hibernate:hibernate-entitymanager:3.3.2.GA',
+3.3.2 fixed
+'taglibs:standard:1.1.2',
+1.1.2 fixed
+'javax.servlet:jstl:1.1.2',
+1.1.2 fixed
+'commons-dbcp:commons-dbcp:20030825.184428',
+20030825.184428 fixed
+'commons-pool:commons-pool:20030825.183949',
+20030825.183949 fixed
+"postgresql:postgresql:${postgresqlVersion}"
+9.0-801.jdbc4 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.5'
+2.5 fixed
+compile group: 'com.google.guava', name: 'guava', version: 'r06'
+06 fixed
+compile group: 'org.markdownj', name: 'markdownj', version: '0.3.0-1.0.2b4'
+0.3.0 fixed
+deployerJars "org.apache.maven.wagon:wagon-ssh:1.0-beta-2"
+1.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+jdeb group: 'org.vafer', name: 'jdeb', version: '0.8'
+0.8 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.1'
+1.8.1 fixed
+compile 'com.goodercode:graffiti:1.0-SNAPSHOT'
+1.0 fixed
+compile 'org.mortbay.jetty:jetty:6.1.25'
+6.1.25 fixed
+compile 'org.mortbay.jetty:jetty-plus:6.1.25'
+6.1.25 fixed
+compile 'org.mortbay.jetty:jetty-naming:6.1.25'
+6.1.25 fixed
+compile 'com.atlassian.jira:jira-rest-java-client:0.2'
+0.2 fixed
+compile 'com.sun.jersey:jersey-client:1.5'
+1.5 fixed
+compile 'com.sun.jersey:jersey-core:1.5'
+1.5 fixed
+compile 'commons-httpclient:commons-httpclient:3.1'
+3.1 fixed
+compile 'org.codehaus.jettison:jettison:1.1'
+1.1 fixed
+compile 'com.sun.xml.bind:jaxb-impl:2.2.3'
+2.2.3 fixed
+compile 'org.codehaus.jackson:jackson-core-asl:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-mapper-asl:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-jaxrs:1.5.5'
+1.5.5 fixed
+compile 'org.codehaus.jackson:jackson-xc:1.5.5'
+1.5.5 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+groovy      "org.codehaus.groovy:groovy-all:$groovyVersion"
+1.8.0 fixed
+compile   ( "org.codehaus.groovy.modules.http-builder:http-builder:$httpBuilderVersion" ){
+0.5.1 fixed
+compile     "org.codehaus.groovy:groovy-all:$groovyVersion",
+1.8.0 fixed
+"org.apache.ant:ant:$antVersion",
+1.8.2 fixed
+"org.springframework:spring-context:$springVersion",
+3.0.5.RELEASE fixed
+"de.schlichtherle:truezip:$truezipVersion",
+6.8.2 fixed
+'org.apache.commons:commons-exec:1.1',
+1.1 fixed
+'commons-net:commons-net:2.2',
+2.2 fixed
+'org.slf4j:slf4j-api:1.6.1',
+1.6.1 fixed
+'org.apache.httpcomponents:httpclient:4.1',
+4.1 fixed
+'ch.qos.logback:logback-classic:0.9.28', // Logback patch in MopHelper
+0.9.28 fixed
+'net.sf.json-lib:json-lib:2.4:jdk15'
+2.4 fixed
+runtime     "org.apache.ant:ant-commons-net:$antVersion"
+1.8.2 fixed
+testCompile "org.springframework:spring-test:$springVersion",
+3.0.5.RELEASE fixed
+"junit:junit:$junitVersion"
+4.8.2 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile     'org.gcontracts:gcontracts-core:1.2.3'
+1.2.3 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+'com.jidesoft:jide-oss:3.4.7',
+3.4.7 fixed
+'com.kitfox.svg:svg-salamander:1.1'
+1.1 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+'org.w3c.css:sac:1.3'
+1.3 fixed
+compile('net.sourceforge.cssparser:cssparser:0.9.5') { transitive = false }
+0.9.5 fixed
+testCompile "junit:junit:4.10"
+4.10 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+'com.explodingpixels:mac_widgets:0.9.5',
+0.9.5 fixed
+'com.jgoodies:forms:1.2.1'
+1.2.1 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+"org.swinglabs.swingx:swingx-core:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-graphics:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-painters:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-plaf:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-autocomplete:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-action:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-common:$swingxVersion",
+1.6.4 fixed
+"org.swinglabs.swingx:swingx-beaninfo:$swingxVersion",
+1.6.4 fixed
+'org.swinglabs:swing-worker:1.1',
+1.1 fixed
+'net.java.dev.timingframework:timingframework:1.0'
+1.0 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+'net.java.balloontip:balloontip:20090102',
+20090102 fixed
+'com.l2fprod.common:l2fprod-common-all:6.9.1',
+6.9.1 fixed
+'org.swinglabs.swingx:swingx-core:1.6.3',
+1.6.3 fixed
+'org.swingxlabs:xswingx:0.2'
+0.2 fixed
+compile('org.swinglabs.swingx:swingx-beaninfo:1.6.3') { transitive = false }
+1.6.3 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+'com.github.insubstantial:trident:7.0'
+7.0 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+'com.jetta:formsrt:2.1.0M1'
+2.1.0 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+deployerJars 'org.apache.maven.wagon:wagon-webdav:1.0-beta-2',
+1.0 fixed
+'org.apache.maven:maven-ant-tasks:2.1.0'
+2.1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+sshDeploy 'org.apache.maven.wagon:wagon-ssh:1.0-beta-7'
+1.0 fixed
+compile 'org.slf4j:slf4j-api:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.11'
+4.11 fixed
+compile 'org.codehaus.groovy:groovy-all:2.2.0'
+2.2.0 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-mapper-lgpl', version: '1.5.6'
+1.5.6 fixed
+compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
+0.7 fixed
+testCompile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+2.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.5'
+1.8.5 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.0'
+1.8.0 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+2.8.1 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+compile 'net.sourceforge.htmlunit:htmlunit:2.13'
+2.13 fixed
+compile 'org.mozilla:rhino:1.7R4'
+1.7 fixed
+compile 'commons-cli:commons-cli:1.2'
+1.2 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile 'junit:junit:4.+'
+4.+ minor
+compile 'com.google.guava:guava:13.0'
+13.0 fixed
+compile "org.springframework:spring-core:3.1.2.RELEASE"
+3.1.2 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.8'
+0.5 fixed
+compile 'joda-time:joda-time:2.1'
+2.1 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.0'
+1.8.0 fixed
+compile 'org.spockframework:spock-core:0.5-groovy-1.8', {
+0.5 fixed
+exclude group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.0-beta-3-SNAPSHOT'
+1.8.0 fixed
+compile 'glaforge:gaelyk:0.7'
+0.7 fixed
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.0'
+1.5.0 fixed
+compile 'com.google.appengine:appengine-api-labs:1.5.0'
+1.5.0 fixed
+compile 'com.google.appengine:appengine-api-stubs:1.5.0'
+1.5.0 fixed
+compile 'com.google.appengine:appengine-testing:1.5.0'
+1.5.0 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+compile 'org.objenesis:objenesis:1.2'
+1.2 fixed
+compile 'ch.qos.logback:logback-classic:0.9.29'
+0.9.29 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.8'
+0.5 fixed
+testRuntime 'cglib:cglib-nodep:2.2.2'
+2.2.2 fixed
+testRuntime 'org.objenesis:objenesis:1.2'
+1.2 fixed
+compile "log4j:log4j:1.2.15@jar"
+1.2.15 fixed
+compile "org.slf4j:slf4j-log4j12:1.5.2@jar"
+1.5.2 fixed
+compile "org.hibernate:hibernate-annotations:3.4.0.GA"
+3.4.0 fixed
+compile "javassist:javassist:3.4.GA@jar"
+3.4 fixed
+compile 'hsqldb:hsqldb:1.8.0.10'
+1.8.0 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+compile 'org.springframework:spring-webmvc:3.0.5.RELEASE'
+3.0.5 fixed
+compile 'org.springframework:spring-orm:3.0.5.RELEASE'
+3.0.5 fixed
+compile 'org.springframework:spring-tx:3.0.5.RELEASE'
+3.0.5 fixed
+testCompile 'org.testng:testng:6.0'
+6.0 fixed
+[ group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.0'],
+1.8.0 fixed
+[ group: 'junit', name: 'junit', version: '4.8.2'],
+4.8.2 fixed
+[ group: 'org.seleniumhq.selenium', name: 'selenium', version: '2.0a7'],
+2.0 fixed
+[ group: 'org.codehaus.geb', name: 'geb-core', version: '0.5.1'],
+0.5.1 fixed
+[ group: 'org.codehaus.geb', name: 'geb-junit4', version: '0.5.1'],
+0.5.1 fixed
+[ group: 'org.spockframework', name: 'spock-core', version: '0.5-groovy-1.8'],
+0.5 fixed
+[ group: 'org.codehaus.geb', name: 'geb-spock', version: '0.5.1'],
+0.5.1 fixed
+compile 'batik:batik:1.5'
+1.5 fixed
+compile 'crimson:crimson:1.1.3'
+1.1.3 fixed
+compile 'skinlf:skinlf:1.2.3'
+1.2.3 fixed
+compile 'batik:batik:1.5'
+1.5 fixed
+compile 'crimson:crimson:1.1.3'
+1.1.3 fixed
+compile 'skinlf:skinlf:1.2.3'
+1.2.3 fixed
+compile 'batik:batik:1.5'
+1.5 fixed
+compile 'crimson:crimson:1.1.3'
+1.1.3 fixed
+compile 'skinlf:skinlf:1.2.3'
+1.2.3 fixed
+compile 'com.android.support:support-annotations:+'
++ major
+compile 'com.android.support:support-v4:20.+'
+20.+ minor
+compile 'com.android.support:appcompat-v7:20.+'
+20.+ minor
+compile 'com.google.android.gms:play-services:5.0.77'
+5.0.77 fixed
+compile "org.apache.tapestry:plastic:5.3-alpha-2"
+5.3 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.4"
+1.7.4 fixed
+testCompile "junit:junit:4.8.1"
+4.8.1 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+compile group:'org.msgpack', name: 'msgpack', version: '0.5.2-devel'
+0.5.2 fixed
+compile group:'org.msgpack', name: 'msgpack-rpc', version: '0.6.1-devel'
+0.6.1 fixed
+compile 'com.android.support:support-annotations:+'
++ major
+compile 'com.android.support:support-v4:22.1.1'
+22.1.1 fixed
+compile 'com.android.support:appcompat-v7:22.1.1'
+22.1.1 fixed
+compile 'com.android.support:design:22.2.0'
+22.2.0 fixed
+compile 'com.google.android.gms:play-services-ads:7.5.0'
+7.5.0 fixed
+compile 'com.google.android.gms:play-services-plus:7.5.0'
+7.5.0 fixed
+compile 'com.squareup.okhttp:okhttp:2.4.0'
+2.4.0 fixed
+compile 'com.squareup.picasso:picasso:2.5.2'
+2.5.2 fixed
+compile 'com.piusvelte.okoauth:OKOAuth:1.0@aar'
+1.0 fixed
+compile 'com.piusvelte.eidos:Eidos:1.0@aar'
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+testCompile 'org.hamcrest:hamcrest-library:1.3'
+1.3 fixed
+testCompile 'org.hsqldb:hsqldb:2.0.0'
+2.0.0 fixed
+deployerJars 'org.apache.maven.wagon:wagon-ssh:2.1'
+2.1 fixed
+compile 'org.encog:encog-core:3.4'
+3.4 fixed
+providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'com.hp.hpl.jena', name: 'jena', version: '2.6.4'
+2.6.4 fixed
+compile group: 'org.neo4j', name: 'neo4j', version: '1.4.M03'
+1.4 fixed
+compile group: 'com.vividsolutions', name: 'jts', version: '1.11'
+1.11 fixed
+compile group: 'org.jboss.resteasy', name: 'resteasy-jaxrs', version: '2.2.1.GA'
+2.2.1 fixed
+compile group: 'com.google.code.gson', name:'gson', version:'1.7.1'
+1.7.1 fixed
+compile group: 'net.sf.opencsv', name: 'opencsv', version: '2.1'
+2.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+testCompile group: 'org.mortbay.jetty', name:'jetty', version: '6.1.26'
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA', classifier: 'sources'
+1.0.0 fixed
+compile 'org.spiffyui:spiffyui:0.7.9'
+0.7.9 fixed
+groovy "org.codehaus.groovy:groovy:1.8.0"
+1.8.0 fixed
+compile("log4j:log4j:1.2.15") {
+1.2.15 fixed
+compile "org.slf4j:slf4j-api:1.6.1"
+1.6.1 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1"
+1.6.1 fixed
+compile "org.slf4j:jcl-over-slf4j:1.6.1"
+1.6.1 fixed
+compile "org.codehaus.jackson:jackson-core-asl:1.8.2"
+1.8.2 fixed
+compile "org.codehaus.jackson:jackson-mapper-asl:1.8.2"
+1.8.2 fixed
+compile "com.google.protobuf:protobuf-java:2.3.0"
+2.3.0 fixed
+compile "com.basho.riak:riak-client:0.14.2-SNAPSHOT"
+0.14.2 fixed
+compile "org.glassfish.grizzly:grizzly-framework:2.1.1"
+2.1.1 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.8"
+0.5 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA', classifier: 'sources'
+1.0.0 fixed
+compile 'org.spiffyui:spiffyui:1.2'
+1.2 fixed
+providedCompile	"org.apache.geronimo.specs:geronimo-jsp_2.1_spec:1.0.1",
+1.0.1 fixed
+"org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0"
+1.0 fixed
+compile			"com.google.guava:guava:10.0.1",
+10.0.1 fixed
+"org.javatuples:javatuples:1.1",
+1.1 fixed
+"org.slf4j:slf4j-api:1.6.1"
+1.6.1 fixed
+testCompile		"ch.qos.logback:logback-classic:0.9.24",
+0.9.24 fixed
+"junit:junit:4.5",
+4.5 fixed
+"org.springframework:spring-core:3.0.0.RELEASE",
+3.0.0 fixed
+"org.springframework:spring-test:3.0.0.RELEASE",
+3.0.0 fixed
+"org.slf4j:jcl-over-slf4j:1.6.1",
+1.6.1 fixed
+"org.codehaus.groovy:groovy-all:1.9.0-beta-4"
+1.9.0 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+compile 'org.slf4j:slf4j-api:1.5.6'
+1.5.6 fixed
+compile 'org.slf4j:slf4j-log4j12:1.5.6'
+1.5.6 fixed
+compile 'com.google.guava:guava:r09'
+09 fixed
+testCompile 'org.mockito:mockito-core:1.8.5'
+1.8.5 fixed
+testCompile 'org.springframework:spring-test:3.0.5.RELEASE'
+3.0.5 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+2.8.1 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-compiler', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.scala-lang', name: 'scala-library', version: '2.8.1'
+2.8.1 fixed
+compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.0.Beta2'
+3.6.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.6.0.Beta2', ext: 'jar'
+3.6.0 fixed
+compile group: 'jboss', name: 'javassist', version: '3.1'
+3.1 fixed
+compile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+2.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testCompile group: 'org.hsqldb', name: 'hsqldb', version: '2.0.0'
+2.0.0 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+scalaTools "org.scala-lang:scala-compiler:${scalaVersion}", "org.scala-lang:scala-library:${scalaVersion}"
+2.9.1 fixed
+scalaTools "org.scala-lang:scala-compiler:${scalaVersion}", "org.scala-lang:scala-library:${scalaVersion}"
+2.9.1 fixed
+compile "org.scala-lang:scala-library:${scalaVersion}", 'lib:disruptor:2.7'
+2.9.1 fixed
+compile "org.scala-lang:scala-library:${scalaVersion}", 'lib:disruptor:2.7'
+2.7 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+testCompile "junit:junit:4.11"
+4.11 fixed
+compile 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.3'
+1.7.3 fixed
+testCompile 'junit:junit:3.8.2'
+3.8.2 fixed
+testCompile group: 'org.testng', name: 'testng', version: '5.8', classifier: 'jdk15'
+5.8 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.7'
+4.7 fixed
+compile 'org.liquibase:liquibase-core:2.0.1'
+2.0.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+compile 'batik:batik:1.5'
+1.5 fixed
+compile 'crimson:crimson:1.1.3'
+1.1.3 fixed
+compile 'skinlf:skinlf:1.2.3'
+1.2.3 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '2.3.8'
+2.3.8 fixed
+compile 'org.apache.jena:jena:2.12.0'
+2.12.0 fixed
+compile 'org.apache.jena:jena-arq:2.12.0'
+2.12.0 fixed
+compile 'com.github.jsonld-java:jsonld-java:0.5.0'
+0.5.0 fixed
+compile 'org.apache.jena:jena-csv:1.0.0'
+1.0.0 fixed
+compile 'org.codehaus.gpars:gpars:1.1.0'
+1.1.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.6'
+1.8.6 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+compile(group: "com.github.java-json-tools", name: "json-schema-core", version: "1.2.8");
+1.2.8 fixed
+compile(group: "javax.mail", name: "mailapi", version: "1.4.3");
+1.4.3 fixed
+compile(group: "joda-time", name: "joda-time", version: "2.9.7");
+2.9.7 fixed
+compile(group: "com.googlecode.libphonenumber", name: "libphonenumber", version: "8.0.0");
+8.0.0 fixed
+compile(group: "com.google.code.findbugs", name: "jsr305", version: "3.0.1");
+3.0.1 fixed
+compile(group: "net.sf.jopt-simple", name: "jopt-simple", version: "5.0.3");
+5.0.3 fixed
+testCompile(group: "org.testng", name: "testng", version: "6.10") {
+6.10 fixed
+testCompile(group: "org.mockito", name: "mockito-core", version: "2.4.2");
+2.4.2 fixed
+testCompile(group: "org.easytesting", name: "fest-assert", version: "1.4");
+1.4 fixed
+compile 'commons-io:commons-io:1.4'
+1.4 fixed
+compile 'log4j:log4j:1.2.15'
+1.2.15 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile 'org.easymock:easymock:2.4'
+2.4 fixed
+testCompile 'org.easymock:easymockclassextension:2.4'
+2.4 fixed
+deployerJars 'org.apache.maven.wagon:wagon-http:1.0-beta-7'
+1.0 fixed
+compile "org.apache.maven.doxia:doxia-converter:1.2"
+1.2 fixed
+testCompile 'junit:junit:4.8.2', 'org.spockframework:spock-core:0.5-groovy-1.7@jar'
+4.8.2 fixed
+testCompile 'junit:junit:4.8.2', 'org.spockframework:spock-core:0.5-groovy-1.7@jar'
+0.5 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile "log4j:log4j:1.2.15@jar"
+1.2.15 fixed
+compile "org.slf4j:slf4j-log4j12:1.5.2@jar"
+1.5.2 fixed
+compile "org.hibernate:hibernate-annotations:3.4.0.GA"
+3.4.0 fixed
+compile "javassist:javassist:3.4.GA@jar"
+3.4 fixed
+compile 'hsqldb:hsqldb:1.8.0.10'
+1.8.0 fixed
+compile "org.springframework:spring-webmvc:2.5.6.SEC01"
+2.5.6 fixed
+compile "org.springframework:spring-orm:2.5.6.SEC01"
+2.5.6 fixed
+compile "org.springframework:spring-jdbc:2.5.6.SEC01"
+2.5.6 fixed
+compile "commons-dbcp:commons-dbcp:1.4@jar"
+1.4 fixed
+compile "commons-pool:commons-pool:1.5.6@jar"
+1.5.6 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+providedCompile "javax.servlet:jstl:1.2@jar"
+1.2 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+compile("com.googlecode.libphonenumber:libphonenumber:7.4.4") {
+7.4.4 fixed
+compile("com.googlecode.libphonenumber:geocoder:2.47") {
+2.47 fixed
+runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.8.2"
+2.8.2 fixed
+testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+2.47.1 fixed
+testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+2.18 fixed
+testCompile "junit:junit:4.8.1"
+4.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.4'
+1.7.4 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-mapper-lgpl', version: '1.5.6'
+1.5.6 fixed
+compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+1.2 fixed
+testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+0.4 fixed
+testCompile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+2.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.5'
+1.8.5 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+compile "ojdbc:ojdbc:14"
+14 fixed
+implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+1.1.60 fixed
+implementation "com.android.support:appcompat-v7:$supportLibVersion"
+26.1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.0'
+1.8.0 fixed
+compile group:'ch.qos.logback', name:'logback-core',version:'1.0.0'
+1.0.0 fixed
+compile group:'ch.qos.logback', name:'logback-classic',version:'1.0.0'
+1.0.0 fixed
+compile group:'org.slf4j', name:'slf4j-api',version:'1.6.4'
+1.6.4 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile("org.spockframework:spock-core:0.5-groovy-1.8") {
+0.5 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.0'
+1.8.0 fixed
+deployerJars "org.apache.maven.wagon:wagon-ssh:1.0-beta-6"
+1.0 fixed
+scalaTools "org.scala-lang:scala-compiler:${scalaVersion}"
+2.9.0-1 fixed
+scalaTools "org.scala-lang:scala-library:${scalaVersion}"
+2.9.0-1 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+testCompile "org.scalatest:scalatest_2.9.0:1.6.1"
+1.6.1 fixed
+testCompile "se.scalablesolutions.akka:akka-testkit:${akkaVersion}"
+1.1.3 fixed
+compile "org.scala-lang:scala-library:${scalaVersion}"
+2.9.0-1 fixed
+compile "se.scalablesolutions.akka:akka-actor:${akkaVersion}"
+1.1.3 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+providedCompile group: 'javax.servlet', name: 'com.springsource.javax.servlet', version:'2.5.0'
+2.5.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile group: 'log4j', name: 'log4j', version:'1.2.16'
+1.2.16 fixed
+compile group: 'org.postgresql', name: 'com.springsource.org.postgresql.jdbc4', version:'8.3.604'
+8.3.604 fixed
+compile group: 'com.hazelcast', name:'hazelcast', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'com.hazelcast', name:'hazelcast-spring', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'org.mybatis', name: 'mybatis', version:'3.0.6'
+3.0.6 fixed
+compile group: 'org.mybatis', name: 'mybatis-hazelcast', version:'1.0.0'
+1.0.0 fixed
+compile group: 'commons-lang', name: 'commons-lang', version:'2.2'
+2.2 fixed
+compile group: 'commons-net', name: 'commons-net', version:'2.2'
+2.2 fixed
+compile group: 'org.elasticsearch', name: 'elasticsearch', version:'0.17.5'
+0.17.5 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-xc', version:'1.7.5'
+1.7.5 fixed
+compile group: 'args4j', name: 'args4j', version:'2.0.12'
+2.0.12 fixed
+compile group: "org.apache.commons", name:"com.springsource.org.apache.commons.dbcp", version:"1.2.2.osgi"
+1.2.2 fixed
+compile group: "org.springframework", name:"org.springframework.web.servlet", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: "org.springframework", name:"org.springframework.jdbc", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-spring', version:'1.0.2'
+1.0.2 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '2.2.6'
+2.2.6 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '2.2.6'
+2.2.6 fixed
+compile group: 'uk.ac.ebi.das', name:'jdas', version: '1.0.1'
+1.0.1 fixed
+compile group: 'net.sf', name: 'sam', version: '1.45', ext: 'jar'
+1.45 fixed
+compile group: 'org.sanger', name: 'artemis', version: 'v13.2.1', ext:'jar'
+13.2.1 fixed
+compile group: 'org.biojava', name: 'biojava', version: '1.6', ext:'jar'
+1.6 fixed
+compile group: 'org.obo', name: 'obo', version: '1.0', ext:'jar'
+1.0 fixed
+compile group: 'org.obo', name: 'bbop', version: '1.0', ext:'jar'
+1.0 fixed
+compile group:'jgrapht', name:'jgrapht', version: '0.7.3'
+0.7.3 fixed
+compile 'com.android.support:support-v4:22.1.1'
+22.1.1 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+jacoco group: "org.jacoco", name: "org.jacoco.agent", version: "0.5.3.201107060350", classifier: "runtime"
+0.5.3 fixed
+compile 'org.atmosphere:atmosphere-runtime:0.7.1'
+0.7.1 fixed
+compile 'org.atmosphere:atmosphere-compat-tomcat:0.7.1'
+0.7.1 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.googlecode.json-simple:json-simple:1.1'
+1.1 fixed
+compile 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+compile 'org.slf4j:slf4j-simple:1.6.1'
+1.6.1 fixed
+compile 'commons-io:commons-io:2.0.1'
+2.0.1 fixed
+compile 'org.slf4j:slf4j-api:1.7.25'
+1.7.25 fixed
+compile 'org.slf4j:slf4j-log4j12:1.7.25'
+1.7.25 fixed
+compile 'log4j:log4j:1.2.17'
+1.2.17 fixed
+compileOnly "org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:${swtVersion}"
+4.6.1 fixed
+win32swt "org.eclipse.swt:org.eclipse.swt.win32.win32.x86:${swtVersion}"
+4.6.1 fixed
+win64swt "org.eclipse.swt:org.eclipse.swt.win32.win32.x86_64:${swtVersion}"
+4.6.1 fixed
+lin64swt "org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:${swtVersion}"
+4.6.1 fixed
+macosxswt "org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:${swtVersion}"
+4.6.1 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+testCompile 'org.hamcrest:hamcrest-all:1.3'
+1.3 fixed
+testCompile 'org.apache.httpcomponents:httpclient:4.5.3'
+4.5.3 fixed
+compile     'org.gcontracts:gcontracts-core:1.2.4'
+1.2.4 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+pmd "net.sourceforge.pmd:pmd:5.0.1"
+5.0.1 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+compile 'log4j:log4j:1.+'
+1.+ minor
+providedCompile group: 'javax.servlet', name: 'com.springsource.javax.servlet', version:'2.5.0'
+2.5.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile group: 'log4j', name: 'log4j', version:'1.2.16'
+1.2.16 fixed
+compile group: 'org.postgresql', name: 'com.springsource.org.postgresql.jdbc4', version:'8.3.604'
+8.3.604 fixed
+compile group: 'com.hazelcast', name:'hazelcast', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'com.hazelcast', name:'hazelcast-spring', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'org.mybatis', name: 'mybatis', version:'3.0.5'
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-hazelcast', version:'1.0.0'
+1.0.0 fixed
+compile group: 'commons-lang', name: 'commons-lang', version:'2.2'
+2.2 fixed
+compile group: 'commons-net', name: 'commons-net', version:'2.2'
+2.2 fixed
+compile group: 'org.elasticsearch', name: 'elasticsearch', version:'0.17.5'
+0.17.5 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-xc', version:'1.7.5'
+1.7.5 fixed
+compile group: 'args4j', name: 'args4j', version:'2.0.12'
+2.0.12 fixed
+compile group: "org.apache.commons", name:"com.springsource.org.apache.commons.dbcp", version:"1.2.2.osgi"
+1.2.2 fixed
+compile group: "org.springframework", name:"org.springframework.web.servlet", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: "org.springframework", name:"org.springframework.jdbc", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-spring', version:'1.0.0'
+1.0.0 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '2.2.6'
+2.2.6 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '2.2.6'
+2.2.6 fixed
+compile group: 'uk.ac.ebi.das', name:'jdas', version: '1.0.1'
+1.0.1 fixed
+compile group: 'net.sf', name: 'sam', version: '1.45', ext: 'jar'
+1.45 fixed
+compile group: 'org.sanger', name: 'artemis', version: 'v13.2.1', ext:'jar'
+13.2.1 fixed
+compile group: 'org.biojava', name: 'biojava', version: '1.6', ext:'jar'
+1.6 fixed
+compile group: 'org.obo', name: 'obo', version: '1.0', ext:'jar'
+1.0 fixed
+compile group: 'org.obo', name: 'bbop', version: '1.0', ext:'jar'
+1.0 fixed
+compile group:'jgrapht', name:'jgrapht', version: '0.7.3'
+0.7.3 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile 'com.google.appengine:appengine-testing:1.5.2'
+1.5.2 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+compile ('org.apache.jena:jena:2.11.1')
+2.11.1 fixed
+compile ('org.apache.jena:jena-arq:2.11.1')
+2.11.1 fixed
+compile ('org.springframework:spring-core:4.0.3.RELEASE')
+4.0.3 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+2.8.1 fixed
+scalaTools 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile 'org.scala-lang:scala-library:2.8.1'
+2.8.1 fixed
+compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.1.1'
+4.1.1 fixed
+compile group: 'commons-io', name: 'commons-io', version: '2.0.1'
+2.0.1 fixed
+compile group: 'org.jsoup', name: 'jsoup', version: '1.6.1'
+1.6.1 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.8.3'
+1.8.3 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.+'
+1.2.+ micro
+testCompile group: 'junit', name: 'junit', version: '4.8'
+4.8 fixed
+testRuntime group: 'net.sourceforge.cobertura', name: 'cobertura', version: '1.9.4.1'
+1.9.4 fixed
+compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+3.2 fixed
+compile group: 'com.rabbitmq', name: 'amqp-client', version: '2.5.1'
+2.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+[group: 'javax.json',    name: 'javax.json-api', version: '1.0'],
+1.0 fixed
+[group: 'org.glassfish', name: 'javax.json',     version: '1.0.4']
+1.0.4 fixed
+compile 'com.flowpowered:flow-networking:1.0.0-SNAPSHOT'
+1.0.0 fixed
+compile 'jline:jline:2.11'
+2.11 fixed
+compile 'org.slf4j:slf4j-jdk14:1.7.5'
+1.7.5 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+compile "com.google.guava:guava:r09"
+09 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+pmd "pmd:pmd:4.2.5"
+4.2.5 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.8'
+1.7.8 fixed
+compile "com.android.support:appcompat-v7:$supportLibVersion"
+26.0.1 fixed
+compile "com.android.support:support-compat:$supportLibVersion"
+26.0.1 fixed
+compile "com.android.support:design:$supportLibVersion"
+26.0.1 fixed
+compile "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+1.0.2 fixed
+compile "com.jakewharton:butterknife:$butterknifeVersion"
+8.6.0 fixed
+annotationProcessor "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+8.6.0 fixed
+compile "com.afollestad.material-dialogs:core:$materialDialogsVersion"
+0.9.4.7 fixed
+compile "com.github.recklessracoon:SimpleRangeBar-Android:$simpleRangeBarVersion"
+0.1.1 fixed
+compile "pub.devrel:easypermissions:$easyPermissionsVersion"
+0.4.2 fixed
+compile "org.greenrobot:eventbus:$eventBusVersion"
+3.0.0 fixed
+annotationProcessor "org.greenrobot:eventbus-annotation-processor:$eventBusAnnotationProcessorVersion"
+3.0.1 fixed
+compile "com.github.felHR85:UsbSerial:$usbSerialVersion"
+4.5 fixed
+compile "com.github.berndporr:iirj:v$iirFiltersVersion"
+1.0.4 fixed
+compile "org.apache.commons:commons-math3:$commonsMathVersion"
+3.6.1 fixed
+compile("com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion") {
+2.6.8@aar fixed
+groovy "org.codehaus.groovy:groovy:1.8.0"
+1.8.0 fixed
+compile("log4j:log4j:1.2.15") {
+1.2.15 fixed
+compile "org.slf4j:slf4j-api:1.6.1"
+1.6.1 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1"
+1.6.1 fixed
+compile "org.slf4j:jcl-over-slf4j:1.6.1"
+1.6.1 fixed
+compile "org.glassfish.grizzly:grizzly-http:2.1.1"
+2.1.1 fixed
+compile "org.eclipse.jetty:jetty-client:8.0.0.M3"
+8.0.0 fixed
+compile "commons-codec:commons-codec:1.5"
+1.5 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.8"
+0.5 fixed
+testRuntime "org.apache.ant:ant-javamail:1.7.1@jar"
+1.7.1 fixed
+compile cxf_dist, groovywsCxfDeps, groovy_all_dist, junit_dist, ant_dist
+2.2.4 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.6.3'
+1.6.3 fixed
+archives "org.apache.maven.wagon:wagon-webdav:1.0-beta-2"
+1.0 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+compile "org.spockframework:spock-core:0.6-groovy-1.7-SNAPSHOT"
+0.6 fixed
+compile "rhino:js:1.7R2"
+1.7 fixed
+compile "de.huxhorn.lilith:logback:0.9.40", "ch.qos.logback:logback-classic:0.9.28"
+0.9.40 fixed
+compile "de.huxhorn.lilith:logback:0.9.40", "ch.qos.logback:logback-classic:0.9.28"
+0.9.28 fixed
+compile "org.slf4j:slf4j-api:1.6.1"
+1.6.1 fixed
+compile "org.springframework:spring-beans:${springVersion}"
+3.1.+ micro
+compile "org.springframework:spring-context:${springVersion}"
+3.1.+ micro
+compile "org.springframework:spring-core:${springVersion}"
+3.1.+ micro
+compile "net.sf.jopt-simple:jopt-simple:${joptSimpleVersion}"
+4.3 fixed
+compile 'com.trigonic:spring-utils:0.6'
+0.6 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testRuntime 'org.slf4j:slf4j-simple:1.6.+'
+1.6.+ micro
+providedCompile group: 'javax.servlet', name: 'com.springsource.javax.servlet', version:'2.5.0'
+2.5.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile group: 'log4j', name: 'log4j', version:'1.2.16'
+1.2.16 fixed
+compile group: 'org.postgresql', name: 'com.springsource.org.postgresql.jdbc4', version:'8.3.604'
+8.3.604 fixed
+compile group: 'com.hazelcast', name:'hazelcast', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'com.hazelcast', name:'hazelcast-spring', version:'1.9.4.4'
+1.9.4 fixed
+compile group: 'org.mybatis', name: 'mybatis', version:'3.0.5'
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-hazelcast', version:'1.0.0'
+1.0.0 fixed
+compile group: 'commons-lang', name: 'commons-lang', version:'2.2'
+2.2 fixed
+compile group: 'commons-net', name: 'commons-net', version:'2.2'
+2.2 fixed
+compile group: 'org.elasticsearch', name: 'elasticsearch', version:'0.17.5'
+0.17.5 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-xc', version:'1.7.5'
+1.7.5 fixed
+compile group: 'args4j', name: 'args4j', version:'2.0.12'
+2.0.12 fixed
+compile group: "org.apache.commons", name:"com.springsource.org.apache.commons.dbcp", version:"1.2.2.osgi"
+1.2.2 fixed
+compile group: "org.springframework", name:"org.springframework.web.servlet", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: "org.springframework", name:"org.springframework.jdbc", version:"3.0.5.RELEASE"
+3.0.5 fixed
+compile group: 'org.mybatis', name: 'mybatis-spring', version:'1.0.0'
+1.0.0 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-frontend-jaxws', version: '2.2.6'
+2.2.6 fixed
+compile group: 'org.apache.cxf', name: 'cxf-rt-transports-http', version: '2.2.6'
+2.2.6 fixed
+compile group: 'uk.ac.ebi.das', name:'jdas', version: '1.0.1'
+1.0.1 fixed
+compile group: 'net.sf', name: 'sam', version: '1.45', ext: 'jar'
+1.45 fixed
+compile group: 'org.sanger', name: 'artemis', version: 'v13.2.1', ext:'jar'
+13.2.1 fixed
+compile group: 'org.biojava', name: 'biojava', version: '1.6', ext:'jar'
+1.6 fixed
+compile group: 'org.obo', name: 'obo', version: '1.0', ext:'jar'
+1.0 fixed
+compile group: 'org.obo', name: 'bbop', version: '1.0', ext:'jar'
+1.0 fixed
+compile group:'jgrapht', name:'jgrapht', version: '0.7.3'
+0.7.3 fixed
+testCompile 'org.assertj:assertj-core:3.1.0'
+3.1.0 fixed
+testCompile "junit:junit:4.12"
+4.12 fixed
+testCompile "org.mockito:mockito-core:1.10.19"
+1.10.19 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.10"
+1.7.10 fixed
+testCompile "org.codehaus.geb:geb-spock:0.6.0"
+0.6.0 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.7"
+0.5 fixed
+testCompile "org.apache.pdfbox:pdfbox:1.0.0"
+1.0.0 fixed
+testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.0rc3"
+2.0 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+compile 'org.mockito:mockito-core:1.8.5'
+1.8.5 fixed
+compile 'gherkin:gherkin:2.4.16'
+2.4.16 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy-all', version: '1.8.0'
+1.8.0 fixed
+compile group: 'com.itextpdf', name: 'itextpdf', version: '5.0.2'
+5.0.2 fixed
+compile group: 'net.cghsystems', name: 'cgh-groovy-ast', version: '0.0.3'
+0.0.3 fixed
+compile group: 'cglib', name: 'cglib', version: '2.2.2'
+2.2.2 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: "1.9.7"
+1.9.7 fixed
+compile ("javax.servlet:servlet-api:2.5") { provided = true }
+2.5 fixed
+compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+1.1.1 fixed
+testCompile "org.springframework:spring-test-mvc:1.0.0.BUILD-SNAPSHOT"
+1.0.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+compile 'org.apache.hadoop:hadoop-core:0.20.2'
+0.20.2 fixed
+testCompile ('org.spockframework:spock-core:0.5-groovy-1.8') {
+0.5 fixed
+compile 'com.thedeanda.javajson:javajson-parser:1.+'
+1.+ minor
+compile 'org.eclipse.jetty:jetty-server:9.2.21.v20170120'
+9.2.21 fixed
+compile 'org.eclipse.jetty:jetty-servlet:9.2.21.v20170120'
+9.2.21 fixed
+compile 'org.eclipse.jetty:apache-jsp:9.2.21.v20170120'
+9.2.21 fixed
+compile 'com.yahoo.platform.yui:yuicompressor:2.+'
+2.+ minor
+compile 'commons-cli:commons-cli:1.+'
+1.+ minor
+compile 'commons-io:commons-io:2.+'
+2.+ minor
+compile 'org.apache.commons:commons-lang3:3.+'
+3.+ minor
+compile 'dom4j:dom4j:1.+'
+1.+ minor
+compile 'org.slf4j:slf4j-api:1.+'
+1.+ minor
+compile 'org.slf4j:slf4j-simple:1.+'
+1.+ minor
+compile 'org.apache.httpcomponents:httpclient:4.+'
+4.+ minor
+compile 'com.h2database:h2:1.4.191'
+1.4.191 fixed
+compile 'com.j256.ormlite:ormlite-core:4.48'
+4.48 fixed
+compile 'com.j256.ormlite:ormlite-jdbc:4.48'
+4.48 fixed
+compile 'org.japura:japura-gui:7.5.+'
+7.5.+ micro
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile 'com.thedeanda:lorem:2.+'
+2.+ minor
+compile 'com.github.jponge:lzma-java:1.3'
+1.3 fixed
+compile("com.xebialabs.overthere:overthere:${overthereVersion}") {
+1.0.16 fixed
+compile 'com.ibm.icu:icu4j:3.4.4'
+3.4.4 fixed
+compile 'commons-lang:commons-lang:2.5'
+2.5 fixed
+compile 'args4j:args4j:2.0.16'
+2.0.16 fixed
+compile 'ch.qos.logback:logback-classic:0.9.24'
+0.9.24 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.0-1', 'org.scala-lang:scala-library:2.9.0-1'
+2.9.0 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.0-1', 'org.scala-lang:scala-library:2.9.0-1'
+2.9.0 fixed
+compile 'org.scala-lang:scala-library:2.9.0-1', 'org.slf4j:slf4j-api:1.6.1'
+2.9.0 fixed
+compile 'org.scala-lang:scala-library:2.9.0-1', 'org.slf4j:slf4j-api:1.6.1'
+1.6.1 fixed
+testCompile 'junit:junit:4.8.2', 'org.scalatest:scalatest:1.2'
+4.8.2 fixed
+testCompile 'junit:junit:4.8.2', 'org.scalatest:scalatest:1.2'
+1.2 fixed
+testRuntime 'org.slf4j:slf4j-simple:1.6.1'
+1.6.1 fixed
+groovy "org.codehaus.groovy:groovy-all:1.7.10"
+1.7.10 fixed
+testCompile "org.spockframework:spock-core:0.6-groovy-1.7-SNAPSHOT"
+0.6 fixed
+testRuntime "com.h2database:h2:1.2.147"
+1.2.147 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+testCompile group: 'pl.pragmatists', name: 'JUnitParams', version: '1.0.6'
+1.0.6 fixed
+testCompile 'org.incava:attest:[0.0.4,)'
+0.0.4 fixed
+testCompile 'org.hamcrest:hamcrest-library:[1.3,)'
+1.3 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'org.easymock', name: 'easymock', version: '3.0'
+3.0 fixed
+compile('javax.servlet:javax.servlet-api:3.0.1') { ext.provided = true }
+3.0.1 fixed
+compile(group: 'org.springframework.data', name: 'spring-data-mongodb', version: '1.0.2.RELEASE') { transitive = false }
+1.0.2 fixed
+compile("org.springframework.data:spring-data-commons-core:1.2.1.RELEASE") { transitive = false }
+1.2.1 fixed
+compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.8.0'
+2.8.0 fixed
+testCompile "org.springframework:spring-test-mvc:1.0.0.M1"
+1.0.0 fixed
+compile "org.apache.tapestry:tapestry-core:$tapestryVersion"
+5.3 fixed
+compile "org.apache.tapestry:tapestry-yuicompressor:$tapestryVersion"
+5.3 fixed
+compile "org.apache.cayenne:cayenne-server:3.0.2"
+3.0.2 fixed
+compile "org.apache.derby:derby:10.8.1.2"
+10.8.1 fixed
+compile "com.howardlewisship:tapx-heroku:1.2-SNAPSHOT"
+1.2 fixed
+compile "commons-lang:commons-lang:2.6"
+2.6 fixed
+provided "javax.servlet:servlet-api:2.5"
+2.5 fixed
+provided "org.apache.tapestry:tapestry-javadoc:$tapestryVersion"
+5.3 fixed
+testCompile "org.apache.tapestry:tapestry-test:$tapestryVersion"
+5.3 fixed
+testCompile "org.testng:testng:5.14.9"
+5.14.9 fixed
+testCompile "org.easymock:easymock:3.0"
+3.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.10'
+4.10 fixed
+testCompile group: 'pl.pragmatists', name: 'JUnitParams', version: '1.0.6'
+1.0.6 fixed
+testCompile 'org.incava:attest:[0.0.4,)'
+0.0.4 fixed
+testCompile 'org.hamcrest:hamcrest-library:[1.3,)'
+1.3 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.7.10'
+1.7.10 fixed
+testCompile 'org.codehaus.geb:geb-spock:0.5.1'
+0.5.1 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.7'
+0.5 fixed
+testCompile "org.seleniumhq.selenium:selenium-firefox-driver:2.0b1"
+2.0 fixed
+compile "commons-io:commons-io:2.0.1"
+2.0.1 fixed
+compile "org.slf4j:slf4j-log4j12:1.6.1"
+1.6.1 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile group: "me.vgv.common", name: "common-utils", version: "0.1.2"
+0.1.2 fixed
+compile group: "commons-lang", name: "commons-lang", version: "2.6"
+2.6 fixed
+compile group: "javax.servlet", name: "servlet-api", version: "2.5"
+2.5 fixed
+compile group: "javax.inject", name: "javax.inject", version: "1"
+1 fixed
+compile group: "com.google.guava", name: "guava", version: "15.0"
+15.0 fixed
+compile group: "org.slf4j", name: "slf4j-api", version: "1.6.6"
+1.6.6 fixed
+compile group: "com.google.inject", name: "guice", version: "3.0"
+3.0 fixed
+compile group: "net.sf.ehcache", name: "ehcache-core", version: "2.6.6"
+2.6.6 fixed
+compile group: "aopalliance", name: "aopalliance", version: "1.0"
+1.0 fixed
+compile group: "javax.activation", name: "activation", version: "1.1.1"
+1.1.1 fixed
+testCompile group: "org.mockito", name: "mockito-all", version: "1.9.0"
+1.9.0 fixed
+testCompile group: "org.testng", name: "testng", version: "6.8"
+6.8 fixed
+testCompile group: "com.beust", name: "jcommander", version: "1.27"
+1.27 fixed
+testCompile group: "org.beanshell", name: "bsh", version: "2.0b4"
+2.0 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-server", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-servlet", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-io", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-http", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-util", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-security", version: "7.6.11.v20130520"
+7.6.11 fixed
+testCompile group: "org.eclipse.jetty", name: "jetty-continuation", version: "7.6.11.v20130520"
+7.6.11 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile group:'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.5.1'
+0.5.1 fixed
+compile group:'org.msgpack', name: 'msgpack', version: '0.5.2-devel'
+0.5.2 fixed
+compile group:'org.msgpack', name: 'msgpack-rpc', version: '0.6.1-devel'
+0.6.1 fixed
+compile group: 'org.apache.commons', name: 'commons-math', version: '2.0'
+2.0 fixed
+compile 'org.apache.solr:apache-solr-solrj:4.0-dev-0.1'
+4.0 fixed
+compile 'org.apache.solr:apache-solr-core:4.0-dev-0.1'
+4.0 fixed
+compile 'com.google.guava:guava:r09'
+09 fixed
+compile 'org.slf4j:slf4j-api:1.5.6'
+1.5.6 fixed
+compile 'org.slf4j:slf4j-log4j12:1.5.6'
+1.5.6 fixed
+compile 'log4j:log4j:1.2.16'
+1.2.16 fixed
+compile 'commons-codec:commons-codec:1.5'
+1.5 fixed
+testCompile 'org.mockito:mockito-core:1.8.5'
+1.8.5 fixed
+testCompile 'org.springframework:spring-test:3.0.5.RELEASE'
+3.0.5 fixed
+compile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+compile 'org.codehaus.groovy:groovy:2.4.1'
+2.4.1 fixed
+compile 'org.liquibase:liquibase-core:3.3.2'
+3.3.2 fixed
+runtime 'net.saliman:groovy-liquibase-dsl:1.0.2'
+1.0.2 fixed
+archives 'org.apache.maven.wagon:wagon-ssh:2.8'
+2.8 fixed
+archives 'org.apache.maven.wagon:wagon-ssh-external:2.8'
+2.8 fixed
+groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+1.8.1 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+compile group: 'joda-time', name: 'joda-time', version: '1.6.2'
+1.6.2 fixed
+compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+2.6 fixed
+compile group: 'com.google.guava', name: 'guava-collections', version: 'r03'
+03 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile group: 'junit', name: 'junit-dep', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.1'
+1.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.10'
+1.7.10 fixed
+compile('io.s4:s4-core:0.3.0' )
+0.3.0 fixed
+compile('io.s4:s4-driver:0.3.0' )
+0.3.0 fixed
+compile('org.json:json:20090211' )
+20090211 fixed
+compile('com.google.code.gson:gson:1.6' )
+1.6 fixed
+compile('log4j:log4j:1.2.15' )
+1.2.15 fixed
+compile('commons-cli:commons-cli:1.2' )
+1.2 fixed
+compile('commons-logging:commons-logging:1.1.1' )
+1.1.1 fixed
+compile('commons-io:commons-io:2.0.1' )
+2.0.1 fixed
+compile('commons-configuration:commons-configuration:1.6' )
+1.6 fixed
+compile('commons-codec:commons-codec:1.4' )
+1.4 fixed
+compile('commons-httpclient:commons-httpclient:3.1' )
+3.1 fixed
+testCompile('junit:junit:4.4' )
+4.4 fixed
+compile 'org.incava:ijdk:+'
++ major
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'pl.pragmatists', name: 'JUnitParams', version: '1.0.6'
+1.0.6 fixed
+testCompile 'org.incava:attest:[0.0.4,)'
+0.0.4 fixed
+testCompile 'org.hamcrest:hamcrest-library:[1.3,)'
+1.3 fixed
+compile 'com.hp.hpl.jena:jena:2.6.4'
+2.6.4 fixed
+compile 'com.hp.hpl.jena:tdb:0.8.10'
+0.8.10 fixed
+compile 'commons-io:commons-io:2.0.1'
+2.0.1 fixed
+groovy      'org.codehaus.groovy:groovy-all:1.7.4'
+1.7.4 fixed
+testCompile 'org.spockframework:spock-core:0.4-groovy-1.7'
+0.4 fixed
+testCompile 'junit:junit:4.8.1'
+4.8.1 fixed
+testCompile 'cglib:cglib-nodep:2.2'
+2.2 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+compile 'javax.media:jai_codec:1.1.3'
+1.1.3 fixed
+compile 'javax.media:jai_core:1.1.3'
+1.1.3 fixed
+compile 'skeeto:october-chess-engine:20110825'
+20110825 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+compile 'net.sourceforge.cobertura:cobertura:1.9.4.1'
+1.9.4 fixed
+groovy 'org.codehaus.groovy:groovy:1.7.3'
+1.7.3 fixed
+testCompile 'junit:junit:3.8.2'
+3.8.2 fixed
+testCompile group: 'org.testng', name: 'testng', version: '5.8', classifier: 'jdk15'
+5.8 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
+1.8.2 fixed
+compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.5.1', {
+0.5.1 fixed
+testCompile(group: 'org.spockframework', name: 'spock-core', version: '0.5-groovy-1.8') {
+0.5 fixed
+compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
+1.1.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+scalaTools group: 'org.scala-lang', name: 'scala-compiler', version: '2.9.2'
+2.9.2 fixed
+scalaTools group: 'org.scala-lang', name: 'scala-library', version: '2.9.2'
+2.9.2 fixed
+compile group: 'org.scala-lang', name: 'scala-swing', version: '2.9.2'
+2.9.2 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+compile group: 'commons-logging', name: 'commons-logging', version: '1.1'
+1.1 fixed
+compile group: 'com.weiglewilczek.slf4s', name: 'slf4s_2.9.0-1', version: '1.0.6'
+1.0.6 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'com.jgoodies', name: 'looks', version: '2.1.4'
+2.1.4 fixed
+compile group: 'org.swinglabs', name: 'swingx', version: '1.6.1'
+1.6.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+compile(group: 'org.apache.ant', name: 'ant', version: '1.8.2') {
+1.8.2 fixed
+compile(group: 'com.sun.codemodel', name: 'codemodel', version: '2.4')
+2.4 fixed
+compile(group: 'org.antlr', name: 'stringtemplate', version: '3.2.1')
+3.2.1 fixed
+compile(group: 'org.apache.velocity', name: 'velocity', version: '1.7') {
+1.7 fixed
+testCompile(group: 'junit', name: 'junit', version: '4.8.2')
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.1'
+1.8.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.7'
+4.7 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+compile group: 'ch.qos.logback', name:'logback-core', version:'0.9.29'
+0.9.29 fixed
+compile group: 'ch.qos.logback', name:'logback-classic', version:'0.9.29'
+0.9.29 fixed
+binaries "javax.inject:javax.inject:1"
+1 fixed
+compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlin_version}"
+1.1.2 fixed
+compile 'org.spigotmc:spigot-api:1.9+'
+1.9+ minor
+testCompile group: 'junit', name: 'junit', version: '4.12'
+4.12 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+scalaTools "org.scala-lang:scala-compiler:$scalaVersion",
+2.9.1 fixed
+"org.scala-lang:scala-library:$scalaVersion"
+2.9.1 fixed
+compile "org.scala-lang:scala-library:$scalaVersion",
+2.9.1 fixed
+"net.liftweb:lift-webkit_$scalaVersion:$liftVersion",
+2.4-M4 fixed
+"net.liftweb:lift-mapper_$scalaVersion:$liftVersion",
+2.4-M4 fixed
+"net.liftweb:lift-testkit_$scalaVersion:$liftVersion",
+2.4-M4 fixed
+"com.h2database:h2:1.3.146",
+1.3.146 fixed
+"ch.qos.logback:logback-classic:0.9.26",
+0.9.26 fixed
+"cardano-core_2.8.1:cardano-core_2.8.1:0.1.2"
+0.1.2 fixed
+testCompile "junit:junit:4.5",
+4.5 fixed
+"org.scala-tools.testing:specs:1.6.1",
+1.6.1 fixed
+"org.scala-lang:scala-compiler:$scalaVersion",
+2.9.1 fixed
+'org.mortbay.jetty:jetty:6.1.22',
+6.1.22 fixed
+'org.mortbay.jetty:jetty-util:6.1.22',
+6.1.22 fixed
+'org.mortbay.jetty:jetty-management:6.1.22'
+6.1.22 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile("log4j:log4j:1.2.15") {
+1.2.15 fixed
+compile "org.slf4j:slf4j-api:$slf4jVersion"
+4 fixed
+compile "org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+4 fixed
+compile "org.glassfish.gmbal:gmbal:3.0.0-b023"
+3.0.0 fixed
+compile "commons-codec:commons-codec:1.5"
+1.5 fixed
+testCompile "junit:junit:4.8.2"
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+testCompile  group: 'junit', name: 'junit', version: '4.8.1'
+4.8.1 fixed
+groovy 'org.codehaus.groovy:groovy:1.8.1'
+1.8.1 fixed
+compile 'org.slf4j:slf4j-api:1.6.1', "org.springframework:spring-context:${springVersion}",
+1.6.1 fixed
+compile 'org.slf4j:slf4j-api:1.6.1', "org.springframework:spring-context:${springVersion}",
+3.0.5.RELEASE fixed
+"org.springframework:spring-jdbc:${springVersion}"
+3.0.5.RELEASE fixed
+testCompile 'junit:junit:4.8.2', "org.springframework:spring-test:${springVersion}"
+4.8.2 fixed
+testCompile 'junit:junit:4.8.2', "org.springframework:spring-test:${springVersion}"
+3.0.5.RELEASE fixed
+testRuntime 'com.h2database:h2:1.3.157', 'commons-dbcp:commons-dbcp:1.4',
+1.3.157 fixed
+testRuntime 'com.h2database:h2:1.3.157', 'commons-dbcp:commons-dbcp:1.4',
+1.4 fixed
+'org.slf4j:slf4j-simple:1.6.1'
+1.6.1 fixed
+compile("org.springframework.boot:spring-boot-starter-web:1.4.0.RELEASE")
+1.4.0 fixed
+compile group: 'net.java.dev.designgridlayout', name: 'designgridlayout', version: '1.9'
+1.9 fixed
+testCompile 'junit:junit:4.10'
+4.10 fixed
+provided 'org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final'
+1.0.0 fixed
+provided 'javax.ejb:ejb-api:3.0'
+3.0 fixed
+provided 'org.hibernate:hibernate-core:3.6.5.Final'
+3.6.5 fixed
+provided 'org.hibernate:hibernate-entitymanager:3.6.5.Final'
+3.6.5 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile ('org.codehaus.groovy.modules.http-builder:http-builder:0.5.0') {
+0.5.0 fixed
+compile 'org.codehaus.groovy.sparql:groovy-sparql:0.2.1'
+0.2.1 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.2'
+1.8.2 fixed
+groovy group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.5.1'
+0.5.1 fixed
+groovy 'org.ccil.cowan.tagsoup:tagsoup:1.2.1'
+1.2.1 fixed
+groovy 'commons-cli:commons-cli:1.2'
+1.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+compile group: 'org.mongodb', name: 'mongo-java-driver', version: '2.6.3'
+2.6.3 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+testCompile 'org.mockito:mockito-all:1.10.19'
+1.10.19 fixed
+integrationTestCompile 'junit:junit:4.12'
+4.12 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile 'com.google.appengine:appengine-testing:1.5.2'
+1.5.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+compile group: 'com.bleedingwolf.ratpack', name: 'ratpack', version: '0.2-SNAPSHOT'
+0.2 fixed
+compile group: 'org.xhtmlrenderer', name: 'core-renderer', version: 'R8'
+8 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile "org.apache.tapestry:tapestry-core:$tapestryVersion"
+5.3 fixed
+compile "org.apache.tapestry:tapestry-yuicompressor:$tapestryVersion"
+5.3 fixed
+compile "org.apache.cayenne:cayenne-server:3.0.2"
+3.0.2 fixed
+compile "org.apache.derby:derby:10.8.1.2"
+10.8.1 fixed
+compile "com.howardlewisship:tapx-heroku:1.2-SNAPSHOT"
+1.2 fixed
+compile "commons-lang:commons-lang:2.6"
+2.6 fixed
+provided "javax.servlet:servlet-api:2.5"
+2.5 fixed
+provided "org.apache.tapestry:tapestry-javadoc:$tapestryVersion"
+5.3 fixed
+testCompile "org.apache.tapestry:tapestry-test:$tapestryVersion"
+5.3 fixed
+testCompile "org.testng:testng:5.14.9"
+5.14.9 fixed
+testCompile "org.easymock:easymock:3.0"
+3.0 fixed
+compile     'org.codehaus.groovy:groovy-all:2.1.6'
+2.1.6 fixed
+testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+0.7 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1"
+1.8.1 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.8.0'
+1.8.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+3.0 fixed
+compile 'org.jetbrains:annotations:15.0'
+15.0 fixed
+testRuntime "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+5.0.1 fixed
+testCompile 'org.mockito:mockito-core:2.12.0'
+2.12.0 fixed
+testCompile "org.junit.platform:junit-platform-runner:$junitPlatformVersion"
+1.0.1 fixed
+testCompile "org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion"
+5.0.1 fixed
+testCompileOnly 'org.apiguardian:apiguardian-api:1.0.0'
+1.0.0 fixed
+compile group: 'org.springframework.data', name: 'spring-data-mongodb', version:'1.0.1.RELEASE'
+1.0.1 fixed
+compile group: 'org.thymeleaf', name: 'thymeleaf-spring3', version:'1.1.0'
+1.1.0 fixed
+compile group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.30'
+0.9.30 fixed
+compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.6.1'
+1.6.1 fixed
+compile group: 'javax.inject', name: 'javax.inject', version: '1'
+1 fixed
+compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+1.2 fixed
+compile group: 'org.aspectj', name: 'aspectjrt', version: '1.6.11'
+1.6.11 fixed
+providedCompile group: 'org.mortbay.jetty', name: 'servlet-api', version: '3.0.20100224'
+3.0.20100224 fixed
+compile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+2.2 fixed
+compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.8.4'
+1.8.4 fixed
+compile group: 'matlabcompiler', name: 'matlabcompiler-win64', version: '0.1'
+0.1 fixed
+runtime group: 'net.java.dev.jna', name: 'jna', version: '3.2.4'
+3.2.4 fixed
+compile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile group: 'com.ning', name:'async-http-client', version: '1.6.5'
+1.6.5 fixed
+compile group: 'org.jsoup', name:'jsoup', version:'1.6.1'
+1.6.1 fixed
+compile group: 'org.quartz-scheduler', name:'quartz', version:'2.1.0'
+2.1.0 fixed
+compile group: 'com.google.guava', name: 'guava', version: '10.0'
+10.0 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+testCompile 'com.google.appengine:appengine-testing:1.5.2'
+1.5.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+compile 'javax.servlet:jstl:1.1.2'
+1.1.2 fixed
+compile 'taglibs:standard:1.1.2'
+1.1.2 fixed
+compile 'org.codehaus.jackson:jackson-mapper-asl:1.5.7'
+1.5.7 fixed
+compile 'commons-httpclient:commons-httpclient:3.0.1'
+3.0.1 fixed
+compile 'commons-io:commons-io:1.2'
+1.2 fixed
+compile 'com.google.collections:google-collections:1.0-rc1'
+1.0 fixed
+compile "org.hibernate:hibernate-annotations:3.2.1.ga"
+3.2.1 fixed
+compile "commons-dbcp:commons-dbcp:1.4"
+1.4 fixed
+compile "hsqldb:hsqldb:1.8.0.7"
+1.8.0 fixed
+compile 'org.tmatesoft.svnkit:svnkit:1.2.3.5521'
+1.2.3 fixed
+compile "org.slf4j:slf4j-api:1.5.6"
+1.5.6 fixed
+compile 'commons-lang:commons-lang:2.6'
+2.6 fixed
+compile 'com.ibm.icu:icu4j:4.8.1'
+4.8.1 fixed
+runtime 'javax.transaction:jta:1.1'
+1.1 fixed
+providedCompile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+testCompile 'junit:junit:4.+'
+4.+ minor
+testCompile 'org.mockito:mockito-all:1.8.4'
+1.8.4 fixed
+testCompile 'com.google.code.gson:gson:1.7.1'
+1.7.1 fixed
+testCompile 'net.sf.json-lib:json-lib:2.4:jdk15'
+2.4 fixed
+testCompile 'org.slf4j:nlog4j:1.2.25'
+1.2.25 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.0'
+2.9.0 fixed
+scalaTools 'org.scala-lang:scala-library:2.9.0'
+2.9.0 fixed
+compile 'com.jcraft:jsch:0.1.44-1'
+0.1.44 fixed
+compile 'org.eclipse.jgit:org.eclipse.jgit:1.0.0.201106090707-r'
+1.0.0 fixed
+compile 'org.scala-lang:scala-library:2.9.0'
+2.9.0 fixed
+compile 'pircbot:pircbot:1.5.0'
+1.5.0 fixed
+testCompile 'junit:junit:4.4'
+4.4 fixed
+testCompile 'org.scalatest:scalatest_2.9.0:1.6.1'
+1.6.1 fixed
+testCompile 'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.0'
+1.8.0 fixed
+testCompile('org.codehaus.groovy.modules.http-builder:http-builder:0.5.1') {
+0.5.1 fixed
+testCompile 'org.spockframework:spock-core:0.6-groovy-1.8-SNAPSHOT'
+0.6 fixed
+testCompile 'org.eclipse.jetty:jetty-server:7.4.2.v20110526'
+7.4.2 fixed
+testCompile 'org.eclipse.jetty:jetty-servlet:7.4.2.v20110526'
+7.4.2 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+distLib group: "org.jruby", name: 'jruby-complete', version: "1.6.5"
+1.6.5 fixed
+compile group: "org.jruby", name: 'jruby-complete', version: "1.6.5"
+1.6.5 fixed
+compile group: "org.elasticsearch", name: 'elasticsearch', version: "0.18.1"
+0.18.1 fixed
+testCompile 'org.testng:testng:5.10:jdk15'
+5.10 fixed
+compile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+compile 'com.google.code.gson:gson:1.7+'
+1.7+ minor
+compile 'com.google.appengine:appengine-api-1.0-sdk:1.5.1'
+1.5.1 fixed
+gaeSdk 'com.google.appengine:appengine-java-sdk:1.5.1'
+1.5.1 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.0-1'
+2.9.0 fixed
+scalaTools 'org.scala-lang:scala-library:2.9.0-1'
+2.9.0 fixed
+compile 'org.scala-lang:scala-library:2.9.0-1',
+2.9.0 fixed
+"org.springframework.security:spring-security-core:$springSecVersion",
+3.1.0.CI-SNAPSHOT fixed
+"org.springframework.security:spring-security-web:$springSecVersion",
+3.1.0.CI-SNAPSHOT fixed
+"org.springframework.security:spring-security-config:$springSecVersion",
+3.1.0.CI-SNAPSHOT fixed
+"org.springframework.security:spring-security-openid:$springSecVersion"
+3.1.0.CI-SNAPSHOT fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+runtime 'org.slf4j:jcl-over-slf4j:1.6.1',
+1.6.1 fixed
+'ch.qos.logback:logback-classic:0.9.28',
+0.9.28 fixed
+'cglib:cglib-nodep:2.2.2'
+2.2.2 fixed
+testCompile 'org.scalatest:scalatest_2.9.0:1.6.1',
+1.6.1 fixed
+'org.mockito:mockito-all:1.8.5'
+1.8.5 fixed
+build "com.cenqua.clover:clover:3.0.2"
+3.0.2 fixed
+build "org.apache.ant:ant-junit:1.8.1@jar"
+1.8.1 fixed
+build "org.apache.ant:ant-nodeps:1.8.1@jar"
+1.8.1 fixed
+compile 'commons-cli:commons-cli:1.3.1'
+1.3.1 fixed
+archives 'net.java.dev.jna:jna:4.2.2'
+4.2.2 fixed
+testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+1.0 fixed
+testRuntime 'cglib:cglib-nodep:3.1'       // for spock: enables mocking of classes (in addition to interfaces)
+3.1 fixed
+testRuntime 'org.objenesis:objenesis:2.1' // for spock: enables mocking of without default constructor (together with CGLIB)
+2.1 fixed
+compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '7.0.27'
+7.0.27 fixed
+compile group: 'redis.clients', name: 'jedis', version: '2.5.2'
+2.5.2 fixed
+compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.2'
+2.2 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile 'org.hamcrest:hamcrest-core:1.3'
+1.3 fixed
+testCompile 'org.hamcrest:hamcrest-library:1.3'
+1.3 fixed
+testCompile 'org.mockito:mockito-all:1.9.5'
+1.9.5 fixed
+testCompile group: 'org.apache.tomcat', name: 'tomcat-coyote', version: '7.0.27'
+7.0.27 fixed
+groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.9'
+1.7.9 fixed
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'org.json', name: 'json', version: '20090211'
+20090211 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+compile(group: 'org.mortbay.jetty', name: 'jetty-util', version: '6.1.26') { exclude module: 'servlet-api' }
+6.1.26 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.4'
+1.8.4 fixed
+testCompile 'junit:junit:4.8.2'
+4.8.2 fixed
+testCompile 'org.spockframework:spock-core:0.5-groovy-1.8'
+0.5 fixed
+testRuntime "cglib:cglib-nodep:2.2"
+2.2 fixed
+runtime 'com.h2database:h2:1.2.140'
+1.2.140 fixed
+provided "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+3.1.0.M2 fixed
+compile group: 'org.springframework', name: 'spring-beans', version: "$springVersion"
+3.1.0.M2 fixed
+compile group: 'org.springframework', name: 'spring-context', version: "$springVersion"
+3.1.0.M2 fixed
+compile group: 'org.springframework', name: 'spring-web', version: "$springVersion"
+3.1.0.M2 fixed
+runtime group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
+3.1.0.M2 fixed
+compile group: 'org.springframework.security', name: 'spring-security-core', version: "3.1.0.RC2"
+3.1.0 fixed
+runtime group: 'org.springframework.security', name: 'spring-security-web', version: "3.1.0.RC2"
+3.1.0 fixed
+runtime group: 'org.springframework.security', name: 'spring-security-config', version: "3.1.0.RC2"
+3.1.0 fixed
+runtime group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: '1.6.7'
+1.6.7 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA'
+1.0.0 fixed
+runtime group: 'org.hibernate', name: 'hibernate-validator', version: '4.0.2.GA'
+4.0.2 fixed
+compile group: 'javax.inject', name: 'javax.inject', version: '1'
+1 fixed
+compile group: 'org.springframework', name: 'spring-tx', version: "$springVersion"
+3.1.0.M2 fixed
+compile group: 'org.scale7', name: 'scale7-pelops', version: '1.2-0.8.x-SNAPSHOT'
+1.2 fixed
+compile group: 'org.apache.cassandra', name: 'cassandra-thrift', version: '0.8.1'
+0.8.1 fixed
+compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+3.0 fixed
+compile group: 'org.slf4j', name: 'slf4j-api', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+runtime group: 'log4j', name: 'log4j', version: '1.2.16'
+1.2.16 fixed
+testCompile group: 'junit', name: 'junit', version: '4.8.2'
+4.8.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version: '1.8.5'
+1.8.5 fixed
+testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3.RC2'
+1.3 fixed
+groovy 'org.codehaus.groovy:groovy-all:1.8.4'
+1.8.4 fixed
+compile 'com.jcraft:jsch:0.1.44-1'
+0.1.44 fixed
+testCompile "org.spockframework:spock-core:0.5-groovy-1.8",
+0.5 fixed
+"junit:junit:4.+"
+4.+ minor
+groovy "org.codehaus.groovy:groovy-all:1.7.4"
+1.7.4 fixed
+compile 'org.tmatesoft.svnkit:svnkit:1.3.5'
+1.3.5 fixed
+groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+2.1.3 fixed
+compile "org.codehaus.groovy:groovy-json:${groovyVersion}"
+2.1.3 fixed
+compile "org.codehaus.groovy:groovy-servlet:${groovyVersion}"
+2.1.3 fixed
+compile "com.google.appengine:appengine-api-1.0-sdk:$gaeVersion",
+1.8.0 fixed
+"com.google.appengine:appengine-api-labs:$gaeVersion"
+1.8.0 fixed
+compile 'org.gaelyk:gaelyk:2.0'
+2.0 fixed
+compile "com.ocpsoft:ocpsoft-pretty-time:1.0.7"
+1.0.7 fixed
+testCompile 'org.gaelyk:gaelyk-spock:0.4'
+0.4 fixed
+testCompile "com.google.appengine:appengine-api-stubs:$gaeVersion",
+1.8.0 fixed
+"com.google.appengine:appengine-testing:$gaeVersion"
+1.8.0 fixed
+functionalTestCompile 'org.codehaus.geb:geb-spock:0.7.0',
+0.7.0 fixed
+'org.seleniumhq.selenium:selenium-firefox-driver:2.22.0'
+2.22.0 fixed
+gaeSdk "com.google.appengine:appengine-java-sdk:$gaeVersion"
+1.8.0 fixed
+testCompile "junit:junit:4.+"
+4.+ minor
+compile group: 'com.google.code.gson', name: 'gson', version:'2.2.4'
+2.2.4 fixed
+testCompile group: 'com.google.guava', name: 'guava', version:'18.0'
+18.0 fixed
+testCompile group: 'junit', name: 'junit', version:'4.12'
+4.12 fixed
+testCompile group: 'org.mockito', name: 'mockito-core', version:'2.12.0'
+2.12.0 fixed
+implementation('oauth.signpost:signpost-commonshttp4:1.2.1.2') {
+1.2.1 fixed
+implementation('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+2.6.8 fixed
+implementation 'commons-io:commons-io:2.5'
+2.5 fixed
+implementation 'com.squareup:otto:1.3.4'
+1.3.4 fixed
+implementation 'com.google.zxing:android-integration:2.3.0'
+2.3.0 fixed
+implementation 'com.android.support:support-annotations:26.1.0'
+26.1.0 fixed
+implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+1.1.51 fixed
+testCompile 'junit:junit:4.12'
+4.12 fixed
+androidTestCompile 'com.android.support:support-annotations:26.1.0'
+26.1.0 fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+3.0.1 fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
+3.0.1 fixed
+androidTestCompile 'com.android.support.test:runner:1.0.1'
+1.0.1 fixed
+androidTestImplementation 'com.android.support.test:runner:1.0.1'
+1.0.1 fixed
+androidTestUtil 'com.android.support.test:orchestrator:1.0.1'
+1.0.1 fixed
+providedCompile 'javax.servlet:servlet-api:2.5'
+2.5 fixed
+cargo 'org.codehaus.cargo:cargo-core-uberjar:1.1.1',
+1.1.1 fixed
+'org.codehaus.cargo:cargo-ant:1.1.1',
+1.1.1 fixed
+'jaxen:jaxen:1.1.1'
+1.1.1 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.+'
+1.2.+ micro
+compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+2.5 fixed
+compile group: 'javax.faces', name: 'jsf-api', version: '1.2_02'
+1.2 fixed
+compile group: 'de.odysseus.juel', name: 'juel', version: '2.1.3'
+2.1.3 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.2'
+1.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+compile group: 'junit', name: 'junit', version: '4.11'
+4.11 fixed
+testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+1.3 fixed
+compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.1'
+1.6.1 fixed
+compile group: 'log4j', name: 'log4j', version: '1.2.+'
+1.2.+ micro
+compile group: 'jboss', name: 'javassist', version: '3.1'
+3.1 fixed
+compile group: 'javax.validation', name: 'validation-api', version: '1.0.0.GA', ext: 'jar'
+1.0.0 fixed
+compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.6.Final', ext: 'jar'
+3.6.6 fixed
+compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.6.6.Final', ext: 'jar'
+3.6.6 fixed
+compile group: 'org.hibernate', name: 'hibernate-validator', version: '4.2.0.Final', ext: 'jar'
+4.2.0 fixed
+compile group: 'org.hibernate', name: 'hibernate-c3p0', version: '3.6.0.Beta2'
+3.6.0 fixed
+compile group: 'c3p0', name: 'c3p0', version: '0.9.1'
+0.9.1 fixed
+compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+5.1.13 fixed
+testCompile group: 'junit', name: 'junit', version: '4.+'
+4.+ minor
+testCompile group: 'org.hamcrest', name: 'hamcrest-library', version: '1.2'
+1.2 fixed
+testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+1.8.5 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.1', 'org.scala-lang:scala-library:2.9.1'
+2.9.1 fixed
+scalaTools 'org.scala-lang:scala-compiler:2.9.1', 'org.scala-lang:scala-library:2.9.1'
+2.9.1 fixed
+compile 'org.scala-lang:scala-library:2.9.1', 'org.processing:core:1.5.1'
+2.9.1 fixed
+compile 'org.scala-lang:scala-library:2.9.1', 'org.processing:core:1.5.1'
+1.5.1 fixed
+groovy "org.codehaus.groovy:groovy-all:${ext.gaelykGroovyVersion}"
+2.4.7 fixed
+compile "com.google.appengine:appengine-api-1.0-sdk:${ext.gaelykAppEngineVersion}",
+1.9.40 fixed
+compile "org.slf4j:slf4j-api:$slf4jVersion"
+4 fixed
+compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+4 fixed
+"com.google.appengine:appengine-api-labs:${ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+jenkinsPlugins "org.jenkins-ci.plugins:mailer:1.7@jar"
+1.7 fixed
+runtime "log4j:log4j:$log4jVersion"
+4 fixed
+runtime "org.slf4j:slf4j-log4j12:$slf4jVersion"
+4 fixed
+compile	"org.gaelyk:gaelyk:${ext.gaelykLatestVersion}"
+2.2.0 fixed
+testCompile group: 'junit', name: 'junit', version: '4.11'
+4.11 fixed
+compile	"org.gaelyk:gaelyk-resources:${ext.gaelykLatestVersion}"
+2.2.0 fixed
+compile "org.gaelyk:gaelyk-bootstrap-resources:${ext.gaelykLatestVersion}"
+2.2.0 fixed
+compile "org.gaelyk:gaelyk-console:${ext.gaelykLatestVersion}"
+2.2.0 fixed
+testCompile("javax.annotation:jsr250-api:1.0") { optional = true }
+1.0 fixed
+testCompile "org.gaelyk:gaelyk-spock:${ext.gaelykSpockLatestVersion}",
+0.4 fixed
+"com.google.appengine:appengine-api-stubs:${ext.gaelykAppEngineVersion}",
+1.9.40 fixed
+"com.google.appengine:appengine-testing:${ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+gaeSdk "com.google.appengine:appengine-java-sdk:${ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+compile "org.codehaus.groovy:groovy-all:$project.ext.gaelykGroovyVersion", {
+2.4.7 fixed
+binaries "org.slf4j:slf4j-api:${versions.slf4j}"
+4 fixed
+binaries "commons-codec:commons-codec:1.5"
+1.5 fixed
+binaries "org.antlr:antlr-runtime:3.3", { transitive = false }
+3.3 fixed
+compile 'org.scala-lang:scala-library:2.9.0'
+2.9.0 fixed
+compile 'com.google.protobuf:protobuf-java:2.3.0'
+2.3.0 fixed
+compile 'voldemort.store.compress:h2-lzf:1.0'
+1.0 fixed
+compile 'org.codehaus.jackson:jackson-mapper-asl:1.7.1'
+1.7.1 fixed
+compile 'commons-io:commons-io:2.0.1'
+2.0.1 fixed
+compile 'org.guiceyfruit:guice-all:2.0'
+2.0 fixed
+compile 'net.debasishg:sjson_2.9.0:0.11'
+0.11 fixed
+compile 'org.jboss.netty:netty:3.2.3.Final'
+3.2.3 fixed
+compile 'commons-codec:commons-codec:1.4'
+1.4 fixed
+compile 'se.scalablesolutions.akka:akka-typed-actor:1.2-SNAPSHOT'
+1.2 fixed
+compile 'org.codehaus.aspectwerkz:aspectwerkz:2.2.3'
+2.2.3 fixed
+compile 'aopalliance:aopalliance:1.0'
+1.0 fixed
+compile 'se.scalablesolutions.akka:akka-stm:1.2-SNAPSHOT'
+1.2 fixed
+compile "org.spockframework:spock-core:$project.ext.gaelykSpockVersion", {
+1.0-groovy-2.4 fixed
+compile "org.gaelyk:gaelyk:${project.ext.gaelykLatestVersion}"
+2.2.0 fixed
+compile "com.google.appengine:appengine-api-1.0-sdk:${project.ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+compile "com.google.appengine:appengine-api-labs:${project.ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+compile "com.google.appengine:appengine-api-stubs:${project.ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+compile 'org.pushingpixels:flamingo:5.2.00-dev'
+5.2.00 fixed
+compile 'xml-apis:xml-apis-ext:1.3.04'
+1.3.04 fixed
+compile "com.google.appengine:appengine-testing:${project.ext.gaelykAppEngineVersion}"
+1.9.40 fixed
+compile "javax.servlet:servlet-api:2.5"
+2.5 fixed
+compile "javax.servlet.jsp:jsp-api:2.2"
+2.2 fixed
+compile "cglib:cglib-nodep:2.2"
+2.2 fixed
+compile "org.objenesis:objenesis:1.2"
+1.2 fixed
+testCompile "junit:junit:4.12"
+4.12 fixed

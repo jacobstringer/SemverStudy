@@ -14,64 +14,29 @@ import java.util.regex.Pattern;
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
 	Writer out;
-	
-	int found = 0;
-	int files = 0;
-	int methods = 0;
-	int noVersion = 0;
-	public HashMap<String, Integer> commands = new HashMap<String, Integer>();
-	public HashMap<String, Integer> notFound = new HashMap<String, Integer>();
-	public static final String[] WANTED_COMMANDS = new String[]{
-			"compile", "testCompile", 
-			"runtime", "testRuntime",
-			"provided", "providedCompile",
-			"compileOnly", "compilerCompile",
-	};
-	public static final String[] COMMANDS_TO_PRINT = new String[] {
-			"provided", "providedCompile",
-			"compileOnly", "compilerCompile",
-	};
 
 	public GradleDependencyFinder(Connection c, Writer out) {
 		this.c = c;
 		this.out = out;
 	}
-
-	public static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
-	public static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"][^\'\"]+[\'\"]");
-	public static final Pattern NUMBER_VERSION = Pattern.compile("\\d+(\\.[\\+\\d]+){0,2}");
-	public static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[^\'\":]+");
-	public static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
-	public static final Pattern LATEST = Pattern.compile("latest");
-	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
-
-	private synchronized void incrementFound() {
-		found++;
-	}
-	private synchronized void incrementFiles() {
-		files++;
-	}
-	private synchronized void incrementMethods() {
-		methods++;
-	}
-	private synchronized void incrementNoVersion() {
-		noVersion++;
-	}
-	private synchronized void addCommands(String command) {
-		Integer i = commands.get(command);
-		if (i == null)
-			commands.put(command, 1);
-		else	
-			commands.put(command, ++i);
-	}
-	private synchronized void addNotFound(String variable) {
-		Integer i = notFound.get(variable);
-		if (i == null)
-			notFound.put(variable, 1);
-		else	
-			notFound.put(variable, ++i);
-	}
 	
+	// Global patterns to speed up performance - they are for gathering version data out of the file
+	public static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
+	public static final Pattern INCLUDE_CONCATENATED_VERSIONS = Pattern.compile("(\'|\")[^\'\"]+(\'|\")(\\s*\\+\\s*\\w+){1,}");
+	public static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"]?[^\'\"]+[\'\"]?");
+	public static final Pattern NUMBER_VERSION = Pattern.compile("(\\d+|\\+)(\\.[\\+\\d]+){0,2}");
+	public static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[\\{a-zA-Z_][^\'\":]+");
+	public static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
+	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
+	public static final Pattern RANGE = Pattern.compile("[\\[\\(\\]\\)][^\\[\\(\\]\\)]+[\\[\\(\\]\\)]");
+	
+	// Patterns for sorting the style of version
+	public static final Pattern MAJOR = Pattern.compile("latest|^[\'\"]?\\d*\\+");
+	public static final Pattern MINOR = Pattern.compile("^[\'\"]?\\d+\\.\\d*\\+");
+	public static final Pattern MICRO = Pattern.compile("^[\'\"]?\\d+\\.\\d+\\.\\d*\\+");
+	public static final Pattern FIXED = Pattern.compile("^[\'\"]?\\d+(\\.\\d+){0,2}");
+	
+
 	private synchronized void printString(String s) {
 		try {
 			out.write(s);
@@ -146,7 +111,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		Matcher m2 = getVariableQuotes.matcher(file);
 
 		if (m.find()) {
-			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("]\"\'", "").split(",\n"));
+			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("(]\"\')", "").split(",\n"));
 		} else if (m2.find()) {
 			variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("[\"\']", ""));
 		}
@@ -185,9 +150,6 @@ public class GradleDependencyFinder implements DependencyFinder {
 			}
 		}
 
-		// Records unmatched variables
-		addNotFound(variable);
-		
 		return temp;
 	}
 
@@ -200,17 +162,26 @@ public class GradleDependencyFinder implements DependencyFinder {
 		Matcher mmap = MAP_VERSION_PATTERN.matcher(line);
 		Matcher m = TOTAL_VERSION.matcher(line);
 		Matcher mvariable = VARIABLES.matcher(line);
+		Matcher mcat = INCLUDE_CONCATENATED_VERSIONS.matcher(line);
 
 		try {
 			// Get variables and versions for further processing
 			// Version is written as a map
 			if (mmap.find()) {
 				rawVersions.add(mmap.group());
+			// Version uses concatenation
+			} else if (mcat.find()) {
+				String[] t = mcat.group().split("\\+");
+				rawVersions.add("$"+t[t.length-1].trim());
 			// Version is written as a string
 			} else if (m.find()) { 
-				rawVersions.add(m.group().split(":")[2]);
-				while(m.find()) {
+				try {
 					rawVersions.add(m.group().split(":")[2]);
+					while(m.find()) {
+						rawVersions.add(m.group().split(":")[2]);
+					}
+				} catch (ArrayIndexOutOfBoundsException e) {
+					// Ignore these, picks up the occasional version but false positive rate far too high
 				}
 			// Line lists variables which need resolving
 			} else if (mvariable.find()) { 
@@ -227,30 +198,37 @@ public class GradleDependencyFinder implements DependencyFinder {
 					}
 
 				}
-			// Neither, empty list returned
+				// Neither, empty list returned
 			} else { 
 				return resolvedVersions;
 			}
-			
+
 			// Process raw variables and versions
 			// For loop: in case there is more than one dependency on the same line
 			for (String tot: rawVersions) {
-				// Resolves variables into versions i.e. ${springVersion}
-				m = VARIABLE_VERSION.matcher(tot);
-				if (m.find()) { 
-					resolvedVersions.addAll(getVersionFromVariable(file, ext, m.group(), url));
+				// Captures ranges
+				m = RANGE.matcher(tot);
+				if (m.find()) {
+					resolvedVersions.add(m.group());
 					continue;
 				}
-
+				
 				// Captures number versions
 				m = NUMBER_VERSION.matcher(tot);
 				if (m.find()) {
 					resolvedVersions.add(m.group());
 					continue;
 				} 
+				
+				// Resolves variables into versions i.e. ${springVersion}
+				m = VARIABLE_VERSION.matcher(tot);
+				if (m.find()) { 
+					resolvedVersions.addAll(getVersionFromVariable(file, ext, m.group(), url));
+					//continue;
+				}
 
 				// Captures ivy style 'latest'
-				m = LATEST.matcher(tot);
+				m = MAJOR.matcher(tot);
 				if (m.find()) {
 					resolvedVersions.add(m.group());
 					continue;
@@ -258,13 +236,36 @@ public class GradleDependencyFinder implements DependencyFinder {
 			}
 		} catch (IndexOutOfBoundsException e) { // Triggers when group:project:version syntax is not followed
 			//printString("\t\t"+line);
-			incrementNoVersion();
 			//resolvedVersions.add("noVersion "+line); // Once commented out, no version lines will return an empty list - excludes trip this often
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		return resolvedVersions;
+	}
+	
+	private String processVersion(String version) {
+		Matcher m = RANGE.matcher(version);
+		if (m.find())
+			return "range";
+		
+		m = MICRO.matcher(version);
+		if (m.find())
+			return "micro";
+		
+		m = MINOR.matcher(version);
+		if (m.find())
+			return "minor";
+		
+		m = MAJOR.matcher(version);
+		if (m.find())
+			return "major";
+		
+		m = FIXED.matcher(version);
+		if (m.find())
+			return "fixed";
+		
+		return null;
 	}
 
 	// ENTRY POINT INTO CLASS. PROVIDE ENTIRE GRADLE FILE AS A STRING ALONG WITH URL FOR RECORDING
@@ -275,6 +276,16 @@ public class GradleDependencyFinder implements DependencyFinder {
 		if (deps == "") {
 			return;
 		}
+		
+		// Counts per file
+		int files = 0;
+		int methods = 0;
+		int fixedVersions = 0;
+		int microVersions = 0;
+		int minorVersions = 0;
+		int majorVersions = 0;	
+		int rangeVersions = 0;
+		int deplines = deps.split("\n").length;
 
 		// Some commands can be used over multiple lines
 		String lastCommand = "";
@@ -298,17 +309,6 @@ public class GradleDependencyFinder implements DependencyFinder {
 				lastCommand = type;
 			}
 
-			// Counts types of commands
-			addCommands(lastCommand);
-
-			/*
-			// Ignores commands that are not useful for analysis
-			if (!Arrays.asList(WANTED_COMMANDS).contains(lastCommand)) {
-				printString(line);
-				continue;
-			}*/
-				
-
 			// Continue if the line does not have any further information after the command
 			if (Pattern.matches(lastCommand + "\\s*\\(?\\s*$", line)) {
 				continue;
@@ -316,32 +316,36 @@ public class GradleDependencyFinder implements DependencyFinder {
 
 			// Counts local file dependencies
 			if (Pattern.matches(lastCommand + "\\s+file(s|Tree).*", line)) {
-				incrementFiles();
+				files++;
 				continue;
 			}
 
 			// Counts method calls to resolve dependencies
 			if (Pattern.matches(lastCommand+"\\s+\\w+\\(\\).*", line)) {
-				incrementMethods();
+				methods++;
 				continue;
 			}
 
 			// Extracts version information out of line
 			// When no version information is found, empty list is returned
 			List<String> version = getVersionNum(line, file, url);
-			printString(line);
-			//printString(version.toString() + " " + lastCommand);
-			incrementFound();
-
-			/*if (version.isEmpty()) { // No information found for this version
-				Pattern p = Pattern.compile("apply from:.*");
-				Matcher matcher = p.matcher(file);
-				while (matcher.find()) {
-					printString(matcher.group());
+			for (String v: version) {
+				String result = processVersion(v);
+				if (result == null) {
+					continue;
 				}
-				printString(url);
-				printString(lastCommand + ": " + line);
-			}*/
+				
+				switch(result) {
+				case "fixed": {fixedVersions++; break;}
+				case "micro": {microVersions++; break;}
+				case "minor": {minorVersions++; break;}
+				case "major": {majorVersions++; break;}
+				case "range": {rangeVersions++; break;}
+				}
+				
+				printString(line + "\n" + v + ' ' + result);
+			}
+
 		}
 	}
 

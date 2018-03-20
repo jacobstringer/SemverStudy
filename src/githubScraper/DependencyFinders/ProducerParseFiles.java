@@ -16,7 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
-	private int until = 10000;
+	private int until = 1000;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();
@@ -108,6 +108,13 @@ public class ProducerParseFiles implements Runnable {
 		}
 		// Close connection
 		try {in.close();} catch (IOException e) {e.printStackTrace();}
+		
+		// Add Poison Pill
+		try {
+			for (int i = 0; i < 100; i++)
+				queue.put(new String[]{null, null, null});
+			} catch (InterruptedException e1) {e1.printStackTrace();}
+		
 		stop();
 		System.out.println("Finished");
 	}
