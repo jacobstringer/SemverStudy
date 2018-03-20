@@ -8,9 +8,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.stream.Collectors;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -125,6 +129,11 @@ public class ProductionParseFiles implements ProductionMBean {
 		}
 		// wait to see whether there are still jobs, if none left, stop consumers
 		// now we can safely stop consumers
+		while (!queue.isEmpty()){
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {}
+		}
 		for (ConsumerParseFiles consumer:consumers) {
 			while (!consumer.done){
 				System.out.print("w");

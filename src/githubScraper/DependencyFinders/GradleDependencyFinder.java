@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+
 // Able to be used in concurrent mode due to additional HTTP calls for extra files
 public class GradleDependencyFinder implements DependencyFinder {
 	Connection c;
@@ -51,7 +52,6 @@ public class GradleDependencyFinder implements DependencyFinder {
 	// Find closure nearest to index, used for once the dependencies keyword is found
 	private String getNextClosure(String file, int index) {
 		int bracket_level = 0;		
-
 		try {
 			// Fast forward to first {
 			while (Character.isWhitespace(file.charAt(index))) {index++;}
