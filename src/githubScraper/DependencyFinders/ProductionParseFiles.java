@@ -8,13 +8,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.stream.Collectors;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
@@ -24,10 +20,8 @@ import githubScraper.ProductionMBean;
 
 public class ProductionParseFiles implements ProductionMBean {
 	private static final int PRODUCER_COUNT = 1;
-	private static final int CONSUMER_COUNT = 10;
+	private static final int CONSUMER_COUNT = 8;
 	private static final int BUFFER_SIZE = 1000;
-
-	private static Connection c;
 
 	public ProductionParseFiles() {
 		super();

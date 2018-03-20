@@ -106,6 +106,8 @@ public class GradleDependencyFinder implements DependencyFinder {
 	// Use if there is a variable listed in the command - fetches variable(s)
 	private List<String> getVariable (String file, String varname) {
 		List<String> variable = new ArrayList<>();
+		if (file == null || varname == null)
+			return variable;
 		
 		try {
 			Pattern getVariableArray = Pattern.compile(varname + "\\s*=\\s*\\[[^\\[\\]]*\\]");
@@ -143,7 +145,8 @@ public class GradleDependencyFinder implements DependencyFinder {
 				try {
 					ext.add(CollectFileFromURL.getFile(temp.get(temp.size()-1)));
 				} catch (IllegalArgumentException e) {
-					ext.add(CollectFileFromURL.getFile(url.replaceAll("github", "raw.githubusercontent") + "/master/" + temp));
+					ext.add(CollectFileFromURL.getFile(url.replaceAll("github", "raw.githubusercontent") + "/master/" + temp 
+							+ "?access_token=70580404d854ec52e85f6f93675e792eac2faccb"));
 				}
 			}
 		}
@@ -380,7 +383,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 				ps.execute();
 			}
 		} catch (SQLException e) {
-			System.err.println(e.getMessage());
+			//System.err.println(e.getMessage());
 		}
 	}
 

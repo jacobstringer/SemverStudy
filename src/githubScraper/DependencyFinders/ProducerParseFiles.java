@@ -16,6 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
+	private int start = 1100000;
 	//private int until = 100;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
@@ -72,6 +73,14 @@ public class ProducerParseFiles implements Runnable {
 			if (type == null) {
 				continue;
 			}
+			
+			// Count and skip if below min
+			count++;
+			if (count % 10000 == 0) {
+				System.out.println("Read in file: " + count);
+			}
+			if (count < start)
+				continue;
 
 			// Find the file which has the structure buildtype\first_character_of_file\file.extension
 			BufferedReader in2;
@@ -95,16 +104,14 @@ public class ProducerParseFiles implements Runnable {
 					temp.append(tempString+"\n");
 				}
 			}
+			if (temp.toString() == null)
+				continue;
 
 			// Send to consumers
 			try {queue.put(new String[]{temp.toString(), type, info[0]});} catch (InterruptedException e1) {e1.printStackTrace();}
 
 			// Close connection
 			try {in2.close();} catch (IOException e) {e.printStackTrace();}
-			count++;
-			if (count % 10000 == 0) {
-				System.out.println("Read in file: " + count);
-			}
 		}
 		// Close connection
 		try {in.close();} catch (IOException e) {e.printStackTrace();}
