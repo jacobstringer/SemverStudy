@@ -4,6 +4,7 @@ private_tokens.txt
 /data/*.csv
 /data/dependencies.zip
 /data/data_npm.zip
+/data/data_meta_all_files.zip
 /old/
 .project
 .pydevproject

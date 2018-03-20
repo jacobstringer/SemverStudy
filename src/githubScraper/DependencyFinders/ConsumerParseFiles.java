@@ -1,5 +1,7 @@
 package githubScraper.DependencyFinders;
 
+import java.io.BufferedWriter;
+import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,15 +19,15 @@ public class ConsumerParseFiles implements Runnable {
 	private Counter counter = null;
 	private boolean stopped = false;
 	private Connection c;
-	private DependencyFinder df;
+	private Writer out;
 	public boolean done = false;
 
-	public ConsumerParseFiles(BlockingQueue<String[]> queue, Counter counter, Connection c, GradleDependencyFinder df) {
+	public ConsumerParseFiles(BlockingQueue<String[]> queue, Counter counter, Connection c, BufferedWriter out) {
 		super();
 		this.queue = queue;
 		this.counter = counter;
 		this.c = c;
-		this.df = df;
+		this.out = out;
 	}
 
 	public void stop() {
@@ -52,7 +54,7 @@ public class ConsumerParseFiles implements Runnable {
 	public void run() {
 		// Initialise classes	
 		//AntDependencyFinder ant = new AntDependencyFinder();
-		//GradleDependencyFinder gradle = new GradleDependencyFinder(c, out);
+		GradleDependencyFinder gradle = new GradleDependencyFinder(c, out);
 		//NPMDependencyFinder npm = new NPMDependencyFinder(c);
 		//PomDependencyFinder pom = new PomDependencyFinder();
 		//RakeDependencyFinder rake = new RakeDependencyFinder();
@@ -80,7 +82,7 @@ public class ConsumerParseFiles implements Runnable {
 			//int[] dependencies = null;
 			switch (file_string[1]) {
 			//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
-			case "Gradle": {df.findVersionData(file_string[0], file_string[2]); break;}
+			case "Gradle": {gradle.findVersionData(file_string[0], file_string[2]); break;}
 			//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
 			//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
 			//case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}

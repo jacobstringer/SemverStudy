@@ -16,7 +16,7 @@ public class ProducerParseFiles implements Runnable {
 	public boolean stopped = false;
 	private String scripts = "D:\\Build Scripts\\";
 	private int count = 0;
-	private int until = 1000;
+	//private int until = 100;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
 		super();
@@ -38,7 +38,7 @@ public class ProducerParseFiles implements Runnable {
 			this.stopped = true;
 		}
 
-		while (!this.stopped && count < until) {
+		while (!this.stopped) {
 			// Get one observation at a time out of the database file
 			String[] info = null;
 			try {

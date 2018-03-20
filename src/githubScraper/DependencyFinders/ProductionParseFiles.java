@@ -43,9 +43,9 @@ public class ProductionParseFiles implements ProductionMBean {
 
 	private List<ProducerParseFiles> producers = new ArrayList<ProducerParseFiles>();
 	private List<ConsumerParseFiles> consumers = new ArrayList<ConsumerParseFiles>();
+	private List<Connection> connections = new ArrayList<Connection>();
 	private BlockingQueue <String[]> queue = new ArrayBlockingQueue<String[]>(BUFFER_SIZE);
 	private Counter jobCounter = new Counter("processed jobs");
-	private GradleDependencyFinder gradle;
 	private BufferedWriter out = null;
 
 	public static void main(String[] args) {
@@ -57,24 +57,16 @@ public class ProductionParseFiles implements ProductionMBean {
 		// DB
 		try {
 			Class.forName("org.postgresql.Driver");
-			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/BuildData", "postgres", "password");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println(e.getClass().getName()+": "+e.getMessage());
-			System.exit(0);
+		} catch (ClassNotFoundException e2) {
+			e2.printStackTrace();
 		}
 		
 		// Log
 		try {
 			out = new BufferedWriter(new FileWriter("Tests.txt"));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-
-		// Logic
-		gradle = new GradleDependencyFinder(c, out);
 		
 		// start producers
 		for (int i=0;i<PRODUCER_COUNT;i++) {
@@ -87,7 +79,15 @@ public class ProductionParseFiles implements ProductionMBean {
 
 		// start consumers
 		for (int i=0;i<CONSUMER_COUNT;i++) {
-			ConsumerParseFiles consumer = new ConsumerParseFiles(queue, jobCounter, c, gradle);
+			ConsumerParseFiles consumer = null;
+			try {
+				connections.add(DriverManager.getConnection(
+						"jdbc:postgresql://localhost:5432/BuildData", "postgres", "password"));
+				consumer = new ConsumerParseFiles(queue, jobCounter, connections.get(connections.size()-1), out);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			Thread thread2 = new Thread(consumer);
 			thread2.setName("consumer - " + i); // name to facilitate analysis with VisualVM or similar tool
 			thread2.start();
@@ -153,7 +153,8 @@ public class ProductionParseFiles implements ProductionMBean {
 
 		// Close DB connection
 		try {
-			c.close();
+			for (Connection c: connections)
+				c.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

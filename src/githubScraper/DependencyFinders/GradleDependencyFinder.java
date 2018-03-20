@@ -3,12 +3,14 @@ package githubScraper.DependencyFinders;
 import java.io.IOException;
 import java.io.Writer;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 // Able to be used in concurrent mode due to additional HTTP calls for extra files
 public class GradleDependencyFinder implements DependencyFinder {
@@ -19,7 +21,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		this.c = c;
 		this.out = out;
 	}
-	
+
 	// Global patterns to speed up performance - they are for gathering version data out of the file
 	public static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
 	public static final Pattern INCLUDE_CONCATENATED_VERSIONS = Pattern.compile("(\'|\")[^\'\"]+(\'|\")(\\s*\\+\\s*\\w+){1,}");
@@ -29,13 +31,13 @@ public class GradleDependencyFinder implements DependencyFinder {
 	public static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
 	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
 	public static final Pattern RANGE = Pattern.compile("[\\[\\(\\]\\)][^\\[\\(\\]\\)]+[\\[\\(\\]\\)]");
-	
+
 	// Patterns for sorting the style of version
 	public static final Pattern MAJOR = Pattern.compile("latest|^[\'\"]?\\d*\\+");
 	public static final Pattern MINOR = Pattern.compile("^[\'\"]?\\d+\\.\\d*\\+");
 	public static final Pattern MICRO = Pattern.compile("^[\'\"]?\\d+\\.\\d+\\.\\d*\\+");
 	public static final Pattern FIXED = Pattern.compile("^[\'\"]?\\d+(\\.\\d+){0,2}");
-	
+
 
 	private synchronized void printString(String s) {
 		try {
@@ -104,18 +106,22 @@ public class GradleDependencyFinder implements DependencyFinder {
 	// Use if there is a variable listed in the command - fetches variable(s)
 	private List<String> getVariable (String file, String varname) {
 		List<String> variable = new ArrayList<>();
-
-		Pattern getVariableArray = Pattern.compile(varname + "\\s*=\\s*\\[[^\\[\\]]*\\]", Pattern.DOTALL);
-		Pattern getVariableQuotes = Pattern.compile(varname + "\\s*=\\s*[\"\'][^\"\']+[\"\']");
-		Matcher m = getVariableArray.matcher(file);
-		Matcher m2 = getVariableQuotes.matcher(file);
-
-		if (m.find()) {
-			variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("(]\"\')", "").split(",\n"));
-		} else if (m2.find()) {
-			variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("[\"\']", ""));
+		
+		try {
+			Pattern getVariableArray = Pattern.compile(varname + "\\s*=\\s*\\[[^\\[\\]]*\\]");
+			Pattern getVariableQuotes = Pattern.compile(varname + "\\s*=\\s*[\"\'][^\"\']+[\"\']");
+			Matcher m = getVariableArray.matcher(file);
+			Matcher m2 = getVariableQuotes.matcher(file);
+	
+			if (m.find()) {
+				variable = Arrays.asList(m.group().replaceAll(varname+"\\s*=\\s*\\[", "").replaceAll("(]\"\')", "").split(",\n"));
+			} else if (m2.find()) {
+				variable.add(m2.group().replaceAll(varname+"\\s*=\\s*", "").replaceAll("[\"\']", ""));
+			}
+		} catch (PatternSyntaxException e) {
+			// Occasionally comes up for variables stored in maps, e.g. version: versions['hibernate-core']
+			// Quite difficult to avoid with regex, add to threats to validity
 		}
-
 		return variable;
 	}
 
@@ -169,11 +175,11 @@ public class GradleDependencyFinder implements DependencyFinder {
 			// Version is written as a map
 			if (mmap.find()) {
 				rawVersions.add(mmap.group());
-			// Version uses concatenation
+				// Version uses concatenation
 			} else if (mcat.find()) {
 				String[] t = mcat.group().split("\\+");
 				rawVersions.add("$"+t[t.length-1].trim());
-			// Version is written as a string
+				// Version is written as a string
 			} else if (m.find()) { 
 				try {
 					rawVersions.add(m.group().split(":")[2]);
@@ -183,7 +189,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 				} catch (ArrayIndexOutOfBoundsException e) {
 					// Ignore these, picks up the occasional version but false positive rate far too high
 				}
-			// Line lists variables which need resolving
+				// Line lists variables which need resolving
 			} else if (mvariable.find()) { 
 				String[] temp = mvariable.group().split("[,\\s]+");
 				for (int i=1; i < temp.length; i++) {
@@ -212,14 +218,14 @@ public class GradleDependencyFinder implements DependencyFinder {
 					resolvedVersions.add(m.group());
 					continue;
 				}
-				
+
 				// Captures number versions
 				m = NUMBER_VERSION.matcher(tot);
 				if (m.find()) {
 					resolvedVersions.add(m.group());
 					continue;
 				} 
-				
+
 				// Resolves variables into versions i.e. ${springVersion}
 				m = VARIABLE_VERSION.matcher(tot);
 				if (m.find()) { 
@@ -243,28 +249,28 @@ public class GradleDependencyFinder implements DependencyFinder {
 
 		return resolvedVersions;
 	}
-	
+
 	private String processVersion(String version) {
 		Matcher m = RANGE.matcher(version);
 		if (m.find())
 			return "range";
-		
+
 		m = MICRO.matcher(version);
 		if (m.find())
 			return "micro";
-		
+
 		m = MINOR.matcher(version);
 		if (m.find())
 			return "minor";
-		
+
 		m = MAJOR.matcher(version);
 		if (m.find())
 			return "major";
-		
+
 		m = FIXED.matcher(version);
 		if (m.find())
 			return "fixed";
-		
+
 		return null;
 	}
 
@@ -276,7 +282,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		if (deps == "") {
 			return;
 		}
-		
+
 		// Counts per file
 		int files = 0;
 		int methods = 0;
@@ -286,6 +292,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		int majorVersions = 0;	
 		int rangeVersions = 0;
 		int deplines = deps.split("\n").length;
+		ArrayList<String[]> individualEntries = new ArrayList<>();
 
 		// Some commands can be used over multiple lines
 		String lastCommand = "";
@@ -314,38 +321,66 @@ public class GradleDependencyFinder implements DependencyFinder {
 				continue;
 			}
 
-			// Counts local file dependencies
+
 			if (Pattern.matches(lastCommand + "\\s+file(s|Tree).*", line)) {
+				// Counts local file dependencies
 				files++;
-				continue;
-			}
-
-			// Counts method calls to resolve dependencies
-			if (Pattern.matches(lastCommand+"\\s+\\w+\\(\\).*", line)) {
+			} else if (Pattern.matches(lastCommand+"\\s+\\w+\\(\\).*", line)) {
+				// Counts method calls
 				methods++;
-				continue;
-			}
+			} else {
+				// Extracts version information out of line
+				// When no version information is found, empty list is returned
+				List<String> version = getVersionNum(line, file, url);
+				for (String v: version) {
+					// Figure out what the version is, skip if it is not usable
+					String result = processVersion(v);
+					if (result == null) {
+						continue;
+					}
 
-			// Extracts version information out of line
-			// When no version information is found, empty list is returned
-			List<String> version = getVersionNum(line, file, url);
-			for (String v: version) {
-				String result = processVersion(v);
-				if (result == null) {
-					continue;
-				}
-				
-				switch(result) {
-				case "fixed": {fixedVersions++; break;}
-				case "micro": {microVersions++; break;}
-				case "minor": {minorVersions++; break;}
-				case "major": {majorVersions++; break;}
-				case "range": {rangeVersions++; break;}
-				}
-				
-				printString(line + "\n" + v + ' ' + result);
-			}
+					// Tally
+					switch(result) {
+					case "fixed": {fixedVersions++; break;}
+					case "micro": {microVersions++; break;}
+					case "minor": {minorVersions++; break;}
+					case "major": {majorVersions++; break;}
+					case "range": {rangeVersions++; break;}
+					}
 
+					// Save for later DB entry
+					individualEntries.add(new String[]{lastCommand, result, v});
+				}
+			}
+		}
+
+		// Add to database, first to gradlefiles, then the individual results to gradleentries
+		PreparedStatement ps = null;
+		try {
+			ps = c.prepareStatement("INSERT into gradlefiles (url, fixed, micro, minor, major, nrange, "
+					+ "lines, files, methods) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			ps.setString(1, url);
+			ps.setInt(2, fixedVersions);
+			ps.setInt(3, microVersions);
+			ps.setInt(4, minorVersions);
+			ps.setInt(5, majorVersions);
+			ps.setInt(6, rangeVersions);
+			ps.setInt(7, deplines);
+			ps.setInt(8, files);
+			ps.setInt(9, methods);
+			ps.execute();
+
+			for (String[] entry: individualEntries) {
+				ps = c.prepareStatement("INSERT into gradleentries (url, command, versiontype, raw) "
+						+ "VALUES (?, ?, ?, ?)");
+				ps.setString(1, url);
+				ps.setString(2, entry[0]);
+				ps.setString(3, entry[1]);
+				ps.setString(4, entry[2]);
+				ps.execute();
+			}
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
 		}
 	}
 
