@@ -1,8 +1,5 @@
 package githubScraper.DependencyFinders;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

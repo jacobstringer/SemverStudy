@@ -1,22 +1,27 @@
 package githubScraper.DependencyFinders;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Enumeration;
 import java.util.concurrent.BlockingQueue;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 /**
  * A producer produces lists of random student instances for processing.
  * It implements Runnable to enable multiple producers to run in parallel using threads.
+ * 
+ * This producer reads in files for the consumer to process
  */
 public class ProducerParseFiles implements Runnable {
 
 	private BlockingQueue <String[]> queue = null;
 	public boolean stopped = false;
-	private String scripts = "D:\\Build Scripts\\";
+	private String type = "gradle";
+	private String zip = "D:/Build Scripts/"+type+".zip";
 	private int count = 0;
-	private int start = 1100000;
+	private int start = 0;
 	//private int until = 100;
 
 	public ProducerParseFiles(BlockingQueue<String[]> queue) {
@@ -30,102 +35,51 @@ public class ProducerParseFiles implements Runnable {
 
 	@Override
 	public void run() {
-		// Open database records
-		BufferedReader in = null;
-		try {
-			in = new BufferedReader(new FileReader("C:\\Users\\Jacob\\Desktop\\MasseyReadings\\Java\\_2018SS\\data\\dependencies.csv"));
-		} catch (FileNotFoundException e) {
+		String linesep = System.getProperty("line.separator");
+		try (ZipFile zf = new java.util.zip.ZipFile(zip)) {
+			for (Enumeration<? extends ZipEntry> entries = zf.entries(); entries.hasMoreElements();) {
+				// Count and skip if below min
+				if (++count % 10000 == 0)
+					System.out.println("Read in file: " + count);
+				if (count < start)
+					continue;
+				
+				// Read in file and place on queue
+				ZipEntry entry = entries.nextElement();
+				try(BufferedReader br = new BufferedReader(new InputStreamReader(zf.getInputStream(entry)))) {
+					// Read in file into a single string
+					String line;
+					StringBuilder temp = new StringBuilder();
+					while((line=br.readLine()) != null){
+	                    temp.append(line);
+	                    temp.append(linesep);
+					}
+					
+					// Send to consumers
+					String[] path = entry.getName().split("/");
+					String url = "https://github.com/" + path[path.length-1].replaceAll("+", "/");
+					if ((line = temp.toString()) != null) {
+						try {
+							queue.put(new String[]{line, type, url});
+						} catch (InterruptedException e1) {
+							e1.printStackTrace();
+						}
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (IOException e) {
 			e.printStackTrace();
-			this.stopped = true;
 		}
-
-		while (!this.stopped) {
-			// Get one observation at a time out of the database file
-			String[] info = null;
-			try {
-				String temp = in.readLine();
-				if (temp == null) { // If file is finished
-					break;
-				}
-				info = temp.split(",");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
-			// Change url to file name as saved on computer
-			String file = info[0].replaceFirst("https://github.com/", "").replace('/', '+');
-
-			// Find the folder it is found in
-			String type = null;
-			try {
-				switch(info[3]) {
-				//case "Rakefile":
-				//case "Rakefile.rb": {type = "Rake"; break;}
-				case "build.gradle": {type = "Gradle"; break;}
-				//case "build.xml": {type = "Build"; break;}
-				//case "pom.xml": {type = "Pom"; break;}
-				//case "package.json": {type = "Package"; break;}
-				}
-			} catch (Exception e) {
-				continue;
-			}
-			
-			if (type == null) {
-				continue;
-			}
-			
-			// Count and skip if below min
-			count++;
-			if (count % 10000 == 0) {
-				System.out.println("Read in file: " + count);
-			}
-			if (count < start)
-				continue;
-
-			// Find the file which has the structure buildtype\first_character_of_file\file.extension
-			BufferedReader in2;
-			try {
-				in2 = new BufferedReader(
-						new FileReader(this.scripts + type + "\\" + file.charAt(0) + "\\" + file + "+" + info[3]));
-			} catch (FileNotFoundException e) {
-				//e.printStackTrace();
-				System.err.println(file);
-				continue;
-			}
-
-			// Read in file into a single string
-			StringBuilder temp = new StringBuilder();
-			String tempString = null;
-			while(true) {
-				try {tempString = in2.readLine();} catch (IOException e) {e.printStackTrace();}
-				if (tempString == null) {
-					break;
-				} else {
-					temp.append(tempString+"\n");
-				}
-			}
-			if (temp.toString() == null)
-				continue;
-
-			// Send to consumers
-			try {queue.put(new String[]{temp.toString(), type, info[0]});} catch (InterruptedException e1) {e1.printStackTrace();}
-
-			// Close connection
-			try {in2.close();} catch (IOException e) {e.printStackTrace();}
-		}
-		// Close connection
-		try {in.close();} catch (IOException e) {e.printStackTrace();}
 		
 		// Add Poison Pill
 		try {
 			for (int i = 0; i < 100; i++)
 				queue.put(new String[]{null, null, null});
-			} catch (InterruptedException e1) {e1.printStackTrace();}
-		
+		} catch (InterruptedException e1) {e1.printStackTrace();}
+
 		stop();
 		System.out.println("Finished");
 	}
-
-
-
 }

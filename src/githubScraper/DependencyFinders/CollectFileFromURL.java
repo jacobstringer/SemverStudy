@@ -1,6 +1,5 @@
 package githubScraper.DependencyFinders;
 
-import java.io.IOException;
 import java.net.UnknownHostException;
 
 import okhttp3.OkHttpClient;

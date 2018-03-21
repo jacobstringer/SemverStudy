@@ -3,18 +3,15 @@ package githubScraper.DependencyFinders;
 import java.io.BufferedWriter;
 import java.io.Writer;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import githubScraper.Counter;
 
 /**
  * A consumer takes lists of student instances and prints them by converting them into html document.
  * It implements Runnable to enable multiple producers to run in parallel using threads.
+ * 
+ * This consumer takes files off the queue, and routes them through to the correct build script logic for processing
+ * Threadsafe
  */
 public class ConsumerParseFiles implements Runnable {
 
@@ -58,8 +55,8 @@ public class ConsumerParseFiles implements Runnable {
 		// Initialise classes	
 		//AntDependencyFinder ant = new AntDependencyFinder();
 		GradleDependencyFinder gradle = new GradleDependencyFinder(c, out);
-		//NPMDependencyFinder npm = new NPMDependencyFinder(c);
-		//PomDependencyFinder pom = new PomDependencyFinder();
+		NPMDependencyFinder npm = new NPMDependencyFinder(c);
+		PomDependencyFinder pom = new PomDependencyFinder(c);
 		//RakeDependencyFinder rake = new RakeDependencyFinder();
 
 		while (!stopped) {
@@ -70,7 +67,7 @@ public class ConsumerParseFiles implements Runnable {
 			}
 
 			// Check for repeats
-			try {
+			/* try {
 				PreparedStatement query = c.prepareStatement("SELECT * FROM npm WHERE url=?");
 				query.setString(1, file_string[2]);
 				ResultSet rs = query.executeQuery();
@@ -79,16 +76,15 @@ public class ConsumerParseFiles implements Runnable {
 				}
 			} catch (SQLException e1) {
 				e1.printStackTrace();
-			}
+			} */
 
 			// Pass onto parsers to extract semantic version information
-			//int[] dependencies = null;
 			switch (file_string[1]) {
-			//case "Rake": {dependencies = rake.findVersionData(file_string[0]); break;}
-			case "Gradle": {gradle.findVersionData(file_string[0], file_string[2]); break;}
-			//case "Build": {dependencies = ant.findVersionData(file_string[0]); break;}
-			//case "Pom": {dependencies = pom.findVersionData(file_string[0]); break;}
-			//case "Package": {npm.findVersionData(file_string[0], file_string[2]); break;}
+			//case "rake": {dependencies = rake.findVersionData(file_string[0]); break;}
+			case "gradle": {gradle.findVersionData(file_string[0], file_string[2]); break;}
+			//case "build": {dependencies = ant.findVersionData(file_string[0]); break;}
+			case "pom": {pom.findVersionData(file_string[0], file_string[2]); break;}
+			case "package": {npm.findVersionData(file_string[0], file_string[2]); break;}
 			}
 
 			counter.added_to_db();

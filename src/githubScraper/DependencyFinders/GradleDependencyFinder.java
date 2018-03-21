@@ -1,6 +1,5 @@
 package githubScraper.DependencyFinders;
 
-import java.io.IOException;
 import java.io.Writer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,14 +39,14 @@ public class GradleDependencyFinder implements DependencyFinder {
 	public static final Pattern FIXED = Pattern.compile("^[\'\"]?\\d+(\\.\\d+){0,2}");
 
 
-	private synchronized void printString(String s) {
+	/*private synchronized void printString(String s) {
 		try {
 			out.write(s);
 			out.write("\n");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	// Find closure nearest to index, used for once the dependencies keyword is found
 	private String getNextClosure(String file, int index) {
@@ -282,9 +281,6 @@ public class GradleDependencyFinder implements DependencyFinder {
 	public void findVersionData(String file, String url) {
 		// Get dependencies closure		
 		String deps = getBaseDependenciesClosure(file);
-		if (deps == "") {
-			return;
-		}
 
 		// Counts per file
 		int files = 0;

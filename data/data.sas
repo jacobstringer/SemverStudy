@@ -132,4 +132,8 @@ PROC CONTENTS data=buildresults;
 RUN;
 ODS HTML CLOSE; 
 
+DATA total2;
+	SET total;
+	IF buildtype > .;
+	RUN;
 
