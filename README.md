@@ -17,7 +17,7 @@ https://drive.google.com/drive/folders/1LGghgE7mtCSLi7CwG_KNsP_9Nm1fNWNF?usp=sha
 ## Summary Statistics
 Build Type | Scripts Found | Scripts with Dependencies | Classified
 ---|---|---|---
-NPM | 8100k | | 
+NPM | 8100k | 7500k | 
 Gradle | 2400k | 300k | 300k
 Maven | 2300k | | 
 Rake | 1000k | | 
