@@ -18,31 +18,38 @@ public class ProducerParseFiles implements Runnable {
 
 	private BlockingQueue <String[]> queue = null;
 	public boolean stopped = false;
-	private String type = "gradle";
-	private String zip = "D:/Build Scripts/"+type+".zip";
 	private int count = 0;
+	private int consumers;
+	
+	// CHANGE THESE FOUR VARIABLES ONLY
+	private String zip = "D:/Build Scripts/pom.zip";
+	private String ending = "pom\\.xml";
 	private int start = 0;
-	//private int until = 100;
+	private int end = 5000; 
+	//private int end = Integer.MAX_VALUE; // Set to infinity to read until end of files
 
-	public ProducerParseFiles(BlockingQueue<String[]> queue) {
+	public ProducerParseFiles(BlockingQueue<String[]> queue, int consumers) {
 		super();
 		this.queue = queue;
+		this.consumers = consumers;
 	}
 
 	public void stop() {
-		stopped = true;
+		this.stopped = true;
 	}
 
 	@Override
 	public void run() {
 		String linesep = System.getProperty("line.separator");
 		try (ZipFile zf = new java.util.zip.ZipFile(zip)) {
-			for (Enumeration<? extends ZipEntry> entries = zf.entries(); entries.hasMoreElements();) {
+			for (Enumeration<? extends ZipEntry> entries = zf.entries(); entries.hasMoreElements() && !this.stopped;) {
 				// Count and skip if below min
-				if (++count % 10000 == 0)
-					System.out.println("Read in file: " + count);
-				if (count < start)
+				if (++this.count % 10000 == 0)
+					System.out.println("Read in file: " + this.count);
+				if (this.count < this.start)
 					continue;
+				if (this.count > this.end)
+					break;
 				
 				// Read in file and place on queue
 				ZipEntry entry = entries.nextElement();
@@ -57,10 +64,10 @@ public class ProducerParseFiles implements Runnable {
 					
 					// Send to consumers
 					String[] path = entry.getName().split("/");
-					String url = "https://github.com/" + path[path.length-1].replaceAll("+", "/");
+					String url = "https://github.com/" + path[path.length-1].replaceAll(ending, "").replaceAll("\\+", "/");
 					if ((line = temp.toString()) != null) {
 						try {
-							queue.put(new String[]{line, type, url});
+							queue.put(new String[]{line, path[0], url});
 						} catch (InterruptedException e1) {
 							e1.printStackTrace();
 						}
@@ -75,7 +82,7 @@ public class ProducerParseFiles implements Runnable {
 		
 		// Add Poison Pill
 		try {
-			for (int i = 0; i < 100; i++)
+			for (int i = 0; i < consumers; i++)
 				queue.put(new String[]{null, null, null});
 		} catch (InterruptedException e1) {e1.printStackTrace();}
 

@@ -56,7 +56,7 @@ public class ConsumerParseFiles implements Runnable {
 		//AntDependencyFinder ant = new AntDependencyFinder();
 		GradleDependencyFinder gradle = new GradleDependencyFinder(c, out);
 		NPMDependencyFinder npm = new NPMDependencyFinder(c);
-		PomDependencyFinder pom = new PomDependencyFinder(c);
+		PomDependencyFinder pom = new PomDependencyFinder(c, out);
 		//RakeDependencyFinder rake = new RakeDependencyFinder();
 
 		while (!stopped) {

@@ -135,5 +135,23 @@ ODS HTML CLOSE;
 DATA total2;
 	SET total;
 	IF buildtype > .;
-	RUN;
+RUN;
 
+
+
+******** GRADLE;
+DATA gradle;
+	INFILE "&dir\gradlefiles.csv" DSD;
+	INPUT url $ lines fixed micro minor major range files methods;
+RUN;
+
+DATA gradleonlydeps;
+	SET gradle;
+	IF lines > 0;
+RUN;
+
+PROC MEANS data=gradleonlydeps;
+RUN;
+
+PROC UNIVARIATE data=gradleonlydeps PLOT;
+RUN;

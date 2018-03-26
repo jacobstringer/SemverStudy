@@ -64,7 +64,7 @@ public class ProductionParseFiles implements ProductionMBean {
 		
 		// start producers
 		for (int i=0;i<PRODUCER_COUNT;i++) {
-			ProducerParseFiles producer = new ProducerParseFiles(queue);
+			ProducerParseFiles producer = new ProducerParseFiles(queue, CONSUMER_COUNT);
 			Thread thread = new Thread(producer);
 			thread.setName("producer - " + (1)); // name to facilitate analysis with VisualVM or similar tool
 			thread.start();
@@ -126,6 +126,8 @@ public class ProductionParseFiles implements ProductionMBean {
 		// wait to see whether there are still jobs, if none left, stop consumers
 		// now we can safely stop consumers
 		while (!queue.isEmpty()){
+			System.out.print("s");
+			System.out.print(queue.size());
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {}

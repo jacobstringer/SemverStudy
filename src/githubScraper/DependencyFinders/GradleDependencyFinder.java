@@ -23,21 +23,28 @@ public class GradleDependencyFinder implements DependencyFinder {
 	}
 
 	// Global patterns to speed up performance - they are for gathering version data out of the file
-	public static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
-	public static final Pattern INCLUDE_CONCATENATED_VERSIONS = Pattern.compile("(\'|\")[^\'\"]+(\'|\")(\\s*\\+\\s*\\w+){1,}");
-	public static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"]?[^\'\"]+[\'\"]?");
-	public static final Pattern NUMBER_VERSION = Pattern.compile("(\\d+|\\+)(\\.[\\+\\d]+){0,2}");
-	public static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[\\{a-zA-Z_][^\'\":]+");
-	public static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
-	public static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
-	public static final Pattern RANGE = Pattern.compile("[\\[\\(\\]\\)][^\\[\\(\\]\\)]+[\\[\\(\\]\\)]");
+	private static final Pattern TOTAL_VERSION = Pattern.compile("(\'|\")[^\'\"]+(\'|\")");
+	private static final Pattern INCLUDE_CONCATENATED_VERSIONS = Pattern.compile("(\'|\")[^\'\"]+(\'|\")(\\s*\\+\\s*\\w+){1,}");
+	private static final Pattern MAP_VERSION_PATTERN = Pattern.compile("version:\\s*[\'\"]?[^\'\"]+[\'\"]?");
+	private static final Pattern NUMBER_VERSION = Pattern.compile("(\\d+|\\+)(\\.[\\+\\d]+){0,2}");
+	private static final Pattern VARIABLE_VERSION = Pattern.compile("\\$[\\{a-zA-Z_][^\'\":]+");
+	private static final Pattern FIND_COMMAND = Pattern.compile("^\\w+");
+	private static final Pattern VARIABLES = Pattern.compile("^[a-zA-Z]+\\s+\\w+(,\\s*\\w+){0,}\\s*$");
+	private static final Pattern RANGE = Pattern.compile("[\\[\\(\\]\\)][^\\[\\(\\]\\)]+[\\[\\(\\]\\)]");
 
 	// Patterns for sorting the style of version
-	public static final Pattern MAJOR = Pattern.compile("latest|^[\'\"]?\\d*\\+");
-	public static final Pattern MINOR = Pattern.compile("^[\'\"]?\\d+\\.\\d*\\+");
-	public static final Pattern MICRO = Pattern.compile("^[\'\"]?\\d+\\.\\d+\\.\\d*\\+");
-	public static final Pattern FIXED = Pattern.compile("^[\'\"]?\\d+(\\.\\d+){0,2}");
+	private static final Pattern MAJOR = Pattern.compile("latest|^[\'\"]?\\d*\\+");
+	private static final Pattern MINOR = Pattern.compile("^[\'\"]?\\d+\\.\\d*\\+");
+	private static final Pattern MICRO = Pattern.compile("^[\'\"]?\\d+\\.\\d+\\.\\d*\\+");
+	private static final Pattern FIXED = Pattern.compile("^[\'\"]?\\d+(\\.\\d+){0,2}");
 
+	// Count files that have been added to the DB
+	private int count = 0;
+	
+	private synchronized void incrementCount() {
+		if (++count % 10000 == 0)
+			System.out.println("Added " + count + " gradle files to the DB");
+	}
 
 	/*private synchronized void printString(String s) {
 		try {
@@ -290,7 +297,7 @@ public class GradleDependencyFinder implements DependencyFinder {
 		int minorVersions = 0;
 		int majorVersions = 0;	
 		int rangeVersions = 0;
-		int deplines = deps.split("\n").length;
+		int deplines = (deps.equals("")) ? 0 : deps.split("\n").length;
 		ArrayList<String[]> individualEntries = new ArrayList<>();
 
 		// Some commands can be used over multiple lines
@@ -378,8 +385,11 @@ public class GradleDependencyFinder implements DependencyFinder {
 				ps.setString(4, entry[2]);
 				ps.execute();
 			}
+			
+			incrementCount();
 		} catch (SQLException e) {
-			//System.err.println(e.getMessage());
+			// System.err.println(e.getMessage());
+			// Will trigger if the url is already in the DB, which will avoid duplicate information
 		}
 	}
 

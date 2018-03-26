@@ -28,7 +28,7 @@ public class Scraper {
 
 	public static int[] extractDependencies(String[] file) {
 		switch (file[0]) {
-		case "pom.xml": return new PomDependencyFinder().findVersionData(file[1]);
+		//case "pom.xml": return new PomDependencyFinder().findVersionData(file[1]);
 		//case "build.xml": return new AntDependencyFinder().findVersionData(file[1]);
 		//case "package.json": return new NPMDependencyFinder().findVersionData(file[1]);
 		//case "Rakefile.rb": return new RakeDependencyFinder().findVersionData(file[1]);
