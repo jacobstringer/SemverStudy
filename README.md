@@ -13,3 +13,8 @@ http://www.jacobstringer.co.nz/Results.html
 
 ## Completed Datasets
 https://drive.google.com/drive/folders/1LGghgE7mtCSLi7CwG_KNsP_9Nm1fNWNF?usp=sharing
+
+## Summary Statistics
+Build Type | Scripts Found | Scripts with Dependencies | Classified
+---|---|---|---
+Gradle | 2400k | 300k | 300k
