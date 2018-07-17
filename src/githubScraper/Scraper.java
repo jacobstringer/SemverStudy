@@ -1,9 +1,6 @@
 package githubScraper;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,56 +9,14 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.Iterator;
-import java.util.Timer;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.sql.*;
 import org.json.*;
 
-import githubScraper.DependencyFinders.*;
-
 public class Scraper {
 	//OkHttpClient client = new OkHttpClient();
-	static final String token = "access_token=70580404d854ec52e85f6f93675e792eac2faccb";
-	static int since = 1603118; // 1-16_061, 1_000_000-  (Gradle from 1_121_728)
-	static int goal = 1700000;
-
-	public static int[] extractDependencies(String[] file) {
-		switch (file[0]) {
-		//case "pom.xml": return new PomDependencyFinder().findVersionData(file[1]);
-		//case "build.xml": return new AntDependencyFinder().findVersionData(file[1]);
-		//case "package.json": return new NPMDependencyFinder().findVersionData(file[1]);
-		//case "Rakefile.rb": return new RakeDependencyFinder().findVersionData(file[1]);
-		//case "build.gradle": return new GradleDependencyFinder().findVersionData(file[1]);
-		}
-		return new int[2];
-	}
-
-	public static void processExistingBuildScripts(String[] info, String folder, Connection c, PreparedStatement ps) {
-		for (File file: new File("../../githubSamples/"+folder+"/").listFiles()) {
-			String name = file.getName();
-			try {
-				info[1] = readAll(new BufferedReader(new FileReader(file)));
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-				continue;
-			}
-
-			int[] dependencies = extractDependencies(info);
-			String original_url = "https://github.com/" + name.replaceAll("+", "/");
-
-			try {
-				ps = c.prepareStatement("UPDATE dependencies SET sem_depend = ?, other_depend = ? WHERE url = '?';");
-				ps.setInt(1, dependencies[1]);
-				ps.setInt(2, dependencies[0]);
-				ps.setString(3, original_url);
-				ps.execute();
-				System.out.println(ps.toString());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}	
-		}
-	}
+	static final String token = "access_token="; // FILL IN
+	static int since = 1;
+	static int goal = 112_000_000;
 
 	private static String readAll(Reader rd) {
 		StringBuilder sb = new StringBuilder();
@@ -88,19 +43,16 @@ public class Scraper {
 			try {
 				if (json.get("message").toString().contains("API rate limit exceeded")) {
 					System.out.println(url.split("access_token=")[1]);
-					System.out.println(Thread.currentThread().getName() + " has exceeded rate limits. Waiting for the next hour");
-					int currentHour = new Date(System.currentTimeMillis()).getHours();
-					while (new Date(System.currentTimeMillis()).getHours() == currentHour) {
-						try { // sleep for 2 minutes
-							Thread.sleep(120_000);
-						} catch (InterruptedException e1) {
-							e1.printStackTrace();
-						} 
-					}
+					System.out.println(Thread.currentThread().getName() + " has exceeded rate limits for the hour. Waiting for 5 minutes");
+					try { // sleep for 5 minutes
+						Thread.sleep(300_000);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					} 
 					return readJsonFromUrl(url);
 				}
 			} catch (JSONException e2) {}
-			
+
 			return json;
 		} finally {
 			is.close();
@@ -148,20 +100,17 @@ public class Scraper {
 					e1.printStackTrace();
 				}
 
-
 				// Save build scripts if they exist in root folder of project
 				long start = System.currentTimeMillis();
 				String[] fileInfo = {null, null};
 				try {
-					fileInfo = fs.findSaveFile(url);
+					fileInfo = FileSaver.findSaveFile(url);
 					if (fileInfo == null) {
 						continue;
 					}
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
-				System.out.println(System.currentTimeMillis() - start);
-
 
 				// Language information
 				start = System.currentTimeMillis();
@@ -178,10 +127,6 @@ public class Scraper {
 					first = keys.next();
 					second = keys.next();
 				} catch (Exception e) {}
-				System.out.println(System.currentTimeMillis() - start);
-
-				// Extract dependency information
-				int[] dependencies = extractDependencies(fileInfo);
 
 				// User email
 				start = System.currentTimeMillis();
@@ -195,21 +140,18 @@ public class Scraper {
 				} catch (IOException e) {
 					continue;
 				}
-				System.out.println(System.currentTimeMillis() - start);
 
 				// Save data (url, languages, build type, dependency information)
 				start = System.currentTimeMillis();
 				try {
 					ps = c.prepareStatement(
-							"INSERT INTO dependencies (url, lang1, lang2, buildtype, sem_depend, other_depend, users, ghid) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+							"INSERT INTO dependencies (url, lang1, lang2, buildtype, users, ghid) VALUES (?, ?, ?, ?, ?, ?)");
 					ps.setString(1, url);
 					ps.setString(2, first);
 					ps.setString(3, second);
 					ps.setString(4, fileInfo[0]);
-					ps.setInt(5, dependencies[1]);
-					ps.setInt(6, dependencies[0]);
-					ps.setString(7, user);
-					ps.setInt(8, since);
+					ps.setString(5, user);
+					ps.setInt(6, since);
 					ps.execute();
 					System.out.println(ps.toString());
 				} catch (SQLException e) {
@@ -221,39 +163,4 @@ public class Scraper {
 
 		System.out.println(since);
 	}
-
-	/*public static void main(String[] args) {
-		Scraper sc = new Scraper();
-		FileSaver fs = new FileSaver();
-
-		// DB Connection
-		Connection c = null;
-		PreparedStatement ps = null;
-		try {
-			Class.forName("org.postgresql.Driver");
-			c = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/BuildData", "postgres", "password");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println(e.getClass().getName()+": "+e.getMessage());
-			System.exit(0);
-		}
-
-		// Run queries
-		sc.gatherData(c, ps, fs);
-
-		// Process already collected build scripts, adjust info and folder
-		// String[] info = {"build.xml", null};
-		// String folder = "Build";
-		// processExistingBuildScripts(info, folder, c, ps);
-
-		// Close DB connection
-		try {
-			c.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-
-	}*/
-
 }

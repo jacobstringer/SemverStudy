@@ -1,5 +1,9 @@
 package githubScraper;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,17 +19,12 @@ import javax.management.ObjectName;
 import org.json.JSONObject;
 
 public class ProductionGitHub implements ProductionMBean {
-	private static final int PRODUCER_COUNT = 1;
-	private static final int CONSUMER_COUNT = 80;
 	private static final int BUFFER_SIZE = 10000;
 
-	private static final int SINCE = 16045;
-	private static final int GOAL = 1532460;
-	
-	private static final String[] tokens = {
-			
-	};
-	
+	private static final int SINCE = 0;
+	private static final int GOAL = 120_000_000;
+
+	private static String[] tokens = null; 
 	private static Connection c;
 
 	public ProductionGitHub() {
@@ -61,19 +60,32 @@ public class ProductionGitHub implements ProductionMBean {
 			System.err.println(e.getClass().getName()+": "+e.getMessage());
 			System.exit(0);
 		}
+		
+		// Gather tokens from src/accesstokens.csv
+		ArrayList<String> templist = new ArrayList<>();
+		try(BufferedReader in = new BufferedReader(new FileReader(new File("src/accesstokens.csv")))) {
+			String temp;
+			while ((temp = in.readLine()) != null) {
+				templist.add(temp);
+			}
+			tokens = new String[templist.size()];
+			for (int i = 0; i < tokens.length; i++) {
+				tokens[i] = "access_token=" + templist.get(i).split(",")[0];
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-		// start producers
-		//for (int i=0;i<PRODUCER_COUNT;i++) {
-			ProducerGitHub producer = new ProducerGitHub(queue, SINCE, GOAL, "access_token=d87e2041b0983ce9973d4e64deec92483bbbe676");
-			Thread thread = new Thread(producer);
-			thread.setName("producer - " + (1)); // name to facilitate analysis with VisualVM or similar tool
-			thread.start();
-			producers.add(producer);
-		//}
+		// start producer
+		ProducerGitHub producer = new ProducerGitHub(queue, SINCE, GOAL, tokens[0]);
+		Thread thread = new Thread(producer);
+		thread.setName("producer - " + (1)); // name to facilitate analysis with VisualVM or similar tool
+		thread.start();
+		producers.add(producer);
 
 		// start consumers
-		for (int i=0;i<tokens.length*5;i++) {
-			ConsumerGitHub consumer = new ConsumerGitHub(queue, jobCounter, c, tokens[i%tokens.length]);
+		for (int i=0;i<(tokens.length-1)*5;i++) {
+			ConsumerGitHub consumer = new ConsumerGitHub(queue, jobCounter, c, tokens[i%(tokens.length-1)+1]);
 			Thread thread2 = new Thread(consumer);
 			thread2.setName("consumer - " + i); // name to facilitate analysis with VisualVM or similar tool
 			thread2.start();

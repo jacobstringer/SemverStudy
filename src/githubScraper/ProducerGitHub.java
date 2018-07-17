@@ -1,10 +1,6 @@
 package githubScraper;
 
 import java.io.IOException;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 import org.json.JSONArray;
@@ -38,8 +34,6 @@ public class ProducerGitHub implements Runnable {
 	@Override
 	public void run() {
 		while (!this.stopped && this.since < this.goal) {
-			List<JSONObject> list = new ArrayList<JSONObject>();
-
 			// Get page of projects
 			JSONArray json;
 			while (true) {
@@ -72,7 +66,4 @@ public class ProducerGitHub implements Runnable {
 			}
 		}
 	}
-
-
-
 }

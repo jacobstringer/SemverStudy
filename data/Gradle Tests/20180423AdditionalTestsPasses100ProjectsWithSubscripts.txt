@@ -1,0 +1,2798 @@
+https://raw.githubusercontent.com/0-0Flash0-0/master/colloquium1
+
+
+
+
+https://raw.githubusercontent.com/0-0Flash0-0/master/colloquium1/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+
+https://raw.githubusercontent.com/0-0Flash0-0/master/lesson1
+
+
+
+
+https://raw.githubusercontent.com/0-0Flash0-0/master/lesson1/app/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/0-0Flash0-0/master/lesson2
+
+
+
+
+https://raw.githubusercontent.com/0-0Flash0-0/master/lesson2/app/build.gradle
+
+
+
+
+
+https://raw.githubusercontent.com/0-14N/master/smali
+
+
+
+
+https://raw.githubusercontent.com/0-kaladin/master/ad-away
+
+
+
+
+https://raw.githubusercontent.com/0-kaladin/master/ad-away/AdAway/build.gradle
+
+    //compile 'com.android.support:support-v4:18.0.+' // already in actionbarsherlock
+    compile project(':libraries:Donations')
+    compile project(':libraries:actionbarsherlock')
+    compile project(':libraries:HtmlTextView')
+    compile project(':libraries:RootCommands')
+    compile 'net.sf.trove4j:trove4j:3.0.3'
+
+
+
+Donations
+Donations
+Donations
+Donations has not been found in https://raw.githubusercontent.com/0-kaladin/master/ad-away/AdAway/build.gradle
+actionbarsherlock
+actionbarsherlock
+actionbarsherlock
+actionbarsherlock has not been found in https://raw.githubusercontent.com/0-kaladin/master/ad-away/AdAway/build.gradle
+HtmlTextView
+HtmlTextView
+HtmlTextView
+HtmlTextView has not been found in https://raw.githubusercontent.com/0-kaladin/master/ad-away/AdAway/build.gradle
+RootCommands
+RootCommands
+RootCommands
+RootCommands has not been found in https://raw.githubusercontent.com/0-kaladin/master/ad-away/AdAway/build.gradle
+compile 'net.sf.trove4j:trove4j:3.0.3' is a fixed
+
+https://raw.githubusercontent.com/0-kaladin/master/open-keychain
+
+
+
+
+https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+
+    // NOTE: Always use fixed version codes not dynamic ones, e.g. 0.7.3 instead of 0.7.+, see README for more information
+    // NOTE: libraries are pinned to a specific build, see below
+
+    // from local Android SDK
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
+
+    // Unit tests in the local JVM with Robolectric
+    // https://developer.android.com/training/testing/unit-testing/local-unit-tests.html
+    // http://robolectric.org/getting-started/
+    // http://www.vogella.com/tutorials/Robolectric/article.html
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.0'
+
+    // UI testing with Espresso
+    androidTestCompile 'com.android.support.test:runner:0.3'
+    androidTestCompile 'com.android.support.test:rules:0.3'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2'
+    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+
+    // Temporary workaround for bug: https://code.google.com/p/android-test-kit/issues/detail?id=136
+    // from https://github.com/googlesamples/android-testing/blob/master/build.gradle#L21
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:22.2.0'
+    }
+
+    // JCenter etc.
+    compile 'com.eftimoff:android-patternview:1.0.1@aar'
+    compile 'com.journeyapps:zxing-android-embedded:2.3.0@aar'
+    compile 'com.journeyapps:zxing-android-integration:2.3.0@aar'
+    compile 'com.google.zxing:core:3.2.0'
+    compile 'com.jpardogo.materialtabstrip:library:1.0.9'
+    compile 'com.getbase:floatingactionbutton:1.9.0'
+    compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.0'
+    compile 'org.ocpsoft.prettytime:prettytime:3.2.7.Final'
+    compile "com.splitwise:tokenautocomplete:1.3.3@aar"
+    compile 'se.emilsjolander:stickylistheaders:2.6.0'
+    compile 'org.sufficientlysecure:html-textview:1.2'
+    compile 'com.mikepenz:materialdrawer:3.0.9@aar'
+    compile 'com.mikepenz:iconics:1.0.2'
+    compile 'com.mikepenz.iconics:octicons-typeface:2.2.0@aar'
+    compile 'com.mikepenz.iconics:meteocons-typeface:1.1.1@aar'
+    compile 'com.mikepenz.iconics:community-material-typeface:1.0.0@aar'
+    compile 'com.nispok:snackbar:2.11.0'
+    compile 'com.squareup.okhttp:okhttp:2.4.0'
+    compile 'org.thoughtcrime.ssl.pinning:AndroidPinning:1.0.0'
+
+    // libs as submodules
+    compile project(':extern:openpgp-api-lib:openpgp-api')
+    compile project(':extern:openkeychain-api-lib:openkeychain-intents')
+    compile project(':extern:spongycastle:core')
+    compile project(':extern:spongycastle:pg')
+    compile project(':extern:spongycastle:pkix')
+    compile project(':extern:spongycastle:prov')
+    compile project(':extern:minidns')
+    compile project(':extern:KeybaseLib:Lib')
+    compile project(':extern:safeslinger-exchange:safeslinger-exchange')
+
+
+
+compile 'com.android.support:support-v4:22.2.1' is a fixed
+compile 'com.android.support:appcompat-v7:22.2.1' is a fixed
+compile 'com.android.support:design:22.2.1' is a fixed
+compile 'com.android.support:recyclerview-v7:22.2.1' is a fixed
+compile 'com.android.support:cardview-v7:22.2.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+testCompile 'org.robolectric:robolectric:3.0' is a fixed
+androidTestCompile 'com.android.support.test:runner:0.3' is a fixed
+androidTestCompile 'com.android.support.test:rules:0.3' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2' is a fixed
+androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2') { is a fixed
+resolutionStrategy.force 'com.android.support:support-annotations:22.2.0' is a fixed
+compile 'com.eftimoff:android-patternview:1.0.1@aar' is a fixed
+compile 'com.journeyapps:zxing-android-embedded:2.3.0@aar' is a fixed
+compile 'com.journeyapps:zxing-android-integration:2.3.0@aar' is a fixed
+compile 'com.google.zxing:core:3.2.0' is a fixed
+compile 'com.jpardogo.materialtabstrip:library:1.0.9' is a fixed
+compile 'com.getbase:floatingactionbutton:1.9.0' is a fixed
+compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.0' is a fixed
+compile 'org.ocpsoft.prettytime:prettytime:3.2.7.Final' is a fixed
+compile "com.splitwise:tokenautocomplete:1.3.3@aar" is a fixed
+compile 'se.emilsjolander:stickylistheaders:2.6.0' is a fixed
+compile 'org.sufficientlysecure:html-textview:1.2' is a fixed
+compile 'com.mikepenz:materialdrawer:3.0.9@aar' is a fixed
+compile 'com.mikepenz:iconics:1.0.2' is a fixed
+compile 'com.mikepenz.iconics:octicons-typeface:2.2.0@aar' is a fixed
+compile 'com.mikepenz.iconics:meteocons-typeface:1.1.1@aar' is a fixed
+compile 'com.mikepenz.iconics:community-material-typeface:1.0.0@aar' is a fixed
+compile 'com.nispok:snackbar:2.11.0' is a fixed
+compile 'com.squareup.okhttp:okhttp:2.4.0' is a fixed
+compile 'org.thoughtcrime.ssl.pinning:AndroidPinning:1.0.0' is a fixed
+openpgp-api-lib
+openpgp-api-lib
+openpgp-api-lib
+openpgp-api-lib has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+openkeychain-api-lib
+openkeychain-api-lib
+openkeychain-api-lib
+openkeychain-api-lib has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+spongycastle
+spongycastle
+spongycastle
+spongycastle has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+spongycastle
+spongycastle
+spongycastle
+spongycastle has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+spongycastle
+spongycastle
+spongycastle
+spongycastle has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+spongycastle
+spongycastle
+spongycastle
+spongycastle has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+minidns
+minidns
+minidns
+minidns has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+KeybaseLib
+KeybaseLib
+KeybaseLib
+KeybaseLib has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+safeslinger-exchange
+safeslinger-exchange
+safeslinger-exchange
+safeslinger-exchange has not been found in https://raw.githubusercontent.com/0-kaladin/master/open-keychain/OpenKeychain/build.gradle
+
+https://raw.githubusercontent.com/0-T-0/master/airpal
+
+    compile group: 'org.eclipse.jetty', name: 'jetty-util', version: '9.3.9.M1'
+    compile group: 'org.eclipse.jetty', name: 'jetty-client', version: '9.3.9.M1'
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+    compile group: 'org.slf4j', name: 'slf4j-api'
+    compile group: 'ch.qos.logback', name: 'logback-classic'
+    compile group: 'io.dropwizard', name: 'dropwizard-core', version:'1.0.0-rc2'
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version:'1.0.0-rc2'
+    compile group: 'io.dropwizard', name: 'dropwizard-assets', version:'1.0.0-rc2'
+    compile group: 'io.dropwizard', name: 'dropwizard-views-freemarker', version:'1.0.0-rc2'
+    compile group: 'io.dropwizard', name: 'dropwizard-metrics-graphite', version:'1.0.0-rc2'
+    compile group: 'io.dropwizard.modules', name: 'dropwizard-flyway', version:'0.9.0-1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    compile(group: 'com.facebook.presto', name: 'presto-client', version:prestoVersion) {
+        exclude(group: 'org.eclipse.jetty')
+        exclude(group: 'org.slf4j')
+        exclude(group: 'ch.qos.logback')
+    }
+    compile(group: 'com.facebook.presto', name: 'presto-spi', version:prestoVersion) {
+        exclude(group: 'ch.qos.logback')
+    }
+    compile(group: 'com.facebook.presto', name: 'presto-main', version:prestoVersion) {
+        exclude(module: 'javax.servlet-api')
+        exclude(group: 'org.eclipse.jetty')
+        exclude(group: 'org.slf4j')
+        exclude(group: 'ch.qos.logback')
+    }
+    compile group: 'com.facebook.presto', name: 'presto-parser', version:prestoVersion
+    compile group: 'com.hubspot.rosetta', name: 'RosettaJdbi', version:'2.1-SNAPSHOT'
+    compile group: 'com.opencsv', name: 'opencsv', version:'3.2'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version:'1.10.6'
+    compile group: 'org.apache.shiro', name: 'shiro-web', version:'1.2.4'
+    compile group: 'org.apache.shiro', name: 'shiro-guice', version:'1.2.4'
+    compile group: 'org.secnod.dropwizard', name: 'dropwizard-shiro', version:'0.2.0'
+    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.34'
+    compile group: 'com.h2database', name: 'h2', version:'1.4.190'
+
+    provided group: 'org.projectlombok', name: 'lombok', version:'1.12.2'
+
+    testCompile group: 'junit', name: 'junit', version:'4.11'
+    testCompile group: 'org.mockito', name: 'mockito-all', version:'1.10.8'
+
+
+
+'9.3.9.M1'
+compile group: 'org.eclipse.jetty', name: 'jetty-util', version: '9.3.9.M1' is a fixed
+'9.3.9.M1'
+compile group: 'org.eclipse.jetty', name: 'jetty-client', version: '9.3.9.M1' is a fixed
+'18.0'
+compile group: 'com.google.guava', name: 'guava', version: '18.0' is a fixed
+'1.0.0-rc2'
+compile group: 'io.dropwizard', name: 'dropwizard-core', version:'1.0.0-rc2' is a fixed
+'1.0.0-rc2'
+compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version:'1.0.0-rc2' is a fixed
+'1.0.0-rc2'
+compile group: 'io.dropwizard', name: 'dropwizard-assets', version:'1.0.0-rc2' is a fixed
+'1.0.0-rc2'
+compile group: 'io.dropwizard', name: 'dropwizard-views-freemarker', version:'1.0.0-rc2' is a fixed
+'1.0.0-rc2'
+compile group: 'io.dropwizard', name: 'dropwizard-metrics-graphite', version:'1.0.0-rc2' is a fixed
+'0.9.0-1'
+compile group: 'io.dropwizard.modules', name: 'dropwizard-flyway', version:'0.9.0-1' is a fixed
+prestoVersion
+prestoVersion
+prestoVersion
+0.145
+compile(group: 'com.facebook.presto', name: 'presto-client', version:prestoVersion) { is a fixed
+prestoVersion
+prestoVersion
+prestoVersion
+0.145
+compile(group: 'com.facebook.presto', name: 'presto-spi', version:prestoVersion) { is a fixed
+prestoVersion
+prestoVersion
+prestoVersion
+0.145
+compile(group: 'com.facebook.presto', name: 'presto-main', version:prestoVersion) { is a fixed
+prestoVersion
+prestoVersion
+prestoVersion
+0.145
+compile group: 'com.facebook.presto', name: 'presto-parser', version:prestoVersion is a fixed
+'2.1-SNAPSHOT'
+compile group: 'com.hubspot.rosetta', name: 'RosettaJdbi', version:'2.1-SNAPSHOT' is a fixed
+'3.2'
+compile group: 'com.opencsv', name: 'opencsv', version:'3.2' is a fixed
+'1.10.6'
+compile group: 'com.amazonaws', name: 'aws-java-sdk', version:'1.10.6' is a fixed
+'1.2.4'
+compile group: 'org.apache.shiro', name: 'shiro-web', version:'1.2.4' is a fixed
+'1.2.4'
+compile group: 'org.apache.shiro', name: 'shiro-guice', version:'1.2.4' is a fixed
+'0.2.0'
+compile group: 'org.secnod.dropwizard', name: 'dropwizard-shiro', version:'0.2.0' is a fixed
+'5.1.34'
+compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.34' is a fixed
+'1.4.190'
+compile group: 'com.h2database', name: 'h2', version:'1.4.190' is a fixed
+'1.12.2'
+provided group: 'org.projectlombok', name: 'lombok', version:'1.12.2' is a fixed
+'4.11'
+testCompile group: 'junit', name: 'junit', version:'4.11' is a fixed
+'1.10.8'
+testCompile group: 'org.mockito', name: 'mockito-all', version:'1.10.8' is a fixed
+
+https://raw.githubusercontent.com/0-T-0/master/conductor
+
+
+
+
+https://raw.githubusercontent.com/0-T-0/master/gobblin
+
+
+
+
+https://raw.githubusercontent.com/0-T-0/master/moco
+
+
+
+
+https://raw.githubusercontent.com/0-T-0/master/rest-client
+
+
+
+
+https://raw.githubusercontent.com/0-T-0/master/rundeck
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/ably-chat
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/ably-chat/app/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+  testCompile 'junit:junit:4.12'
+  compile 'com.jakewharton:butterknife:8.5.1'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+  compile 'io.reactivex:rxjava:1.1.6'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.ably:ably-android:1.0.0'
+  annotationProcessor 'com.bluelinelabs:logansquare-compiler:1.3.7'
+  compile "com.fasterxml.jackson.core:jackson-core:2.7.1"
+  compile "com.fasterxml.jackson.core:jackson-databind:2.7.1"
+  compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
+  compile 'com.android.support:cardview-v7:25.3.0'
+  compile 'com.android.support:design:25.3.0'
+  compile 'org.apache.commons:commons-lang3:3.5'
+  compile 'com.afollestad.material-dialogs:core:0.9.4.2'
+  compile project(path: ':model')
+  compile project(path: ':repository')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.0' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.jakewharton:butterknife:8.5.1' is a fixed
+annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1' is a fixed
+compile 'io.reactivex:rxjava:1.1.6' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+compile 'io.ably:ably-android:1.0.0' is a fixed
+annotationProcessor 'com.bluelinelabs:logansquare-compiler:1.3.7' is a fixed
+compile "com.fasterxml.jackson.core:jackson-core:2.7.1" is a fixed
+compile "com.fasterxml.jackson.core:jackson-databind:2.7.1" is a fixed
+compile 'com.pixplicity.easyprefs:library:1.8.1@aar' is a fixed
+compile 'com.android.support:cardview-v7:25.3.0' is a fixed
+compile 'com.android.support:design:25.3.0' is a fixed
+compile 'org.apache.commons:commons-lang3:3.5' is a fixed
+compile 'com.afollestad.material-dialogs:core:0.9.4.2' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/ably-chat/model/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'org.apache.commons:commons-lang3:3.5'
+  testCompile 'junit:junit:4.12'
+  compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.0' is a fixed
+compile 'org.apache.commons:commons-lang3:3.5' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/ably-chat/repository/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support:appcompat-v7:25.3.0'
+  compile 'io.reactivex:rxjava:1.1.6'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  testCompile 'junit:junit:4.12'
+  compile project(path: ':model')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.0' is a fixed
+compile 'io.reactivex:rxjava:1.1.6' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/BreadCrumbView
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/BreadCrumbView/app/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.1.1'
+  compile project(':breadcrumbview')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.1.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/BreadCrumbView/breadcrumbview/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.1.1'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.1.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/CodeChallenge
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/CodeChallenge/app/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  apt 'com.jakewharton:butterknife-compiler:8.0.1'
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'com.android.support:support-v4:23.3.0'
+  compile 'com.android.support:cardview-v7:23.3.0'
+  compile 'com.android.support:recyclerview-v7:23.3.0'
+  compile 'com.android.support:design:23.3.0'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile 'com.jakewharton:butterknife:8.0.1'
+  compile 'io.reactivex:rxandroid:1.2.0'
+  compile 'io.reactivex:rxjava:1.1.5'
+  compile project(':model')
+  compile project(':repository')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+apt 'com.jakewharton:butterknife-compiler:8.0.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:support-v4:23.3.0' is a fixed
+compile 'com.android.support:cardview-v7:23.3.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.3.0' is a fixed
+compile 'com.android.support:design:23.3.0' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+compile 'com.jakewharton:butterknife:8.0.1' is a fixed
+compile 'io.reactivex:rxandroid:1.2.0' is a fixed
+compile 'io.reactivex:rxjava:1.1.5' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/CodeChallenge/model/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'org.threeten:threetenbp:1.3.1'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/CodeChallenge/repository/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile project(':model')
+  compile 'com.android.databinding:compiler:2.1.0'
+  compile 'org.apache.commons:commons-lang3:3.4'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.databinding:compiler:2.1.0' is a fixed
+compile 'org.apache.commons:commons-lang3:3.4' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/CompactCalendarView
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/CompactCalendarView/library/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+
+    //mockito dependencies
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:21.0.3' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+testCompile 'org.mockito:mockito-core:1.9.0' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/CompactCalendarView/sample/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile project(':library')
+
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:21.0.3' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/Enterprise-leave-app
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/Enterprise-leave-app/app/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.0.0'
+    compile 'com.android.support:design:+'
+    compile 'com.android.support:cardview-v7:23.0.+'
+    compile 'com.prolificinteractive:material-calendarview:0.8.1'
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.akexorcist:RoundCornerProgressBar:2.0.3'
+    compile 'com.github.sundeepk:compact-calendar-view:1.7.8'
+    compile 'com.prolificinteractive:material-calendarview:1.0.1'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:appcompat-v7:23.0.1' is a fixed
+compile 'com.android.support:appcompat-v7:23.0.0' is a fixed
+compile 'com.android.support:design:+' is a major
+compile 'com.android.support:cardview-v7:23.0.+' is a micro
+compile 'com.prolificinteractive:material-calendarview:0.8.1' is a fixed
+compile 'com.squareup.picasso:picasso:2.3.2' is a fixed
+compile 'com.android.support:recyclerview-v7:23.0.1' is a fixed
+compile 'com.akexorcist:RoundCornerProgressBar:2.0.3' is a fixed
+compile 'com.github.sundeepk:compact-calendar-view:1.7.8' is a fixed
+compile 'com.prolificinteractive:material-calendarview:1.0.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/FireBaseChatDemo
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/FireBaseChatDemo/app/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.firebase:firebase-client-android:2.5.2'
+  apt 'com.jakewharton:butterknife-compiler:8.0.1'
+  compile 'com.android.support:appcompat-v7:23.4.0'
+  compile 'com.android.support:support-v4:23.3.0'
+  compile 'com.android.support:cardview-v7:23.3.0'
+  compile 'com.android.support:recyclerview-v7:23.3.0'
+  compile 'com.android.support:design:23.3.0'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile 'com.jakewharton:butterknife:8.0.1'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.reactivex:rxjava:1.1.6'
+  compile 'org.apache.commons:commons-lang3:3.4'
+  compile project(':model')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.firebase:firebase-client-android:2.5.2' is a fixed
+apt 'com.jakewharton:butterknife-compiler:8.0.1' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:support-v4:23.3.0' is a fixed
+compile 'com.android.support:cardview-v7:23.3.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.3.0' is a fixed
+compile 'com.android.support:design:23.3.0' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+compile 'com.jakewharton:butterknife:8.0.1' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+compile 'io.reactivex:rxjava:1.1.6' is a fixed
+compile 'org.apache.commons:commons-lang3:3.4' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/FireBaseChatDemo/model/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    exclude group: 'com.android.support', module: 'support-annotations'
+  })
+  compile 'com.android.support:appcompat-v7:24.2.1'
+  testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:24.2.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/GitHubMobile
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/GitHubMobile/app/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.android.support:appcompat-v7:24.2.1'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile project(':repository')
+  compile project(':model')
+  compile 'com.android.support:appcompat-v7:24.2.1'
+  compile 'com.android.support:support-v4:24.2.1'
+  compile 'com.android.support:cardview-v7:24.2.1'
+  compile 'com.android.support:recyclerview-v7:24.2.1'
+  compile 'com.android.support:design:24.2.1'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile 'com.jakewharton:butterknife:8.0.1'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.reactivex:rxjava:1.1.6'
+  compile 'com.artemzin.rxjava:proguard-rules:1.1.0.0'
+  compile 'com.google.dagger:dagger:2.0'
+  compile 'de.hdodenhof:circleimageview:2.1.0'
+  compile 'com.squareup.picasso:picasso:2.5.2'
+  compile 'com.github.zurche:plain-pie:v0.1.1'
+  compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
+  compile 'org.apache.commons:commons-lang3:3.4'
+  compile 'com.google.android.gms:play-services:9.6.1'
+  testCompile 'junit:junit:4.12'
+  apt 'com.jakewharton:butterknife-compiler:8.0.1'
+  apt 'com.google.dagger:dagger-compiler:2.0'
+  provided 'org.glassfish:javax.annotation:10.0-b28'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:appcompat-v7:24.2.1' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+compile 'com.android.support:appcompat-v7:24.2.1' is a fixed
+compile 'com.android.support:support-v4:24.2.1' is a fixed
+compile 'com.android.support:cardview-v7:24.2.1' is a fixed
+compile 'com.android.support:recyclerview-v7:24.2.1' is a fixed
+compile 'com.android.support:design:24.2.1' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+compile 'com.jakewharton:butterknife:8.0.1' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+compile 'io.reactivex:rxjava:1.1.6' is a fixed
+compile 'com.artemzin.rxjava:proguard-rules:1.1.0.0' is a fixed
+compile 'com.google.dagger:dagger:2.0' is a fixed
+compile 'de.hdodenhof:circleimageview:2.1.0' is a fixed
+compile 'com.squareup.picasso:picasso:2.5.2' is a fixed
+compile 'com.github.zurche:plain-pie:v0.1.1' is a fixed
+compile 'com.github.castorflex.verticalviewpager:library:19.0.1' is a fixed
+compile 'org.apache.commons:commons-lang3:3.4' is a fixed
+compile 'com.google.android.gms:play-services:9.6.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+apt 'com.jakewharton:butterknife-compiler:8.0.1' is a fixed
+apt 'com.google.dagger:dagger-compiler:2.0' is a fixed
+provided 'org.glassfish:javax.annotation:10.0-b28' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/LikeMinds
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/LikeMinds/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:design:+'
+    compile 'com.android.support:recyclerview-v7:+'
+    compile 'com.android.support:cardview-v7:+'
+    compile 'org.apmem.tools:layouts:1.9@aar'
+    compile 'com.wdullaer:materialdatetimepicker:1.5.1'
+    compile 'de.hdodenhof:circleimageview:1.3.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.blackfizz:eazegraph:1.2.2@aar'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.timehop.stickyheadersrecyclerview:library:0.4.2@aar'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:+' is a major
+compile 'com.android.support:design:+' is a major
+compile 'com.android.support:recyclerview-v7:+' is a major
+compile 'com.android.support:cardview-v7:+' is a major
+compile 'org.apmem.tools:layouts:1.9@aar' is a fixed
+compile 'com.wdullaer:materialdatetimepicker:1.5.1' is a fixed
+compile 'de.hdodenhof:circleimageview:1.3.0' is a fixed
+compile 'com.squareup.picasso:picasso:2.5.2' is a fixed
+compile 'com.github.blackfizz:eazegraph:1.2.2@aar' is a fixed
+compile 'com.nineoldandroids:library:2.4.0' is a fixed
+compile 'com.timehop.stickyheadersrecyclerview:library:0.4.2@aar' is a fixed
+compile 'com.google.code.gson:gson:2.3.1' is a fixed
+compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/MasterOfCoin
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/MasterOfCoin/app/build.gradle
+
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'com.android.support:appcompat-v7:25.0.1'
+  compile 'com.android.support:support-v4:25.0.1'
+  compile 'com.android.support:cardview-v7:25.0.1'
+  compile 'com.android.support:recyclerview-v7:25.0.1'
+  compile 'com.android.support:design:25.0.1'
+  compile 'com.jakewharton:butterknife:8.4.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.reactivex:rxjava:1.2.4'
+  compile 'com.artemzin.rxjava:proguard-rules:1.1.3.0'
+  compile 'org.apache.commons:commons-lang3:3.4'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile project(':model')
+  compile project(':repository')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:appcompat-v7:25.0.1' is a fixed
+compile 'com.android.support:support-v4:25.0.1' is a fixed
+compile 'com.android.support:cardview-v7:25.0.1' is a fixed
+compile 'com.android.support:recyclerview-v7:25.0.1' is a fixed
+compile 'com.android.support:design:25.0.1' is a fixed
+compile 'com.jakewharton:butterknife:8.4.0' is a fixed
+annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+compile 'io.reactivex:rxjava:1.2.4' is a fixed
+compile 'com.artemzin.rxjava:proguard-rules:1.1.3.0' is a fixed
+compile 'org.apache.commons:commons-lang3:3.4' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/MasterOfCoin/model/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'org.threeten:threetenbp:1.3.1'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/MasterOfCoin/repository/build.gradle
+
+  compile project(':model')
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile 'com.squareup.retrofit2:retrofit:2.1.0'
+  compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+  compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+compile 'com.squareup.retrofit2:retrofit:2.1.0' is a fixed
+compile 'com.squareup.retrofit2:converter-jackson:2.1.0' is a fixed
+compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0' is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/realm-test-environment
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/realm-test-environment/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:8.7.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:26+' is a major
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.jakewharton:butterknife:8.7.0' is a fixed
+annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+kotlin_version
+kotlin_version
+1.2.10
+kotlin_version
+1.2.10
+compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version" is a fixed
+
+https://raw.githubusercontent.com/00-00-00/master/Roads
+
+
+
+
+https://raw.githubusercontent.com/00-00-00/master/Roads/app/build.gradle
+
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:25.0.1'
+  compile 'com.android.support:support-v4:25.0.1'
+  compile 'com.android.support:cardview-v7:25.0.1'
+  compile 'com.android.support:recyclerview-v7:25.0.1'
+  compile 'com.android.support:design:25.0.1'
+  compile 'com.jakewharton:butterknife:8.4.0'
+  compile 'com.google.dagger:dagger:2.0'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+  annotationProcessor 'com.google.dagger:dagger-compiler:2.0'
+  compile 'io.reactivex:rxandroid:1.2.1'
+  compile 'io.reactivex:rxjava:1.2.4'
+  provided 'org.glassfish:javax.annotation:10.0-b28'
+  compile 'com.artemzin.rxjava:proguard-rules:1.1.3.0'
+  compile 'org.apache.commons:commons-lang3:3.4'
+  compile 'org.threeten:threetenbp:1.3.1'
+  compile project(':model')
+  compile project(':repository')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:25.0.1' is a fixed
+compile 'com.android.support:support-v4:25.0.1' is a fixed
+compile 'com.android.support:cardview-v7:25.0.1' is a fixed
+compile 'com.android.support:recyclerview-v7:25.0.1' is a fixed
+compile 'com.android.support:design:25.0.1' is a fixed
+compile 'com.jakewharton:butterknife:8.4.0' is a fixed
+compile 'com.google.dagger:dagger:2.0' is a fixed
+annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0' is a fixed
+annotationProcessor 'com.google.dagger:dagger-compiler:2.0' is a fixed
+compile 'io.reactivex:rxandroid:1.2.1' is a fixed
+compile 'io.reactivex:rxjava:1.2.4' is a fixed
+provided 'org.glassfish:javax.annotation:10.0-b28' is a fixed
+compile 'com.artemzin.rxjava:proguard-rules:1.1.3.0' is a fixed
+compile 'org.apache.commons:commons-lang3:3.4' is a fixed
+compile 'org.threeten:threetenbp:1.3.1' is a fixed
+
+https://raw.githubusercontent.com/00-Evan/master/pixel-dungeon-gradle
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/pixel-dungeon-gradle/core/build.gradle
+
+    implementation project(':PD-classes')
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/pixel-dungeon-gradle/PD-classes/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/shattered-pixel-dungeon
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/shattered-pixel-dungeon/core/build.gradle
+
+    implementation project(':SPD-classes')
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/shattered-pixel-dungeon/SPD-classes/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/00-Evan/master/shattered-pixel-dungeon-gdx
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/employees-simple-mgr
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/employees-simple-mgr-rails3
+
+    rubyInterpreterArtifactDependency project.ext.rubyInterpreterArtifact
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/everyday-english
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/gradle-node-plugin
+
+  compile gradleApi()
+  compile localGroovy()
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+
+
+
+compile gradleApi() is a method
+compile localGroovy() is a method
+'4.12'
+testCompile group: 'junit', name: 'junit', version: '4.12' is a fixed
+
+https://raw.githubusercontent.com/0000-bigtree/master/gradle-ruby-plugin
+
+  compile gradleApi()
+  compile localGroovy()
+  testCompile group: 'junit', name: 'junit', version: '4.12'
+
+
+
+compile gradleApi() is a method
+compile localGroovy() is a method
+'4.12'
+testCompile group: 'junit', name: 'junit', version: '4.12' is a fixed
+
+https://raw.githubusercontent.com/0000-bigtree/master/node-exercises
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/RtmpHlsPlayer
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/RtmpHlsPlayer/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile project(':vitamio')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.1.1' is a fixed
+compile 'com.android.support:design:23.1.1' is a fixed
+compile 'com.jakewharton:butterknife:7.0.1' is a fixed
+
+https://raw.githubusercontent.com/0000-bigtree/master/RtmpHlsPlayer/vitamio/build.gradle
+
+
+
+
+
+https://raw.githubusercontent.com/0000-bigtree/master/stats-gradle-plugin
+
+    compile gradleApi()
+    testCompile 'junit:junit:4.12'
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+        exclude group: 'org.codehaus.groovy', module: 'groovy-all'
+    }
+
+
+
+compile gradleApi() is a method
+testCompile 'junit:junit:4.12' is a fixed
+testCompile('org.spockframework:spock-core:1.0-groovy-2.4') { is a fixed
+
+https://raw.githubusercontent.com/0000sir/master/WeChatMomentStat-Android
+
+
+
+
+https://raw.githubusercontent.com/0000sir/master/WeChatMomentStat-Android/app/build.gradle
+
+    provided fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile files('libs/universal-image-loader-1.9.5.jar')
+
+
+
+provided fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.1.1' is a fixed
+compile files('libs/universal-image-loader-1.9.5.jar') is a file
+
+https://raw.githubusercontent.com/00010001/master/MongoDB_CRUD_Web_App
+
+	compile('org.webjars:bootstrap:3.3.7')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+compile('org.webjars:bootstrap:3.3.7') is a fixed
+
+https://raw.githubusercontent.com/000192455869/master/ExoPlayer
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/AwesomeSplash
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/AwesomeSplash/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(":lib")
+
+    /* Support */
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:cardview-v7:23.0.1'
+
+    /* ButterKnife */
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    /* Handler (for UI changes) */
+    compile 'com.badoo.mobile:android-weak-handler:1.1'
+
+
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:23.0.1' is a fixed
+compile 'com.android.support:design:23.0.1' is a fixed
+compile 'com.android.support:cardview-v7:23.0.1' is a fixed
+compile 'com.jakewharton:butterknife:7.0.1' is a fixed
+compile 'com.badoo.mobile:android-weak-handler:1.1' is a fixed
+
+https://raw.githubusercontent.com/0001vrn/master/AwesomeSplash/lib/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.1'
+
+    /* Animations */
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.daimajia.easing:library:1.0.1@aar'
+    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+
+    /* Fillable Loaders */
+    compile 'com.github.jorgecastilloprz:fillableloaders:1.02@aar'
+
+    /*Circular reveal*/
+    compile 'com.github.ozodrukh:CircularReveal:1.1.1@aar'
+
+
+
+
+    apply plugin: 'com.jfrog.bintray'
+
+    version = libraryVersion
+
+    task sourcesJar(type: Jar) {
+        from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
+    }
+
+    task javadoc(type: Javadoc) {
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+    artifacts {
+        archives javadocJar
+        archives sourcesJar
+    }
+
+// Bintray
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    bintray {
+        user = properties.getProperty("bintray.user")
+        key = properties.getProperty("bintray.apikey")
+
+        configurations = ['archives']
+        pkg {
+            repo = bintrayRepo
+            name = bintrayName
+            desc = libraryDescription
+            websiteUrl = siteUrl
+            vcsUrl = gitUrl
+            licenses = allLicenses
+            publish = true
+            publicDownloadNumbers = true
+            version {
+                desc = libraryDescription
+                gpg {
+                    sign = true //Determines whether to GPG sign the files. The default is false
+                    passphrase = properties.getProperty("bintray.gpg.password")
+                    //Optional. The passphrase for GPG signing'
+                }
+            }
+        }
+    }
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:23.0.1' is a fixed
+compile 'com.nineoldandroids:library:2.4.0' is a fixed
+compile 'com.daimajia.easing:library:1.0.1@aar' is a fixed
+compile 'com.daimajia.androidanimations:library:1.1.3@aar' is a fixed
+compile 'com.github.jorgecastilloprz:fillableloaders:1.02@aar' is a fixed
+compile 'com.github.ozodrukh:CircularReveal:1.1.1@aar' is a fixed
+javadocJar
+javadocJar
+javadocJar
+javadocJar
+javadocJar has not been found in https://raw.githubusercontent.com/0001vrn/master/AwesomeSplash/lib/build.gradle
+sourcesJar
+sourcesJar
+sourcesJar
+sourcesJar
+sourcesJar has not been found in https://raw.githubusercontent.com/0001vrn/master/AwesomeSplash/lib/build.gradle
+
+https://raw.githubusercontent.com/0001vrn/master/Fun-Facts-Android
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/Fun-Facts-Android/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:converter-scalars:2.3.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2'
+
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.squareup.retrofit2:converter-gson:2.3.0' is a fixed
+compile 'com.squareup.retrofit2:converter-scalars:2.3.0' is a fixed
+compile 'com.squareup.retrofit2:retrofit:2.3.0' is a fixed
+compile 'org.honorato.multistatetogglebutton:multistatetogglebutton:0.2.2' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0001vrn/master/Material-Design
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/Material-Design/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:24.2.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0001vrn/master/SharedPrefs
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/SharedPrefs/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.1.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0001vrn/master/Sliding-tab-android
+
+
+
+
+https://raw.githubusercontent.com/0001vrn/master/Sliding-tab-android/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:design:25.1.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.1.0' is a fixed
+compile 'com.android.support:support-v4:25.1.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:design:25.1.0' is a fixed
+
+https://raw.githubusercontent.com/0004072/master/Chefu
+
+
+
+
+https://raw.githubusercontent.com/0004072/master/Chefu/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0'
+    // RecyclerView
+    
+
+    // CardView
+    
+    // Glide
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+'2.8.0'
+compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0' is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.android.support:design:25.3.1' is a fixed
+compile 'com.android.support:recyclerview-v7:25.3.1' is a fixed
+compile 'com.android.support:cardview-v7:25.3.1' is a fixed
+compile 'com.github.bumptech.glide:glide:3.7.0' is a fixed
+compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0004072/master/FoodListNew
+
+
+
+
+https://raw.githubusercontent.com/0004072/master/FoodListNew/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+'2.8.0'
+compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0004072/master/TranslatorAPK
+
+
+
+
+https://raw.githubusercontent.com/0004072/master/TranslatorAPK/app/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.google.code.gson:gson:2.8.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.loopj.android:android-async-http:1.4.9' is a fixed
+compile 'com.google.code.gson:gson:2.8.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/000lsp123/master/PictureSelector
+
+
+
+
+https://raw.githubusercontent.com/000lsp123/master/PictureSelector/app/build.gradle
+
+    compile project(':picture_library')
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+
+
+
+testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1' is a fixed
+debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1' is a fixed
+releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1' is a fixed
+
+https://raw.githubusercontent.com/000lsp123/master/PictureSelector/picture_library/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':ucrop')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.0.5'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.4.0' is a fixed
+compile 'com.github.bumptech.glide:glide:4.0.0' is a fixed
+compile 'io.reactivex.rxjava2:rxjava:2.0.5' is a fixed
+compile 'io.reactivex.rxjava2:rxandroid:2.0.1' is a fixed
+
+https://raw.githubusercontent.com/000lsp123/master/PictureSelector/ucrop/build.gradle
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+
+
+
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.4.0' is a fixed
+compile 'com.github.bumptech.glide:glide:4.0.0' is a fixed
+
+https://raw.githubusercontent.com/000lsp123/master/StickyHeaderListView
+
+
+
+
+https://raw.githubusercontent.com/000lsp123/master/StickyHeaderListView/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:7.0.1'
+
+    // Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:23.3.0' is a fixed
+compile 'com.android.support:design:23.3.0' is a fixed
+compile 'com.android.support:cardview-v7:23.3.0' is a fixed
+compile 'com.jakewharton:butterknife:7.0.1' is a fixed
+compile 'com.github.bumptech.glide:glide:3.7.0' is a fixed
+
+https://raw.githubusercontent.com/000luowen/master/AndroidMaterialDesign
+
+
+
+
+https://raw.githubusercontent.com/000luowen/master/AndroidMaterialDesign/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
+    compile 'com.android.support:palette-v7:23.4.0'
+
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:design:23.4.0' is a fixed
+compile 'com.android.support:cardview-v7:23.4.0' is a fixed
+compile 'com.android.support:palette-v7:23.4.0' is a fixed
+
+https://raw.githubusercontent.com/000luowen/master/TestGit
+
+
+
+
+https://raw.githubusercontent.com/000luowen/master/TestGit/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/000luowen/master/TestRemoteGit
+
+
+
+
+https://raw.githubusercontent.com/000luowen/master/TestRemoteGit/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.3.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/000panther/master/KummerkastenAndroidApp
+
+
+
+
+https://raw.githubusercontent.com/000panther/master/KummerkastenAndroidApp/Kummerkasten/build.gradle
+
+
+
+
+
+https://raw.githubusercontent.com/000pjs/master/cheese-mvc
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	runtime('org.springframework.boot:spring-boot-devtools')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+
+https://raw.githubusercontent.com/000pjs/master/cheese-mvc-persistent
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('mysql:mysql-connector-java')
+	runtime('org.springframework.boot:spring-boot-devtools')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+
+https://raw.githubusercontent.com/000pjs/master/techjobs-mvc
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile('org.apache.commons:commons-csv:1.4')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+compile('org.apache.commons:commons-csv:1.4') is a fixed
+
+https://raw.githubusercontent.com/000pjs/master/techjobs-oo
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile('org.apache.commons:commons-csv:1.4')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+compile('org.apache.commons:commons-csv:1.4') is a fixed
+
+https://raw.githubusercontent.com/000Sanya/master/rpgboss
+
+
+
+
+https://raw.githubusercontent.com/000Sanya/master/Simple-jRPG
+
+
+
+
+https://raw.githubusercontent.com/00101010/master/FrancHorno
+
+
+
+
+https://raw.githubusercontent.com/00101010/master/FrancHorno/FrancHorno/build.gradle
+
+
+
+
+
+https://raw.githubusercontent.com/001101/master/youtrack-idea-plugin
+
+    compile project(':api')
+    compile 'org.nanohttpd:nanohttpd:2.3.0'
+
+    testCompile 'junit:junit:4.12'
+
+    signature 'org.codehaus.mojo.signature:java17:1.0@signature'
+
+
+
+compile 'org.nanohttpd:nanohttpd:2.3.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+signature 'org.codehaus.mojo.signature:java17:1.0@signature' is a fixed
+
+https://raw.githubusercontent.com/001239511ShuangShuangXu/master/csye6225-spring-boot-starter-webapp
+
+    compile ('org.springframework.boot:spring-boot-starter-actuator')
+    compile ('org.springframework.boot:spring-boot-actuator-docs')
+    compile ('org.springframework.boot:spring-boot-starter-mail')
+    compile ('org.springframework.boot:spring-boot-starter-security')
+    compile ('org.springframework.session:spring-session')
+    compile ('org.springframework.boot:spring-boot-starter-web')
+    compile ('org.apache.commons:commons-lang3:+')
+    compile ('com.google.guava:guava:+')
+    compile ('org.apache.httpcomponents:httpclient:+')
+    compile ('com.google.code.gson:gson:+')
+    compile ('com.amazonaws:aws-java-sdk:+')
+    compile ('com.google.cloud:google-cloud:+')
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+    runtime('mysql:mysql-connector-java')
+
+    providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.security:spring-security-test')
+
+
+
+compile ('org.apache.commons:commons-lang3:+') is a major
+compile ('com.google.guava:guava:+') is a major
+compile ('org.apache.httpcomponents:httpclient:+') is a major
+compile ('com.google.code.gson:gson:+') is a major
+compile ('com.amazonaws:aws-java-sdk:+') is a major
+compile ('com.google.cloud:google-cloud:+') is a major
+
+https://raw.githubusercontent.com/0012ff80/master/app472
+
+
+
+
+https://raw.githubusercontent.com/0012ff80/master/app472/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services:6.+'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.2.0' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.google.android.gms:play-services:6.+' is a minor
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0012ff80/master/HitsUp
+
+
+
+
+https://raw.githubusercontent.com/0012ff80/master/HitsUp/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services:6.+'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.2.0' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.google.android.gms:play-services:6.+' is a minor
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0012ff80/master/SeoulBaram
+
+
+
+
+https://raw.githubusercontent.com/0012ff80/master/SeoulBaram/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.2.0' is a fixed
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.2.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0014/master/LockPhone
+
+
+
+
+https://raw.githubusercontent.com/0014/master/LockPhone/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:24.2.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0014/master/UnknownAssistant
+
+
+
+
+https://raw.githubusercontent.com/0014/master/UnknownAssistant/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:24.2.0' is a fixed
+
+https://raw.githubusercontent.com/001Ajay/master/sparrow-config-client
+
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('io.pivotal.spring.cloud:spring-cloud-services-starter-config-client')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+
+https://raw.githubusercontent.com/001Ajay/master/sparrow-pivotal-mongodb
+	
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-cloud-connectors')
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+
+https://raw.githubusercontent.com/001dianli/master/ZombieInvadersVR
+
+
+
+
+https://raw.githubusercontent.com/001gabo/master/Snack-Express
+
+
+
+
+https://raw.githubusercontent.com/001gabo/master/Snack-Express/app/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/003/master/android-gesture-detectors
+
+
+
+
+https://raw.githubusercontent.com/003/master/android-gesture-detectors/library/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/003/master/android-gesture-detectors/sample/build.gradle
+
+    compile project(':library')
+
+
+
+
+https://raw.githubusercontent.com/003/master/android-gpuimage-videorecording
+
+
+
+
+https://raw.githubusercontent.com/003/master/android-gpuimage-videorecording/library/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/003/master/insta-filter
+
+
+
+
+https://raw.githubusercontent.com/003/master/insta-filter/gpuimage/build.gradle
+
+
+
+
+https://raw.githubusercontent.com/003/master/lottie-android
+
+
+
+
+https://raw.githubusercontent.com/003/master/lottie-android/lottie/build.gradle
+
+  compile 'com.android.support:appcompat-v7:25.1.1'
+  testCompile 'junit:junit:4.12'
+  testCompile "org.robolectric:robolectric:3.1.2"
+
+
+
+compile 'com.android.support:appcompat-v7:25.1.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+testCompile "org.robolectric:robolectric:3.1.2" is a fixed
+
+https://raw.githubusercontent.com/003/master/lottie-android/LottieSample/build.gradle
+
+    compile project(':lottie')
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:recyclerview-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1'
+    compile 'com.squareup.okhttp3:okhttp:3.5.0'
+    compile 'com.matthew-tamlin:sliding-intro-screen:3.2.0'
+
+    debugCompile 'com.github.brianPlummer:tinydancer:0.0.9'
+
+    testCompile 'junit:junit:4.12'
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'org.hamcrest', module: 'hamcrest-integration'
+    })
+    androidTestCompile('com.android.support.test:runner:0.5', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile('com.android.support.test:rules:0.5', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+
+
+compile 'com.android.support:appcompat-v7:25.1.1' is a fixed
+compile 'com.android.support:recyclerview-v7:25.1.1' is a fixed
+compile 'com.android.support:design:25.1.1' is a fixed
+compile 'com.jakewharton:butterknife:8.2.1' is a fixed
+annotationProcessor 'com.jakewharton:butterknife-compiler:8.2.1' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.5.0' is a fixed
+compile 'com.matthew-tamlin:sliding-intro-screen:3.2.0' is a fixed
+debugCompile 'com.github.brianPlummer:tinydancer:0.0.9' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+androidTestCompile('com.android.support.test:runner:0.5', { is a fixed
+androidTestCompile('com.android.support.test:rules:0.5', { is a fixed
+
+https://raw.githubusercontent.com/003/master/pull-to-make-soup
+
+
+
+
+https://raw.githubusercontent.com/003/master/pull-to-make-soup/library/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.3.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.3.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/pull-to-make-soup/sample/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile project(':library')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.3.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.3.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/SwipeBackLayout
+
+
+
+
+https://raw.githubusercontent.com/003/master/SwipeBackLayout/library/build.gradle
+
+    compile 'com.android.support:appcompat-v7:22.2.0'
+
+
+
+compile 'com.android.support:appcompat-v7:22.2.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/SwipeBackLayout/samples/build.gradle
+
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile project(':library')
+
+
+
+compile 'com.android.support:appcompat-v7:22.2.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/TopSnackbar
+
+
+
+
+https://raw.githubusercontent.com/003/master/TopSnackbar/demo/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile project(':topsnackbar')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:24.0.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/TopSnackbar/topsnackbar/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:24.2.0' is a fixed
+compile 'com.android.support:design:24.2.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/TSnackBar
+
+
+
+
+https://raw.githubusercontent.com/003/master/TSnackBar/app/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+
+    compile project(':topsnackbar')
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:24.0.0' is a fixed
+
+https://raw.githubusercontent.com/003/master/TSnackBar/topsnackbar/build.gradle
+
+    compile 'com.android.support:support-annotations:24.1.1'
+    javadocDeps 'com.android.support:support-annotations:24.1.1'
+    compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+
+
+
+compile 'com.android.support:support-annotations:24.1.1' is a fixed
+javadocDeps 'com.android.support:support-annotations:24.1.1' is a fixed
+compile 'com.android.support:design:24.1.1' is a fixed
+compile 'com.android.support:appcompat-v7:24.1.1' is a fixed
+
+https://raw.githubusercontent.com/003/master/TwinklingRefreshLayout
+
+
+
+
+https://raw.githubusercontent.com/003/master/TwinklingRefreshLayout/app/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:design:25.2.0'
+    compile project(':library')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:cardview-v7:25.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.5'
+    compile 'com.github.moduth:blockcanary-android:1.2.1'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:design:25.2.0' is a fixed
+compile 'com.android.support:appcompat-v7:25.2.0' is a fixed
+compile 'com.android.support:cardview-v7:25.2.0' is a fixed
+compile 'com.jakewharton:butterknife:7.0.1' is a fixed
+compile 'com.squareup.leakcanary:leakcanary-android:1.5' is a fixed
+compile 'com.github.moduth:blockcanary-android:1.2.1' is a fixed
+
+https://raw.githubusercontent.com/003/master/TwinklingRefreshLayout/library/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.android.support:recyclerview-v7:25.2.0' is a fixed
+compile 'com.android.support:support-v4:25.2.0' is a fixed
+
+https://raw.githubusercontent.com/00380981315171/master/vk-android-sdk
+
+
+
+
+https://raw.githubusercontent.com/00380981315171/master/vk-android-sdk/vksdk_library/build.gradle
+
+    javadocDeps 'com.android.support:support-annotations:25.1.0'
+    compile 'com.android.support:support-v4:25.1.0'
+
+
+
+javadocDeps 'com.android.support:support-annotations:25.1.0' is a fixed
+compile 'com.android.support:support-v4:25.1.0' is a fixed
+
+https://raw.githubusercontent.com/00380981315171/master/vk-android-sdk/VKTestApplication/build.gradle
+
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.vk:androidsdk:1.6.9'
+    compile project(':vksdk_library')
+
+
+
+compile 'com.android.support:appcompat-v7:25.1.0' is a fixed
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+
+https://raw.githubusercontent.com/003942847/master/Assignment4
+
+
+
+
+https://raw.githubusercontent.com/003942847/master/Assignment4/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:21.0.3' is a fixed
+
+https://raw.githubusercontent.com/003lions/master/android-hello-world-master
+
+
+
+
+https://raw.githubusercontent.com/003lions/master/android-hello-world-master/app/build.gradle
+
+  androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+
+
+
+androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1' is a fixed
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android
+
+
+
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':firebase_plugin')
+    compile 'com.android.support:multidex:1.0.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:multidex:1.0.0' is a fixed
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/country_picker/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.0.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:23.0.0' is a fixed
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/facebook/build.gradle
+
+    compile 'com.android.support:support-v4:23.0.0'
+    compile files('libs/bolts.jar')
+
+
+
+compile 'com.android.support:support-v4:23.0.0' is a fixed
+compile files('libs/bolts.jar') is a file
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/firebase_plugin/build.gradle
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':sdk')
+
+    compile 'com.google.firebase:firebase-core:9.0.2'
+    compile 'com.google.firebase:firebase-database:9.0.2'
+    compile 'com.google.firebase:firebase-storage:9.0.2'
+    compile 'com.google.firebase:firebase-auth:9.0.2'
+
+
+
+compile fileTree(include: ['*.jar'], dir: 'libs') is a file
+compile 'com.google.firebase:firebase-core:9.0.2' is a fixed
+compile 'com.google.firebase:firebase-database:9.0.2' is a fixed
+compile 'com.google.firebase:firebase-storage:9.0.2' is a fixed
+compile 'com.google.firebase:firebase-auth:9.0.2' is a fixed
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/generator/build.gradle
+
+    compile 'de.greenrobot:DaoGenerator:1.3.0'
+
+
+
+compile 'de.greenrobot:DaoGenerator:1.3.0' is a fixed
+
+https://raw.githubusercontent.com/003somyatandon/master/chat-sdk-android/sdk/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // Facebook SDK
+    compile project(':facebook')
+    compile project(':country_picker')
+    // Used for StringUtils
+    compile 'org.apache.commons:commons-lang3:3.3.2@jar'
+    // Bug tracking
+    compile files('libs/bugsense-3.6.1.jar')
+    compile('com.google.android.gms:play-services-maps:9.0.2') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    // Support Library.
+    compile 'com.android.support:support-v13:23.0.0@aar'
+    compile('com.android.support:appcompat-v7:23.0.0@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    // Volley - Networking library from google.
+    compile('com.mcxiaoke.volley:library-aar:1.0.1@aar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    // Has is own support library in it so need to exclude it so no TOP_LEVEL_EXCEPTION will occur.
+    compile('de.greenrobot:greendao:1.3.7@jar') {
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    // Super Toast
+    compile('com.github.johnpersano:supertoasts:1.3.4@aar') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    // Croping images
+    compile('com.soundcloud.android:android-crop:0.9.10@aar') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+    // Backendless
+    compile 'com.backendless:backendless:3.0.20'
+    compile 'com.android.support:support-annotations:23.0.0'
+    compile 'org.scribe:scribe:1.3.7'
+    compile 'org.jdeferred:jdeferred-android-aar:1.2.4'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'org.apache.commons:commons-lang3:3.3.2@jar' is a fixed
+compile files('libs/bugsense-3.6.1.jar') is a file
+compile('com.google.android.gms:play-services-maps:9.0.2') { is a fixed
+compile 'com.android.support:support-v13:23.0.0@aar' is a fixed
+compile('com.android.support:appcompat-v7:23.0.0@aar') { is a fixed
+compile('com.mcxiaoke.volley:library-aar:1.0.1@aar') { is a fixed
+compile('de.greenrobot:greendao:1.3.7@jar') { is a fixed
+compile('com.github.johnpersano:supertoasts:1.3.4@aar') { is a fixed
+compile('com.soundcloud.android:android-crop:0.9.10@aar') { is a fixed
+compile 'com.backendless:backendless:3.0.20' is a fixed
+compile 'com.android.support:support-annotations:23.0.0' is a fixed
+compile 'org.scribe:scribe:1.3.7' is a fixed
+compile 'org.jdeferred:jdeferred-android-aar:1.2.4' is a fixed
+
+https://raw.githubusercontent.com/005gargpiyush005/master/openshop.io-android
+
+
+
+
+https://raw.githubusercontent.com/005gargpiyush005/master/openshop.io-android/app/build.gradle
+
+    //  if needed jar libraries, add them to libs folder and load them here:
+    //  compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.jakewharton.timber:timber:4.1.2'
+    compile 'com.google.android.gms:play-services-analytics:10.2.0'
+    compile 'com.google.android.gms:play-services-gcm:10.2.0'
+    compile 'com.google.android.gms:play-services-maps:10.2.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'mbanje.kurt:fabbutton:1.2.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.9.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+
+
+    //// Unit testing dependencies
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+    // Set this dependency if you want to use the Hamcrest matcher library
+    testCompile 'org.hamcrest:hamcrest-library:1.3'
+    testCompile 'org.powermock:powermock-module-junit4:1.6.4'
+    testCompile 'org.powermock:powermock-api-mockito:1.6.4'
+    //// Instrumentation test dependencies
+    androidTestCompile 'com.android.support:support-annotations:25.2.0'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+
+
+
+compile 'com.android.support:appcompat-v7:25.2.0' is a fixed
+compile 'com.android.support:design:25.2.0' is a fixed
+compile 'com.android.support:recyclerview-v7:25.2.0' is a fixed
+compile 'com.jakewharton.timber:timber:4.1.2' is a fixed
+compile 'com.google.android.gms:play-services-analytics:10.2.0' is a fixed
+compile 'com.google.android.gms:play-services-gcm:10.2.0' is a fixed
+compile 'com.google.android.gms:play-services-maps:10.2.0' is a fixed
+compile 'com.google.code.gson:gson:2.7' is a fixed
+compile 'mbanje.kurt:fabbutton:1.2.1' is a fixed
+compile 'com.facebook.android:facebook-android-sdk:4.9.0' is a fixed
+compile 'com.squareup.picasso:picasso:2.5.2' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.2.0' is a fixed
+compile 'com.android.volley:volley:1.0.0' is a fixed
+compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+testCompile 'org.mockito:mockito-all:1.10.19' is a fixed
+testCompile 'org.hamcrest:hamcrest-library:1.3' is a fixed
+testCompile 'org.powermock:powermock-module-junit4:1.6.4' is a fixed
+testCompile 'org.powermock:powermock-api-mockito:1.6.4' is a fixed
+androidTestCompile 'com.android.support:support-annotations:25.2.0' is a fixed
+androidTestCompile 'com.android.support.test:runner:0.5' is a fixed
+androidTestCompile 'com.android.support.test:rules:0.5' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2' is a fixed
+
+https://raw.githubusercontent.com/005gargpiyush005/master/razorpay-android-sample-app
+
+
+
+
+https://raw.githubusercontent.com/005gargpiyush005/master/razorpay-android-sample-app/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile('com.razorpay:checkout:1.2.1')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile('com.razorpay:checkout:1.2.1') is a fixed
+
+https://raw.githubusercontent.com/005gargpiyush005/master/vimeo-networking-java
+
+
+
+
+https://raw.githubusercontent.com/005gargpiyush005/master/vimeo-networking-java/example/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile project(':vimeo-networking')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.4.0' is a fixed
+compile 'com.android.support:design:23.4.0' is a fixed
+
+https://raw.githubusercontent.com/005gargpiyush005/master/vimeo-networking-java/vimeo-networking/build.gradle
+
+    testCompile 'junit:junit:4.12'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.intellij:annotations:12.0@jar'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.vimeo.stag:stag-library:1.0.0'
+    apt 'com.vimeo.stag:stag-library-compiler:1.0.0'
+
+
+
+testCompile 'junit:junit:4.12' is a fixed
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.intellij:annotations:12.0@jar' is a fixed
+compile 'com.squareup.retrofit2:retrofit:2.1.0' is a fixed
+compile 'com.squareup.retrofit2:converter-gson:2.1.0' is a fixed
+compile 'com.vimeo.stag:stag-library:1.0.0' is a fixed
+apt 'com.vimeo.stag:stag-library-compiler:1.0.0' is a fixed
+
+https://raw.githubusercontent.com/00675901/master/testAndroidLib
+
+
+
+
+https://raw.githubusercontent.com/00675901/master/testAndroidLib/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0079123/master/KGWeather
+
+
+
+
+https://raw.githubusercontent.com/0079123/master/KGWeather/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'org.litepal.android:core:1.3.2'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.1.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.github.bumptech.glide:glide:3.7.0' is a fixed
+compile 'org.litepal.android:core:1.3.2' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.4.1' is a fixed
+compile 'com.google.code.gson:gson:2.7' is a fixed
+
+https://raw.githubusercontent.com/0079123/master/kkweather
+
+
+
+
+https://raw.githubusercontent.com/0079123/master/kkweather/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'org.litepal.android:core:1.3.2'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:25.1.0' is a fixed
+compile 'org.litepal.android:core:1.3.2' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.4.1' is a fixed
+compile 'com.google.code.gson:gson:2.7' is a fixed
+compile 'com.github.bumptech.glide:glide:3.7.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/0079cy/master/jadx
+
+
+
+
+https://raw.githubusercontent.com/007agent/master/Yoga
+
+
+
+
+https://raw.githubusercontent.com/007agent/master/Yoga/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+    compile 'com.google.android.gms:play-services-ads:9.4.0'
+    compile 'com.google.android.gms:play-services-analytics:9.4.0'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+testCompile 'junit:junit:4.12' is a fixed
+compile 'com.android.support:appcompat-v7:23.3.0' is a fixed
+compile 'com.android.support:design:23.3.0' is a fixed
+compile 'com.android.support:support-v4:23.3.0' is a fixed
+compile 'com.android.support:cardview-v7:23.3.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.3.0' is a fixed
+compile 'com.mcxiaoke.volley:library-aar:1.0.0' is a fixed
+compile 'com.google.android.gms:play-services-ads:9.4.0' is a fixed
+compile 'com.google.android.gms:play-services-analytics:9.4.0' is a fixed
+
+https://raw.githubusercontent.com/007arunwilson/master/scala
+
+
+
+
+https://raw.githubusercontent.com/007arunwilson/master/scala/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.android.gms:play-services:11.0.4'
+    compile "com.google.android.gms:play-services-location:11.0.1"
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:26.+' is a minor
+compile 'com.android.support.constraint:constraint-layout:1.0.2' is a fixed
+compile 'com.google.android.gms:play-services:11.0.4' is a fixed
+compile "com.google.android.gms:play-services-location:11.0.1" is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/AndroidFillableLoaders
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/AndroidFillableLoaders/library/build.gradle
+
+  compile libSupport
+
+
+
+libSupport
+libSupport
+com.android.support:support-v4:22.2.0
+libSupport
+com.android.support:support-v4:22.2.0
+libSupport
+com.android.support:support-v4:22.2.0
+com.android.support:support-v4:22.2.0 is from mvariable raw find
+compile libSupport is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/AndroidFillableLoaders/sampleapp/build.gradle
+
+  //  compile project(':library')
+  compile 'com.github.jorgecastilloprz:fillableloaders:1.02@aar'
+  compile libAppCompat
+  compile libSupportDesign
+  compile libViewInjection
+
+
+
+compile 'com.github.jorgecastilloprz:fillableloaders:1.02@aar' is a fixed
+libAppCompat
+libAppCompat
+com.android.support:appcompat-v7:22.2.0
+libAppCompat
+com.android.support:appcompat-v7:22.2.0
+libAppCompat
+com.android.support:appcompat-v7:22.2.0
+com.android.support:appcompat-v7:22.2.0 is from mvariable raw find
+compile libAppCompat is a fixed
+libSupportDesign
+libSupportDesign
+com.android.support:design:22.2.1
+libSupportDesign
+com.android.support:design:22.2.1
+libSupportDesign
+com.android.support:design:22.2.1
+com.android.support:design:22.2.1 is from mvariable raw find
+compile libSupportDesign is a fixed
+libViewInjection
+libViewInjection
+com.jakewharton:butterknife:7.0.1
+libViewInjection
+com.jakewharton:butterknife:7.0.1
+libViewInjection
+com.jakewharton:butterknife:7.0.1
+com.jakewharton:butterknife:7.0.1 is from mvariable raw find
+compile libViewInjection is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/BlurBehind
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/circular-progress-button
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/circular-progress-button/library/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+
+https://raw.githubusercontent.com/007durgesh219/master/circular-progress-button/sample/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.github.dmytrodanylyk.circular-progress-button:library:1.1.3-SNAPSHOT@aar'
+    compile project(':library')
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+
+https://raw.githubusercontent.com/007durgesh219/master/dhis2-android-dashboard
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/dhis2-android-dashboard/app/build.gradle
+
+    compile project(':core')
+    compile project(':ui')
+
+    compile 'com.android.support:recyclerview-v7:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
+    compile 'com.android.support:design:22.2.1'
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'com.squareup:otto:1.3.6'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.chrisbanes.photoview:library:1.2.3'
+    compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
+
+
+
+compile 'com.android.support:recyclerview-v7:22.2.1' is a fixed
+compile 'com.android.support:cardview-v7:22.2.1' is a fixed
+compile 'com.android.support:design:22.2.1' is a fixed
+compile 'com.jakewharton:butterknife:7.0.0' is a fixed
+compile 'com.squareup:otto:1.3.6' is a fixed
+compile 'com.squareup.picasso:picasso:2.5.2' is a fixed
+compile 'com.github.chrisbanes.photoview:library:1.2.3' is a fixed
+compile 'com.github.castorflex.smoothprogressbar:library:1.1.0' is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/ips
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/ips/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    testCompile 'junit:junit:4.12'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', { is a fixed
+compile 'com.android.support:appcompat-v7:22.2.1' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/MaterialTransitions
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/MaterialTransitions/app/build.gradle
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile 'com.android.support:support-v13:22.+'
+    compile 'com.android.support:recyclerview-v7:22.0.+'
+    compile 'com.android.support:cardview-v7:22.0.+'
+    compile 'com.jakewharton:butterknife:5.1.2'
+    compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.1'
+
+
+
+compile fileTree(dir: 'libs', include: ['*.jar']) is a file
+compile 'com.android.support:appcompat-v7:22.0.0' is a fixed
+compile 'com.android.support:support-v13:22.+' is a minor
+compile 'com.android.support:recyclerview-v7:22.0.+' is a micro
+compile 'com.android.support:cardview-v7:22.0.+' is a micro
+compile 'com.jakewharton:butterknife:5.1.2' is a fixed
+compile 'com.balysv.materialmenu:material-menu-toolbar:1.5.1' is a fixed
+
+https://raw.githubusercontent.com/007durgesh219/master/open-keychain
+
+
+
+
+https://raw.githubusercontent.com/007durgesh219/master/open-keychain/OpenKeychain/build.gradle
+
+    // NOTE: Always use fixed version codes not dynamic ones, e.g. 0.7.3 instead of 0.7.+, see README for more information
+    // NOTE: libraries are pinned to a specific build, see below
+
+    // from local Android SDK
+    compile 'com.android.support:support-v4:23.2.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:recyclerview-v7:23.2.0'
+    compile 'com.android.support:cardview-v7:23.2.0'
+
+    // Unit tests in the local JVM with Robolectric
+    // https://developer.android.com/training/testing/unit-testing/local-unit-tests.html
+    // http://robolectric.org/getting-started/
+    // http://www.vogella.com/tutorials/Robolectric/article.html
+    testCompile 'junit:junit:4.12'
+    testCompile ('org.robolectric:robolectric:3.0') {
+        exclude group: 'org.bouncycastle', module: 'bcprov-jdk16'
+    }
+    testCompile 'org.mockito:mockito-core:1.10.19'
+
+    // UI testing with Espresso
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    androidTestCompile 'com.android.support.test:rules:0.4.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.1'
+    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+
+    // Temporary workaround for bug: https://code.google.com/p/android-test-kit/issues/detail?id=136
+    // from https://github.com/googlesamples/android-testing/blob/master/build.gradle#L21
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:23.2.0'
+    }
+
+    // JCenter etc.
+    compile 'com.eftimoff:android-patternview:1.0.5@aar'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.jpardogo.materialtabstrip:library:1.1.0'
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+    compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.0'
+    compile 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    compile 'com.splitwise:tokenautocomplete:2.0.7@aar'
+    compile 'se.emilsjolander:stickylistheaders:2.7.0'
+    compile 'org.sufficientlysecure:html-textview:1.3'
+    compile 'org.sufficientlysecure:donations:2.4'
+    compile 'com.nispok:snackbar:2.11.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
+    compile 'org.apache.james:apache-mime4j-core:0.7.2'
+    compile 'org.apache.james:apache-mime4j-dom:0.7.2'
+    compile 'org.thoughtcrime.ssl.pinning:AndroidPinning:1.0.0'
+    compile 'com.cocosw:bottomsheet:1.3.0@aar'
+
+    // Material Drawer
+    compile 'com.mikepenz:materialdrawer:4.6.3@aar'
+    compile 'com.mikepenz:materialize:0.5.1'
+    compile 'com.mikepenz:iconics-core:2.5.3@aar'
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.5.0.1@aar'
+    compile 'com.mikepenz:community-material-typeface:1.3.41.1@aar'
+
+    // Nordpol
+    compile 'com.fidesmo:nordpol-android:0.1.18'
+
+    // libs as submodules
+    compile project(':openpgp-api-lib')
+    compile project(':openkeychain-api-lib')
+    compile project(':extern:bouncycastle:core')
+    compile project(':extern:bouncycastle:pg')
+    compile project(':extern:bouncycastle:prov')
+    compile project(':extern:minidns')
+    compile project(':KeybaseLib')
+    compile project(':safeslinger-exchange')
+
+
+
+compile 'com.android.support:support-v4:23.2.0' is a fixed
+compile 'com.android.support:appcompat-v7:23.2.0' is a fixed
+compile 'com.android.support:design:23.2.0' is a fixed
+compile 'com.android.support:recyclerview-v7:23.2.0' is a fixed
+compile 'com.android.support:cardview-v7:23.2.0' is a fixed
+testCompile 'junit:junit:4.12' is a fixed
+testCompile ('org.robolectric:robolectric:3.0') { is a fixed
+testCompile 'org.mockito:mockito-core:1.10.19' is a fixed
+androidTestCompile 'com.android.support.test:runner:0.4.1' is a fixed
+androidTestCompile 'com.android.support.test:rules:0.4.1' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1' is a fixed
+androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.1' is a fixed
+androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.1') { is a fixed
+resolutionStrategy.force 'com.android.support:support-annotations:23.2.0' is a fixed
+compile 'com.eftimoff:android-patternview:1.0.5@aar' is a fixed
+compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar' is a fixed
+compile 'com.google.zxing:core:3.2.1' is a fixed
+compile 'com.jpardogo.materialtabstrip:library:1.1.0' is a fixed
+compile 'com.getbase:floatingactionbutton:1.10.1' is a fixed
+compile 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.0' is a fixed
+compile 'org.ocpsoft.prettytime:prettytime:4.0.1.Final' is a fixed
+compile 'com.splitwise:tokenautocomplete:2.0.7@aar' is a fixed
+compile 'se.emilsjolander:stickylistheaders:2.7.0' is a fixed
+compile 'org.sufficientlysecure:html-textview:1.3' is a fixed
+compile 'org.sufficientlysecure:donations:2.4' is a fixed
+compile 'com.nispok:snackbar:2.11.0' is a fixed
+compile 'com.squareup.okhttp3:okhttp:3.2.0' is a fixed
+compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0' is a fixed
+compile 'org.apache.james:apache-mime4j-core:0.7.2' is a fixed
+compile 'org.apache.james:apache-mime4j-dom:0.7.2' is a fixed
+compile 'org.thoughtcrime.ssl.pinning:AndroidPinning:1.0.0' is a fixed
+compile 'com.cocosw:bottomsheet:1.3.0@aar' is a fixed
+compile 'com.mikepenz:materialdrawer:4.6.3@aar' is a fixed
+compile 'com.mikepenz:materialize:0.5.1' is a fixed
+compile 'com.mikepenz:iconics-core:2.5.3@aar' is a fixed
+compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar' is a fixed
+compile 'com.mikepenz:fontawesome-typeface:4.5.0.1@aar' is a fixed
+compile 'com.mikepenz:community-material-typeface:1.3.41.1@aar' is a fixed
+compile 'com.fidesmo:nordpol-android:0.1.18' is a fixed
+bouncycastle
+bouncycastle
+bouncycastle
+bouncycastle has not been found in https://raw.githubusercontent.com/007durgesh219/master/open-keychain/OpenKeychain/build.gradle
+bouncycastle
+bouncycastle
+bouncycastle
+bouncycastle has not been found in https://raw.githubusercontent.com/007durgesh219/master/open-keychain/OpenKeychain/build.gradle
+bouncycastle
+bouncycastle
+bouncycastle
+bouncycastle has not been found in https://raw.githubusercontent.com/007durgesh219/master/open-keychain/OpenKeychain/build.gradle
+minidns
+minidns
+minidns
+minidns has not been found in https://raw.githubusercontent.com/007durgesh219/master/open-keychain/OpenKeychain/build.gradle
+

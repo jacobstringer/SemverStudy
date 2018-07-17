@@ -18,3 +18,5 @@ private_tokens.txt
 **test.java
 **/*.html
 /data/NPM/
+/data/*.csv
+/src/accesstokens.csv

@@ -8,6 +8,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class checkAnt {
+	
+	// Creates a csv file from ant files, checking which ones have Ivy references
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader in = null;

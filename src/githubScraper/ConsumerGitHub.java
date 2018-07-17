@@ -104,9 +104,6 @@ public class ConsumerGitHub implements Runnable {
 					second = keys.next();
 				} catch (Exception e) {}
 
-				// Extract dependency information
-				int[] dependencies = Scraper.extractDependencies(fileInfo);
-
 				// User email
 				String user;
 				try {
@@ -123,15 +120,13 @@ public class ConsumerGitHub implements Runnable {
 				PreparedStatement ps = null;
 				try {
 					ps = c.prepareStatement(
-							"INSERT INTO dependencies (url, lang1, lang2, buildtype, sem_depend, other_depend, users, ghid) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+							"INSERT INTO dependencies (url, lang1, lang2, buildtype, users, ghid) VALUES (?, ?, ?, ?, ?, ?)");
 					ps.setString(1, url);
 					ps.setString(2, first);
 					ps.setString(3, second);
 					ps.setString(4, fileInfo[0]);
-					ps.setInt(5, dependencies[1]);
-					ps.setInt(6, dependencies[0]);
-					ps.setString(7, user);
-					ps.setInt(8, since);
+					ps.setString(5, user);
+					ps.setInt(6, since);
 					ps.execute();
 					//System.out.println(ps.toString());
 				} catch (SQLException e) {

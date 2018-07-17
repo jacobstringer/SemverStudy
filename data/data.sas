@@ -47,6 +47,8 @@ PROC MEANS data=combo MEAN STDDEV P5 MEDIAN P95;
 RUN;
 ODS HTML CLOSE;
 
+
+
 * Looks at the univariate distribution of the ln(size) - Package is too large for this function and runs out of memory;
 %MACRO UNI(dat=);
 DATA temp;
@@ -106,6 +108,49 @@ PROC MEANS data=npm MAXDEC=3 N MEAN STD P95 P99 MAX;
 RUN;
 ODS HTML CLOSE;
 
+DATA npm_condensed;
+	SET npm;
+	fixed = SUM(norange, norangedev, urldep, urldepdev, git, gitdev, filedep, filedepdev);
+	micro = SUM(micro, microrange, microsimp, microcomp, microlt, microltsimp, microdev, microrangedev, microsimpdev, microcompdev, microltdev, microltsimpdev);
+	minor = SUM(minor, minorrange, minorsimp, minorcomp, minorlt, minorltsimp, minordev, minorrangedev, minorsimpdev, minorcompdev, minorltdev, minorltsimpdev);
+	major = SUM(major, majorrange, majorcomp, majorlt, gt, majordev, majorrangedev, majorcompdev, majorltdev);
+	variable = SUM(micro, minor, major);
+	total = SUM(fixed, variable);
+	KEEP fixed variable total micro minor major unknowndep;
+RUN;
+
+PROC UNIVARIATE data=npm_condensed;
+RUN;
+
+%MACRO npmbytype (type=);
+DATA t;
+	SET npm_condensed;
+	IF &type > 0;
+PROC UNIVARIATE data=t;
+	var &type;
+RUN;
+%MEND npmbytype;
+
+%npmbytype(type=fixed);
+%npmbytype(type=micro);
+%npmbytype(type=minor);
+%npmbytype(type=major);
+%npmbytype(type=variable);
+%npmbytype(type=total);
+	
+DATA npmmixed;
+	SET npm_condensed;
+	IF micro > 0 and minor > 0 or micro > 0 and major > 0 or minor > 0 and major > 0;
+PROC UNIVARIATE data=npmmixed;
+	var variable;
+RUN;
+
+DATA npmnofixed;
+	SET npm_condensed;
+	IF fixed = 0;
+PROC UNIVARIATE data=npmnofixed;
+RUN;
+
 
 
 ******* FULL FILE OF STATS;
@@ -150,8 +195,127 @@ DATA gradleonlydeps;
 	IF lines > 0;
 RUN;
 
-PROC MEANS data=gradleonlydeps;
+PROC MEANS data=gradle;*onlydeps;
 RUN;
 
 PROC UNIVARIATE data=gradleonlydeps PLOT;
+RUN;
+
+
+
+********* GRADLE WITH SUBFILES;
+DATA gradlesubs;
+	INFILE "&dir\gradlefileswithsub.csv" DSD;
+	INPUT url $ fixed micro minor major range lines files methods subfiles;
+	fix = SUM(fixed, files);
+	var = SUM(micro, minor, major, range);
+	total = SUM(fix, var);
+DATA gradlesubsdeps;
+	SET gradlesubs;
+	IF total > 0;
+DATA gradlesubfix;
+	SET gradlesubsdeps;
+	IF fix > 0;
+DATA gradlesubmicro;
+	SET gradlesubsdeps;
+	IF micro > 0;
+DATA gradlesubminor;
+	SET gradlesubsdeps;
+	IF minor > 0;
+DATA gradlesubmajor;
+	SET gradlesubsdeps;
+	IF major > 0;
+DATA gradlesubmixedvars;
+	SET gradlesubsdeps;
+	IF micro > 0 and minor > 0 or micro > 0 and major > 0 or minor > 0 and major > 0;
+DATA gradlesubvar;
+	SET gradlesubsdeps;
+	IF var > 0;
+DATA gradlenofix;
+	SET gradlesubsdeps;
+	IF fix = 0;
+RUN;
+PROC UNIVARIATE data=gradlesubs;
+RUN;
+PROC UNIVARIATE data=gradlesubfix;
+	VAR fix;
+PROC UNIVARIATE data=gradlesubmicro;
+	VAR micro;
+PROC UNIVARIATE data=gradlesubminor;
+	VAR minor;
+PROC UNIVARIATE data=gradlesubmajor;
+	VAR major;
+PROC UNIVARIATE data=gradlesubmixedvars;
+	var var;
+PROC UNIVARIATE data=gradlesubvar;
+	VAR var;
+PROC UNIVARIATE data=gradlesubsdeps;
+	VAR total;
+RUN;
+
+
+
+
+
+******** POM;
+DATA pom;
+	INFILE "&dir\pom.csv" DSD;
+	INPUT url $ fixed micro minor major other;
+RUN;
+
+DATA pom2;
+	SET pom;
+	total = sum(fixed, micro, minor, major, other);
+	if total > 0;
+RUN;
+
+DATA pommicro;
+	SET pom;
+	if micro > 0;
+RUN;
+
+DATA pomminor;
+	SET pom;
+	if minor > 0;
+RUN;
+
+DATA pommajor;
+	SET pom;
+	if major > 0;
+RUN;
+
+DATA pomfixed;
+	SET pom;
+	if fixed > 0;
+RUN;
+
+DATA mixed;
+	SET pom;
+	IF major > 0 and micro > 0 or major > 0 and minor > 0 or micro > 0 and minor > 0;
+RUN;
+
+DATA pomvariable;
+	SET pom;
+	IF micro > 0 or minor > 0 or major > 0;
+RUN;
+
+DATA pomnofixed;
+	SET pom2;
+	IF fixed = 0;
+RUN;
+
+PROC UNIVARIATE data=pomfixed;
+	VAR fixed;
+Run;
+
+ODS HTML;
+PROC UNIVARIATE data=pommicro;
+	VAR micro;
+PROC UNIVARIATE data=pomminor;
+	VAR minor;
+PROC UNIVARIATE data=pommajor;
+	VAR major;
+RUN;
+
+PROC UNIVARIATE data=pom2;
 RUN;
