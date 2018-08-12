@@ -1,0 +1,3 @@
+This project scans through files (NPM and POM build files) to gather information about how many submodules are involved. These are then added to the relevant entries on the dependencies table in the database. For more information about how to set up the database, see the root folder readme.
+
+Use the ProductionParseFiles.java file to set up the DB and to run the project. ProducerParseFiles will set up the file required to be analysed - the path information can be set near the top of this file. The files are expected to be in a zip file for this project with the first folder being the name of the type of file (i.e., pom for POM, package for NPM).

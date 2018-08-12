@@ -1,0 +1,1 @@
+This project takes queries from the DB and creates csv files from them for further analysis. QueryToFile.java has a main function with several functions to turn on and off as needed.
