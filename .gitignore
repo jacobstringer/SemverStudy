@@ -18,4 +18,4 @@
 **/*.html
 /data/NPM/
 /data/*.csv
-**/accesstokens.csv
+/src/main/java/accesstokens.csv
